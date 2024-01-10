@@ -4,24 +4,34 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+.underline-hover {
+  @apply relative block w-fit after:absolute after:block after:h-[3px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-300 after:content-[''] after:hover:scale-x-100;
+}
+
+@layer components {
+  .footer-socials > svg path,
+  .footer-socials > svg clipPath {
+    @apply transition duration-300;
+  }
+
+  .footer-socials > svg:hover path,
+  .footer-socials > svg:hover clipPath {
+    @apply fill-highlight;
+  }
+}
+
+@media (prefers-color-scheme: white) {
+  /* Must be black but works right now on white scheme later need fix*/
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
 }
