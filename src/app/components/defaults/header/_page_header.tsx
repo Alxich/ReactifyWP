@@ -12,13 +12,13 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
 }) => {
   return (
     <div className="page-header w-full border-b border-b-black px-3xl py-7xl">
-      <Container width="md" classNames="mx-auto">
+      <Container width="sm" classNames="mx-auto">
         <h1 className="mb-xl text-8xl font-bold uppercase text-black">
           {title}
         </h1>
 
         <div className="flex flex-row items-center justify-start space-x-xs">
-          <h3 className="text-2xl font-bold uppercase text-black leading-none">
+          <h3 className="text-2xl font-bold uppercase leading-none text-black">
             Do not be shy to Explore{" "}
           </h3>
           <svg

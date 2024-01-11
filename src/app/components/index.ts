@@ -6,6 +6,8 @@ export { default as RoundedNavItems } from "./defaults/header/_rounded-nav-items
 export { default as Subscriber } from "./defaults/subscriber/_subscriber";
 export { default as SubscriberBanner } from "./defaults/subscriber/_subscriber-banner";
 export { default as TagLink } from "./defaults/tag/_tag-link";
+export { default as PostPreview } from "./defaults/posts/_post-preview";
+export { default as PostsRecent } from "./defaults/posts/_posts-recent";
 
 // Extra components (additional in use)
 

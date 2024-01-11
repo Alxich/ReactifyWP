@@ -37,8 +37,8 @@ const Footer: FC<FooterProps> = (props) => {
   };
 
   return (
-    <footer className="footer w-full max-w-wrapper-xl-sz pt-7xl">
-      <Container classNames="head-wrapper flex flex-row pb-7xl" width="md">
+    <footer className="footer w-full max-w-wrapper-lg-sz pt-7xl">
+      <Container classNames="head-wrapper flex flex-row pb-7xl" width="sm">
         <div className="navigation flex w-3/5 flex-row items-center justify-between">
           {navObjOne && (
             <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
@@ -95,7 +95,7 @@ const Footer: FC<FooterProps> = (props) => {
       <div className="bottom-wrapper border-t border-t-black pt-2.5xl">
         <Container
           classNames="flex flex-row justify-between items-center"
-          width="md"
+          width="sm"
         >
           <div className="privacy-rooles">
             <p className="text-medium font-normal text-black">
@@ -114,7 +114,7 @@ const Footer: FC<FooterProps> = (props) => {
               .
             </p>
           </div>
-          <div className="socials flex flex-row space-x-xl child:cursor-pointer footer-socials">
+          <div className="socials footer-socials flex flex-row space-x-xl child:cursor-pointer">
             <SvgIcons type="Discord" />
             <SvgIcons type="Figma" />
             <SvgIcons type="Google" />

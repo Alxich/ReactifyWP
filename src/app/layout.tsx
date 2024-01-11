@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <Header />
         <main className="flex min-h-screen w-full flex-col items-center justify-start">
-          <Container width="xl">
+          <Container width="lg">
             <PageHeader
               title="Do you like this Stories ?"
               text="Take a moment to explore our collection of posts and discover the
@@ -42,7 +42,7 @@ export default function RootLayout({
             {children}
           </Container>
         </main>
-        <Container width="xl">
+        <Container width="lg">
           <Subscriber />
         </Container>
         <Footer />

@@ -1,45 +1,78 @@
 import { FC } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import classNames from "classnames";
 
 import { TagLink } from "../../index";
 import { TagLinkProps } from "@/lib/types";
 
-interface PostPreviewerProps {
+interface PostPreviewProps {
   view: "row" | "col";
-  image: string;
+  isGridSmall?: boolean;
+  image: string | StaticImageData;
+  author: string;
+  date: string;
   title: string;
   texts: string;
-  tags: [TagLinkProps];
+  tags: TagLinkProps[];
+  className?: string;
 }
 
-const PostPreviewer: FC<PostPreviewerProps> = ({
+const PostPreview: FC<PostPreviewProps> = ({
   view,
+  isGridSmall,
   image,
+  author,
+  date,
   title,
   texts,
   tags,
-}: PostPreviewerProps) => {
+  className,
+}: PostPreviewProps) => {
   return (
     <div
-      className={classNames("post post-previewer", {
-        "flex-row justify-between space-x-3xl": view && view == "row",
-        "flex-col space-y-3xl": view && view == "col",
-      })}
+      className={classNames(
+        "post post-previewer flex",
+        className && className,
+        {
+          "flex-row justify-between space-x-3xl": view && view == "row",
+          "flex-col space-y-3xl": view && view == "col",
+        },
+      )}
     >
-      <div className="thumbnail w-1/2">
-        <Image src={image} alt="post__preview__thumbnail__image" />
+      <div
+        className={classNames("thumbnail", {
+          "min-w-[320px]": view && view == "row",
+          "w-full": view && view == "col",
+        })}
+      >
+        <Image src={image} alt="post__preview__thumbnail__image" className="w-full"/>
       </div>
-      <div className="text-content item-start w-1/2 flex-col justify-start space-y-xl">
+      <div
+        className={classNames(
+          "text-content flex-col items-start justify-start space-y-xl",
+          {
+            "w-1/2": view && view == "row",
+            "w-full": view && view == "col",
+          },
+        )}
+      >
         <div className="content w-full flex-col items-start justify-start space-y-sm">
           <div className="author-info w-full">
-            <p className="text-gray text-medium">
-              <span className="name">Olivia Rhye</span>
+            <p className="text-medium leading-normal text-gray">
+              <span className="name">{author}</span>
               {" • "}
-              <span className="date">1 Jan 2023</span>
+              <span className="date">{date}</span>
             </p>
           </div>
-          <h4 className="flex w-full flex-row items-center justify-between text-2xl font-semibold text-black">
+          <h4
+            className={classNames(
+              "flex w-full flex-row items-center justify-between font-semibold text-black",
+              {
+                "text-large": isGridSmall != undefined && isGridSmall === true,
+                "text-2xl": isGridSmall == undefined ||  isGridSmall === false,
+              },
+            )}
+          >
             <span>{title}</span>
             <svg
               width="24"
@@ -57,8 +90,8 @@ const PostPreviewer: FC<PostPreviewerProps> = ({
               />
             </svg>
           </h4>
-          <div className="text-block w-full">
-            <p className="text-gray">{texts}</p>
+          <div className="text-block w-full text-normal text-gray">
+            <p className=" text-inherit">{texts}</p>
           </div>
         </div>
         <div className="tags flex w-full flex-row flex-wrap space-x-xs">
@@ -77,4 +110,4 @@ const PostPreviewer: FC<PostPreviewerProps> = ({
   );
 };
 
-export default PostPreviewer;
+export default PostPreview;

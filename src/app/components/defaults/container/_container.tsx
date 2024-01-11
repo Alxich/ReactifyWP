@@ -5,7 +5,7 @@ import { PaddingValues } from "@/lib/types";
 
 interface СontainerProps {
   children: ReactNode;
-  width: "sm" | "md" | "lg" | "xl";
+  width: "xs" | "sm" | "md" | "lg" | "xl";
   padding?: PaddingValues;
   classNames?: string;
 }
@@ -41,6 +41,7 @@ const Сontainer: FC<СontainerProps> = ({
         paddingClass && paddingClass,
         customClassNames && customClassNames,
         {
+          "max-w-wrapper-xs-sz": width === "xs",
           "max-w-wrapper-sm-sz": width === "sm",
           "max-w-wrapper-md-sz": width === "md",
           "max-w-wrapper-lg-sz": width === "lg",

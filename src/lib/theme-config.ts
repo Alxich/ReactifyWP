@@ -26,8 +26,9 @@ const customFontSize = {
 };
 
 const wrapperWidth = {
-  "wrapper-sm-sz": "60rem", // small size for wrapper (960px)
-  "wrapper-md-sz": "76rem", // medium size for wrapper (1216px)
+  "wrapper-xs-sz": "60rem", // small size for wrapper (960px)
+  "wrapper-sm-sz": "76rem", // medium size for wrapper (1216px)
+  "wrapper-md-sz": "80rem", // medium size for wrapper (1280px)
   "wrapper-lg-sz": "86.25rem", // large size for wrapper (1380px)
   "wrapper-xl-sz": "90rem", // extra large size for wrapper (1440px)
   "wrapper-page-sz": "120rem", // page size for wrapper and body (1920px

@@ -9,7 +9,7 @@ const SubscriberBanner: FC<SubscriberBannerProps> = (props) => {
   return (
     <div className="subscriber w-full rounded-lg bg-black py-7xl">
       <Container
-        width="md"
+        width="sm"
         classNames="flex flex-col justify-center items-center px-xl py-11xl space-y-5xl"
       >
         <div className="short-text w-full space-y-xl">
@@ -32,7 +32,7 @@ const SubscriberBanner: FC<SubscriberBannerProps> = (props) => {
                   id="user-mail"
                   name="user-mail"
                   type="email"
-                  className="placeholder:text-gray block w-full rounded-lg bg-white px-md py-sm focus:outline-none"
+                  className="block w-full rounded-lg bg-white px-md py-sm placeholder:text-gray focus:outline-none"
                   placeholder="Enter your email"
                 />
                 <button

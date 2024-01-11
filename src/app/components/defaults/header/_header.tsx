@@ -13,8 +13,8 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
   ];
 
   return (
-    <header className="masthead flex w-full max-w-wrapper-xl-sz items-center justify-center border-b border-b-black pb-xl pt-xs">
-      <Container width="md" classNames="flex justify-between">
+    <header className="masthead flex w-full max-w-wrapper-lg-sz items-center justify-center border-b border-b-black pb-xl pt-xs">
+      <Container width="sm" classNames="flex justify-between">
         <div className="logo cursor-pointer select-none">
           <p className="text-3xl font-bold text-black">
             Reactify

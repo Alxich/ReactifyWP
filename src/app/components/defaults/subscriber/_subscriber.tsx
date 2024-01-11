@@ -9,7 +9,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
   return (
     <div className="subscriber w-full rounded-lg bg-black py-7xl">
       <Container
-        width="md"
+        width="sm"
         classNames="flex flex-row items-start px-xl py-7xl space-x-10xl border-y border-gray"
       >
         <div className="short-text w-1/2 space-y-sm">
@@ -36,7 +36,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
                   id="user-mail"
                   name="user-mail"
                   type="email"
-                  className="placeholder:text-gray block w-full rounded-lg bg-white px-md py-sm focus:outline-none"
+                  className="block w-full rounded-lg bg-white px-md py-sm placeholder:text-gray focus:outline-none"
                   placeholder="Enter your email"
                 />
                 <button

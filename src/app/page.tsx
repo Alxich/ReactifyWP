@@ -1,15 +1,15 @@
 import { FC } from "react";
-import { Container, SubscriberBanner } from "./components";
+import { Container, PostsRecent, SubscriberBanner } from "./components";
 
 interface HomeProps {}
 
 const Home: FC<HomeProps> = (props) => {
   return (
     <>
-      <Container padding="sm" width="lg">
-        <div></div>
+      <Container width="lg" classNames="space-y-6.5xl py-6.5xl">
+        <PostsRecent />
+        <SubscriberBanner />
       </Container>
-      <SubscriberBanner />
     </>
   );
 };
