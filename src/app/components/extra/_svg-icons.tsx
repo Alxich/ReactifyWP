@@ -1,7 +1,13 @@
 import { FC } from "react";
 
 interface SvgIconsProps {
-  type: "Discord" | "Figma" | "Google" | "Github";
+  type:
+    | "Discord"
+    | "Figma"
+    | "Google"
+    | "Github"
+    | "Explore-Arrow-Down-Right"
+    | "Explore-Arrow-Up-Right-Post";
 }
 
 const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
@@ -140,6 +146,45 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
               <rect width="28" height="28" fill="white" />
             </clipPath>
           </defs>
+        </svg>
+      );
+
+    case "Explore-Arrow-Down-Right":
+      return (
+        <svg
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect y="0.5" width="24" height="24" rx="2" className="fill-black" />
+          <path
+            d="M7 17.5L17 7.5M17 7.5H7M17 7.5V17.5"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+    case "Explore-Arrow-Up-Right-Post":
+      return (
+        <svg
+          width="24"
+          height="28"
+          viewBox="0 0 24 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 21L17 11M17 11H7M17 11V21"
+            stroke="#1A1A1A"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       );
 

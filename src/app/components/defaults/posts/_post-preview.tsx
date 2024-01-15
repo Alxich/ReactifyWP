@@ -1,19 +1,11 @@
 import { FC } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import classNames from "classnames";
 
-import { TagLink } from "../../index";
-import { TagLinkProps } from "@/lib/types";
+import { SvgIcons, TagLink } from "../../index";
+import { PostPreviewBlockProps } from "@/lib/types";
 
-interface PostPreviewProps {
-  view: "row" | "col";
-  isGridSmall?: boolean;
-  image: string | StaticImageData;
-  author: string;
-  date: string;
-  title: string;
-  texts: string;
-  tags: TagLinkProps[];
+interface PostPreviewProps extends PostPreviewBlockProps {
   className?: string;
 }
 
@@ -31,7 +23,7 @@ const PostPreview: FC<PostPreviewProps> = ({
   return (
     <div
       className={classNames(
-        "post post-previewer flex",
+        "post post-previewer flex cursor-pointer",
         className && className,
         {
           "flex-row justify-between space-x-3xl": view && view == "row",
@@ -45,7 +37,11 @@ const PostPreview: FC<PostPreviewProps> = ({
           "w-full": view && view == "col",
         })}
       >
-        <Image src={image} alt="post__preview__thumbnail__image" className="w-full"/>
+        <Image
+          src={image}
+          alt="post__preview__thumbnail__image"
+          className="w-full"
+        />
       </div>
       <div
         className={classNames(
@@ -66,29 +62,15 @@ const PostPreview: FC<PostPreviewProps> = ({
           </div>
           <h4
             className={classNames(
-              "flex w-full flex-row items-center justify-between font-semibold text-black",
+              "flex w-full flex-row items-start justify-between font-semibold text-black",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
-                "text-2xl": isGridSmall == undefined ||  isGridSmall === false,
+                "text-2xl": isGridSmall == undefined || isGridSmall === false,
               },
             )}
           >
             <span>{title}</span>
-            <svg
-              width="24"
-              height="28"
-              viewBox="0 0 24 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 21L17 11M17 11H7M17 11V21"
-                stroke="#1A1A1A"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <SvgIcons type="Explore-Arrow-Up-Right-Post" />
           </h4>
           <div className="text-block w-full text-normal text-gray">
             <p className=" text-inherit">{texts}</p>

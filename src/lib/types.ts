@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type PaddingValues =
   | "xxs"
   | "xs"
@@ -19,4 +21,15 @@ export interface TagLinkProps {
   text: string;
   color: string;
   background: string;
+}
+
+export interface PostPreviewBlockProps {
+  view: "row" | "col";
+  isGridSmall?: boolean;
+  image: string | StaticImageData;
+  author: string;
+  date: string;
+  title: string;
+  texts: string;
+  tags: TagLinkProps[];
 }

@@ -3,6 +3,7 @@ const customColors = {
   black: "#1A1A1A",
   gray: "#667085",
   highlight: "#7e5bef",
+  "highlight-definition": "#EFE9FB",
   accent: "#7F56D9",
   vitalred: "#ff7849",
 };
