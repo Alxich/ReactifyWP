@@ -11,10 +11,18 @@
   @apply relative block w-fit after:absolute after:block after:h-[3px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-300 after:content-[''] after:hover:scale-x-100;
 }
 
+.use-transition {
+  @apply transition duration-300;
+}
+
+.wp-border {
+  @apply border border-black
+}
+
 @layer components {
   .footer-socials > svg path,
   .footer-socials > svg clipPath {
-    @apply transition duration-300;
+    @apply transition;
   }
 
   .footer-socials > svg:hover path,

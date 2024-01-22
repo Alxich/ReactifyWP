@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import { Container } from "../../index";
+import { Button, Container } from "../../index";
 
 interface SubscriberBannerProps {}
 
@@ -35,17 +35,12 @@ const SubscriberBanner: FC<SubscriberBannerProps> = (props) => {
                   className="block w-full rounded-lg bg-white px-md py-sm placeholder:text-gray focus:outline-none"
                   placeholder="Enter your email"
                 />
-                <button
-                  type="submit"
-                  className="transition-300 rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white transition hover:bg-transparent hover:text-highlight"
-                >
-                  Subscribe
-                </button>
+                <Button type="submit">Subscribe</Button>
               </div>
               <span className="text-medium text-white">
                 We care about your data in our{" "}
                 <Link
-                  className="transition-300 underline transition hover:text-highlight hover:no-underline"
+                  className="use-transition underline hover:text-highlight hover:no-underline"
                   href="#"
                 >
                   privacy policy

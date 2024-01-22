@@ -105,10 +105,7 @@ const Footer: FC<FooterProps> = (props) => {
             </p>
             <p className="mt-2.5xl text-medium font-normal text-black">
               The code and design of this template are copyrighted by{" "}
-              <Link
-                href="#"
-                className="transition duration-300 hover:text-highlight"
-              >
+              <Link href="#" className="use-transition hover:text-highlight">
                 @Alxich
               </Link>
               .

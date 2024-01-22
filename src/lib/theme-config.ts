@@ -4,6 +4,7 @@ const customColors = {
   gray: "#667085",
   highlight: "#7e5bef",
   "highlight-definition": "#EFE9FB",
+  "light-border": "#EAECF0",
   accent: "#7F56D9",
   vitalred: "#ff7849",
 };

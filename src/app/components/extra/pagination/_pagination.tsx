@@ -23,8 +23,8 @@ const Pagination: FC<PaginationProps> = ({
 
   return (
     <Container
-      width="sm"
-      classNames="flex flex-row justify-between items-center pt-7xl"
+      width="md"
+      classNames="flex flex-row justify-between items-center pt-7xl border-t border-t-light-border"
     >
       <ButtonNavigation previous />
       <div className="navigation flex flex-row items-baseline justify-center space-x-xxxs">
@@ -33,10 +33,17 @@ const Pagination: FC<PaginationProps> = ({
 
           return (
             <div
-              className="item active:bg-highlight-definition hover:bg-highlight-definition flex h-5xl w-5xl cursor-pointer select-none items-center justify-center rounded-lg p-sm text-gray transition duration-300 hover:text-highlight"
+              className={`item use-transition flex h-5xl w-5xl cursor-pointer select-none items-center justify-center rounded-lg p-sm ${
+                key == 0
+                  ? item !== "..." &&
+                    "bg-highlight-definition text-highlight hover:bg-transparent hover:text-gray active:bg-transparent"
+                  : item !== "..."
+                    ? "text-gray hover:bg-highlight-definition hover:text-highlight active:bg-highlight-definition"
+                    : "text-gray"
+              }`}
               key={`${item}__${key}`}
             >
-              <p className="text-medium font-semibold text-inherit  transition duration-300">
+              <p className="use-transition text-medium font-semibold  text-inherit">
                 {item}
               </p>
             </div>
