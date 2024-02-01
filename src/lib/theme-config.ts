@@ -28,12 +28,34 @@ const customFontSize = {
 };
 
 const wrapperWidth = {
-  "wrapper-xs-sz": "60rem", // small size for wrapper (960px)
-  "wrapper-sm-sz": "76rem", // medium size for wrapper (1216px)
+  "wrapper-xs-sz": "60rem", // extra small size for wrapper (960px)
+  "wrapper-sm-sz": "76rem", // small size for wrapper (1216px)
   "wrapper-md-sz": "80rem", // medium size for wrapper (1280px)
   "wrapper-lg-sz": "86.25rem", // large size for wrapper (1380px)
   "wrapper-xl-sz": "90rem", // extra large size for wrapper (1440px)
   "wrapper-page-sz": "120rem", // page size for wrapper and body (1920px
+};
+
+const customWidth = () => {
+  const localValues: Record<string, string> = {};
+
+  for (let i = 1; i <= 99; i++) {
+    const key = `${i}/100`;
+    localValues[key] = `${i}%`;
+  }
+
+  return localValues;
+};
+
+const customHeight = () => {
+  const localValues: Record<string, string> = {};
+
+  for (let i = 1; i <= 99; i++) {
+    const key = `ctm-${i}`;
+    localValues[key] = `${i}rem`;
+  }
+
+  return localValues;
 };
 
 const customSpacing = {
@@ -95,6 +117,8 @@ const themeConfiguration = {
     customColors,
     customFontSize,
     customBorderRadius,
+    customWidth: customWidth(),
+    customHeight: customHeight(),
   },
   codeVariables: {
     paddingClasses,

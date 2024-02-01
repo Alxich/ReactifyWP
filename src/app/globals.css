@@ -31,6 +31,26 @@
   }
 }
 
+img {
+  @apply block h-auto w-full rounded-default object-cover object-center
+}
+
+.post-content-text {
+  @apply text-gray
+}
+
+.post-content-text > * {
+  @apply text-inherit
+}
+
+.post-content-text h4 {
+  @apply text-gray text-large font-bold
+}
+
+.post-content-text ul {
+  @apply list-disc list-outside dark:text-gray pl-4
+}
+
 @media (prefers-color-scheme: white) {
   /* Must be black but works right now on white scheme later need fix*/
   :root {

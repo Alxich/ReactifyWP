@@ -7,7 +7,7 @@ import {
   Footer,
   Subscriber,
   PageHeader,
-} from "./components";
+} from "@/components";
 
 import classNames from "classnames";
 

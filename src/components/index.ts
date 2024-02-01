@@ -8,6 +8,8 @@ export { default as SubscriberBanner } from "./defaults/subscriber/_subscriber-b
 export { default as PostPreview } from "./defaults/posts/_post-preview";
 export { default as PostsRecent } from "./defaults/posts/_posts-recent";
 export { default as PostAll } from "./defaults/posts/_posts-all";
+export { default as PostContent } from "./defaults/posts/post/_post-content";
+export { default as PostHeader } from "./defaults/posts/post/_post-header";
 
 // Extra components (additional in use)
 
@@ -15,3 +17,4 @@ export { default as SvgIcons } from "./extra/_svg-icons";
 export { default as Button } from "./extra/_button";
 export { default as TagLink } from "./extra/tag/_tag-link";
 export { default as Pagination } from "./extra/pagination/_pagination";
+export { default as Breadcrumbs } from "./extra/breadcrumbs/_breadcrumbs";

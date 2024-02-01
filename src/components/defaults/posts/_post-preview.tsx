@@ -7,6 +7,7 @@ import { PostPreviewBlockProps } from "@/lib/types";
 
 interface PostPreviewProps extends PostPreviewBlockProps {
   className?: string;
+  type?: "group" | "regular";
 }
 
 const PostPreview: FC<PostPreviewProps> = ({
@@ -19,6 +20,7 @@ const PostPreview: FC<PostPreviewProps> = ({
   texts,
   tags,
   className,
+  type,
 }: PostPreviewProps) => {
   return (
     <div
@@ -35,12 +37,13 @@ const PostPreview: FC<PostPreviewProps> = ({
         className={classNames("thumbnail", {
           "min-w-[320px]": view && view == "row",
           "w-full": view && view == "col",
+          "h-ctm-14": type === "regular",
         })}
       >
         <Image
           src={image}
           alt="post__preview__thumbnail__image"
-          className="w-full"
+          className="h-full w-full"
         />
       </div>
       <div
@@ -62,7 +65,7 @@ const PostPreview: FC<PostPreviewProps> = ({
           </div>
           <h4
             className={classNames(
-              "flex w-full flex-row items-start justify-between font-semibold text-black",
+              "flex w-full flex-row items-start justify-between font-semibold leading-normal text-black",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
                 "text-2xl": isGridSmall == undefined || isGridSmall === false,

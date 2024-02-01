@@ -1,24 +1,19 @@
 import { FC } from "react";
-import {
-  Pagination,
-  Container,
-  PostAll,
-  PostsRecent,
-  SubscriberBanner,
-} from "@/components";
+
+import { Container, PostContent, PostHeader } from "@/components";
 import { PostPreviewBlockProps } from "@/lib/types";
 
 // Images
-import PostImage1 from "../../public/images/Image.png";
-import PostImage2 from "../../public/images/Image-1.png";
-import PostImage3 from "../../public/images/Image-2.png";
-import PostImage4 from "../../public/images/Image-3.png";
-import PostImage5 from "../../public/images/Image-4.png";
-import PostImage6 from "../../public/images/Image-5.png";
+import PostImage1 from "../../../../../public/images/Image.png";
+import PostImage2 from "../../../../../public/images/Image-1.png";
+import PostImage3 from "../../../../../public/images/Image-2.png";
+import PostImage4 from "../../../../../public/images/Image-3.png";
+import PostImage5 from "../../../../../public/images/Image-4.png";
+import PostImage6 from "../../../../../public/images/Image-5.png";
 
-interface HomeProps {}
+interface PostPageProps {}
 
-const Home: FC<HomeProps> = (props) => {
+const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
   const postsData: Array<PostPreviewBlockProps> = [
     {
       view: "col",
@@ -171,17 +166,15 @@ const Home: FC<HomeProps> = (props) => {
       ],
     },
   ];
-
   return (
-    <>
-      <Container width="lg" classNames="space-y-6.5xl py-6.5xl">
-        <PostsRecent />
-        <SubscriberBanner />
-        <PostAll postsData={postsData} />
-        <Pagination currentPage={1} totalPages={10} visiblePages={3} />
-      </Container>
-    </>
+    <Container
+      classNames="flex flex-col justify-center items-start post py-7xl px-3xl"
+      width="md"
+    >
+      <PostHeader />
+      <PostContent postsData={postsData} />
+    </Container>
   );
 };
 
-export default Home;
+export default PostPage;

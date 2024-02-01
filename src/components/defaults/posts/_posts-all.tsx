@@ -23,6 +23,7 @@ const PostAll: FC<PostAllProps> = ({ postsData }: PostAllProps) => {
             title={title}
             texts={texts}
             tags={tags}
+            type="regular"
             key={`post_${title}__${key}`}
           />
         ),

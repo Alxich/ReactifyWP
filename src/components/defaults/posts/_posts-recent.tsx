@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Container, PostPreview } from "../../index";
-import PostRecentImage1 from "../../../../../public/images/post-recent-1.png";
-import PostRecentImage2 from "../../../../../public/images/post-recent-2.png";
-import PostRecentImage3 from "../../../../../public/images/post-recent-3.png";
-import PostRecentImage4 from "../../../../../public/images/post-recent-4.png";
+import PostRecentImage1 from "../../../../public/images/post-recent-1.png";
+import PostRecentImage2 from "../../../../public/images/post-recent-2.png";
+import PostRecentImage3 from "../../../../public/images/post-recent-3.png";
+import PostRecentImage4 from "../../../../public/images/post-recent-4.png";
 
 interface PostsRecentProps {}
 

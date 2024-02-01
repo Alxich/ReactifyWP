@@ -5,6 +5,8 @@ const {
   styling: {
     customColors,
     wrapperWidth,
+    customWidth,
+    customHeight,
     customFontSize,
     customSpacing,
     customBorderRadius,
@@ -34,6 +36,12 @@ const config: Config = {
       },
       maxWidth: {
         ...wrapperWidth,
+      },
+      height: {
+        ...customHeight,
+      },
+      width: {
+        ...customWidth,
       },
       borderRadius: {
         ...customBorderRadius,
