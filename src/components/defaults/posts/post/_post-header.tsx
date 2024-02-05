@@ -13,11 +13,11 @@ const PostHeader: FC<PostHeaderProps> = ({}: PostHeaderProps) => {
     >
       <Breadcrumbs />
       <div className="buttons flex flex-row items-center justify-center space-x-xs">
-        <Button type="button" formType="breadcrumb">
+        <Button type="button" formType="post__action:breadcrumbs">
           <TrashIcon className="mr-xs h-full w-auto text-inherit" />
           Delete
         </Button>
-        <Button type="button" formType="breadcrumb">
+        <Button type="button" formType="post__action:breadcrumbs">
           <PencilIcon className="mr-xs h-full w-auto text-inherit" />
           Edit this post
         </Button>

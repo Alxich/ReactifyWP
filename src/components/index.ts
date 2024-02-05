@@ -3,13 +3,23 @@ export { default as Header } from "./defaults/header/_header";
 export { default as PageHeader } from "./defaults/header/_page-header";
 export { default as Footer } from "./defaults/footer/_footer";
 export { default as RoundedNavItems } from "./defaults/header/_rounded-nav-items";
+
+// Subscriber components
+
 export { default as Subscriber } from "./defaults/subscriber/_subscriber";
 export { default as SubscriberBanner } from "./defaults/subscriber/_subscriber-banner";
+
+// Post components
+
 export { default as PostPreview } from "./defaults/posts/_post-preview";
 export { default as PostsRecent } from "./defaults/posts/_posts-recent";
 export { default as PostAll } from "./defaults/posts/_posts-all";
-export { default as PostContent } from "./defaults/posts/post/_post-content";
+export { default as PostWrpapper } from "./defaults/posts/post/_post-wrapper";
 export { default as PostHeader } from "./defaults/posts/post/_post-header";
+
+// Comments components
+
+export { default as Comments } from "./defaults/comments/_comments"
 
 // Extra components (additional in use)
 

@@ -2,7 +2,7 @@ import { FC } from "react";
 
 interface ButtonProps {
   type: "button" | "submit";
-  formType: "form" | "breadcrumb";
+  formType: "form" | "post__action:breadcrumbs" | "post__action:post-actions";
   children: React.ReactNode;
 }
 
@@ -14,10 +14,17 @@ const Button: FC<ButtonProps> = ({ type, children, formType }: ButtonProps) => {
     >
       {children}
     </button>
-  ) : formType == "breadcrumb" ? (
+  ) : formType == "post__action:breadcrumbs" ? (
     <button
       type={"button"}
-      className="use-transition w-max flex h-xl flex-row items-center justify-center space-x-xs rounded-default border-2 border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black"
+      className=" post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black"
+    >
+      {children}
+    </button>
+  ) : formType == "post__action:post-actions" ? (
+    <button
+      type={"button"}
+      className=" post__action border-black bg-transparent px-xxs py-xxs text-black hover:bg-black hover:text-white"
     >
       {children}
     </button>

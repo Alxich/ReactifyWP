@@ -34,7 +34,7 @@ const PostPreview: FC<PostPreviewProps> = ({
       )}
     >
       <div
-        className={classNames("thumbnail", {
+        className={classNames("thumbnail overflow-hidden rounded-md", {
           "min-w-[320px]": view && view == "row",
           "w-full": view && view == "col",
           "h-ctm-14": type === "regular",

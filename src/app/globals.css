@@ -40,7 +40,11 @@ img {
 }
 
 .post-content-text > * {
-  @apply text-inherit
+  @apply text-inherit w-full
+}
+
+.post-content-text image {
+  @apply mx-auto
 }
 
 .post-content-text h4 {
@@ -49,6 +53,10 @@ img {
 
 .post-content-text ul {
   @apply list-disc list-outside dark:text-gray pl-4
+}
+
+.post__action {
+  @apply use-transition flex h-2xl w-max flex-row items-center justify-center space-x-xs rounded-default border-2;
 }
 
 @media (prefers-color-scheme: white) {

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Container, PostContent, PostHeader } from "@/components";
+import { Container, PostWrpapper, PostHeader } from "@/components";
 import { PostPreviewBlockProps } from "@/lib/types";
 
 // Images
@@ -172,7 +172,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
       width="md"
     >
       <PostHeader />
-      <PostContent postsData={postsData} />
+      <PostWrpapper postsData={postsData} />
     </Container>
   );
 };

@@ -5,7 +5,7 @@ import { PaddingValues } from "@/lib/types";
 
 interface СontainerProps {
   children: ReactNode;
-  width: "xs" | "sm" | "md" | "lg" | "xl";
+  width: "xs" | "sm" | "md" | "lg" | "xl" | "full";
   padding?: PaddingValues;
   classNames?: string;
 }
