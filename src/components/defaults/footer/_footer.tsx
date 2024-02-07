@@ -111,7 +111,7 @@ const Footer: FC<FooterProps> = (props) => {
               .
             </p>
           </div>
-          <div className="socials footer-socials flex flex-row space-x-xl child:cursor-pointer">
+          <div className="socials svg-animated flex flex-row space-x-xl child:cursor-pointer">
             <SvgIcons type="Discord" />
             <SvgIcons type="Figma" />
             <SvgIcons type="Google" />

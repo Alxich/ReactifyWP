@@ -28,3 +28,4 @@ export { default as Button } from "./extra/_button";
 export { default as TagLink } from "./extra/tag/_tag-link";
 export { default as Pagination } from "./extra/pagination/_pagination";
 export { default as Breadcrumbs } from "./extra/breadcrumbs/_breadcrumbs";
+export { default as Tiptap } from "./extra/editor/_tiptap";

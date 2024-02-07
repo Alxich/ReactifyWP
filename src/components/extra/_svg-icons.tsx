@@ -7,7 +7,10 @@ interface SvgIconsProps {
     | "Google"
     | "Github"
     | "Explore-Arrow-Down-Right"
-    | "Explore-Arrow-Up-Right-Post";
+    | "Explore-Arrow-Up-Right-Post"
+    | "Bold"
+    | "Italic"
+    | "Link";
 }
 
 const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
@@ -188,6 +191,98 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
         </svg>
       );
 
+    case "Bold":
+      return (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 3.33334H11.6667C12.5507 3.33334 13.3986 3.68453 14.0237 4.30965C14.6488 4.93478 15 5.78262 15 6.66668C15 7.55073 14.6488 8.39858 14.0237 9.0237C13.3986 9.64882 12.5507 10 11.6667 10H5V3.33334Z"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M5 10H12.5C13.3841 10 14.2319 10.3512 14.857 10.9763C15.4821 11.6014 15.8333 12.4493 15.8333 13.3333C15.8333 14.2174 15.4821 15.0652 14.857 15.6904C14.2319 16.3155 13.3841 16.6667 12.5 16.6667H5V10Z"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+    case "Italic":
+      return (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.833 3.33334H8.33301"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M11.667 16.6667H4.16699"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M12.5 3.33334L7.5 16.6667"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+    case "Link":
+      return (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.50033 14.1667H5.83366C4.72859 14.1667 3.66878 13.7277 2.88738 12.9463C2.10598 12.1649 1.66699 11.1051 1.66699 10C1.66699 8.89494 2.10598 7.83513 2.88738 7.05373C3.66878 6.27233 4.72859 5.83334 5.83366 5.83334H7.50033"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M12.5 5.83334H14.1667C15.2717 5.83334 16.3315 6.27233 17.1129 7.05373C17.8943 7.83513 18.3333 8.89494 18.3333 10C18.3333 11.1051 17.8943 12.1649 17.1129 12.9463C16.3315 13.7277 15.2717 14.1667 14.1667 14.1667H12.5"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M6.66699 10H13.3337"
+            stroke="#667085"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
     default:
       // Return frog icon in case of extra scenario
       return (
@@ -216,7 +311,6 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
           </defs>
         </svg>
       );
-      break;
   }
 };
 

@@ -16,47 +16,64 @@
 }
 
 .wp-border {
-  @apply border border-black
+  @apply border border-black;
 }
 
 @layer components {
-  .footer-socials > svg path,
-  .footer-socials > svg clipPath {
-    @apply transition;
+  .svg-animated-stroke > svg > *,
+  .svg-animated-stroke > * svg > *,
+  .svg-animated > svg > *,
+  .svg-animated > * > svg > * {
+    @apply transition duration-300;
   }
 
-  .footer-socials > svg:hover path,
-  .footer-socials > svg:hover clipPath {
+  .svg-animated > svg:hover path,
+  .svg-animated > svg:hover clipPath {
     @apply fill-highlight;
+  }
+
+  .svg-animated-stroke > * > svg:hover path,
+  .svg-animated-stroke > * > svg:hover clipPath {
+    @apply stroke-highlight;
   }
 }
 
 img {
-  @apply block h-auto w-full rounded-default object-cover object-center
+  @apply block h-auto w-full rounded-default object-cover object-center;
 }
 
 .post-content-text {
-  @apply text-gray
+  @apply text-gray;
 }
 
 .post-content-text > * {
-  @apply text-inherit w-full
+  @apply w-full text-inherit;
 }
 
 .post-content-text image {
-  @apply mx-auto
+  @apply mx-auto;
 }
 
 .post-content-text h4 {
-  @apply text-gray text-large font-bold
+  @apply text-large font-bold text-gray;
 }
 
 .post-content-text ul {
-  @apply list-disc list-outside dark:text-gray pl-4
+  @apply list-outside list-disc pl-4 dark:text-gray;
 }
 
 .post__action {
   @apply use-transition flex h-2xl w-max flex-row items-center justify-center space-x-xs rounded-default border-2;
+}
+
+.comment-actions {
+  @apply  flex flex-row items-center justify-center space-x-sm child:cursor-pointer
+}
+
+.tiptap-editor-wrapper > p:not(:focus)::before {
+  content: attr(data-placeholder);
+
+  @apply text-gray/40
 }
 
 @media (prefers-color-scheme: white) {
