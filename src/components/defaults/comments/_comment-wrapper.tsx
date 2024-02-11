@@ -1,6 +1,15 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useCallback, useState } from "react";
 import Image from "next/image";
 import classNames from "classnames";
+
+import { useEditor, EditorContent } from "@tiptap/react";
+
+// Extensions for tiptap editor
+import StarterKit from "@tiptap/starter-kit";
+import Placeholder from "@tiptap/extension-placeholder";
+import Link from "@tiptap/extension-link";
 
 import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/24/outline";
 
@@ -21,6 +30,9 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
   author,
   content,
 }: CommentWrapperProps) => {
+  const [linkSelected, setLinkSelected] = useState<boolean>(false);
+  const [linkWritted, setLinkWritted] = useState<string | null | undefined>();
+
   const submitBtnText = () => {
     switch (type) {
       case "answer":
@@ -36,6 +48,71 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
         break;
     }
   };
+
+  const runErrorNoEditor = () =>
+    console.error(
+      "TipTap editor is not loaded or had an Error while passing data ! Please check if editor working and code is not corrupted",
+    );
+
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      Placeholder.configure({
+        emptyEditorClass: "is-editor-empty",
+        placeholder: "Please write your comment over there... ",
+      }),
+      Link.configure({
+        validate: (href) => /^https?:\/\//.test(href),
+        HTMLAttributes: {
+          class: "underline underline-offset-2 text-highlight",
+        },
+      }),
+    ],
+    editorProps: {
+      attributes: {
+        class:
+          "tiptap-editor-wrapper font-inter leading-normal focus:outline-none",
+      },
+    },
+  });
+
+  const setLink = useCallback(
+    (e?: React.MouseEvent<HTMLButtonElement>) => {
+      e?.preventDefault();
+
+      const url = linkWritted;
+
+      console.log(url);
+
+      // cancelled
+      if (url === null) {
+        return;
+      }
+
+      // empty
+      if (url === "" || url === undefined) {
+        editor?.chain().focus().extendMarkRange("link").unsetLink().run();
+
+        return;
+      }
+
+      // update link
+      if (editor) {
+        editor
+          .chain()
+          .focus()
+          .extendMarkRange("link")
+          .setLink({ href: url })
+          .run();
+
+        setLinkWritted(null);
+        setLinkSelected(false);
+      } else {
+        runErrorNoEditor();
+      }
+    },
+    [editor],
+  );
 
   return (
     <div className="comment-wrapper flex w-full flex-col items-start justify-center space-y-md rounded-lg border border-black border-opacity-25 p-xl child:w-full">
@@ -56,7 +133,7 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
             {type === "answer" ? "Your answer to this..." : author.name}
           </p>
           {type === "answer" && (
-            <div className="item text-black cursor-default">
+            <div className="item cursor-default text-black">
               <ArrowUpIcon width={20} height={20} />
             </div>
           )}
@@ -68,7 +145,7 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
           "text-black": type === "edit" || type === "answer",
         })}
       >
-        {type !== "reg" ? <Tiptap /> : <p>{content}</p>}
+        {type !== "reg" ? <EditorContent editor={editor} /> : <p>{content}</p>}
       </div>
       <div className=" flex w-full flex-row items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
         {type != "edit" && type != "answer" ? (
@@ -85,14 +162,49 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
           </div>
         ) : (
           <div className="actions comment-actions svg-animated-stroke">
-            <div className="item">
+            <div
+              className={classNames("item", {
+                active: editor?.isActive("bold"),
+              })}
+              onClick={() => editor?.chain().focus().toggleBold().run()}
+            >
               <SvgIcons type="Bold" />
             </div>
-            <div className="item">
+            <div
+              className={classNames("item", {
+                active: editor?.isActive("italic"),
+              })}
+              onClick={() => editor?.chain().focus().toggleItalic().run()}
+            >
               <SvgIcons type="Italic" />
             </div>
-            <div className="item">
+            <div
+              className={classNames("item", {
+                active: linkSelected,
+              })}
+              onClick={() => setLinkSelected(linkSelected ? false : true)}
+            >
               <SvgIcons type="Link" />
+            </div>
+            <div
+              className={classNames(
+                "flex flex-row items-stretch justify-between space-x-xs rounded-md border border-black bg-white p-md",
+                {
+                  hidden: !linkSelected,
+                },
+              )}
+            >
+              <input
+                type="text"
+                className="w-full rounded-lg border border-gray px-xs py-xxxs focus:outline-none"
+                placeholder="Enter a link ..."
+                onChange={(e: React.FormEvent<HTMLInputElement>) => {
+                  setLinkWritted(e.currentTarget.value);
+                }}
+              />
+              <Button formType="comment" type="button" onClick={setLink}>
+                Done
+              </Button>
             </div>
           </div>
         )}
