@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Container } from "@/components";
+import { Button, Container } from "@/components";
 import CommentWrapper from "./_comment-wrapper";
 
 interface CommentsWrapperProps {}
@@ -15,7 +15,7 @@ const Comments: FC<CommentsWrapperProps> = ({}: CommentsWrapperProps) => {
       </div>
       <Container
         width="md"
-        classNames="flex flex-col justify-start items-start space-y-xl"
+        classNames="flex flex-col justify-start items-center space-y-xl"
       >
         <CommentWrapper
           type="answer"
@@ -25,6 +25,44 @@ const Comments: FC<CommentsWrapperProps> = ({}: CommentsWrapperProps) => {
           }}
           content="I just tried this recipe and it was amazing! The instructions were clear and easy to follow, and the end result was delicious. I will definitely be making this again. Thanks for sharing!"
         />
+        <CommentWrapper
+          type="reg"
+          author={{
+            name: "Jane Doe",
+            thumbnail: "placeholder-text-nah",
+          }}
+          content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
+        >
+          <CommentWrapper
+            type="reg"
+            author={{
+              name: "Jane Doe",
+              thumbnail: "placeholder-text-nah",
+            }}
+            content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
+          >
+            <CommentWrapper
+              type="reg"
+              author={{
+                name: "Jane Doe",
+                thumbnail: "placeholder-text-nah",
+              }}
+              content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
+            >
+              <CommentWrapper
+                type="answer"
+                author={{
+                  name: "Jane Doe",
+                  thumbnail: "placeholder-text-nah",
+                }}
+                content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
+              />
+            </CommentWrapper>
+          </CommentWrapper>
+        </CommentWrapper>
+        <Button formType="btn__action:load-more" type="button">
+          Load More
+        </Button>
       </Container>
     </Container>
   );

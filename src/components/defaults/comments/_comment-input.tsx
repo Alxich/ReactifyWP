@@ -11,10 +11,10 @@ import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Link from "@tiptap/extension-link";
 
-import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/24/outline";
+import { ArrowUpIcon } from "@heroicons/react/24/outline";
 
 import thumbnail1 from "../../../../public/images/thumbnail-1.png";
-import { Button, SvgIcons, Tiptap } from "@/components";
+import { Button, SvgIcons } from "@/components";
 
 interface CommentWrapperProps {
   type: "edit" | "reg" | "answer";
@@ -139,58 +139,56 @@ const CommentInput: FC<CommentWrapperProps> = ({
           )}
         </div>
       </div>
-      <div
-        className="content text-normal font-normal text-black"
-      >
-       <EditorContent editor={editor} />
+      <div className="content text-normal font-normal text-black">
+        <EditorContent editor={editor} />
       </div>
       <div className=" flex w-full flex-row items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
-          <div className="actions comment-actions svg-animated-stroke">
-            <div
-              className={classNames("item", {
-                active: editor?.isActive("bold"),
-              })}
-              onClick={() => editor?.chain().focus().toggleBold().run()}
-            >
-              <SvgIcons type="Bold" />
-            </div>
-            <div
-              className={classNames("item", {
-                active: editor?.isActive("italic"),
-              })}
-              onClick={() => editor?.chain().focus().toggleItalic().run()}
-            >
-              <SvgIcons type="Italic" />
-            </div>
-            <div
-              className={classNames("item", {
-                active: linkSelected,
-              })}
-              onClick={() => setLinkSelected(linkSelected ? false : true)}
-            >
-              <SvgIcons type="Link" />
-            </div>
-            <div
-              className={classNames(
-                "flex flex-row items-stretch justify-between space-x-xs rounded-md border border-black bg-white p-md",
-                {
-                  hidden: !linkSelected,
-                },
-              )}
-            >
-              <input
-                type="text"
-                className="w-full rounded-lg border border-gray px-xs py-xxxs focus:outline-none"
-                placeholder="Enter a link ..."
-                onChange={(e: React.FormEvent<HTMLInputElement>) => {
-                  setLinkWritted(e.currentTarget.value);
-                }}
-              />
-              <Button formType="comment" type="button" onClick={setLink}>
-                Done
-              </Button>
-            </div>
+        <div className="actions comment-actions svg-animated-stroke">
+          <div
+            className={classNames("item", {
+              active: editor?.isActive("bold"),
+            })}
+            onClick={() => editor?.chain().focus().toggleBold().run()}
+          >
+            <SvgIcons type="Bold" />
           </div>
+          <div
+            className={classNames("item", {
+              active: editor?.isActive("italic"),
+            })}
+            onClick={() => editor?.chain().focus().toggleItalic().run()}
+          >
+            <SvgIcons type="Italic" />
+          </div>
+          <div
+            className={classNames("item", {
+              active: linkSelected,
+            })}
+            onClick={() => setLinkSelected(linkSelected ? false : true)}
+          >
+            <SvgIcons type="Link" />
+          </div>
+          <div
+            className={classNames(
+              "flex flex-row items-stretch justify-between space-x-xs rounded-md bg-white",
+              {
+                hidden: !linkSelected,
+              },
+            )}
+          >
+            <input
+              type="text"
+              className="w-full border-0 border-b border-b-gray px-xs py-xxxs focus:border-b-gray focus:outline-0 focus:ring-0 active:outline-0"
+              placeholder="Enter a link ..."
+              onChange={(e: React.FormEvent<HTMLInputElement>) => {
+                setLinkWritted(e.currentTarget.value);
+              }}
+            />
+            <Button formType="comment" type="button" onClick={setLink}>
+              Done
+            </Button>
+          </div>
+        </div>
         <div className="btn-submit">
           <Button type="button" formType="comment">
             {submitBtnText()}

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import Image from "next/image";
 import classNames from "classnames";
 
@@ -13,11 +13,13 @@ interface CommentWrapperProps {
     name: string;
   };
   content: string;
+  children: ReactNode;
 }
 
 const CommentRegular: FC<CommentWrapperProps> = ({
   author,
   content,
+  children,
 }: CommentWrapperProps) => {
   return (
     <div className="comment-wrapper flex w-full flex-col items-start justify-center space-y-md rounded-lg border border-black border-opacity-25 p-xl child:w-full">
@@ -38,10 +40,10 @@ const CommentRegular: FC<CommentWrapperProps> = ({
       </div>
       <div className=" flex w-full flex-row items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
         <div className="actions comment-actions svg-animated-stroke">
-          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs text-black">
+          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs text-black transition duration-300 hover:bg-gray/15">
             <ArrowUpIcon width={20} height={20} />
           </div>
-          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs text-black">
+          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs text-black transition duration-300 hover:bg-gray/15">
             <ArrowDownIcon width={20} height={20} />
           </div>
           <div className="item post-time cursor-auto text-medium font-semibold text-gray">
@@ -54,6 +56,7 @@ const CommentRegular: FC<CommentWrapperProps> = ({
           </Button>
         </div>
       </div>
+      {children}
     </div>
   );
 };
