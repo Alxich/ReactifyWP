@@ -97,7 +97,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
       </div>
       <PostPreview
         className="col-span-2"
-        view={"row"}
+        view={"row-full"}
         author="Olivia Rhye"
         date="1 Jan 2023"
         image={PostRecentImage4}

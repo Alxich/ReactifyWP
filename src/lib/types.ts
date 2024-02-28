@@ -24,12 +24,12 @@ export interface TagLinkProps {
 }
 
 export interface PostPreviewBlockProps {
-  view: "row" | "col";
+  view: "row" | "col" | "row-full";
   isGridSmall?: boolean;
   image: string | StaticImageData;
-  author: string;
-  date: string;
+  author?: string;
+  date?: string;
   title: string;
   texts: string;
-  tags: TagLinkProps[];
+  tags?: TagLinkProps[];
 }

@@ -28,7 +28,8 @@ const PostPreview: FC<PostPreviewProps> = ({
         "post post-previewer flex cursor-pointer",
         className && className,
         {
-          "flex-row justify-between space-x-3xl": view && view == "row",
+          "flex-row justify-between space-x-3xl":
+            (view && view == "row") || view == "row-full",
           "flex-col space-y-3xl": view && view == "col",
         },
       )}
@@ -37,6 +38,7 @@ const PostPreview: FC<PostPreviewProps> = ({
         className={classNames("thumbnail overflow-hidden rounded-md", {
           "min-w-[320px]": view && view == "row",
           "w-full": view && view == "col",
+          "w-1/2": view && view == "row-full",
           "h-ctm-14": type === "regular",
         })}
       >
@@ -50,19 +52,25 @@ const PostPreview: FC<PostPreviewProps> = ({
         className={classNames(
           "text-content flex-col items-start justify-start space-y-xl",
           {
-            "w-1/2": view && view == "row",
+            "w-1/2": (view && view == "row") || view == "row-full",
             "w-full": view && view == "col",
           },
         )}
       >
         <div className="content w-full flex-col items-start justify-start space-y-sm">
-          <div className="author-info w-full">
-            <p className="text-medium leading-normal text-gray">
-              <span className="name">{author}</span>
-              {" • "}
-              <span className="date">{date}</span>
-            </p>
-          </div>
+          {author && (
+            <div className="author-info w-full">
+              <p className="text-medium leading-normal text-gray">
+                <span className="name">{author}</span>
+                {date && (
+                  <>
+                    {" • "}
+                    <span className="date">{date}</span>
+                  </>
+                )}
+              </p>
+            </div>
+          )}
           <h4
             className={classNames(
               "flex w-full flex-row items-start justify-between font-semibold leading-normal text-black",
@@ -79,17 +87,19 @@ const PostPreview: FC<PostPreviewProps> = ({
             <p className=" text-inherit">{texts}</p>
           </div>
         </div>
-        <div className="tags flex w-full flex-row flex-wrap space-x-xs">
-          {tags.map(({ background, color, link, text }, key) => (
-            <TagLink
-              background={background}
-              color={color}
-              link={link}
-              text={text}
-              key={`items_${key}`}
-            />
-          ))}
-        </div>
+        {tags && (
+          <div className="tags flex w-full flex-row flex-wrap space-x-xs">
+            {tags.map(({ background, color, link, text }, key) => (
+              <TagLink
+                background={background}
+                color={color}
+                link={link}
+                text={text}
+                key={`items_${key}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
