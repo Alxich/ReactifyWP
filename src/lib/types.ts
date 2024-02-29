@@ -17,6 +17,7 @@ export type PaddingValues =
   | "9xl";
 
 export interface TagLinkProps {
+  type?: "big" | "normal";
   link: string;
   text: string;
   color: string;

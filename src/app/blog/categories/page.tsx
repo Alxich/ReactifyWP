@@ -12,7 +12,7 @@ import PostImage6 from "../../../../public/images/Image-5.png";
 
 interface ICategoryPageAllProps {}
 
-const CategoryPageAll: FC<ICategoryPageAllProps> = (props) => {
+const CategoriesPageAll: FC<ICategoryPageAllProps> = (props) => {
   const postsData: Array<PostPreviewBlockProps> = [
     {
       view: "col",
@@ -73,4 +73,4 @@ const CategoryPageAll: FC<ICategoryPageAllProps> = (props) => {
   );
 };
 
-export default CategoryPageAll;
+export default CategoriesPageAll;
