@@ -194,9 +194,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
 }
-input
-{
-    outline:none;
+input {
+  outline: none;
 }
 
 [contenteditable="true"]:focus {
@@ -248,23 +247,56 @@ input.form-control:focus {
 img {
   @apply block h-auto w-full rounded-default object-cover object-center;
 }
-
+.page-content-text,
 .post-content-text {
   @apply text-gray;
 }
-
+.page-content-text > *,
 .post-content-text > * {
   @apply w-full text-inherit;
 }
-
+.page-content-text image,
 .post-content-text image {
   @apply mx-auto;
 }
+.page-content-text h1,
+.page-content-text h2,
+.page-content-text h3,
+.page-content-text h4,
+.page-content-text h5,
+.post-content-text h1,
+.post-content-text
+  h2
+  .post-content-text
+  h3
+  .post-content-text
+  h4
+  .post-content-text
+  h5 {
+  @apply font-semibold text-black;
+}
 
+.page-content-text h1,
+.post-content-text h1 {
+  @apply text-7xl font-bold;
+}
+.page-content-text h2,
+.post-content-text h2 {
+  @apply text-6xl;
+}
+.page-content-text h3,
+.post-content-text h3 {
+  @apply text-4xl;
+}
+.page-content-text h4,
 .post-content-text h4 {
   @apply text-large font-bold text-gray;
 }
-
+.page-content-text h5,
+.post-content-text h5 {
+  @apply font-bold text-gray;
+}
+.page-content-text ul,
 .post-content-text ul {
   @apply list-outside list-disc pl-4 dark:text-gray;
 }
