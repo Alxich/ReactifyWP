@@ -247,6 +247,21 @@ input.form-control:focus {
 img {
   @apply block h-auto w-full rounded-default object-cover object-center;
 }
+
+.page-content-text p,
+.post-content-text p {
+  @apply leading-normal;
+}
+
+.page-content-text ol,
+.post-content-text ol {
+  @apply list-inside list-disc;
+}
+.page-content-text li,
+.post-content-text li {
+  @apply list-inside list-decimal;
+}
+
 .page-content-text,
 .post-content-text {
   @apply text-gray;
@@ -273,7 +288,7 @@ img {
   h4
   .post-content-text
   h5 {
-  @apply font-semibold text-black;
+  @apply font-semibold text-black leading-loose;
 }
 
 .page-content-text h1,

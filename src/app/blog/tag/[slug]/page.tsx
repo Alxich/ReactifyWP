@@ -1,9 +1,9 @@
 import { FC } from "react";
 import TagsPage from "../../tags/[slug]/page";
 
-interface ITagPageProps {}
+interface TagPageProps {}
 
-const TagPage: FC<ITagPageProps> = (props) => {
+const TagPage: FC<TagPageProps> = (props) => {
   return <TagsPage />;
 };
 

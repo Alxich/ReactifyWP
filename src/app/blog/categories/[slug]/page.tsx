@@ -11,9 +11,9 @@ import PostImage4 from "../../../../../public/images/Image-3.png";
 import PostImage5 from "../../../../../public/images/Image-4.png";
 import PostImage6 from "../../../../../public/images/Image-5.png";
 
-interface ICategoryPageProps {}
+interface CategoryPageProps {}
 
-const CategoriesPage: FC<ICategoryPageProps> = (props) => {
+const CategoriesPage: FC<CategoryPageProps> = (props) => {
   const postsData: Array<PostPreviewBlockProps> = [
     {
       view: "col",

@@ -7,7 +7,7 @@ import pageContentBanner from "../../../public/images/post-recent-4.png";
 
 interface AboutPageProps {}
 
-const AboutPage: FC<AboutPageProps> = (props) => {
+const BehindThePixelsPage: FC<AboutPageProps> = (props) => {
   return (
     <BlankPageWrapper>
       <h2>What ReactifyWP project used to ?</h2>
@@ -75,4 +75,4 @@ const AboutPage: FC<AboutPageProps> = (props) => {
   );
 };
 
-export default AboutPage;
+export default BehindThePixelsPage;

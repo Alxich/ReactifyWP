@@ -1,9 +1,9 @@
 import { FC } from "react";
 import CategoriesPage from "../../categories/[slug]/page";
 
-interface ICategoryPageProps {}
+interface CategoryPageProps {}
 
-const CategoryPage: FC<ICategoryPageProps> = (props) => {
+const CategoryPage: FC<CategoryPageProps> = (props) => {
   return <CategoriesPage />;
 };
 

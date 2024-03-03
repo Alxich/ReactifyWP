@@ -9,9 +9,9 @@ import {
   TagLink,
 } from "@/components";
 
-interface ITagPageProps {}
+interface TagPageProps {}
 
-const TagsPageAll: FC<ITagPageProps> = (props) => {
+const TagsPageAll: FC<TagPageProps> = (props) => {
   const tags: TagLinkProps[] = [
     { link: "#", text: "Leadership", color: "#667085", background: "#F9F5FF" },
     { link: "#", text: "Management", color: "#363F72", background: "#F8F9FC" },
