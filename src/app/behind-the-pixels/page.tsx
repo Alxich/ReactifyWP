@@ -10,7 +10,7 @@ interface AboutPageProps {}
 const BehindThePixelsPage: FC<AboutPageProps> = (props) => {
   return (
     <BlankPageWrapper>
-      <h2>What ReactifyWP project used to ?</h2>
+      <h2>What ReactifyWP project created by?</h2>
       <p>
         If you’ve been to New York City and have walked the streets, it is easy
         to figure out how to get from one place to another because of the grid

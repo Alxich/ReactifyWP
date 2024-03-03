@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+
+import classNames from "classnames";
+
 import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+
 import "./globals.css";
+
 import {
   Header,
   Container,
   Footer,
-  Subscriber,
   PageHeader,
 } from "@/components";
-
-import classNames from "classnames";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ReactifyWP - Your Wordpress Theme",
@@ -42,9 +43,6 @@ export default function RootLayout({
             {children}
           </Container>
         </main>
-        <Container width="lg">
-          <Subscriber />
-        </Container>
         <Footer />
       </body>
     </html>

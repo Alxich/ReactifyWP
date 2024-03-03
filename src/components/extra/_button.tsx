@@ -1,6 +1,7 @@
 import { FC, MouseEventHandler, ReactNode } from "react";
 
 interface ButtonProps {
+  id?: string;
   type: "button" | "submit";
   formType:
     | "form"
@@ -13,6 +14,7 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({
+  id,
   type,
   children,
   formType,
@@ -22,6 +24,7 @@ const Button: FC<ButtonProps> = ({
     case "form":
       return (
         <button
+          id={id}
           type={type}
           className="use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight"
           onClick={onClick}
@@ -33,6 +36,7 @@ const Button: FC<ButtonProps> = ({
     case "post__action:breadcrumbs":
       return (
         <button
+          id={id}
           type={type}
           className=" post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black"
           onClick={onClick}
@@ -44,6 +48,7 @@ const Button: FC<ButtonProps> = ({
     case "post__action:post-actions":
       return (
         <button
+          id={id}
           type={type}
           className=" post__action border-black bg-transparent px-xxs py-xxs text-black hover:bg-black hover:text-white"
           onClick={onClick}
@@ -55,6 +60,7 @@ const Button: FC<ButtonProps> = ({
     case "comment":
       return (
         <button
+          id={id}
           type={type}
           className="use-transition rounded-lg border-2 border-black bg-black px-lg py-xs text-normal font-semibold text-white hover:bg-transparent hover:text-black"
           onClick={onClick}
@@ -66,6 +72,7 @@ const Button: FC<ButtonProps> = ({
     case "btn__action:load-more":
       return (
         <button
+          id={id}
           type={type}
           className="use-transition hover:text-light-gray w-[220px] rounded-md border-2 border-light-border bg-transparent px-xs py-xs text-gray hover:bg-light-border"
           onClick={onClick}
@@ -77,6 +84,7 @@ const Button: FC<ButtonProps> = ({
     default:
       return (
         <button
+          id={id}
           type={type}
           className="use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight"
           onClick={onClick}

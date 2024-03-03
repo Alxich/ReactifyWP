@@ -3,6 +3,7 @@ export { default as Header } from "./defaults/header/_header";
 export { default as PageHeader } from "./defaults/header/_page-header";
 export { default as Footer } from "./defaults/footer/_footer";
 export { default as RoundedNavItems } from "./defaults/header/_rounded-nav-items";
+export { default as Contacts } from "./defaults/contacts/_contacts";
 
 // Subscriber components
 
