@@ -35,7 +35,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         <div className="content w-full space-y-xl">
           <div className="page-content-text flex w-full flex-col items-center justify-center space-y-sm">
             {children}
-            {showSlogan !== false && hasContacts === true && <Contacts />}
+            {showSlogan !== false && hasContacts === true && <Contacts className="!mt-7xl" />}
           </div>
         </div>
         {showSlogan !== false && (

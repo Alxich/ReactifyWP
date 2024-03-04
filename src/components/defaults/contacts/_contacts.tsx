@@ -1,14 +1,22 @@
 import { Button } from "@/components";
+import classNames from "classnames";
 import Link from "next/link";
 import { FC } from "react";
 
-interface ContactsProps {}
+interface ContactsProps {
+  className?: string;
+}
 
-const Contacts: FC<ContactsProps> = (props) => {
+const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
-    <div className="contacts flex w-full flex-col items-center justify-center space-y-5xl border-y border-y-black py-7xl">
+    <div
+      className={classNames(
+        "contacts flex w-full flex-col items-center justify-center space-y-5xl border-y border-y-black py-7xl",
+        (className !== undefined || null) && className,
+      )}
+    >
       <div className="description flex w-full flex-col items-center justify-center space-y-xl px-7.5xl">
-        <h2 className="text-center font-semibold !leading-none text-black text-6xl">
+        <h2 className="text-center text-6xl font-semibold !leading-none text-black">
           Subscribe to learn about new product features
         </h2>
         <p className="w-3/4 text-center text-xl text-black">

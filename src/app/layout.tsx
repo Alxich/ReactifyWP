@@ -12,6 +12,7 @@ import {
   Container,
   Footer,
   PageHeader,
+  ProjectMainMessage,
 } from "@/components";
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({
           </Container>
         </main>
         <Footer />
+        <ProjectMainMessage />
       </body>
     </html>
   );
