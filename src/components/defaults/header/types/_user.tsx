@@ -21,19 +21,29 @@ const PageHeaderUser: FC<PageHeaderUserProps> = ({
         width="sm"
         classNames="mx-auto flex flex-row justify-center items-center space-x-7xl"
       >
-        <div className="user-icon flex items-center justify-center gap-5 rounded-full border-8 border-black p-5">
+        <div className="user-icon flex w-full max-w-[280px] items-center justify-center gap-5 rounded-full border-8 border-black p-5">
           {image ? (
             typeof image === "string" ? (
-              <Image src={image} alt="User custom icon" />
+              <Image
+                src={image}
+                alt="User custom icon"
+                width={280}
+                height={260}
+              />
             ) : (
-              <Image src={image.src} alt="User custom icon" />
+              <Image
+                src={image.src}
+                alt="User custom icon"
+                width={280}
+                height={260}
+              />
             )
           ) : (
             <SvgIcons type="User" />
           )}
         </div>
         <div className="container flex flex-col items-start justify-center">
-          <h1 className="mb-xl text-8xl font-bold uppercase text-black">
+          <h1 className="mb-xl text-8xl font-bold uppercase text-black leading-none">
             {username}
           </h1>
 

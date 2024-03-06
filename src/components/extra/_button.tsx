@@ -5,6 +5,7 @@ interface ButtonProps {
   type: "button" | "submit";
   formType:
     | "form"
+    | "form__error"
     | "post__action:breadcrumbs"
     | "post__action:post-actions"
     | "comment"
@@ -27,6 +28,18 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className="use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight"
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
+
+    case "form__error":
+      return (
+        <button
+          id={id}
+          type={type}
+          className="use-transition rounded-lg border-2 border-vitalred bg-vitalred px-lg py-sm text-white hover:bg-transparent hover:text-vitalred"
           onClick={onClick}
         >
           {children}

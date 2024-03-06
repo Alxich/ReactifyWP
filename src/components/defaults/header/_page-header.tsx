@@ -3,9 +3,10 @@
 import { FC } from "react";
 import { usePathname } from "next/navigation";
 
-import { Container, SvgIcons } from "../../index";
 import PageHeaderReg from "./types/_regular";
 import PageHeaderUser from "./types/_user";
+
+import thumbnail from "../../../../public/images/thumbnail-1.png";
 
 interface PageHeaderProps {
   title: string;
@@ -14,8 +15,30 @@ interface PageHeaderProps {
 
 const PageHeader: FC<PageHeaderProps> = ({ title, text }: PageHeaderProps) => {
   const route = usePathname();
+  const showSubscriber = () => {
+    if (route.startsWith("/blog/user/")) {
+      return false;
+    }
 
-  return  route !== "/blog/user" ? <PageHeaderReg title={title} text={text} />: <PageHeaderUser username="" text="" description="" />;
+    switch (route) {
+      case "/blog/user":
+        return false;
+
+      default:
+        return true;
+    }
+  };
+
+  return !showSubscriber ? (
+    <PageHeaderReg title={title} text={text} />
+  ) : (
+    <PageHeaderUser
+      image={thumbnail}
+      username="John doe"
+      text="One of Reactify WP Customer"
+      description="Take a moment to explore our collection of posts and discover the simplicity within."
+    />
+  );
 };
 
 export default PageHeader;
