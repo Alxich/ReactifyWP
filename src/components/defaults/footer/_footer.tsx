@@ -15,7 +15,7 @@ type NavCategoryObject = {
 };
 
 const Footer: FC<FooterProps> = (props) => {
-  const router = usePathname();
+  const route = usePathname();
 
   const navObjOne: NavCategoryObject = {
     title: "Discover & Explore",
@@ -44,7 +44,7 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <>
-      {router !== "/contacts" && (
+      {route !== "/contacts" && (
         <Container width="lg">
           <Subscriber />
         </Container>
