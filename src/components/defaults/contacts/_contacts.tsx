@@ -11,7 +11,7 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "contacts flex w-full flex-col items-center justify-center space-y-5xl border-y border-y-black py-7xl",
+        "contacts flex w-full flex-col items-center justify-center space-y-5xl border-t border-t-black py-7xl",
         (className !== undefined || null) && className,
       )}
     >

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Container, Subscriber, SvgIcons } from "../../index";
+import classNames from "classnames";
 
 interface FooterProps {}
 
@@ -16,6 +17,22 @@ type NavCategoryObject = {
 
 const Footer: FC<FooterProps> = (props) => {
   const route = usePathname();
+  const showSubscriber = () => {
+    if (route.startsWith("/blog/user/")) {
+      return false;
+    }
+
+    switch (route) {
+      case "/contacts":
+        return false;
+
+      case "/blog/user":
+        return false;
+
+      default:
+        return true;
+    }
+  };
 
   const navObjOne: NavCategoryObject = {
     title: "Discover & Explore",
@@ -44,12 +61,16 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <>
-      {route !== "/contacts" && (
+      {showSubscriber() && (
         <Container width="lg">
           <Subscriber />
         </Container>
       )}
-      <footer className="footer w-full max-w-wrapper-lg-sz pt-7xl">
+      <footer
+        className={classNames("footer w-full max-w-wrapper-lg-sz pt-7xl", {
+          "border-t border-t-black": !showSubscriber(),
+        })}
+      >
         <Container classNames="head-wrapper flex flex-row pb-7xl" width="sm">
           <div className="navigation flex w-3/5 flex-row items-center justify-between">
             {navObjOne && (
