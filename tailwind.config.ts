@@ -7,6 +7,7 @@ const {
     wrapperWidth,
     customWidth,
     customHeight,
+    customBorderWidth,
     customFontSize,
     customSpacing,
     customBorderRadius,
@@ -30,6 +31,10 @@ const config: Config = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         serif: ["Inter", "serif"],
+      },
+      borderWidth: {
+        DEFAULT: "1px",
+        ...customBorderWidth,
       },
       spacing: {
         ...customSpacing,

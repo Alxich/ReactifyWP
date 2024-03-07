@@ -22,6 +22,10 @@ const Footer: FC<FooterProps> = (props) => {
       return false;
     }
 
+    if (route.startsWith("/login") || route.startsWith("/register")) {
+      return false;
+    }
+
     switch (route) {
       case "/contacts":
         return false;
@@ -69,63 +73,71 @@ const Footer: FC<FooterProps> = (props) => {
       <footer
         className={classNames("footer w-full max-w-wrapper-lg-sz pt-7xl", {
           "border-t border-t-black": !showSubscriber(),
+          "border-none":
+            route.startsWith("/login") || route.startsWith("/register"),
         })}
       >
-        <Container classNames="head-wrapper flex flex-row pb-7xl" width="sm">
-          <div className="navigation flex w-3/5 flex-row items-center justify-between">
-            {navObjOne && (
-              <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                <li className="title mb-xxs font-semibold text-black">
-                  {navObjOne.title}
-                </li>
-                {navObjOne.navLinks.map((item, key) => (
-                  <li
-                    className="underline-hover cursor-pointer text-normal text-black"
-                    key={`nav_${item}_${key}`}
-                  >
-                    <Link href={item.link}>{item.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {navObjTwo && (
-              <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                <li className="title mb-xxs font-semibold text-black">
-                  {navObjTwo.title}
-                </li>
-                {navObjTwo.navLinks.map((item, key) => (
-                  <li
-                    className="underline-hover cursor-pointer text-normal text-black"
-                    key={`nav_${item}_${key}`}
-                  >
-                    <Link href={item.link}>{item.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {navObjThree && (
-              <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                <li className="title mb-xxs font-semibold text-black">
-                  {navObjThree.title}
-                </li>
-                {navObjThree.navLinks.map((item, key) => (
-                  <li
-                    className="underline-hover cursor-pointer text-normal text-black"
-                    key={`nav_${item}_${key}`}
-                  >
-                    <Link href={item.link}>{item.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-          <div className="highlight-banner w-2/5">
-            <p className="text-4xl font-bold uppercase text-black">
-              As one chapter ends, the story{"'"}s essence lingers in the
-              margins.
-            </p>
-          </div>
-        </Container>
+        {route.startsWith("/login") ||
+          (route.startsWith("/register") && (
+            <Container
+              classNames="head-wrapper flex flex-row pb-7xl"
+              width="sm"
+            >
+              <div className="navigation flex w-3/5 flex-row items-center justify-between">
+                {navObjOne && (
+                  <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
+                    <li className="title mb-xxs font-semibold text-black">
+                      {navObjOne.title}
+                    </li>
+                    {navObjOne.navLinks.map((item, key) => (
+                      <li
+                        className="underline-hover cursor-pointer text-normal text-black"
+                        key={`nav_${item}_${key}`}
+                      >
+                        <Link href={item.link}>{item.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {navObjTwo && (
+                  <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
+                    <li className="title mb-xxs font-semibold text-black">
+                      {navObjTwo.title}
+                    </li>
+                    {navObjTwo.navLinks.map((item, key) => (
+                      <li
+                        className="underline-hover cursor-pointer text-normal text-black"
+                        key={`nav_${item}_${key}`}
+                      >
+                        <Link href={item.link}>{item.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {navObjThree && (
+                  <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
+                    <li className="title mb-xxs font-semibold text-black">
+                      {navObjThree.title}
+                    </li>
+                    {navObjThree.navLinks.map((item, key) => (
+                      <li
+                        className="underline-hover cursor-pointer text-normal text-black"
+                        key={`nav_${item}_${key}`}
+                      >
+                        <Link href={item.link}>{item.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <div className="highlight-banner w-2/5">
+                <p className="text-4xl font-bold uppercase text-black">
+                  As one chapter ends, the story{"'"}s essence lingers in the
+                  margins.
+                </p>
+              </div>
+            </Container>
+          ))}
         <div className="bottom-wrapper border-t border-t-black pt-2.5xl">
           <Container
             classNames="flex flex-row justify-between items-center"

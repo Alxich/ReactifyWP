@@ -47,6 +47,17 @@ const customWidth = () => {
   return localValues;
 };
 
+const customBorderWidth = () => {
+  const localValues: Record<string, string> = {};
+
+  for (let i = 1; i <= 99; i++) {
+    const key = `${i}`;
+    localValues[key] = `${i}px`;
+  }
+
+  return localValues;
+};
+
 const customHeight = () => {
   const localValues: Record<string, string> = {};
 
@@ -81,6 +92,7 @@ const customSpacing = {
   "8xl": "3.25rem", // Eightfold Extra Large - 3.25rem (52px)
   "8.5xl": "3.375rem", // 8.5x Extra Large - 3.375rem (54px)
   "9xl": "3.625rem", // Ninefold Extra Large - 3.625rem (58px)
+  "9.5xl": "4.063rem", // Ninefold Extra Large - 4.063rem (65px)
   "10xl": "5.313rem", // Tenfold Extra Large - 5.313rem (85px)
   "11xl": "6rem", // Elevenfold Extra Large - 6rem (96px)
 };
@@ -119,6 +131,7 @@ const themeConfiguration = {
     customBorderRadius,
     customWidth: customWidth(),
     customHeight: customHeight(),
+    customBorderWidth: customBorderWidth(),
   },
   codeVariables: {
     paddingClasses,

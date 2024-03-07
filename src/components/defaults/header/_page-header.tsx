@@ -29,7 +29,11 @@ const PageHeader: FC<PageHeaderProps> = ({ title, text }: PageHeaderProps) => {
     }
   };
 
-  return !showSubscriber ? (
+  if (route.startsWith("/login") || route.startsWith("/register")) {
+    return <></>;
+  }
+
+  return showSubscriber() !== false ? (
     <PageHeaderReg title={title} text={text} />
   ) : (
     <PageHeaderUser
