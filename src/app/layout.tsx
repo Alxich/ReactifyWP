@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const siteUnderMaintance: Boolean = false;
+
   return (
     <html lang="en">
       <body

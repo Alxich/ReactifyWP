@@ -1,33 +1,22 @@
 "use client";
 
-import { Dispatch, FC, SetStateAction, useCallback, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 
-import { useEditor, EditorContent } from "@tiptap/react";
+import { useEditor, EditorContent, FloatingMenu } from "@tiptap/react";
 
 // Extensions for tiptap editor
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
+import ListItem from "@tiptap/extension-list-item";
+import TextStyle from "@tiptap/extension-text-style";
 import Link from "@tiptap/extension-link";
+import MenuBar from "./components/_menuBar";
 
-interface TipTapProps {
-  boldSelected: boolean;
-  italicSelected: boolean;
-  setLinkSelected: Dispatch<SetStateAction<boolean>>;
-  linkWritted: string | null | undefined;
-  setLinkWritted: Dispatch<SetStateAction<string | null | undefined>>;
-  linkButtonClicked: boolean;
-  setLinkButtonClicked: Dispatch<SetStateAction<boolean>>;
-}
+interface TipTapProps {}
 
-const TipTap: FC<TipTapProps> = ({
-  boldSelected,
-  italicSelected,
-  setLinkSelected,
-  linkWritted,
-  setLinkWritted,
-  linkButtonClicked,
-  setLinkButtonClicked,
-}: TipTapProps) => {
+const TipTap: FC<TipTapProps> = ({}: TipTapProps) => {
+  const [isEditable, setIsEditable] = useState<boolean>(true);
+
   const runErrorNoEditor = () =>
     console.error(
       "TipTap editor is not loaded or had an Error while passing data ! Please check if editor working and code is not corrupted",
@@ -36,6 +25,8 @@ const TipTap: FC<TipTapProps> = ({
   const editor = useEditor({
     extensions: [
       StarterKit,
+      ListItem,
+      TextStyle,
       Placeholder.configure({
         emptyEditorClass: "is-editor-empty",
         placeholder: "Please write your comment over there... ",
@@ -55,61 +46,20 @@ const TipTap: FC<TipTapProps> = ({
     },
   });
 
-  const setLink = useCallback(
-    (e?: React.MouseEvent<HTMLButtonElement>) => {
-      e?.preventDefault();
-
-      const url = linkWritted;
-
-      // cancelled
-      if (url === null) {
-        return;
-      }
-
-      // empty
-      if (url === "" || url === undefined) {
-        editor?.chain().focus().extendMarkRange("link").unsetLink().run();
-
-        return;
-      }
-
-      // update link
-      if (editor) {
-        editor
-          .chain()
-          .focus()
-          .extendMarkRange("link")
-          .setLink({ href: url })
-          .run();
-
-        setLinkWritted(null);
-        setLinkSelected(false);
-        setLinkButtonClicked(false);
-      } else {
-        runErrorNoEditor();
-      }
-    },
-    [editor],
-  );
-
   useEffect(() => {
-    console.log(boldSelected, italicSelected);
     if (editor) {
-      boldSelected
-        ? () => editor.chain().focus().setBold().run()
-        : () => editor.chain().focus().unsetBold().run();
-
-      italicSelected
-        ? () => editor.chain().focus().setItalic().run()
-        : () => editor.chain().focus().unsetItalic().run();
-
-      linkButtonClicked && setLink();
-
-      console.log(linkButtonClicked);
+      editor.setEditable(isEditable);
+    } else {
+      runErrorNoEditor();
     }
-  }, [editor, boldSelected, italicSelected, linkButtonClicked]);
+  }, [isEditable, editor]);
 
-  return <EditorContent editor={editor} />;
+  return (
+    <>
+      {editor && <MenuBar editor={editor} />}
+      <EditorContent editor={editor} />
+    </>
+  );
 };
 
 export default TipTap;

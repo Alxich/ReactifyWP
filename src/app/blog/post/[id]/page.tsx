@@ -1,6 +1,14 @@
-import { FC } from "react";
+"use client";
 
-import { Container, PostWrpapper, PostHeader } from "@/components";
+import { FC, useState } from "react";
+
+import {
+  Container,
+  PostWrpapper,
+  PostHeader,
+  Banner,
+  Tiptap,
+} from "@/components";
 import { PostPreviewBlockProps } from "@/lib/types";
 
 // Images
@@ -14,6 +22,8 @@ import PostImage6 from "../../../../../public/images/Image-5.png";
 interface PostPageProps {}
 
 const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
+  const [BannerClosed, BannerCloseFunc] = useState<boolean>(false);
+
   const postsData: Array<PostPreviewBlockProps> = [
     {
       view: "col",
@@ -166,14 +176,25 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
       ],
     },
   ];
+
   return (
-    <Container
-      classNames="flex flex-col justify-center items-start post py-7xl px-3xl"
-      width="md"
-    >
-      <PostHeader />
-      <PostWrpapper postsData={postsData} />
-    </Container>
+    <>
+      <Container
+        classNames="flex flex-col justify-center items-start post py-7xl px-3xl"
+        width="md"
+      >
+        <PostHeader />
+        <PostWrpapper postsData={postsData} />
+      </Container>
+      <Banner
+        type="reg"
+        title="Creating a new post"
+        isClosed={BannerClosed}
+        closeTheBanner={BannerCloseFunc}
+      >
+        <Tiptap />
+      </Banner>
+    </>
   );
 };
 

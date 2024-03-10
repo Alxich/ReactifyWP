@@ -25,6 +25,7 @@ export { default as Comments } from "./defaults/comments/_comments"
 
 // Extra components (additional in use)
 
+export { default as Banner } from "./extra/banner/_banner";
 export { default as BlankPageWrapper } from "./extra/blank/_blank";
 export { default as SvgIcons } from "./extra/_svg-icons";
 export { default as Button } from "./extra/_button";
