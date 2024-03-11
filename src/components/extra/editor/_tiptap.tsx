@@ -12,9 +12,11 @@ import TextStyle from "@tiptap/extension-text-style";
 import Link from "@tiptap/extension-link";
 import MenuBar from "./components/_menuBar";
 
-interface TipTapProps {}
+interface TipTapProps {
+  content?: string;
+}
 
-const TipTap: FC<TipTapProps> = ({}: TipTapProps) => {
+const TipTap: FC<TipTapProps> = ({ content }: TipTapProps) => {
   const [isEditable, setIsEditable] = useState<boolean>(true);
 
   const runErrorNoEditor = () =>
@@ -57,7 +59,7 @@ const TipTap: FC<TipTapProps> = ({}: TipTapProps) => {
   return (
     <>
       {editor && <MenuBar editor={editor} />}
-      <EditorContent editor={editor} />
+      <EditorContent editor={editor} content={content} />
     </>
   );
 };

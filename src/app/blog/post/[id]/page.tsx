@@ -8,6 +8,7 @@ import {
   PostHeader,
   Banner,
   Tiptap,
+  Button,
 } from "@/components";
 import { PostPreviewBlockProps } from "@/lib/types";
 
@@ -186,13 +187,82 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         <PostHeader />
         <PostWrpapper postsData={postsData} />
       </Container>
-      <Banner
+      {/* {   <Banner
         type="reg"
         title="Creating a new post"
         isClosed={BannerClosed}
         closeTheBanner={BannerCloseFunc}
+        className="space-y-7xl"
+        additionalChildren={
+          <Button formType="btn_action:post" type="button" className="ml-auto ">
+            Publicate this post
+          </Button>
+        }
       >
+        <div className="title">
+          <input
+            className="title w-full border-x-0 border-b border-t-0 border-b-black p-0 text-7xl font-bold text-black"
+            value={"How create a new post ?"}
+            readOnly
+          />
+        </div>
         <Tiptap />
+      </Banner>} */}
+
+      {/* {      <Banner
+        type="message"
+        title="Delete this post ?"
+        isClosed={BannerClosed}
+        closeTheBanner={BannerCloseFunc}
+        className="space-y-xs"
+        additionalChildren={
+          <div className="flex w-full flex-row items-center justify-end space-x-xs">
+            <Button formType="form__error" type="button">
+              Yes, please delete it
+            </Button>
+            <Button formType="btn_action:post" type="button">
+              No, I change my mind
+            </Button>
+          </div>
+        }
+      >
+        <h3 className="!leading-none !text-2xl">
+          Are you sure that you want delete this post ?
+        </h3>
+        <p>
+          Deleting this post is as final as pressing 'send' on a fiery email.
+          Once it's gone, it's gone for good—no post-mortem recovery here! You
+          and others will bid adieu to it forever. Still determined to delete?
+        </p>
+      </Banner>} */}
+
+      <Banner
+        type="message"
+        title="Report this post ?"
+        isClosed={BannerClosed}
+        closeTheBanner={BannerCloseFunc}
+        className="space-y-xs"
+        additionalChildren={
+          <div className="flex w-full flex-row items-center justify-end space-x-xs">
+            <Button formType="form__error" type="button">
+              Yes, report this post
+            </Button>
+            <Button formType="btn_action:post" type="button">
+              No, I change my mind
+            </Button>
+          </div>
+        }
+      >
+        <h3 className="!text-2xl !leading-none">
+          Please be sure to not spam the report
+        </h3>
+        <p>
+          Your report is the bat-signal for moderation – it signals a serious
+          call to review and potentially delete the post, even block the author.
+          So, handle that report button like a glass slipper: make sure it fits
+          the situation perfectly. Spamming it will result in a swift ban for
+          you, no questions been asked!
+        </p>
       </Banner>
     </>
   );

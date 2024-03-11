@@ -24,9 +24,7 @@ const MenuBar: FC<IMenuBarProps> = ({ editor }) => {
               .run()
           }
           className={
-            editor.isActive("heading", { level: i })
-              ? "is-active underline"
-              : ""
+            editor.isActive("heading", { level: i }) ? "is-active" : ""
           }
         >
           H{i}
@@ -38,55 +36,38 @@ const MenuBar: FC<IMenuBarProps> = ({ editor }) => {
   };
 
   return (
-    <div className="menu-bar flex items-center gap-1.5">
+    <div className="menu-bar flex flex-wrap items-center gap-1.5">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        className={editor.isActive("bold") ? "is-active underline" : ""}
+        className={editor.isActive("bold") ? "is-active" : ""}
       >
         Bold
       </button>
-      {" | "}
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
-        className={editor.isActive("italic") ? "is-active underline" : ""}
+        className={editor.isActive("italic") ? "is-active" : ""}
       >
         Italic
       </button>
-      {" | "}
       <button
         onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
-        className={editor.isActive("strike") ? "is-active underline" : ""}
+        className={editor.isActive("strike") ? "is-active" : ""}
       >
         Strike
       </button>
-      {" | "}
-      {generateHeaders()?.map((item) => (
-        <>
-          {item}
-          {" | "}
-        </>
-      ))}
+      {generateHeaders()?.map((item) => <>{item}</>)}
       <button
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={
-          editor.isActive("orderedList")
-            ? "is-active text-nowrap underline"
-            : "text-nowrap"
-        }
+        className={editor.isActive("orderedList") ? "is-active" : ""}
       >
         Bullet List
       </button>
-      {" | "}
       <button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={
-          editor.isActive("bulletList")
-            ? "is-active text-nowrap underline"
-            : "text-nowrap"
-        }
+        className={editor.isActive("bulletList") ? "is-active" : ""}
       >
         Queue List
       </button>

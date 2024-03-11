@@ -334,6 +334,14 @@ img {
   @apply  use-transition hover:bg-light-border hover:border-light-border border border-gray flex justify-center items-center w-1/3 h-9xl rounded-md cursor-pointer
 }
 
+.banner .menu-bar button {
+  @apply rounded-md border use-transition border-black bg-black px-md py-xxs text-white text-nowrap
+}
+
+.banner .menu-bar button.is-active {
+  @apply  bg-white text-black
+}
+
 @media (prefers-color-scheme: white) {
   /* Must be black but works right now on white scheme later need fix*/
   :root {

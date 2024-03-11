@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { FC, MouseEventHandler, ReactNode } from "react";
 
 interface ButtonProps {
@@ -9,9 +10,11 @@ interface ButtonProps {
     | "post__action:breadcrumbs"
     | "post__action:post-actions"
     | "comment"
-    | "btn__action:load-more";
+    | "btn__action:load-more"
+    | "btn_action:post";
   onClick?: MouseEventHandler<HTMLButtonElement>;
   children: ReactNode;
+  className?: string;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -20,14 +23,21 @@ const Button: FC<ButtonProps> = ({
   children,
   formType,
   onClick,
+  className,
 }: ButtonProps) => {
   switch (formType) {
-    case "form":
+    case "form" || "btn_action:post":
       return (
         <button
           id={id}
           type={type}
-          className="use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight"
+          className={classNames(
+            "use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
@@ -39,7 +49,13 @@ const Button: FC<ButtonProps> = ({
         <button
           id={id}
           type={type}
-          className="use-transition rounded-lg border-2 border-vitalred bg-vitalred px-lg py-sm text-white hover:bg-transparent hover:text-vitalred"
+          className={classNames(
+            "use-transition rounded-lg border-2 border-vitalred bg-vitalred px-lg py-sm text-white hover:bg-transparent hover:text-vitalred",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
@@ -51,7 +67,13 @@ const Button: FC<ButtonProps> = ({
         <button
           id={id}
           type={type}
-          className=" post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black"
+          className={classNames(
+            " post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
@@ -63,7 +85,13 @@ const Button: FC<ButtonProps> = ({
         <button
           id={id}
           type={type}
-          className=" post__action border-black bg-transparent px-xxs py-xxs text-black hover:bg-black hover:text-white"
+          className={classNames(
+            " post__action border-black bg-transparent px-xxs py-xxs text-black hover:bg-black hover:text-white",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
@@ -75,7 +103,13 @@ const Button: FC<ButtonProps> = ({
         <button
           id={id}
           type={type}
-          className="use-transition rounded-lg border-2 border-black bg-black px-lg py-xs text-normal font-semibold text-white hover:bg-transparent hover:text-black"
+          className={classNames(
+            "use-transition rounded-lg border-2 border-black bg-black px-lg py-xs text-normal font-semibold text-white hover:bg-transparent hover:text-black",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
@@ -87,7 +121,13 @@ const Button: FC<ButtonProps> = ({
         <button
           id={id}
           type={type}
-          className="use-transition hover:text-light-gray w-[220px] rounded-md border-2 border-light-border bg-transparent px-xs py-xs text-gray hover:bg-light-border"
+          className={classNames(
+            "use-transition hover:text-light-gray w-[220px] rounded-md border-2 border-light-border bg-transparent px-xs py-xs text-gray hover:bg-light-border",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
@@ -99,7 +139,13 @@ const Button: FC<ButtonProps> = ({
         <button
           id={id}
           type={type}
-          className="use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight"
+          className={classNames(
+            "use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight",
+            {
+              [className as string]:
+                typeof className === "string" && className !== undefined,
+            },
+          )}
           onClick={onClick}
         >
           {children}
