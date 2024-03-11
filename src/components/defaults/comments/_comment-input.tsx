@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useCallback, useState } from "react";
+import { FC, FormEvent, MouseEvent, useCallback, useState } from "react";
 import Image from "next/image";
 import classNames from "classnames";
 
@@ -77,7 +77,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
   });
 
   const setLink = useCallback(
-    (e?: React.MouseEvent<HTMLButtonElement>) => {
+    (e?: MouseEvent<HTMLButtonElement>) => {
       e?.preventDefault();
 
       const url = linkWritted;
@@ -180,7 +180,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
               type="text"
               className="w-full border-0 border-b border-b-gray px-xs py-xxxs focus:border-b-gray focus:outline-0 focus:ring-0 active:outline-0"
               placeholder="Enter a link ..."
-              onChange={(e: React.FormEvent<HTMLInputElement>) => {
+              onChange={(e: FormEvent<HTMLInputElement>) => {
                 setLinkWritted(e.currentTarget.value);
               }}
             />

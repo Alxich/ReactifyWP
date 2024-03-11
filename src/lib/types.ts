@@ -34,3 +34,14 @@ export interface PostPreviewBlockProps {
   texts: string;
   tags?: TagLinkProps[];
 }
+
+export interface ProductPreviewBlockProps {
+  view: "row" | "col" | "row-full";
+  isGridSmall?: boolean;
+  image: string | StaticImageData;
+  breadcrumbs: string;
+  title: string;
+  texts: string;
+  tags?: TagLinkProps[];
+  price: number;
+}

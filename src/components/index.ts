@@ -19,6 +19,10 @@ export { default as PostAll } from "./defaults/posts/_posts-all";
 export { default as PostWrpapper } from "./defaults/posts/post/_post-wrapper";
 export { default as PostHeader } from "./defaults/posts/post/_post-header";
 
+// Product components
+export { default as ProductPreview } from "./defaults/products/_product-preview";
+export { default as ProductWrpapper } from "./defaults/products/product/_product-wrapper";
+
 // Comments components
 
 export { default as Comments } from "./defaults/comments/_comments"

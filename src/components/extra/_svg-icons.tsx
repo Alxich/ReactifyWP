@@ -11,6 +11,7 @@ interface SvgIconsProps {
     | "Github"
     | "Explore-Arrow-Down-Right"
     | "Explore-Arrow-Up-Right-Post"
+    | "Explore-Arrow-Up-Right-Product"
     | "Bold"
     | "Italic"
     | "Link"
@@ -251,7 +252,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
         </svg>
       );
 
-    case "Explore-Arrow-Up-Right-Post":
+    case "Explore-Arrow-Up-Right-Post" || "Explore-Arrow-Up-Right-Product":
       return (
         <svg
           width="24"
