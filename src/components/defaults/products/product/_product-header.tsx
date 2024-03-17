@@ -19,7 +19,7 @@ const ProductHeader: FC<ProductHeaderProps> = ({}: ProductHeaderProps) => {
         </Button>
         <Button type="button" formType="post__action:breadcrumbs">
           <PencilIcon className="mr-xs h-full w-auto text-inherit" />
-          Edit this post
+          Edit this product
         </Button>
       </div>
     </Container>

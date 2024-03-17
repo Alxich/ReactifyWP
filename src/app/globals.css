@@ -186,6 +186,15 @@
       format("svg"); /* Legacy iOS */
 }
 
+@layer base {
+  input[type="number"],
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    appearance: textfield;
+    margin: 0;
+  }
+}
+
 /**
 * Finish loading fonts
 */

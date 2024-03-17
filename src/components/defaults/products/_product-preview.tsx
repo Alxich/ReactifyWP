@@ -35,12 +35,15 @@ const ProductPreview: FC<ProductPreviewProps> = ({
       )}
     >
       <div
-        className={classNames("thumbnail overflow-hidden rounded-md", {
-          "min-w-[320px]": view && view == "row",
-          "w-full": view && view == "col",
-          "w-1/2": view && view == "row-full",
-          "h-ctm-14": type === "regular",
-        })}
+        className={classNames(
+          "thumbnail overflow-hidden rounded-md border border-gray/20",
+          {
+            "min-w-[320px]": view && view == "row",
+            "w-full": view && view == "col",
+            "w-1/2": view && view == "row-full",
+            "h-ctm-14": type === "regular",
+          },
+        )}
       >
         <Image
           src={image}
@@ -60,14 +63,12 @@ const ProductPreview: FC<ProductPreviewProps> = ({
         <div className="content w-full flex-col items-start justify-start space-y-sm">
           <div className="short-info flex w-full flex-row items-baseline justify-between">
             {breadcrumbs && (
-              <p className="text-medium leading-normal text-gray">
+              <p className="w-full text-medium leading-normal text-gray">
                 <span className="breadcrumb">{breadcrumbs}</span>
               </p>
             )}
             {price && (
-              <p className="price w-full font-semibold text-highlight">
-                {price}
-              </p>
+              <p className="price font-semibold text-highlight">£{price}</p>
             )}
           </div>
 
@@ -81,7 +82,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
             )}
           >
             <span>{title}</span>
-            <SvgIcons type="Explore-Arrow-Up-Right-Product" />
+            <SvgIcons type="Explore-Arrow-Up-Right" />
           </h4>
           <div className="text-block w-full text-normal text-gray">
             <p className=" text-inherit">{texts}</p>
