@@ -10,9 +10,9 @@ import PostImage4 from "../../../../public/images/Image-3.png";
 import PostImage5 from "../../../../public/images/Image-4.png";
 import PostImage6 from "../../../../public/images/Image-5.png";
 
-interface CategoryPageAllProps {}
+interface CategoriesPageProps {}
 
-const CategoriesPageAll: FC<CategoryPageAllProps> = (props) => {
+const CategoriesPage: FC<CategoriesPageProps> = (props) => {
   const postsData: Array<PostPreviewBlockProps> = [
     {
       view: "col",
@@ -73,4 +73,4 @@ const CategoriesPageAll: FC<CategoryPageAllProps> = (props) => {
   );
 };
 
-export default CategoriesPageAll;
+export default CategoriesPage;

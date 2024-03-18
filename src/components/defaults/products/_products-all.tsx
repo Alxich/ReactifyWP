@@ -4,16 +4,16 @@ import { Container, ProductPreview } from "../../index";
 import { ProductPreviewBlockProps } from "@/lib/types";
 
 interface ProductAllProps {
-  postsData: Array<ProductPreviewBlockProps>;
+  productsData: Array<ProductPreviewBlockProps>;
 }
 
-const ProductAll: FC<ProductAllProps> = ({ postsData }: ProductAllProps) => {
+const ProductAll: FC<ProductAllProps> = ({ productsData }: ProductAllProps) => {
   return (
     <Container
       width="md"
       classNames="grid grid-cols-3 auto-rows-max auto-cols-max gap-3xl"
     >
-      {postsData.map(
+      {productsData.map(
         ({ view, breadcrumbs, price, image, title, texts, tags }, key) => (
           <ProductPreview
             view={view}

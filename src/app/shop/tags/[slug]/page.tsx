@@ -11,9 +11,9 @@ import PostImage4 from "../../../../../public/images/Image-3.png";
 import PostImage5 from "../../../../../public/images/Image-4.png";
 import PostImage6 from "../../../../../public/images/Image-5.png";
 
-interface CategoryPageProps {}
+interface TagPageProps {}
 
-const CategoryPage: FC<CategoryPageProps> = (props) => {
+const TagsPage: FC<TagPageProps> = (props) => {
   const postsData: Array<PostPreviewBlockProps> = [
     {
       view: "col",
@@ -174,7 +174,7 @@ const CategoryPage: FC<CategoryPageProps> = (props) => {
     >
       <Breadcrumbs />
       <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal text-black">
-        <h4 className="text-inherit">All frameworks posts</h4>
+        <h4 className="text-inherit">All frameworks tag posts</h4>
       </div>
       <PostAll postsData={postsData} />
       <Pagination currentPage={1} totalPages={10} visiblePages={3} />
@@ -182,4 +182,4 @@ const CategoryPage: FC<CategoryPageProps> = (props) => {
   );
 };
 
-export default CategoryPage;
+export default TagsPage;

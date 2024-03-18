@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { ProductPreviewBlockProps } from "@/lib/types";
 
-import { Container, ProductHeader, ProductWrpapper } from "@/components";
+import { Breadcrumbs, Container, Pagination, ProductAll } from "@/components";
 
 import VansPreview from "../../../../../public/images/vans-preview.png";
 
-interface ProductPageProps {}
+interface CategoryPageProps {}
 
-const ProductPage: FC<ProductPageProps> = ({}: ProductPageProps) => {
+const CategoryPage: FC<CategoryPageProps> = (props) => {
   const productsData: Array<ProductPreviewBlockProps> = [
     {
       view: "col",
@@ -90,13 +90,17 @@ const ProductPage: FC<ProductPageProps> = ({}: ProductPageProps) => {
 
   return (
     <Container
-      classNames="flex flex-col justify-center items-start product py-7xl px-3xl"
+      classNames="flex flex-col justify-center items-start post py-7xl px-3xl space-y-7xl"
       width="md"
     >
-      <ProductHeader />
-      <ProductWrpapper productsData={productsData} />
+      <Breadcrumbs />
+      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal text-black">
+        <h4 className="text-inherit">Explore all categories</h4>
+      </div>
+      <ProductAll productsData={productsData} />
+      <Pagination currentPage={1} totalPages={10} visiblePages={3} />
     </Container>
   );
 };
 
-export default ProductPage;
+export default CategoryPage;
