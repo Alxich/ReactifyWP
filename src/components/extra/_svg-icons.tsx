@@ -11,6 +11,8 @@ interface SvgIconsProps {
     | "Github"
     | "Explore-Arrow-Down-Right"
     | "Explore-Arrow-Up-Right"
+    | "Chevron-Arrow-Down"
+    | "Chevron-Arrow-Up"
     | "Bold"
     | "Italic"
     | "Link"
@@ -266,6 +268,38 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+    case "Chevron-Arrow-Down":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.2045 17.8815L2.09466 8.77158C1.6553 8.33222 1.6553 7.61991 2.09466 7.1806L3.15717 6.11808C3.59578 5.67947 4.30664 5.67863 4.74628 6.11621L12 13.3359L19.2537 6.11621C19.6933 5.67863 20.4042 5.67947 20.8428 6.11808L21.9053 7.1806C22.3447 7.61996 22.3447 8.33227 21.9053 8.77158L12.7955 17.8815C12.3562 18.3208 11.6438 18.3208 11.2045 17.8815Z"
+            fill="#1A1A1A"
+          />
+        </svg>
+      );
+
+    case "Chevron-Arrow-Up":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12.7955 6.11854L21.9053 15.2284C22.3447 15.6677 22.3447 16.38 21.9053 16.8194L20.8428 17.8819C20.4042 18.3205 19.6933 18.3213 19.2537 17.8837L12 10.6641L4.74628 17.8838C4.30664 18.3214 3.59578 18.3205 3.15717 17.8819L2.09466 16.8194C1.6553 16.38 1.6553 15.6677 2.09466 15.2284L11.2045 6.11859C11.6438 5.67923 12.3561 5.67923 12.7955 6.11854Z"
+            fill="#1A1A1A"
           />
         </svg>
       );

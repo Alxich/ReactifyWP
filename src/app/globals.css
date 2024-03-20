@@ -186,6 +186,10 @@
       format("svg"); /* Legacy iOS */
 }
 
+/**
+* Finish loading fonts
+*/
+
 @layer base {
   input[type="number"],
   input[type="number"]::-webkit-inner-spin-button,
@@ -195,9 +199,19 @@
   }
 }
 
-/**
-* Finish loading fonts
-*/
+@media (prefers-color-scheme: white) {
+  /* Must be black but works right now on white scheme later need fix*/
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  background: rgb(var(--background-rgb));
+  @apply text-black;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -349,17 +363,4 @@ img {
 
 .banner .menu-bar button.is-active {
   @apply  bg-white text-black
-}
-
-@media (prefers-color-scheme: white) {
-  /* Must be black but works right now on white scheme later need fix*/
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
 }

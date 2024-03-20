@@ -28,9 +28,16 @@ export { default as ProductAll } from "./defaults/products/_products-all";
 export { default as ProductWrpapper } from "./defaults/products/product/_product-wrapper";
 export { default as ProductHeader } from "./defaults/products/product/_product-header";
 
+// Cart components
+
+export { default as CartItem } from "./defaults/cart/_cartItem";
+export { default as CartDetails } from "./defaults/cart/_cartDetails";
+export { default as CartSummary } from "./defaults/cart/_cartSummary";
+
+
 // Comments components
 
-export { default as Comments } from "./defaults/comments/_comments"
+export { default as Comments } from "./defaults/comments/_comments";
 
 // Extra components (additional in use)
 
@@ -42,7 +49,7 @@ export { default as TagLink } from "./extra/tag/_tag-link";
 export { default as Pagination } from "./extra/pagination/_pagination";
 export { default as Breadcrumbs } from "./extra/breadcrumbs/_breadcrumbs";
 export { default as ProjectMainMessage } from "./extra/projectMessage/_project-main-message";
-export { default as TabsTable } from "./extra/tabsTable/_tabsTable"
+export { default as TabsTable } from "./extra/tabsTable/_tabsTable";
 
 // Extra - Titap
 
@@ -51,6 +58,5 @@ export { default as KeyPressInteraction } from "./extra/editor/extensions/_key-p
 
 // Extra - Product (Shop variant)
 
-export {default as QuantitySelector} from "./extra/product/selectors/_quantity";
-export {default as SquaresSelector} from "./extra/product/selectors/_squares";
-
+export { default as QuantitySelector } from "./extra/product/selectors/_quantity";
+export { default as SquaresSelector } from "./extra/product/selectors/_squares";
