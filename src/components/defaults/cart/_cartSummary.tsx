@@ -13,7 +13,7 @@ interface CartSummaryProps {}
 
 const CartSummary: FC<CartSummaryProps> = (props) => {
   return (
-    <div className="payment-form w-full flex-col items-start justify-start space-y-lg bg-gray/5 px-3xl py-2xl">
+    <div className="payment-form w-full max-w-[480px] flex-col items-start justify-start space-y-lg bg-gray/5 px-3xl py-2xl">
       <div className="title w-full">
         <h3 className="text-2xl font-semibold text-black">Placing an order</h3>
       </div>

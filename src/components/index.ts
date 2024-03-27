@@ -33,7 +33,8 @@ export { default as ProductHeader } from "./defaults/products/product/_product-h
 export { default as CartItem } from "./defaults/cart/_cartItem";
 export { default as CartDetails } from "./defaults/cart/_cartDetails";
 export { default as CartSummary } from "./defaults/cart/_cartSummary";
-
+export { default as CartEmpty } from "./defaults/cart/_cartEmpty";
+export { default as CartSuccess } from "./defaults/cart/_cartSuccess";
 
 // Comments components
 
