@@ -73,7 +73,7 @@ const PostPreview: FC<PostPreviewProps> = ({
           )}
           <h4
             className={classNames(
-              "flex w-full flex-row items-start justify-between font-semibold leading-normal text-black",
+              "flex w-full flex-row items-start justify-between font-semibold leading-normal",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
                 "text-2xl": isGridSmall == undefined || isGridSmall === false,
@@ -81,7 +81,7 @@ const PostPreview: FC<PostPreviewProps> = ({
             )}
           >
             <span>{title}</span>
-            <SvgIcons type="Explore-Arrow-Up-Right-Post" />
+            <SvgIcons type="Explore-Arrow-Up-Right" />
           </h4>
           <div className="text-block w-full text-normal text-gray">
             <p className=" text-inherit">{texts}</p>

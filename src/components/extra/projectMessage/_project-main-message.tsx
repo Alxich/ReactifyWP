@@ -16,10 +16,10 @@ const ProjectMainMessage: FC<ProjectMainMessageProps> = (props) => {
         <div className="error-svg">
           <SvgIcons type="Error" />
         </div>
-        <h1 className="mb-sm text-center text-3xl font-bold text-black">
+        <h1 className="mb-sm text-center text-3xl font-bold ">
           We’ll be back soon!
         </h1>
-        <p className="mb-md text-center text-black">
+        <p className="mb-md text-center ">
           We are creating something amazing for you!
           <br />
           We will launch website soon.

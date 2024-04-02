@@ -21,7 +21,7 @@ const PostWrpapper: FC<PostWrapperProps> = ({
         <Comments />
       </div>
       <div className="sidebar sticky top-xl h-fit w-29/100 space-y-xl">
-        <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal text-black">
+        <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
           <h4 className="text-inherit">Recent blog posts</h4>
         </div>
         {postsData.map(

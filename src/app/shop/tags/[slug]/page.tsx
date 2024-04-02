@@ -173,7 +173,7 @@ const TagsPage: FC<TagPageProps> = (props) => {
       width="md"
     >
       <Breadcrumbs />
-      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal text-black">
+      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
         <h4 className="text-inherit">All frameworks tag posts</h4>
       </div>
       <PostAll postsData={postsData} />

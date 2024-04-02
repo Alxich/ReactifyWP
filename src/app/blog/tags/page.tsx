@@ -132,7 +132,7 @@ const TagsPageAll: FC<TagPageProps> = (props) => {
       width="md"
     >
       <Breadcrumbs />
-      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal text-black">
+      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
         <h4 className="text-inherit">All available tags</h4>
       </div>
       {tags && (

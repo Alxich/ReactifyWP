@@ -43,17 +43,17 @@ const PageHeaderUser: FC<PageHeaderUserProps> = ({
           )}
         </div>
         <div className="container flex flex-col items-start justify-center">
-          <h1 className="mb-xl text-8xl font-bold uppercase text-black leading-none">
+          <h1 className="mb-xl text-8xl font-bold uppercase leading-none">
             {username}
           </h1>
 
           <div className="flex flex-row items-center justify-start space-x-xs">
-            <h3 className="text-2xl font-bold uppercase leading-none text-black">
+            <h3 className="text-2xl font-bold uppercase leading-none ">
               {text}
             </h3>
             <SvgIcons type="Explore-Arrow-Down-Right" />
           </div>
-          <p className="text-black">{description}</p>
+          <p className="">{description}</p>
         </div>
       </Container>
     </div>

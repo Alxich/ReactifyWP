@@ -15,7 +15,7 @@ const Comments: FC<CommentsWrapperProps> = ({
   return (
     <Container width="md" classNames="flex flex-col pt-7xl space-y-3xl !mt-0">
       {showTitle !== false && (
-        <div className="title text-2xl font-semibold text-black">
+        <div className="title text-2xl font-semibold ">
           <h3 className="text-inherit">
             Hey! Lets write some comment. Please not be shy !
           </h3>

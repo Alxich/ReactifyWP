@@ -24,7 +24,7 @@ const ProductWrpapper: FC<ProductWrapperProps> = ({
         <Comments />
       </div>
       <div className="sidebar sticky top-xl h-fit w-29/100 space-y-xl">
-        <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal text-black">
+        <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
           <h4 className="text-inherit">Recent products</h4>
         </div>
         {productsData?.map(

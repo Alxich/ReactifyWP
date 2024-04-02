@@ -1,12 +1,13 @@
 const customColors = {
-  white: "#FFFFFF",
-  black: "#1A1A1A",
-  gray: "#667085",
-  highlight: "#7e5bef",
-  "highlight-definition": "#EFE9FB",
-  "light-border": "#EAECF0",
-  accent: "#7F56D9",
-  vitalred: "#ff7849",
+  white: "rgba(var(--color-white), <alpha-value>)",
+  black: "rgba(var(--color-black), <alpha-value>)",
+  gray: "rgba(var(--color-gray), <alpha-value>)",
+  highlight: "rgba(var(--color-highlight), <alpha-value>)",
+  "highlight-definition":
+    "rgba(var(--color-highlight-definition), <alpha-value>)",
+  "light-border": "rgba(var(--color-light-border), <alpha-value>)",
+  accent: "rgba(var(--color-accent), <alpha-value>)",
+  vitalred: "rgba(var(--color-vitalred), <alpha-value>)",
 };
 
 const customFontSize = {

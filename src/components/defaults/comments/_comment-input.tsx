@@ -122,7 +122,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
         </div>
         <div
           className={classNames(
-            "name cursor-pointer text-large font-semibold text-black",
+            "name cursor-pointer text-large font-semibold ",
             {
               "flex w-full flex-row items-center justify-between":
                 type === "answer",
@@ -133,13 +133,13 @@ const CommentInput: FC<CommentWrapperProps> = ({
             {type === "answer" ? "Your answer to this..." : author.name}
           </p>
           {type === "answer" && (
-            <div className="item cursor-default text-black">
+            <div className="item cursor-default ">
               <ArrowUpIcon width={20} height={20} />
             </div>
           )}
         </div>
       </div>
-      <div className="content text-normal font-normal text-black">
+      <div className="content text-normal font-normal ">
         <EditorContent editor={editor} />
       </div>
       <div className=" flex w-full flex-row items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">

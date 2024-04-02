@@ -9,7 +9,7 @@ interface AuthorizationFormProps {
 
 const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
   return (
-    <form className="px-9.5xl flex w-full flex-col space-y-lg py-10xl">
+    <form className="flex w-full flex-col space-y-lg px-9.5xl py-10xl">
       <div className="title w-full text-center text-5xl font-bold leading-normal">
         <h1 className="text-inherit">Log In</h1>
       </div>
@@ -17,13 +17,13 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
         htmlFor="user-mail"
         className="flex w-full flex-col items-start justify-start"
       >
-        <span className="mb-xxs text-medium font-medium text-black">Email</span>
+        <span className="mb-xxs text-medium font-medium ">Email</span>
         <div className="flex-column flex w-full">
           <input
             id="user-mail"
             name="user-mail"
             type="email"
-            className="block w-full rounded-lg border border-black bg-white px-md py-sm text-normal text-black placeholder:text-black focus:outline-none"
+            className="block w-full rounded-lg border border-black bg-white px-md py-sm text-normal placeholder:focus:outline-none"
             placeholder="Enter your email"
           />
         </div>
@@ -32,15 +32,13 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
         htmlFor="user-mail"
         className="flex w-full flex-col items-start justify-start"
       >
-        <span className="mb-xxs text-medium font-medium text-black">
-          Password
-        </span>
+        <span className="mb-xxs text-medium font-medium ">Password</span>
         <div className="flex-column flex w-full">
           <input
             id="user-password"
             name="user-password"
             type="password"
-            className="block w-full rounded-lg border border-black bg-white px-md py-sm text-normal text-black placeholder:text-black focus:outline-none"
+            className="block w-full rounded-lg border border-black bg-white px-md py-sm text-normal placeholder:focus:outline-none"
             placeholder="Enter your password"
           />
         </div>
@@ -50,7 +48,7 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
           htmlFor="user-mail"
           className="flex w-full flex-col items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium text-black">
+          <span className="mb-xxs text-medium font-medium ">
             Repeat password
           </span>
           <div className="flex-column flex w-full">
@@ -58,7 +56,7 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
               id="user-password"
               name="user-password"
               type="password"
-              className="block w-full rounded-lg border border-black bg-white px-md py-sm text-normal text-black placeholder:text-black focus:outline-none"
+              className="block w-full rounded-lg border border-black bg-white px-md py-sm text-normal placeholder:focus:outline-none"
               placeholder="Enter your password again"
             />
           </div>
@@ -82,12 +80,9 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
           className=" flex w-full cursor-pointer select-none justify-between"
           htmlFor="link-checkbox"
         >
-          <p className="text-black">Remember Me</p>
+          <p className="">Remember Me</p>
           {type !== "register" && (
-            <Link
-              href="#"
-              className="use-transition block text-black hover:text-accent"
-            >
+            <Link href="#" className="use-transition block hover:text-accent">
               Forgot password?
             </Link>
           )}
@@ -120,14 +115,14 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
           {type === "register" ? (
             <Link
               href="#"
-              className="use-transition block border-b border-b-black text-black text-inherit hover:border-b-accent hover:text-accent"
+              className="use-transition block border-b border-b-black text-inherit hover:border-b-accent hover:text-accent"
             >
               Log in
             </Link>
           ) : (
             <Link
               href="#"
-              className="use-transition block border-b border-b-black text-black text-inherit hover:border-b-accent hover:text-accent"
+              className="use-transition block border-b border-b-black text-inherit hover:border-b-accent hover:text-accent"
             >
               Forgot password?
             </Link>

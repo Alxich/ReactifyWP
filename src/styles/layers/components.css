@@ -1,0 +1,100 @@
+@tailwind components;
+
+@layer components {
+  /**
+  *  
+  * Running out svg icons style list classes:
+  * |-- Discord
+  * |-- Figma
+  * |-- Google
+  * |-- Login_Google
+  * |-- Login_Facebook
+  * |-- Login_Apple
+  * |-- Github
+  * |-- Explore-Arrow-Down-Right
+  * |-- Explore-Arrow-Up-Right
+  * |-- Chevron-Arrow-Down
+  * |-- Chevron-Arrow-Up
+  * |-- Bold
+  * |-- Italic
+  * |-- Link
+  * |-- Error
+  * |-- Checkbox
+  * |-- User
+  * |-- Sun
+  * |-- Moon
+  *
+  */
+
+  svg.Login_Apple path {
+    @apply fill-black;
+  }
+
+  svg.Discord path,
+  svg.Figma path,
+  svg.Google path,
+  svg.Github path,
+  svg.Discord clipPath,
+  svg.Figma clipPath,
+  svg.Google clipPath,
+  svg.Github clipPath {
+    @apply fill-black;
+  }
+
+  svg.Sun path {
+    @apply fill-white;
+  }
+
+  svg.Moon path {
+    @apply stroke-black;
+  }
+
+  svg.Explore-Arrow-Down-Right path {
+    @apply stroke-white;
+  }
+
+  svg.Explore-Arrow-Up-Right path,
+  svg.Chevron-Arrow-Down path,
+  svg.Chevron-Arrow-Up path {
+    @apply stroke-black;
+  }
+
+  .svg-animated-stroke > svg > *,
+  .svg-animated-stroke > * svg > *,
+  .svg-animated > svg > *,
+  .svg-animated > * > svg > * {
+    @apply transition duration-300;
+  }
+
+  .svg-animated > svg:hover path,
+  .svg-animated > svg:hover clipPath {
+    @apply fill-highlight;
+  }
+
+  .svg-animated-stroke .active > svg path,
+  .svg-animated-stroke .active > svg clipPath,
+  .svg-animated-stroke > * > svg:hover path,
+  .svg-animated-stroke > * > svg:hover clipPath {
+    @apply stroke-highlight;
+  }
+
+  .post__action {
+    @apply use-transition flex h-2xl w-max flex-row items-center justify-center space-x-xs rounded-default border-2;
+  }
+
+  .comment-actions {
+    @apply flex flex-row items-center justify-center space-x-sm child:cursor-pointer;
+  }
+
+  .banner .menu-bar button {
+    @apply use-transition text-nowrap rounded-md border border-black bg-black px-md py-xxs text-white;
+  }
+
+  .banner .menu-bar button.is-active {
+    @apply bg-white;
+  }
+
+  .authorization-services .item {
+    @apply use-transition flex h-9xl w-1/3 cursor-pointer items-center justify-center rounded-md border border-gray hover:border-light-border hover:bg-light-border;
+  }
+}

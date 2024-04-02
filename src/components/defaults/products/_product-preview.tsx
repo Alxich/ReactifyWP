@@ -74,7 +74,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
 
           <h4
             className={classNames(
-              "flex w-full flex-row items-start justify-between font-semibold leading-normal text-black",
+              "flex w-full flex-row items-start justify-between font-semibold leading-normal",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
                 "text-2xl": isGridSmall == undefined || isGridSmall === false,

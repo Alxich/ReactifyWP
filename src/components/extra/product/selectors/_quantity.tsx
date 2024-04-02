@@ -15,9 +15,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = ({}) => {
   return (
     <div className="item type-selctor-quantity flex w-full flex-col items-start justify-start space-y-md">
       <div className="title">
-        <h4 className="text-normal font-medium leading-normal text-black">
-          Quantity
-        </h4>
+        <h4 className="text-normal font-medium leading-normal ">Quantity</h4>
       </div>
       <div className="selectors-items flex w-full flex-row items-stretch justify-start space-x-sm">
         <div className="container flex w-full flex-row items-stretch justify-between">
@@ -27,7 +25,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = ({}) => {
               value={inputValue}
               min={1}
               max={99}
-              className="flex h-full w-7xl appearance-none items-center justify-center border border-r-0 border-gray text-center text-normal font-normal text-gray"
+              className="flex h-full w-7xl appearance-none items-center justify-center border border-r-0 border-gray bg-transparent text-center text-normal font-normal text-gray"
             />
             <div className="button flex flex-col">
               <div
@@ -59,7 +57,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = ({}) => {
             <span className="font-medium">{">"}</span>
           </Button>
         </div>
-        <div className="use-transition flex h-7xl w-7xl min-w-7xl items-center justify-center border border-b-gray bg-transparent text-black hover:bg-black hover:text-white">
+        <div className="use-transition flex h-7xl w-7xl min-w-7xl items-center justify-center border border-b-gray bg-transparent hover:bg-black hover:text-white">
           <HeartIcon className="w-7 text-inherit" />
         </div>
       </div>

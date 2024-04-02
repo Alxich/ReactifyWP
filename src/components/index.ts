@@ -51,6 +51,7 @@ export { default as Pagination } from "./extra/pagination/_pagination";
 export { default as Breadcrumbs } from "./extra/breadcrumbs/_breadcrumbs";
 export { default as ProjectMainMessage } from "./extra/projectMessage/_project-main-message";
 export { default as TabsTable } from "./extra/tabsTable/_tabsTable";
+export { default as ThemeSwither } from "./extra/_theme-switcher";
 
 // Extra - Titap
 

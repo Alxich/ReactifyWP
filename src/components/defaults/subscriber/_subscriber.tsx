@@ -39,7 +39,9 @@ const Subscriber: FC<SubscriberProps> = (props) => {
                   className="block w-full rounded-lg bg-white px-md py-sm placeholder:text-gray focus:outline-none"
                   placeholder="Enter your email"
                 />
-                <Button type="submit" formType={"form"}>Subscribe</Button>
+                <Button type="submit" formType={"form"}>
+                  Subscribe
+                </Button>
               </div>
               <span className="text-medium text-white">
                 We care about your data in our{" "}

@@ -52,14 +52,12 @@ const Banner: FC<BannerProps> = ({
         )}
       >
         <div className="banner-head sticky top-0 z-10 flex w-full items-start justify-between overflow-hidden border-b border-b-gray bg-white pb-xl pt-7xl">
-          <h2 className="text-3xl font-semibold leading-none text-black">
-            {title}
-          </h2>
+          <h2 className="text-3xl font-semibold leading-none ">{title}</h2>
           <XMarkIcon
             onClick={() => closeTheBanner(!isClosed)}
             height={32}
             width={32}
-            className="cursor-pointer text-black"
+            className="cursor-pointer "
           />
         </div>
         <div

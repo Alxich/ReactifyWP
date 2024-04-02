@@ -13,6 +13,7 @@ import {
   Footer,
   PageHeader,
   ProjectMainMessage,
+  ThemeSwither,
 } from "@/components";
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </main>
         <Footer />
         {siteUnderMaintance && <ProjectMainMessage />}
+        <ThemeSwither />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ const LoginPage: FC<LoginPageProps> = (props) => {
       width="sm"
     >
       <div className="loyalty flex w-1/2 flex-col items-start justify-center bg-black p-md">
-        <div className="border-10 flex h-full w-full flex-col items-start justify-center space-y-xs border-white bg-black px-6.5xl">
+        <div className="flex h-full w-full flex-col items-start justify-center space-y-xs border-10 border-white bg-black px-6.5xl">
           <h2 className="text-5xl font-bold text-white">
             Join the largest shop community in the world
           </h2>
@@ -22,7 +22,7 @@ const LoginPage: FC<LoginPageProps> = (props) => {
         </div>
       </div>
       <div className="w-1/2">
-        <AuthorizationForm type="register"/>
+        <AuthorizationForm type="register" />
       </div>
     </Container>
   );

@@ -16,7 +16,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
     <header className="masthead flex w-full max-w-wrapper-lg-sz items-center justify-center border-b border-b-black pb-xl pt-xs">
       <Container width="sm" classNames="flex justify-between">
         <div className="logo cursor-pointer select-none">
-          <p className="text-3xl font-bold text-black">
+          <p className="text-3xl font-bold ">
             Reactify
             <span className="ml-xxs rounded-sm bg-black px-xxs py-xxs text-white">
               WP
@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
               className="underline-hover cursor-pointer text-normal"
               key={`nav_${item}_${key}`}
             >
-              <p className="text-black">{item}</p>
+              <p className="">{item}</p>
             </li>
           ))}
           <RoundedNavItems />

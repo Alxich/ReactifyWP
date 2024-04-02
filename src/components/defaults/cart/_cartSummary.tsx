@@ -15,13 +15,13 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
   return (
     <div className="payment-form w-full max-w-[480px] flex-col items-start justify-start space-y-lg bg-gray/5 px-3xl py-2xl">
       <div className="title w-full">
-        <h3 className="text-2xl font-semibold text-black">Placing an order</h3>
+        <h3 className="text-2xl font-semibold">Placing an order</h3>
       </div>
       <div className="summary-details flex w-full flex-col items-start justify-start space-y-lg child:first:border-t-0 child:first:pt-0 child:last:border-b-0 child:last:pb-0">
         <div className="item flex w-full flex-col items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
           <div className="title flex w-full flex-row items-center justify-between">
-            <h5 className="text-normal font-medium text-black">Discounts</h5>
-            <p className="text-sm font-medium text-gray underline">
+            <h5 className="text-normal font-medium">Discounts</h5>
+            <p className="cursor-pointer text-sm font-medium text-gray underline">
               Clear the list
             </p>
           </div>
@@ -42,13 +42,13 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
         </div>
         <div className="item flex w-full flex-col items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
           <div className="title flex w-full flex-row items-center justify-between">
-            <h5 className="text-normal font-medium text-black">Total price</h5>
+            <h5 className="text-normal font-medium ">Total price</h5>
             <p className="text-normal font-medium text-highlight">£251.34</p>
           </div>
         </div>
         <div className="item flex w-full flex-col items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
           <div className="title flex w-full flex-row items-center justify-between">
-            <h5 className="text-normal font-medium text-black">We accept</h5>
+            <h5 className="text-normal font-medium ">We accept</h5>
           </div>
           <div className="items-card-acceps flex w-full flex-row items-center justify-between space-x-2xl">
             <div className="item h-7xl w-full max-w-[48px]">

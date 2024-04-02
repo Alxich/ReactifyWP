@@ -1,0 +1,187 @@
+/**
+* Font Inter loading there
+*/
+
+/* inter-100 - cyrillic_cyrillic-ext_latin_latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-100.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-100.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-100.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-100.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-200 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 200;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-200.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-200.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-200.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-200.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-300 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-300.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-300.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-300.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-300.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-regular - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-regular.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-regular.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-regular.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-regular.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-500 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-500.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-500.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-500.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-500.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-600 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-600.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-600.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-600.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-600.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-700 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-700.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-700.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-700.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-700.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-800 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-800.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-800.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-800.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-800.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /* inter-900 - cyrillic_cyrillic-ext_latin_latin-ext */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    src:
+      url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-900.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-900.woff")
+        format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-900.ttf")
+        format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../styles/fonts/inter/inter-v13-cyrillic_cyrillic-ext_latin_latin-ext-900.svg#Inter")
+        format("svg"); /* Legacy iOS */
+  }
+  
+  /**
+  * Finish loading fonts
+  */

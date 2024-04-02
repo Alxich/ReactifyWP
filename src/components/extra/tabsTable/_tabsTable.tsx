@@ -14,7 +14,7 @@ const TabsTable: FC<TabsProps> = ({}) => {
           className={classNames(
             "item active use-transition flex h-7xl cursor-pointer items-center justify-center py-md",
             {
-              "border-b-3 border-b-highlight text-black": activeTab,
+              "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
             },
           )}
@@ -27,7 +27,7 @@ const TabsTable: FC<TabsProps> = ({}) => {
           className={classNames(
             "item use-transition flex h-7xl cursor-pointer items-center justify-center py-md",
             {
-              "border-b-3 border-b-highlight text-black": activeTab,
+              "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
             },
           )}
@@ -40,7 +40,7 @@ const TabsTable: FC<TabsProps> = ({}) => {
           className={classNames(
             "item use-transition flex h-7xl cursor-pointer items-center justify-center py-md",
             {
-              "border-b-3 border-b-highlight text-black": activeTab,
+              "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
             },
           )}

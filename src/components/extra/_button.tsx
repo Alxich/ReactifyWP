@@ -68,7 +68,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            " post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black",
+            " post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -86,7 +86,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            " post__action border-black bg-transparent px-xxs py-xxs text-black hover:bg-black hover:text-white",
+            " post__action border-black bg-transparent px-xxs py-xxs hover:bg-black hover:text-white",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,

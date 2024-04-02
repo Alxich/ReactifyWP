@@ -11,15 +11,15 @@ interface ProductDetailsProps {}
 const ProductDetails: FC<ProductDetailsProps> = (props) => {
   return (
     <Container width="md" classNames="flex flex-row pt-7xl space-x-3xl">
-      <div className="thumbnail product-thumbnail relative h-fit w-1/2 cursor-pointer rounded-lg border border-gray">
+      <div className="thumbnail product-thumbnail relative h-fit w-1/2 cursor-pointer rounded-lg border border-gray bg-[#fff]">
         <Image src={VansProductImage} alt="product-image-container" />
         <div className="absolute right-lg top-lg z-10">
-          <MagnifyingGlassIcon className="w-xl text-black" />
+          <MagnifyingGlassIcon className="w-xl " />
         </div>
       </div>
       <div className="details product details flex w-1/2 flex-col items-start justify-start space-y-md child:w-full">
         <div className="title-and-price flex flex-row items-baseline justify-between">
-          <h2 className="text-2xl font-normal text-black">
+          <h2 className="text-2xl font-normal ">
             Trainers <span className="font-black">Vans SK8-HI</span>
           </h2>
           <p className="price text-normal font-semibold text-highlight">
@@ -32,7 +32,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
           <QuantitySelector />
           <div className="item type-selctor-calc__vat flex w-full flex-row items-baseline justify-between">
             <div className="title">
-              <h4 className="text-normal font-medium leading-normal text-black">
+              <h4 className="text-normal font-medium leading-normal ">
                 Price with VAT + delivery
               </h4>
             </div>
@@ -45,7 +45,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
         <div className="item type-selctor-total flex w-full flex-col items-start justify-start">
           <div className="flex w-full flex-row items-baseline justify-between">
             <div className="title">
-              <h4 className="text-normal font-medium leading-normal text-black">
+              <h4 className="text-normal font-medium leading-normal ">
                 Total Price
               </h4>
             </div>

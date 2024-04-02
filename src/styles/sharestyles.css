@@ -1,0 +1,5 @@
+.tiptap-editor-wrapper > p:not(:focus)::before {
+    content: attr(data-placeholder);
+  
+    @apply text-gray/40;
+  }

@@ -10,12 +10,12 @@ import { UserIcon } from "@heroicons/react/20/solid";
 interface RoundedNavItemsProps {}
 
 const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
-  const transitionSetup = "text-black use-transition";
+  const transitionSetup = "use-transition";
   const userIconStyle = `h-6 w-6 ${transitionSetup} group-hover:text-white`;
 
   return (
     <>
-      <li className="shopping-nav wp-border group rounded-full px-md py-xs use-transition hover:bg-black">
+      <li className="shopping-nav wp-border use-transition group rounded-full px-md py-xs hover:bg-black">
         <ul className="flex h-full w-full items-center justify-between">
           <li className="mr-xs cursor-pointer">
             <HeartIcon className={userIconStyle} />
@@ -25,7 +25,7 @@ const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
           </li>
         </ul>
       </li>
-      <li className="account-nav wp-border group flex cursor-pointer items-center justify-between rounded-full px-md py-xs use-transition hover:bg-black">
+      <li className="account-nav wp-border use-transition group flex cursor-pointer items-center justify-between rounded-full px-md py-xs hover:bg-black">
         <UserIcon className={`mr-xs ${userIconStyle}`} />
         <p
           className={`name text-normal font-medium ${transitionSetup} group-hover:text-white`}

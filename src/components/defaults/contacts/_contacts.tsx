@@ -16,10 +16,10 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
       )}
     >
       <div className="description flex w-full flex-col items-center justify-center space-y-xl px-7.5xl">
-        <h2 className="text-center text-6xl font-semibold !leading-none text-black">
+        <h2 className="text-center text-6xl font-semibold !leading-none ">
           Subscribe to learn about new product features
         </h2>
-        <p className="w-3/4 text-center text-xl text-black">
+        <p className="w-3/4 text-center text-xl ">
           Subscribe to learn about new product features, the latest in
           technology, solutions, and updates. You will get a great benefit from
           our last creators ideas everyday!
@@ -30,15 +30,13 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
           htmlFor="user-mail"
           className="flex w-full flex-col items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium text-black">
-            Email
-          </span>
+          <span className="mb-xxs text-medium font-medium ">Email</span>
           <div className="flex-column flex w-full">
             <input
               id="user-mail"
               name="user-mail"
               type="email"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal text-black placeholder:text-gray focus:outline-none"
+              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
               placeholder="Enter your email"
             />
           </div>
@@ -48,15 +46,13 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
           htmlFor="user-message"
           className="flex w-full flex-col items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium text-black">
-            Message
-          </span>
+          <span className="mb-xxs text-medium font-medium ">Message</span>
           <div className="flex-column flex w-full">
             <input
               id="user-message"
               name="user-message"
               type="text"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal text-black placeholder:text-gray focus:outline-none"
+              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
               placeholder="Enter your message"
             />
           </div>
@@ -66,15 +62,13 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
           htmlFor="user-name"
           className="flex w-full flex-col items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium text-black">
-            Name
-          </span>
+          <span className="mb-xxs text-medium font-medium ">Name</span>
           <div className="flex-column flex w-full">
             <input
               id="user-name"
               name="user-name"
               type="text"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal text-black placeholder:text-gray focus:outline-none"
+              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
               placeholder="Enter your name"
             />
           </div>
@@ -84,15 +78,13 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
           htmlFor="user-surname"
           className="flex w-full flex-col items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium text-black">
-            Surname
-          </span>
+          <span className="mb-xxs text-medium font-medium ">Surname</span>
           <div className="flex-column flex w-full">
             <input
               id="user-surname"
               name="user-surname"
               type="text"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal text-black placeholder:text-gray focus:outline-none"
+              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
               placeholder="Enter your surname"
             />
           </div>

@@ -35,12 +35,14 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         <div className="content w-full space-y-xl">
           <div className="page-content-text flex w-full flex-col items-center justify-center space-y-sm">
             {children}
-            {showSlogan !== false && hasContacts === true && <Contacts className="!mt-7xl" />}
+            {showSlogan !== false && hasContacts === true && (
+              <Contacts className="!mt-7xl" />
+            )}
           </div>
         </div>
         {showSlogan !== false && (
           <div className="theme-slogan">
-            <p className="whitespace-nowrap text-7xl font-bold uppercase text-black writing-sd-rl">
+            <p className="whitespace-nowrap text-7xl font-bold uppercase writing-sd-rl">
               Have you heard about Reactify
               <span className="mt-xs rounded-sm bg-black px-xs py-sm text-white">
                 WP

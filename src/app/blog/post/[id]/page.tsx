@@ -201,7 +201,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
       >
         <div className="title">
           <input
-            className="title w-full border-x-0 border-b border-t-0 border-b-black p-0 text-7xl font-bold text-black"
+            className="title w-full border-x-0 border-b border-t-0 border-b-black p-0 text-7xl font-bold "
             value={"How create a new post ?"}
             readOnly
           />

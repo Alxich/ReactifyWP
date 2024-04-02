@@ -17,25 +17,11 @@ type NavCategoryObject = {
 
 const Footer: FC<FooterProps> = (props) => {
   const route = usePathname();
-  const showSubscriber = () => {
-    if (route.startsWith("/blog/user/")) {
-      return false;
-    }
-
-    if (route.startsWith("/login") || route.startsWith("/register")) {
-      return false;
-    }
-
-    switch (route) {
-      case "/contacts":
-        return false;
-
-      case "/blog/user":
-        return false;
-
-      default:
-        return true;
-    }
+  const hideBorderAndSubscriber = () => {
+    const excludedRoutes = ["/login", "/register", "/contacts", "/blog/user/"];
+    return excludedRoutes.some((excludedRoute) =>
+      route.startsWith(excludedRoute),
+    );
   };
 
   const navObjOne: NavCategoryObject = {
@@ -65,16 +51,14 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <>
-      {showSubscriber() && (
+      {!hideBorderAndSubscriber() && (
         <Container width="lg">
           <Subscriber />
         </Container>
       )}
       <footer
         className={classNames("footer w-full max-w-wrapper-lg-sz pt-7xl", {
-          "border-t border-t-black": !showSubscriber(),
-          "border-none":
-            route.startsWith("/login") || route.startsWith("/register"),
+          "border-t border-t-black": !hideBorderAndSubscriber(),
         })}
       >
         {route.startsWith("/login") ||
@@ -86,12 +70,12 @@ const Footer: FC<FooterProps> = (props) => {
               <div className="navigation flex w-3/5 flex-row items-center justify-between">
                 {navObjOne && (
                   <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                    <li className="title mb-xxs font-semibold text-black">
+                    <li className="title mb-xxs font-semibold ">
                       {navObjOne.title}
                     </li>
                     {navObjOne.navLinks.map((item, key) => (
                       <li
-                        className="underline-hover cursor-pointer text-normal text-black"
+                        className="underline-hover cursor-pointer text-normal "
                         key={`nav_${item}_${key}`}
                       >
                         <Link href={item.link}>{item.title}</Link>
@@ -101,12 +85,12 @@ const Footer: FC<FooterProps> = (props) => {
                 )}
                 {navObjTwo && (
                   <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                    <li className="title mb-xxs font-semibold text-black">
+                    <li className="title mb-xxs font-semibold ">
                       {navObjTwo.title}
                     </li>
                     {navObjTwo.navLinks.map((item, key) => (
                       <li
-                        className="underline-hover cursor-pointer text-normal text-black"
+                        className="underline-hover cursor-pointer text-normal "
                         key={`nav_${item}_${key}`}
                       >
                         <Link href={item.link}>{item.title}</Link>
@@ -116,12 +100,12 @@ const Footer: FC<FooterProps> = (props) => {
                 )}
                 {navObjThree && (
                   <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                    <li className="title mb-xxs font-semibold text-black">
+                    <li className="title mb-xxs font-semibold ">
                       {navObjThree.title}
                     </li>
                     {navObjThree.navLinks.map((item, key) => (
                       <li
-                        className="underline-hover cursor-pointer text-normal text-black"
+                        className="underline-hover cursor-pointer text-normal "
                         key={`nav_${item}_${key}`}
                       >
                         <Link href={item.link}>{item.title}</Link>
@@ -131,7 +115,7 @@ const Footer: FC<FooterProps> = (props) => {
                 )}
               </div>
               <div className="highlight-banner w-2/5">
-                <p className="text-4xl font-bold uppercase text-black">
+                <p className="text-4xl font-bold uppercase ">
                   As one chapter ends, the story{"'"}s essence lingers in the
                   margins.
                 </p>
@@ -144,12 +128,12 @@ const Footer: FC<FooterProps> = (props) => {
             width="sm"
           >
             <div className="privacy-rooles">
-              <p className="text-medium font-normal text-black">
+              <p className="text-medium font-normal ">
                 © 2023 ReactifyWP - Wordpress blog project by Alxich. <br />
                 The rights belong to the authors of the content and libraries
                 used in this template.
               </p>
-              <p className="mt-2.5xl text-medium font-normal text-black">
+              <p className="mt-2.5xl text-medium font-normal ">
                 The code and design of this template are copyrighted by{" "}
                 <Link href="#" className="use-transition hover:text-highlight">
                   @Alxich

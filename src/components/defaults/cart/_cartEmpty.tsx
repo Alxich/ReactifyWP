@@ -1,13 +1,13 @@
 import Link from "next/link";
-import * as React from "react";
+import { FC } from "react";
 
 interface CartEmptyProps {}
 
-const CartEmpty: React.FunctionComponent<CartEmptyProps> = (props) => {
+const CartEmpty: FC<CartEmptyProps> = (props) => {
   return (
     <div className="empty-cart flex w-full flex-col items-center justify-center space-y-[10vw]">
       <div className="main-text mt-[10vw] flex h-full w-fit max-w-[535px] flex-col items-center justify-center">
-        <h3 className="text-center text-8xl font-semibold capitalize text-black">
+        <h3 className="text-center text-8xl font-semibold capitalize ">
           So empty :{"("}
         </h3>
         <h4 className="text-center text-2xl font-normal text-gray">
@@ -15,7 +15,7 @@ const CartEmpty: React.FunctionComponent<CartEmptyProps> = (props) => {
           before opening this page...
         </h4>
       </div>
-      <p className="move-back text-center text-normal font-normal text-black">
+      <p className="move-back text-center text-normal font-normal ">
         Please, don’t be shy to buy some nice looking cloth. Do you want return
         to{" "}
         <Link

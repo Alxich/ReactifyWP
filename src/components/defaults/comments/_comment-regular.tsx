@@ -29,7 +29,7 @@ const CommentRegular: FC<CommentWrapperProps> = ({
         </div>
         <div
           className={classNames(
-            "name cursor-pointer text-large font-semibold text-black",
+            "name cursor-pointer text-large font-semibold ",
           )}
         >
           <p className="text-inherit">{author.name}</p>
@@ -40,10 +40,10 @@ const CommentRegular: FC<CommentWrapperProps> = ({
       </div>
       <div className=" flex w-full flex-row items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
         <div className="actions comment-actions svg-animated-stroke">
-          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs text-black transition duration-300 hover:bg-gray/15">
+          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs transition duration-300 hover:bg-gray/15">
             <ArrowUpIcon width={20} height={20} />
           </div>
-          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs text-black transition duration-300 hover:bg-gray/15">
+          <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs transition duration-300 hover:bg-gray/15">
             <ArrowDownIcon width={20} height={20} />
           </div>
           <div className="item post-time cursor-auto text-medium font-semibold text-gray">

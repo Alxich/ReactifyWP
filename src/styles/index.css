@@ -1,0 +1,58 @@
+/**
+ *
+ * File Description: The main css file for configuring this projes
+ * Notions: Please all you custom styles use in sharestylles.css,
+ * because you can break previous setup and who knows what can happen next :)
+ *
+*/
+
+/**
+ * 
+ *   Loading custom installed fonts.
+ *   To change liked font you need to edit this file.
+ **********************************************************************
+ *   PLEASE to not edit this files if you can do it in sharestylles.css
+ *   because you can break the default styles without backup it back.
+ *
+*/
+
+@import "./fonts/fonts";
+
+/**
+ * 
+ *   Loading the prefered themes of our project.
+ *   Included the dark and light theme setups.
+ *   Allows to configure view of app in different themes.
+ **********************************************************************
+ *   PLEASE to not edit this files if you can do it in sharestylles.css
+ *   because you can break the default styles without backup it back.
+ *
+*/
+
+@import "./themes/dark";
+@import "./themes/light";
+
+/**
+ * 
+ *   Loading the basic custom TailwindCSS styles
+ *   To change liked style you need to edit this file
+ **********************************************************************
+ *   PLEASE to not edit this files if you can do it in sharestylles.css
+ *   because you can break the default styles without backup it back.
+ *
+*/
+
+@import "./layers/base";
+@import "./layers/utilities";
+@import "./layers/components";
+
+/**
+ * 
+ *   Loading the custom styles overvall the main styles.
+ *   To change liked style you need to edit this file.
+ *   This is important file if you want change something in project 
+ *   without touching the main styles and causing errors.
+ *
+*/
+
+@import "./sharestyles";
