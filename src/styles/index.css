@@ -48,6 +48,18 @@
 
 /**
  * 
+ *   Loading the basic media mobile styles
+ *   To change liked style you need to edit this file
+ **********************************************************************
+ *   PLEASE to not edit this files if you can do it in sharestylles.css
+ *   because you can break the default styles without backup it back.
+ *
+*/
+
+@import "./mobile";
+
+/**
+ * 
  *   Loading the custom styles overvall the main styles.
  *   To change liked style you need to edit this file.
  *   This is important file if you want change something in project 

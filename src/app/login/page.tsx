@@ -7,7 +7,7 @@ interface LoginPageProps {}
 const LoginPage: FC<LoginPageProps> = (props) => {
   return (
     <Container
-      classNames="flex flex-row justify-center post pt-7xl px-10xl"
+      classNames="flex flex-row justify-center post pt-7xl px-10xl authorization-page"
       width="sm"
     >
       <div className="loyalty flex w-1/2 flex-col items-start justify-center bg-black p-md">

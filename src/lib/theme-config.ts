@@ -11,21 +11,21 @@ const customColors = {
 };
 
 const customFontSize = {
-  small: "0.625rem", // Font-size for text/placeholder/etc : 10px
-  base: "0.75rem", // Font-size for text/placeholder/etc : 12px
-  medium: "0.875rem", // Font-size for text/placeholder/etc : 14px
-  normal: "1rem", // Font-size for text/placeholder/etc : 16px
-  large: "1.125rem", // Font-size for text/placeholder/etc : 18px
-  xl: "1.25rem", // Font-size for text/placeholder/etc : 20px
-  "2xl": "1.5rem", // Font-size for text/placeholder/etc : 24px
-  "3xl": "2rem", // Font-size for text/placeholder/etc : 32px
-  "4xl": "2.25rem", // Font-size for text/placeholder/etc : 36px
-  "5xl": "2.5rem", // Font-size for text/placeholder/etc : 40px
-  "6xl": "3rem", // Font-size for text/placeholder/etc : 48px
-  "7xl": "3.75rem", // Font-size for text/placeholder/etc : 60px
-  "8xl": "5.25rem", // Font-size for text/placeholder/etc : 84px
-  "9xl": "8rem", // Font-size for text/placeholder/etc : 128px
-  "10xl": "16.563rem", // Font-size for text/placeholder/etc : 265px
+  small: "var(--font-size-small)", // Font-size for text/placeholder/etc : 10px
+  base: "var(--font-size-base)", // Font-size for text/placeholder/etc : 12px
+  medium: "var(--font-size-medium)", // Font-size for text/placeholder/etc : 14px
+  normal: "var(--font-size-normal)", // Font-size for text/placeholder/etc : 16px
+  large: "var(--font-size-large)", // Font-size for text/placeholder/etc : 18px
+  xl: "var(--font-size-xl)", // Font-size for text/placeholder/etc : 20px
+  "2xl": "var(--font-size-2xl)", // Font-size for text/placeholder/etc : 24px
+  "3xl": "var(--font-size-3xl)", // Font-size for text/placeholder/etc : 32px
+  "4xl": "var(--font-size-4xl)", // Font-size for text/placeholder/etc : 36px
+  "5xl": "var(--font-size-5xl)", // Font-size for text/placeholder/etc : 40px
+  "6xl": "var(--font-size-6xl)", // Font-size for text/placeholder/etc : 48px
+  "7xl": "var(--font-size-7xl)", // Font-size for text/placeholder/etc : 60px
+  "8xl": "var(--font-size-8xl)", // Font-size for text/placeholder/etc : 84px
+  "9xl": "var(--font-size-9xl)", // Font-size for text/placeholder/etc : 128px
+  "10xl": "var(--font-size-10xl)", // Font-size for text/placeholder/etc : 265px
 };
 
 const wrapperWidth = {
@@ -34,7 +34,18 @@ const wrapperWidth = {
   "wrapper-md-sz": "80rem", // medium size for wrapper (1280px)
   "wrapper-lg-sz": "86.25rem", // large size for wrapper (1380px)
   "wrapper-xl-sz": "90rem", // extra large size for wrapper (1440px)
-  "wrapper-page-sz": "120rem", // page size for wrapper and body (1920px
+  "wrapper-page-sz": "120rem", // page size for wrapper and body (1920px)
+};
+
+const customScreens = {
+  phone: { max: "320px" }, // For phone
+  "phone-portrait": { max: "360px" }, // For portrait mode on the phone
+  tablet: { max: "640px" }, // for a tablet
+  "tablet-portrait": { max: "768px" }, // For portrait mode on a tablet
+  laptop: { max: "1024px" }, // for a laptop
+  desktop: { max: "1280px" }, // for the desktop
+  "large-desktop": { max: "1400px" }, // for a large desktop
+  "extra-large-desktop": { max: "1920px" }, // for a very large desktop
 };
 
 const customWidth = () => {
@@ -130,12 +141,13 @@ const themeConfiguration = {
     customColors,
     customFontSize,
     customBorderRadius,
-    customWidth: customWidth(),
-    customHeight: customHeight(),
-    customBorderWidth: customBorderWidth(),
   },
   codeVariables: {
     paddingClasses,
+    customScreens,
+    customWidth: customWidth(),
+    customHeight: customHeight(),
+    customBorderWidth: customBorderWidth(),
   },
 };
 

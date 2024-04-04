@@ -1,0 +1,97 @@
+.pt-7xl {
+  @apply desktop:pt-4xl;
+}
+.pb-7xl {
+  @apply desktop:pb-4xl;
+}
+.py-7xl {
+  @apply desktop:py-4xl;
+}
+
+/*----------------------------------------------*/
+
+div.page-header h1 {
+  @apply desktop:text-7xl;
+}
+
+/*----------------------------------------------*/
+
+div.posts-recents {
+  @apply gap-lg;
+}
+
+div.posts-recents .post:not(.flex-col) {
+  @apply desktop:space-x-lg;
+}
+
+div.posts-recents .post:not(.flex-col, .col-span-2) .thumbnail {
+  @apply desktop:min-w-[200px];
+}
+
+div.posts-recents .post:not(.flex-col, .col-span-2) .text-content {
+  @apply desktop:w-full;
+}
+
+div.posts-recents .post.col-span-2 .text-content {
+  @apply desktop:w-1/2;
+}
+
+div.posts-recents .post.flex-col {
+  @apply desktop:space-y-lg;
+}
+
+div.posts-recents .post .content {
+  @apply desktop:space-y-xs;
+}
+
+div.posts-recents .post-in-col {
+  @apply desktop:space-y-lg;
+}
+
+/*----------------------------------------------*/
+
+div:not(.posts-recents) .post-previewer {
+  @apply desktop:space-y-xs;
+}
+
+div:not(.posts-recents) .post-previewer:not(.col-span-2) > .thumbnail {
+  @apply desktop:h-ctm-10;
+}
+
+div:not(.posts-recents) .post-previewer .content {
+  @apply desktop:space-y-xs;
+}
+
+/*----------------------------------------------*/
+
+div.authorization-page {
+    @apply desktop:px-4xl;
+}
+
+/*----------------------------------------------*/
+
+div.subscriber .wrapper {
+  @apply desktop:space-x-2.5xl px-5xl;
+}
+
+/*----------------------------------------------*/
+
+footer {
+  @apply large-desktop:pb-10xl;
+}
+
+/*----------------------------------------------*/
+
+.selectors-items button.bg-highlight {
+  @apply desktop:!px-xs desktop:text-medium;
+}
+
+/*----------------------------------------------*/
+
+.page-header {
+  @apply desktop:px-0;
+}
+
+main > .wrapper.max-w-wrapper-lg-sz > .wrapper.px-3xl {
+  @apply desktop:px-0;
+}

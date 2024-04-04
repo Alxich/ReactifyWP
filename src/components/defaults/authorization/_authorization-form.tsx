@@ -117,7 +117,7 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
               href="#"
               className="use-transition block border-b border-b-black text-inherit hover:border-b-accent hover:text-accent"
             >
-              Log in
+              Register now !
             </Link>
           ) : (
             <Link

@@ -5,12 +5,15 @@ const {
   styling: {
     customColors,
     wrapperWidth,
-    customWidth,
-    customHeight,
-    customBorderWidth,
     customFontSize,
     customSpacing,
     customBorderRadius,
+  },
+  codeVariables: {
+    customWidth,
+    customHeight,
+    customBorderWidth,
+    customScreens,
   },
 } = themeConfiguration;
 
@@ -23,6 +26,9 @@ const config: Config = {
   theme: {
     darkMode: "class",
     extend: {
+      screens: {
+        ...customScreens,
+      },
       colors: {
         ...customColors,
       },

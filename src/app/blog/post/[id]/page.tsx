@@ -7,7 +7,6 @@ import {
   PostWrpapper,
   PostHeader,
   Banner,
-  Tiptap,
   Button,
 } from "@/components";
 import { PostPreviewBlockProps } from "@/lib/types";

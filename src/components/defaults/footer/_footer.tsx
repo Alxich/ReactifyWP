@@ -57,9 +57,7 @@ const Footer: FC<FooterProps> = (props) => {
         </Container>
       )}
       <footer
-        className={classNames("footer w-full max-w-wrapper-lg-sz pt-7xl", {
-          "border-t border-t-black": !hideBorderAndSubscriber(),
-        })}
+        className={"footer w-full max-w-wrapper-lg-sz pt-7xl"}
       >
         {route.startsWith("/login") ||
           (route.startsWith("/register") && (

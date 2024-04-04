@@ -30,7 +30,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
         <div className="selectors flex flex-col items-start justify-start space-y-md">
           <SquaresSelector />
           <QuantitySelector />
-          <div className="item type-selctor-calc__vat flex w-full flex-row items-baseline justify-between">
+          <div className="item type-selctor-calc__vat flex w-full flex-row items-baseline justify-between desktop:flex-col">
             <div className="title">
               <h4 className="text-normal font-medium leading-normal ">
                 Price with VAT + delivery
