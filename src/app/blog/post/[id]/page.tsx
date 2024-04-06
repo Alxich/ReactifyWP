@@ -240,13 +240,21 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         title="Report this post ?"
         isClosed={BannerClosed}
         closeTheBanner={BannerCloseFunc}
-        className="space-y-xs"
+        className="space-y-xs tablet:space-y-lg"
         additionalChildren={
-          <div className="flex w-full flex-row items-center justify-end space-x-xs">
-            <Button formType="form__error" type="button">
+          <div className="flex w-full flex-row items-center justify-end space-x-xs tablet:flex-col tablet:justify-center tablet:space-x-0 tablet:space-y-lg">
+            <Button
+              formType="form__error"
+              type="button"
+              className="tablet:w-full"
+            >
               Yes, report this post
             </Button>
-            <Button formType="btn_action:post" type="button">
+            <Button
+              formType="btn_action:post"
+              type="button"
+              className="tablet:w-full"
+            >
               No, I change my mind
             </Button>
           </div>

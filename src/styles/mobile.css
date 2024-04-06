@@ -29,3 +29,25 @@
 main > .wrapper.max-w-wrapper-lg-sz > .wrapper.px-3xl {
   @apply desktop:px-0;
 }
+
+/*----------------------------------------------*/
+
+.comment-wrapper {
+  @apply small-laptop:px-md phone-portrait:px-sm
+}
+
+.comment-wrapper .comment-wrapper {
+  @apply tablet:px-sm
+}
+
+.comment-wrapper .comment-wrapper .comment-wrapper {
+  @apply tablet:px-xs
+}
+
+.comment-wrapper .comment-actions {
+  @apply space-x-xs
+}
+
+.comment-wrapper .comment-actions svg {
+  @apply tablet:w-4 tablet:h-4
+}

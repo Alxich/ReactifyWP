@@ -38,8 +38,8 @@ const PostContentBlock: FC<
         their consistent reference point, grids improve page readability and
         scannability and allow people to quickly get where they need to go.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
-        <div className="title px-11xl text-center font-bold">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
+        <div className="title px-11xl text-center font-bold small-laptop:px-0">
           <h5>
             Definition: A grid is made up of columns, gutters, and margins that
             provide a structure for the layout of elements on a page.
@@ -50,7 +50,7 @@ const PostContentBlock: FC<
           alt="image-post-regular"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Definition: A grid is made up of columns, gutters, and margins that
             provide a structure for the layout of elements on a page.
@@ -88,13 +88,13 @@ const PostContentBlock: FC<
         column, followed by secondary and tertiary stories, which take up the
         smaller column and modules on the right.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
           src={postContentImage2}
           alt="image-post-regular-2"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             The New York Times uses a hierarchical grid to achieve its
             newspaper-like reading experience. {"("}We highlighted the columns
@@ -112,13 +112,13 @@ const PostContentBlock: FC<
         user visually separate the different products. The margins are
         independently sized and are the same between the left and right sides.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
           src={postContentImage3}
           alt="image-post-regular-3"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Ritual’s four-column grid makes scanning products easy. {"("}We
             highlighted the columns in yellow, the gutters in blue, and the
@@ -135,13 +135,13 @@ const PostContentBlock: FC<
         consistently sized on the left and right of the design. Like in previous
         example, the gutters visually separate each element.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
           src={postContentImage4}
           alt="image-post-regular-4"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Behance’s design uses a modular grid, which allows users to easily
             browse. "("We highlighted the columns in yellow, the gutters in
@@ -159,13 +159,13 @@ const PostContentBlock: FC<
         more attention to some products over others. It is okay to break the
         grid every so often, as long as you have a valid reason for it.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
           src={postContentImage5}
           alt="image-post-regular-5"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Breaking the grid produces a chaotic browsing experience for users.
             "("We highlighted the columns in yellow, the gutters in blue, and
@@ -187,9 +187,9 @@ const PostContentBlock: FC<
           mobile so that the resulting layout has only 4 columns.
         </li>
       </ul>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image src={postContentImage6} alt="image-post-regular-6" />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             At the mobile size, Behance’s one-column grid {"("}left{")"} was
             reflowed into a four-column grid structure {"("}right{")"}.
@@ -229,13 +229,13 @@ const PostContentBlock: FC<
         like Sketch and Figma have quick and easy ways to set up and edit your
         grid, even after you have started designing.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
           src={postContentImage7}
           alt="image-post-regular-7"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Easily set the number of columns, the gutter size, and margin size
             in Figma.
@@ -247,13 +247,13 @@ const PostContentBlock: FC<
         should remain empty as you place elements on the grid in order to
         clearly separate and align content and elements.
       </p>
-      <div className="image w-full space-y-sm px-3xl">
+      <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
           src={postContentImage8}
           alt="image-post-regular-8"
           className="overflow-hidden rounded-md"
         />
-        <div className="text-additional px-11xl text-center">
+        <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Content or elements should be placed within and across columns, not
             gutters.

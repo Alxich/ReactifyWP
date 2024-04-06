@@ -13,7 +13,10 @@ const Comments: FC<CommentsWrapperProps> = ({
   showEditor,
 }: CommentsWrapperProps) => {
   return (
-    <Container width="md" classNames="flex flex-col pt-7xl space-y-3xl !mt-0">
+    <Container
+      width="md"
+      classNames="flex flex-col pt-7xl space-y-3xl !mt-0 small-laptop:space-y-lg"
+    >
       {showTitle !== false && (
         <div className="title text-2xl font-semibold ">
           <h3 className="text-inherit">
@@ -23,7 +26,7 @@ const Comments: FC<CommentsWrapperProps> = ({
       )}
       <Container
         width="md"
-        classNames="flex flex-col justify-start items-center space-y-xl"
+        classNames="flex flex-col justify-start items-center space-y-xl small-laptop:space-y-lg"
       >
         {showEditor !== false && (
           <CommentWrapper

@@ -14,13 +14,16 @@ const PostWrpapper: FC<PostWrapperProps> = ({
   postsData,
 }: PostWrapperProps) => {
   return (
-    <Container width="md" classNames="space-x-3xl flex flex-row pt-7xl">
-      <div className="content w-71/100 space-y-xl">
+    <Container
+      width="md"
+      classNames="space-x-3xl flex flex-row pt-7xl laptop:space-x-lg small-laptop:flex-col small-laptop:!space-x-0 small-laptop:space-y-lg"
+    >
+      <div className="content w-71/100 space-y-xl small-laptop:w-full">
         <PostContentBlock />
         <PostActions />
         <Comments />
       </div>
-      <div className="sidebar sticky top-xl h-fit w-29/100 space-y-xl">
+      <div className="sidebar sticky top-xl h-fit w-29/100 space-y-xl small-laptop:w-full small-laptop:space-y-lg">
         <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
           <h4 className="text-inherit">Recent blog posts</h4>
         </div>
