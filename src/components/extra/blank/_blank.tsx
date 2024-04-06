@@ -20,7 +20,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         "flex flex-col justify-center items-start post py-7xl",
         {
           "space-y-7xl": showSlogan === false,
-          "pb-0": hasContacts === true,
+          "!pb-0": hasContacts === true,
         },
       )}
       width="full"
@@ -41,7 +41,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
           </div>
         </div>
         {showSlogan !== false && (
-          <div className="theme-slogan">
+          <div className="theme-slogan tablet:hidden">
             <p className="whitespace-nowrap text-7xl font-bold uppercase writing-sd-rl">
               Have you heard about Reactify
               <span className="mt-xs rounded-sm bg-black px-xs py-sm text-white">

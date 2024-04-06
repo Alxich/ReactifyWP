@@ -36,7 +36,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
     >
       <div
         className={classNames(
-          "thumbnail overflow-hidden rounded-md border border-gray/20",
+          "thumbnail overflow-hidden rounded-md border border-gray/20 tablet:!h-ctm-10 small-laptop:w-full",
           {
             "min-w-[320px]": view && view == "row",
             "w-full": view && view == "col",
@@ -60,7 +60,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
           },
         )}
       >
-        <div className="content w-full flex-col items-start justify-start space-y-sm">
+        <div className="content w-full flex-col items-start justify-start space-y-sm desktop:space-y-xxxs">
           <div className="short-info flex w-full flex-row items-baseline justify-between">
             {breadcrumbs && (
               <p className="w-full text-medium leading-normal text-gray">

@@ -9,7 +9,7 @@ interface AuthorizationFormProps {
 
 const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
   return (
-    <form className="flex w-full flex-col space-y-lg px-9.5xl py-10xl">
+    <form className="flex w-full flex-col space-y-lg px-9.5xl py-10xl small-laptop:px-lg tablet-portrait:py-lg phone-portrait:!px-0">
       <div className="title w-full text-center text-5xl font-bold leading-normal">
         <h1 className="text-inherit">Log In</h1>
       </div>

@@ -11,21 +11,21 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "contacts flex w-full flex-col items-center justify-center space-y-5xl border-t border-t-black py-7xl",
+        "contacts flex w-full flex-col items-center justify-center space-y-5xl border-t border-t-black py-7xl phone-portrait:pb-0",
         (className !== undefined || null) && className,
       )}
     >
-      <div className="description flex w-full flex-col items-center justify-center space-y-xl px-7.5xl">
+      <div className="description flex w-full flex-col items-center justify-center space-y-xl px-7.5xl tablet:px-0">
         <h2 className="text-center text-6xl font-semibold !leading-none ">
           Subscribe to learn about new product features
         </h2>
-        <p className="w-3/4 text-center text-xl ">
+        <p className="w-3/4 text-center text-xl tablet:w-full">
           Subscribe to learn about new product features, the latest in
           technology, solutions, and updates. You will get a great benefit from
           our last creators ideas everyday!
         </p>
       </div>
-      <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl">
+      <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl tablet:px-0 phone-portrait:grid-rows-4 phone-portrait:grid-cols-1">
         <label
           htmlFor="user-mail"
           className="flex w-full flex-col items-start justify-start"
@@ -92,7 +92,7 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
 
         <label
           htmlFor="submit-btn"
-          className="col-span-2 flex w-full flex-col items-center justify-center space-y-md"
+          className="col-span-2 flex w-full flex-col items-center justify-center space-y-md phone-portrait:col-auto"
         >
           <span className="text-medium text-gray">
             We care about your data in our{" "}
