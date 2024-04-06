@@ -10,19 +10,19 @@ interface ProductDetailsProps {}
 
 const ProductDetails: FC<ProductDetailsProps> = (props) => {
   return (
-    <Container width="md" classNames="flex flex-row pt-7xl space-x-3xl">
-      <div className="thumbnail product-thumbnail relative h-fit w-1/2 cursor-pointer rounded-lg border border-gray bg-[#fff]">
+    <Container width="md" classNames="flex flex-row pt-7xl space-x-3xl tablet:flex-col tablet:space-x-0 tablet:space-y-lg tablet:pt-0">
+      <div className="thumbnail product-thumbnail relative h-fit w-1/2 tablet:mx-auto tablet:w-full tablet:max-w-[360px] cursor-pointer rounded-lg border border-gray bg-[#fff]">
         <Image src={VansProductImage} alt="product-image-container" />
         <div className="absolute right-lg top-lg z-10">
           <MagnifyingGlassIcon className="w-xl " />
         </div>
       </div>
-      <div className="details product details flex w-1/2 flex-col items-start justify-start space-y-md child:w-full">
+      <div className="details product details flex w-1/2 tablet:w-full flex-col items-start justify-start space-y-md child:w-full">
         <div className="title-and-price flex flex-row items-baseline justify-between">
           <h2 className="text-2xl font-normal ">
             Trainers <span className="font-black">Vans SK8-HI</span>
           </h2>
-          <p className="price text-normal font-semibold text-highlight">
+          <p className="price text-normal font-semibold text-highlight phone-portrait:hidden">
             £75.00
           </p>
         </div>

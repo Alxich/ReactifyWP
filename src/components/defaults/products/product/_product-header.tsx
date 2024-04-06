@@ -8,7 +8,7 @@ interface ProductHeaderProps {}
 const ProductHeader: FC<ProductHeaderProps> = ({}: ProductHeaderProps) => {
   return (
     <Container
-      classNames="flex flex-row justify-between items-center"
+      classNames="flex flex-row justify-between items-center tablet:flex-col tablet:items-start tablet:space-y-lg"
       width="md"
     >
       <Breadcrumbs />
