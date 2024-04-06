@@ -26,9 +26,9 @@ const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
         </ul>
       </li>
       <li className="account-nav wp-border use-transition group flex cursor-pointer items-center justify-between rounded-full px-md py-xs hover:bg-black">
-        <UserIcon className={`mr-xs ${userIconStyle}`} />
+        <UserIcon className={`mr-xs laptop:mr-0 ${userIconStyle}`} />
         <p
-          className={`name text-normal font-medium ${transitionSetup} group-hover:text-white`}
+          className={`name text-normal font-medium ${transitionSetup} group-hover:text-white laptop:hidden`}
         >
           John Doe
         </p>

@@ -16,7 +16,7 @@ const PageHeaderUser: FC<PageHeaderUserProps> = ({
   description,
 }) => {
   return (
-    <div className="page-header w-full border-b border-b-black px-3xl py-7xl">
+    <div className="page-header w-full border-b border-b-black px-3xl py-7xl desktop:px-0">
       <Container
         width="sm"
         classNames="mx-auto flex flex-row justify-center items-center space-x-7xl"

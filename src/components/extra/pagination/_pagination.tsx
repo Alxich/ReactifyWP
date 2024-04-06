@@ -29,7 +29,7 @@ const Pagination: FC<PaginationProps> = ({
       <ButtonNavigation previous />
       <div className="navigation flex flex-row items-baseline justify-center space-x-xxxs">
         {pageNumbers.map((item, key) => {
-          item;
+          const isFirstThree = key < 3; // Check if it's one of the first three elements
 
           return (
             <div
@@ -40,10 +40,12 @@ const Pagination: FC<PaginationProps> = ({
                   : item !== "..."
                     ? "text-gray hover:bg-highlight-definition hover:text-highlight active:bg-highlight-definition"
                     : "text-gray"
+              } ${
+                isFirstThree ? "tablet-portrait:flex" : "tablet-portrait:hidden"
               }`}
               key={`${item}__${key}`}
             >
-              <p className="use-transition text-medium font-semibold  text-inherit">
+              <p className="use-transition text-medium font-semibold text-inherit">
                 {item}
               </p>
             </div>

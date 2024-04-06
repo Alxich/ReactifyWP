@@ -11,7 +11,7 @@ const PostAll: FC<PostAllProps> = ({ postsData }: PostAllProps) => {
   return (
     <Container
       width="md"
-      classNames="grid grid-cols-3 auto-rows-max auto-cols-max gap-3xl"
+      classNames="grid grid-cols-3 auto-rows-max auto-cols-max gap-3xl laptop:grid-cols-2 tablet:!grid-cols-1 tablet:gap-lg"
     >
       {postsData.map(
         ({ view, author, date, image, title, texts, tags }, key) => (

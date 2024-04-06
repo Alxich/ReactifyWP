@@ -42,6 +42,7 @@ const customScreens = {
   "phone-portrait": { max: "360px" }, // For portrait mode on the phone
   tablet: { max: "640px" }, // for a tablet
   "tablet-portrait": { max: "768px" }, // For portrait mode on a tablet
+  "small-laptop": { max: "900px" }, // for a small laptop
   laptop: { max: "1024px" }, // for a laptop
   desktop: { max: "1280px" }, // for the desktop
   "large-desktop": { max: "1400px" }, // for a large desktop

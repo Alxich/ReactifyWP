@@ -11,9 +11,11 @@ interface ButtonProps {
     | "post__action:post-actions"
     | "comment"
     | "btn__action:load-more"
-    | "btn_action:post";
+    | "btn_action:post"
+    | "btn_menu";
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  children: ReactNode;
+  isActive?: boolean;
+  children?: ReactNode;
   className?: string;
 }
 
@@ -22,6 +24,7 @@ const Button: FC<ButtonProps> = ({
   type,
   children,
   formType,
+  isActive,
   onClick,
   className,
 }: ButtonProps) => {
@@ -68,7 +71,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            " post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:",
+            " post__action hover: border-black bg-black px-xxs py-xxs text-white hover:bg-transparent",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -131,6 +134,30 @@ const Button: FC<ButtonProps> = ({
           onClick={onClick}
         >
           {children}
+        </button>
+      );
+
+    case "btn_menu":
+      const genericHamburgerLine = `h-1 w-8 my-[2px] rounded-full bg-black transform use-transition`;
+
+      return (
+        <button
+          className="group h-12 w-12 flex-col items-center justify-center rounded hidden tablet-portrait:flex"
+          onClick={onClick}
+        >
+          <div
+            className={`${genericHamburgerLine} ${
+              isActive && "translate-y-[8px] rotate-45"
+            }`}
+          />
+          <div
+            className={`${genericHamburgerLine} ${isActive && "opacity-0"}`}
+          />
+          <div
+            className={`${genericHamburgerLine} ${
+              isActive && "-translate-y-[8px] -rotate-45"
+            }`}
+          />
         </button>
       );
 

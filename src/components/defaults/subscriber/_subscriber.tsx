@@ -10,9 +10,9 @@ const Subscriber: FC<SubscriberProps> = (props) => {
     <div className="subscriber w-full rounded-lg bg-black py-7xl">
       <Container
         width="sm"
-        classNames="flex flex-row items-start px-xl py-7xl space-x-10xl border-y border-gray"
+        classNames="flex flex-row items-start px-xl py-7xl space-x-10xl tablet:!px-md desktop:px-5xl desktop:space-x-2.5xl border-y border-gray small-laptop:flex-col small-laptop:!space-x-0 small-laptop:justify-center small-laptop:items-center small-laptop:space-y-lg"
       >
-        <div className="short-text w-1/2 space-y-sm">
+        <div className="short-text w-1/2 space-y-sm small-laptop:w-full">
           <h4 className="text-2xl font-semibold text-white">
             Subscribe to learn about new product features
           </h4>
@@ -22,7 +22,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
             from our last creators ideas everyday!
           </p>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 small-laptop:w-full">
           <form className="w-full">
             <label
               htmlFor="user-mail"
@@ -31,7 +31,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
               <span className="mb-md text-xl font-semibold text-white">
                 Please let us share a great posts with you
               </span>
-              <div className="mb-xs flex w-full flex-row space-x-4">
+              <div className="mb-xs flex w-full flex-row space-x-4 tablet:flex-col tablet:space-x-0 tablet:space-y-lg">
                 <input
                   id="user-mail"
                   name="user-mail"

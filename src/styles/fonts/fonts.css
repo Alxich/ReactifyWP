@@ -223,20 +223,40 @@
 
 @media only screen and (max-width: 1400px) {
   :root {
---font-size-small: 0.5625rem; /* 9px */
-  --font-size-base: 0.675rem; /* 10.8px */
-  --font-size-medium: 0.7875rem; /* 12.6px */
-  --font-size-normal: 0.9rem; /* 14.4px */
-  --font-size-large: 1.0125rem; /* 16.2px */
-  --font-size-xl: 1.125rem; /* 18px */
-  --font-size-2xl: 1.35rem; /* 21.6px */
-  --font-size-3xl: 1.8rem; /* 28.8px */
-  --font-size-4xl: 2.025rem; /* 32.4px */
-  --font-size-5xl: 2.25rem; /* 36px */
-  --font-size-6xl: 2.7rem; /* 43.2px */
-  --font-size-7xl: 3.375rem; /* 54px */
-  --font-size-8xl: 4.725rem; /* 75.6px */
-  --font-size-9xl: 7.2rem; /* 115.2px */
-  --font-size-10xl: 14.906rem; /* 238.5px */
+    --font-size-small: 0.625rem; /* 10px */
+    --font-size-base: 0.75rem; /* 12px */
+    --font-size-medium: 0.875rem; /* 14px */
+    --font-size-normal: 1rem; /* 16px */
+    --font-size-large: 1.125rem; /* 18px */
+    --font-size-xl: 1.175rem; /* 18.8px */
+    --font-size-2xl: 1.35rem; /* 21.6px */
+    --font-size-3xl: 1.8rem; /* 28.8px */
+    --font-size-4xl: 2.025rem; /* 32.4px */
+    --font-size-5xl: 2.25rem; /* 36px */
+    --font-size-6xl: 2.7rem; /* 43.2px */
+    --font-size-7xl: 3.375rem; /* 54px */
+    --font-size-8xl: 4.725rem; /* 75.6px */
+    --font-size-9xl: 7.2rem; /* 115.2px */
+    --font-size-10xl: 14.906rem; /* 238.5px */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --font-size-small: 0.5625rem; /* 9px */
+    --font-size-base: 0.675rem; /* 10.8px */
+    --font-size-medium: 0.6375rem; /* 10.2px */
+    --font-size-normal: 0.75rem; /* 12px */
+    --font-size-large: 0.8625rem; /* 13.8px */
+    --font-size-xl: 0.975rem; /* 15.6px */
+    --font-size-2xl: 1.2rem; /* 19.2px */
+    --font-size-3xl: 1.65rem; /* 26.4px */
+    --font-size-4xl: 1.875rem; /* 30px */
+    --font-size-5xl: 2.1rem; /* 33.6px */
+    --font-size-6xl: 2.15rem; /* 34.4px */
+    --font-size-7xl: 2.45rem; /* 39.2px */
+    --font-size-8xl: 3.25rem; /* 52px */
+    --font-size-9xl: 4rem; /* 64px */
+    --font-size-10xl: 12.75rem; /* 204px */
   }
 }
