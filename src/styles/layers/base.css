@@ -1,13 +1,21 @@
 @tailwind base;
 
 @layer base {
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    @apply text-normal;
+  }
+
   body {
     @apply bg-white text-black;
   }
 
   input:not([class*="bg-"]),
   textarea:not([class*="bg-"]) {
-    @apply !bg-transparent
+    @apply !bg-transparent;
   }
 
   input[type="number"],

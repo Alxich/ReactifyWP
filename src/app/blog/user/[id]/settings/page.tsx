@@ -15,8 +15,8 @@ const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
         <h4 className="text-inherit">Explore all categories</h4>
       </div>
       <form className="settings-form flex w-full flex-col items-center justify-center gap-y-7xl">
-        <div className="form-inputs-container flex w-full items-start justify-center gap-x-xs">
-          <div className="container flex w-1/2 flex-col items-start justify-start space-y-lg">
+        <div className="form-inputs-container flex w-full items-start justify-center gap-x-xs tablet:flex-col tablet:gap-x-0 tablet:gap-y-7xl">
+          <div className="container flex w-1/2 flex-col items-start justify-start space-y-lg tablet:w-full">
             <h5 className="inline-block w-full border-b-2 border-b-black pb-xxs text-normal font-medium ">
               Details
             </h5>
@@ -51,7 +51,7 @@ const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
               />
             </div>
           </div>
-          <div className="container flex w-1/2 flex-col items-start justify-start space-y-lg">
+          <div className="container flex w-1/2 flex-col items-start justify-start space-y-lg tablet:w-full">
             <h5 className="inline-block w-full border-b-2 border-b-black pb-xxs text-normal font-medium ">
               Passwords
             </h5>
@@ -73,7 +73,7 @@ const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="form-actions flex w-full items-center justify-end space-x-lg">
+        <div className="form-actions flex w-full items-center justify-end space-x-lg tablet:justify-between">
           <Button type="submit" formType="form__error">
             Delete my account
           </Button>
