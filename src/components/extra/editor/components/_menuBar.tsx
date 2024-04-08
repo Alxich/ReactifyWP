@@ -36,7 +36,7 @@ const MenuBar: FC<IMenuBarProps> = ({ editor }) => {
   };
 
   return (
-    <div className="menu-bar flex flex-wrap items-center gap-1.5">
+    <div className="menu-bar flex-drow-wrap items-center gap-1.5">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}

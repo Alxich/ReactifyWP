@@ -142,7 +142,7 @@ const Button: FC<ButtonProps> = ({
 
       return (
         <button
-          className="group h-12 w-12 flex-col items-center justify-center rounded hidden tablet-portrait:flex"
+          className="flex-ccenter group hidden h-12 w-12 flex-col rounded tablet-portrait:flex"
           onClick={onClick}
         >
           <div

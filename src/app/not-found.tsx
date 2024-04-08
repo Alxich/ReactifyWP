@@ -17,7 +17,7 @@ const NotFoundPage: FC<NotFoundPageProps> = (props) => {
       <Breadcrumbs />
       <Container
         width="sm"
-        classNames="flex flex-col jusify-center items-center w-full pt-[20vh] tablet:pt-[10vh]"
+        classNames="flex-dcol jusify-center items-center w-full pt-[20vh] tablet:pt-[10vh]"
       >
         <div className="title text-center text-[30vh] font-semibold leading-none child:text-inherit tablet:text-[20vh]">
           <h1>404</h1>

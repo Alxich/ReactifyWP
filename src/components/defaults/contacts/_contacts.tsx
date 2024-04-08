@@ -11,12 +11,12 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "contacts flex w-full flex-col items-center justify-center space-y-5xl border-t border-t-black py-7xl phone-portrait:pb-0",
+        "contacts flex-dcol flex-ccenter w-full space-y-5xl border-t border-t-black py-7xl phone-portrait:pb-0",
         (className !== undefined || null) && className,
       )}
     >
-      <div className="description flex w-full flex-col items-center justify-center space-y-xl px-7.5xl tablet:px-0">
-        <h2 className="text-center text-6xl font-semibold !leading-none ">
+      <div className="description flex-dcol flex-ccenter w-full space-y-xl px-7.5xl tablet:px-0">
+        <h2 className="text-center text-6xl font-semibold !leading-none">
           Subscribe to learn about new product features
         </h2>
         <p className="w-3/4 text-center text-xl tablet:w-full">
@@ -25,12 +25,12 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
           our last creators ideas everyday!
         </p>
       </div>
-      <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl tablet:px-0 phone-portrait:grid-rows-4 phone-portrait:grid-cols-1">
+      <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl phone-portrait:grid-cols-1 phone-portrait:grid-rows-4 tablet:px-0">
         <label
           htmlFor="user-mail"
-          className="flex w-full flex-col items-start justify-start"
+          className="flex-dcol w-full items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium ">Email</span>
+          <span className="mb-xxs text-medium font-medium">Email</span>
           <div className="flex-column flex w-full">
             <input
               id="user-mail"
@@ -44,9 +44,9 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
 
         <label
           htmlFor="user-message"
-          className="flex w-full flex-col items-start justify-start"
+          className="flex-dcol w-full items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium ">Message</span>
+          <span className="mb-xxs text-medium font-medium">Message</span>
           <div className="flex-column flex w-full">
             <input
               id="user-message"
@@ -60,9 +60,9 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
 
         <label
           htmlFor="user-name"
-          className="flex w-full flex-col items-start justify-start"
+          className="flex-dcol w-full items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium ">Name</span>
+          <span className="mb-xxs text-medium font-medium">Name</span>
           <div className="flex-column flex w-full">
             <input
               id="user-name"
@@ -76,9 +76,9 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
 
         <label
           htmlFor="user-surname"
-          className="flex w-full flex-col items-start justify-start"
+          className="flex-dcol w-full items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium ">Surname</span>
+          <span className="mb-xxs text-medium font-medium">Surname</span>
           <div className="flex-column flex w-full">
             <input
               id="user-surname"
@@ -92,7 +92,7 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
 
         <label
           htmlFor="submit-btn"
-          className="col-span-2 flex w-full flex-col items-center justify-center space-y-md phone-portrait:col-auto"
+          className="flex-dcol flex-ccenter col-span-2 w-full space-y-md phone-portrait:col-auto"
         >
           <span className="text-medium text-gray">
             We care about your data in our{" "}

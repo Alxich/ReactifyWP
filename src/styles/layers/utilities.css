@@ -1,6 +1,62 @@
 @tailwind utilities;
 
 @layer utilities {
+  /**
+  *
+  * Text utilities and common styles
+  *
+  */
+
+  .fbold-center {
+    @apply text-center font-bold;
+  }
+
+  .f2xl-semibold {
+    @apply text-2xl font-semibold
+  }
+
+  /**
+  *
+  * Default utilities and common styles
+  *
+  */
+
+  .wrapper-conspace {
+    @apply py-7xl px-3xl
+  }
+
+  .flex-dcol {
+    @apply flex flex-col;
+  }
+
+  .flex-drow {
+    @apply flex flex-row;
+  }
+
+  .flex-drow-wrap {
+    @apply flex-drow flex-wrap
+  }
+
+  .flex-tcenter {
+    @apply items-start justify-center;
+  }
+
+  .flex-tspace {
+    @apply items-start justify-between;
+  }
+
+  .flex-cend {
+    @apply items-center justify-end;
+  }
+
+  .flex-ccenter {
+    @apply items-center justify-center
+  }
+
+  .gap-tag {
+    @apply gap-xs
+  }
+
   .underline-hover {
     @apply relative block w-fit after:absolute after:block after:h-[3px] after:w-full after:origin-center after:scale-x-0 after:bg-black after:transition after:duration-300 after:content-[''] after:hover:scale-x-100;
   }

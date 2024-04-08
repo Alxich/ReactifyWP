@@ -21,7 +21,7 @@ const AboutPage: FC<AboutPageProps> = (props) => {
         scannability and allow people to quickly get where they need to go.
       </p>
       <div className="image w-full space-y-sm px-3xl">
-        <div className="title px-11xl text-center font-bold">
+        <div className="title fbold-center px-11xl">
           <h5>
             Definition: A grid is made up of columns, gutters, and margins that
             provide a structure for the layout of elements on a page.

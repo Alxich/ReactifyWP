@@ -8,11 +8,11 @@ interface PostHeaderProps {}
 const PostHeader: FC<PostHeaderProps> = ({}: PostHeaderProps) => {
   return (
     <Container
-      classNames="flex flex-row justify-between items-center tablet:flex-col tablet:items-start tablet:space-y-lg"
+      classNames="flex-drow justify-between items-center tablet:flex-col tablet:items-start tablet:space-y-lg"
       width="md"
     >
       <Breadcrumbs />
-      <div className="buttons flex flex-row items-center justify-center space-x-xs">
+      <div className="buttons flex-drow flex-ccenter space-x-xs">
         <Button type="button" formType="post__action:breadcrumbs">
           <TrashIcon className="mr-xs h-full w-auto text-inherit" />
           Delete

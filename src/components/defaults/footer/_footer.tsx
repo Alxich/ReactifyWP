@@ -58,13 +58,13 @@ const Footer: FC<FooterProps> = (props) => {
       )}
       <footer className="footer w-full max-w-wrapper-lg-sz pt-7xl large-desktop:pb-10xl">
         <Container
-          classNames="head-wrapper flex flex-row pb-7xl tablet-portrait:hidden"
+          classNames="head-wrapper flex-drow pb-7xl tablet-portrait:hidden"
           width="sm"
         >
           <div className="navigation flex w-3/5 flex-row items-center justify-between laptop:w-full">
             {navObjOne && (
-              <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                <li className="title mb-xxs font-semibold ">
+              <ul className="nav-list flex-dcol w-full items-start justify-start space-y-sm">
+                <li className="title mb-xxs font-semibold">
                   {navObjOne.title}
                 </li>
                 {navObjOne.navLinks.map((item, key) => (
@@ -78,8 +78,8 @@ const Footer: FC<FooterProps> = (props) => {
               </ul>
             )}
             {navObjTwo && (
-              <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                <li className="title mb-xxs font-semibold ">
+              <ul className="nav-list flex-dcol w-full items-start justify-start space-y-sm">
+                <li className="title mb-xxs font-semibold">
                   {navObjTwo.title}
                 </li>
                 {navObjTwo.navLinks.map((item, key) => (
@@ -93,8 +93,8 @@ const Footer: FC<FooterProps> = (props) => {
               </ul>
             )}
             {navObjThree && (
-              <ul className="nav-list flex w-full flex-col items-start justify-start space-y-sm">
-                <li className="title mb-xxs font-semibold ">
+              <ul className="nav-list flex-dcol w-full items-start justify-start space-y-sm">
+                <li className="title mb-xxs font-semibold">
                   {navObjThree.title}
                 </li>
                 {navObjThree.navLinks.map((item, key) => (
@@ -109,7 +109,7 @@ const Footer: FC<FooterProps> = (props) => {
             )}
           </div>
           <div className="highlight-banner w-2/5 laptop:hidden">
-            <p className="text-4xl font-bold uppercase ">
+            <p className="text-4xl font-bold uppercase">
               As one chapter ends, the story{"'"}s essence lingers in the
               margins.
             </p>
@@ -117,11 +117,11 @@ const Footer: FC<FooterProps> = (props) => {
         </Container>
         <div className="bottom-wrapper border-t border-t-black pt-2.5xl">
           <Container
-            classNames="flex flex-row justify-between items-center tablet-portrait:flex-col tablet-portrait:space-y-lg"
+            classNames="flex-drow justify-between items-center tablet-portrait:flex-col tablet-portrait:space-y-lg"
             width="sm"
           >
             <div className="privacy-rooles space-y-2.5xl tablet-portrait:w-full tablet-portrait:space-y-lg">
-              <p className="text-medium font-normal ">
+              <p className="text-medium font-normal">
                 © 2023 ReactifyWP - Wordpress blog project by Alxich. <br />
                 The rights belong to the authors of the content and libraries
                 used in this template.
@@ -132,7 +132,7 @@ const Footer: FC<FooterProps> = (props) => {
                 <SvgIcons type="Google" />
                 <SvgIcons type="Github" />
               </div>
-              <p className="text-medium font-normal ">
+              <p className="text-medium font-normal">
                 The code and design of this template are copyrighted by{" "}
                 <Link href="#" className="use-transition hover:text-highlight">
                   @Alxich
@@ -140,7 +140,7 @@ const Footer: FC<FooterProps> = (props) => {
                 .
               </p>
             </div>
-            <div className="socials svg-animated flex flex-row space-x-xl child:cursor-pointer tablet-portrait:hidden">
+            <div className="socials svg-animated flex-drow space-x-xl child:cursor-pointer tablet-portrait:hidden">
               <SvgIcons type="Discord" />
               <SvgIcons type="Figma" />
               <SvgIcons type="Google" />

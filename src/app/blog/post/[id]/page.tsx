@@ -180,7 +180,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
   return (
     <>
       <Container
-        classNames="flex flex-col justify-center items-start post py-7xl px-3xl"
+        classNames="flex-dcol flex-tcenter post wrapper-conspace"
         width="md"
       >
         <PostHeader />
@@ -193,7 +193,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         closeTheBanner={BannerCloseFunc}
         className="space-y-7xl"
         additionalChildren={
-          <Button formType="btn_action:post" type="button" className="ml-auto ">
+          <Button formType="btn_action:post" type="button" className="ml-auto">
             Publicate this post
           </Button>
         }
@@ -215,7 +215,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         closeTheBanner={BannerCloseFunc}
         className="space-y-xs"
         additionalChildren={
-          <div className="flex w-full flex-row items-center justify-end space-x-xs">
+          <div className="flex-drow w-full flex-cend space-x-xs">
             <Button formType="form__error" type="button">
               Yes, please delete it
             </Button>
@@ -242,7 +242,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         closeTheBanner={BannerCloseFunc}
         className="space-y-xs tablet:space-y-lg"
         additionalChildren={
-          <div className="flex w-full flex-row items-center justify-end space-x-xs tablet:flex-col tablet:justify-center tablet:space-x-0 tablet:space-y-lg">
+          <div className="flex-drow flex-cend w-full space-x-xs tablet:flex-col tablet:justify-center tablet:space-x-0 tablet:space-y-lg">
             <Button
               formType="form__error"
               type="button"
@@ -260,6 +260,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
           </div>
         }
       >
+        {/* CHECK THIS CODE: Unknown !important use */}
         <h3 className="!text-2xl !leading-none">
           Please be sure to not spam the report
         </h3>

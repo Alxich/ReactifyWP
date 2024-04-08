@@ -45,7 +45,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
       />
       <div
         className="
-      post-in-col group flex flex-col space-y-3xl tablet:!flex-col tablet:!space-x-0 tablet:!space-y-lg laptop:flex-row laptop:items-start
+      post-in-col flex-dcol group space-y-3xl tablet:!flex-col tablet:!space-x-0 tablet:!space-y-lg laptop:flex-row laptop:items-start
       laptop:!space-y-0 laptop:space-x-lg desktop:space-y-lg
       "
       >

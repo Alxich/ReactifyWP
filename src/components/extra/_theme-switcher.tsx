@@ -48,7 +48,7 @@ const ThemeSwither: FC<ThemeSwitherProps> = (props) => {
   return (
     <div
       className={classNames(
-        "theme-switcher use-transition group fixed bottom-xl left-xl tablet:left-sm tablet:bottom-lg flex h-9xl w-9xl cursor-pointer items-center justify-center rounded-full border-4 border-black shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]",
+        "theme-switcher use-transition flex-ccenter group fixed bottom-xl left-xl flex h-9xl w-9xl cursor-pointer rounded-full border-4 border-black shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] tablet:bottom-lg tablet:left-sm",
         {
           "dark bg-black hover:bg-white": theme === "dark",
           "light border-black bg-white hover:bg-black": theme === "light",

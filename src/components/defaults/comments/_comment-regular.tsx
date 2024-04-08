@@ -22,9 +22,9 @@ const CommentRegular: FC<CommentWrapperProps> = ({
   children,
 }: CommentWrapperProps) => {
   return (
-    <div className="comment-wrapper flex w-full flex-col items-start justify-center space-y-md rounded-lg border border-black border-opacity-25 p-xl child:w-full">
+    <div className="comment-wrapper flex-dcol flex-tcenter w-full space-y-md rounded-lg border border-black border-opacity-25 p-xl child:w-full">
       <div className="author flex items-center justify-start space-x-xs">
-        <div className="thumbnail h-5xl w-5xl cursor-pointer overflow-hidden rounded-full ">
+        <div className="thumbnail h-5xl w-5xl cursor-pointer overflow-hidden rounded-full">
           <Image src={thumbnail1} alt="author-comment-thumbnail" />
         </div>
         <div
@@ -38,7 +38,7 @@ const CommentRegular: FC<CommentWrapperProps> = ({
       <div className={"content text-normal font-normal text-gray"}>
         <p>{content}</p>
       </div>
-      <div className=" flex w-full flex-row items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
+      <div className=" flex-drow w-full items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
         <div className="actions comment-actions svg-animated-stroke">
           <div className="item h-2.5xl w-2.5xl bg-gray/5 p-xxs transition duration-300 hover:bg-gray/15">
             <ArrowUpIcon width={20} height={20} />

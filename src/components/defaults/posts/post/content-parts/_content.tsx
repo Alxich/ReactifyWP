@@ -17,7 +17,7 @@ const PostContentBlock: FC<
   PostContentBlockProps
 > = ({}: PostContentBlockProps) => {
   return (
-    <div className="post-content-text flex w-full flex-col items-center justify-center space-y-sm">
+    <div className="post-content-text flex-dcol flex-ccenter w-full space-y-sm">
       <div className="banner mb-7xl h-auto w-full overflow-hidden rounded-md">
         <Image src={postContentBanner} alt="post-content-banner-meet" />
       </div>
@@ -39,7 +39,7 @@ const PostContentBlock: FC<
         scannability and allow people to quickly get where they need to go.
       </p>
       <div className="image w-full space-y-sm px-3xl tablet:px-0">
-        <div className="title px-11xl text-center font-bold small-laptop:px-0">
+        <div className="title fbold-center px-11xl small-laptop:px-0">
           <h5>
             Definition: A grid is made up of columns, gutters, and margins that
             provide a structure for the layout of elements on a page.

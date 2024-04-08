@@ -9,15 +9,15 @@ interface AuthorizationFormProps {
 
 const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
   return (
-    <form className="flex w-full flex-col space-y-lg px-9.5xl py-10xl small-laptop:px-lg tablet-portrait:py-lg phone-portrait:!px-0">
+    <form className="flex-dcol w-full space-y-lg px-9.5xl py-10xl phone-portrait:!px-0 tablet-portrait:py-lg small-laptop:px-lg">
       <div className="title w-full text-center text-5xl font-bold leading-normal">
         <h1 className="text-inherit">Log In</h1>
       </div>
       <label
         htmlFor="user-mail"
-        className="flex w-full flex-col items-start justify-start"
+        className="flex-dcol w-full items-start justify-start"
       >
-        <span className="mb-xxs text-medium font-medium ">Email</span>
+        <span className="mb-xxs text-medium font-medium">Email</span>
         <div className="flex-column flex w-full">
           <input
             id="user-mail"
@@ -30,9 +30,9 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
       </label>
       <label
         htmlFor="user-mail"
-        className="flex w-full flex-col items-start justify-start"
+        className="flex-dcol w-full items-start justify-start"
       >
-        <span className="mb-xxs text-medium font-medium ">Password</span>
+        <span className="mb-xxs text-medium font-medium">Password</span>
         <div className="flex-column flex w-full">
           <input
             id="user-password"
@@ -46,9 +46,9 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
       {type === "register" && (
         <label
           htmlFor="user-mail"
-          className="flex w-full flex-col items-start justify-start"
+          className="flex-dcol w-full items-start justify-start"
         >
-          <span className="mb-xxs text-medium font-medium ">
+          <span className="mb-xxs text-medium font-medium">
             Repeat password
           </span>
           <div className="flex-column flex w-full">
@@ -88,15 +88,15 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
           )}
         </label>
       </div>
-      <div className="additional-login flex w-full flex-col items-center justify-center space-y-lg">
-        <div className="title flex w-full flex-row items-center justify-between space-x-lg">
+      <div className="additional-login flex-dcol flex-ccenter w-full space-y-lg">
+        <div className="title flex-drow w-full items-center justify-between space-x-lg">
           <span className="display-block h-[1px] w-full bg-gray" />
           <p className="font-regular whitespace-nowrap text-medium text-gray">
             Or Login with
           </p>
           <span className="display-block h-[1px] w-full bg-gray" />
         </div>
-        <div className="authorization-services flex w-full flex-row items-stretch justify-center space-x-lg">
+        <div className="authorization-services flex-drow w-full items-stretch justify-center space-x-lg">
           <div className="item">
             <SvgIcons type="Login_Facebook" />
           </div>
@@ -107,7 +107,7 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
             <SvgIcons type="Login_Apple" />
           </div>
         </div>
-        <div className="last-option flex flex-col items-center justify-center text-center text-normal font-normal leading-normal text-gray">
+        <div className="last-option flex-dcol flex-ccenter text-center text-normal font-normal leading-normal text-gray">
           <p className=" mb-1 text-inherit">
             Don{"'"}t have account right now?
           </p>

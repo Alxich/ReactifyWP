@@ -10,7 +10,7 @@ const SubscriberBanner: FC<SubscriberBannerProps> = (props) => {
     <div className="subscriber w-full rounded-lg bg-black py-7xl">
       <Container
         width="sm"
-        classNames="flex flex-col justify-center items-center px-xl py-11xl space-y-5xl laptop:py-0 tablet:!px-md"
+        classNames="flex-dcol justify-center items-center px-xl py-11xl space-y-5xl laptop:py-0 tablet:!px-md"
       >
         <div className="short-text w-full space-y-xl">
           <h4 className="text-center text-6xl font-semibold text-white">
@@ -21,13 +21,13 @@ const SubscriberBanner: FC<SubscriberBannerProps> = (props) => {
             technology, solutions, and updates.
           </p>
         </div>
-        <div className="flex w-full max-w-[500px] items-center justify-center">
+        <div className="flex-ccenter flex w-full max-w-[500px]">
           <form className="w-full">
             <label
               htmlFor="user-mail"
-              className="flex flex-col items-start justify-start"
+              className="flex-dcol items-start justify-start"
             >
-              <div className="mb-xs flex w-full flex-row space-x-4 tablet:flex-col tablet:space-x-0 tablet:space-y-lg">
+              <div className="flex-drow mb-xs w-full space-x-4 tablet:flex-col tablet:space-x-0 tablet:space-y-lg">
                 <input
                   id="user-mail"
                   name="user-mail"

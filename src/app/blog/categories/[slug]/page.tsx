@@ -169,11 +169,11 @@ const CategoryPage: FC<CategoryPageProps> = (props) => {
 
   return (
     <Container
-      classNames="flex flex-col justify-center items-start post py-7xl px-3xl space-y-7xl"
+      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl"
       width="md"
     >
       <Breadcrumbs />
-      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
+      <div className="flex-drow flex-tspace f2xl-semibold w-full leading-normal">
         <h4 className="text-inherit">All frameworks posts</h4>
       </div>
       <PostAll postsData={postsData} />

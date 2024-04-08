@@ -7,20 +7,20 @@ interface UserSettingsPageProps {}
 const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
   return (
     <Container
-      classNames="flex flex-col justify-center items-start post py-7xl px-3xl space-y-7xl"
+      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl"
       width="md"
     >
       <Breadcrumbs />
-      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
+      <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
         <h4 className="text-inherit">Explore all categories</h4>
       </div>
-      <form className="settings-form flex w-full flex-col items-center justify-center gap-y-7xl">
-        <div className="form-inputs-container flex w-full items-start justify-center gap-x-xs tablet:flex-col tablet:gap-x-0 tablet:gap-y-7xl">
+      <form className="settings-form flex-dcol flex-ccenter w-full gap-y-7xl">
+        <div className="form-inputs-container flex-tcenter flex w-full gap-x-xs tablet:flex-col tablet:gap-x-0 tablet:gap-y-7xl">
           <div className="container flex w-1/2 flex-col items-start justify-start space-y-lg tablet:w-full">
-            <h5 className="inline-block w-full border-b-2 border-b-black pb-xxs text-normal font-medium ">
+            <h5 className="inline-block w-full border-b-2 border-b-black pb-xxs text-normal font-medium">
               Details
             </h5>
-            <div className="inputs flex w-full flex-col items-start justify-start space-y-sm">
+            <div className="inputs flex-dcol w-full items-start justify-start space-y-sm">
               <input
                 id="user-mail"
                 name="user-mail"
@@ -52,10 +52,10 @@ const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
             </div>
           </div>
           <div className="container flex w-1/2 flex-col items-start justify-start space-y-lg tablet:w-full">
-            <h5 className="inline-block w-full border-b-2 border-b-black pb-xxs text-normal font-medium ">
+            <h5 className="inline-block w-full border-b-2 border-b-black pb-xxs text-normal font-medium">
               Passwords
             </h5>
-            <div className="inputs flex w-full flex-col items-start justify-start space-y-sm">
+            <div className="inputs flex-dcol w-full items-start justify-start space-y-sm">
               <input
                 id="user-pass"
                 name="user-pass"
@@ -73,7 +73,7 @@ const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="form-actions flex w-full items-center justify-end space-x-lg tablet:justify-between">
+        <div className="form-actions flex-cend flex w-full space-x-lg tablet:justify-between">
           <Button type="submit" formType="form__error">
             Delete my account
           </Button>

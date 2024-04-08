@@ -16,13 +16,10 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
 }) => {
   return (
     <Container
-      classNames={classNames(
-        "flex flex-col justify-center items-start post py-7xl",
-        {
-          "space-y-7xl": showSlogan === false,
-          "!pb-0": hasContacts === true,
-        },
-      )}
+      classNames={classNames("flex-dcol flex-tcenter post py-7xl", {
+        "space-y-7xl": showSlogan === false,
+        "!pb-0": hasContacts === true,
+      })}
       width="full"
     >
       <Container
@@ -33,7 +30,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         })}
       >
         <div className="content w-full space-y-xl">
-          <div className="page-content-text flex w-full flex-col items-center justify-center space-y-sm">
+          <div className="page-content-text flex-dcol flex-ccenter w-full space-y-sm">
             {children}
             {showSlogan !== false && hasContacts === true && (
               <Contacts className="!mt-7xl" />

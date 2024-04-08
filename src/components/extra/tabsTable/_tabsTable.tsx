@@ -8,11 +8,11 @@ const TabsTable: FC<TabsProps> = ({}) => {
   const activeTab = false;
 
   return (
-    <div className="tabs-table flex w-full flex-col items-start justify-start space-y-xl">
-      <div className="table-header flex w-full flex-row flex-wrap items-stretch justify-start gap-x-md border-b border-b-gray">
+    <div className="tabs-table flex-dcol w-full items-start justify-start space-y-xl">
+      <div className="table-header flex-drow-wrap w-full items-stretch justify-start gap-x-md border-b border-b-gray">
         <div
           className={classNames(
-            "item active use-transition flex h-7xl cursor-pointer items-center justify-center py-md",
+            "item active use-transition flex-ccenter flex h-7xl cursor-pointer py-md",
             {
               "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
@@ -25,7 +25,7 @@ const TabsTable: FC<TabsProps> = ({}) => {
         </div>
         <div
           className={classNames(
-            "item use-transition flex h-7xl cursor-pointer items-center justify-center py-md",
+            "item use-transition flex-ccenter flex h-7xl cursor-pointer py-md",
             {
               "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
@@ -38,7 +38,7 @@ const TabsTable: FC<TabsProps> = ({}) => {
         </div>
         <div
           className={classNames(
-            "item use-transition flex h-7xl cursor-pointer items-center justify-center py-md",
+            "item use-transition flex-ccenter flex h-7xl cursor-pointer py-md",
             {
               "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,

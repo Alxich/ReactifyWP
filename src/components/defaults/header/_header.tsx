@@ -11,7 +11,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
   const pagesNavArray = ["Posts", "About us", "Behind the pixels", "Contact"];
 
   return (
-    <header className="masthead flex w-full max-w-wrapper-lg-sz items-center justify-center border-b border-b-black pb-xl pt-xs">
+    <header className="masthead flex-ccenter flex w-full max-w-wrapper-lg-sz border-b border-b-black pb-xl pt-xs">
       <Container width="sm" classNames="flex justify-between">
         <div className="logo cursor-pointer select-none laptop:flex laptop:items-center">
           <p className="text-3xl font-bold laptop:text-2xl">
@@ -27,7 +27,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
           isActive={isActive}
           onClick={() => setIsActive(!isActive)}
         />
-        <ul className="navigation flex w-auto items-center justify-between space-x-2xl laptop:space-x-md tablet-portrait:hidden">
+        <ul className="navigation flex w-auto items-center justify-between space-x-2xl tablet-portrait:hidden laptop:space-x-md">
           {pagesNavArray.map((item, key) => (
             <li
               className="underline-hover cursor-pointer text-normal"

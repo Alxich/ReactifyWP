@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-white text-black;
+    @apply bg-white text-normal leading-normal text-black;
   }
 
   input:not([class*="bg-"]),

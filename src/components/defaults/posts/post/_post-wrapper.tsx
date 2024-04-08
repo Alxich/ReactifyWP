@@ -16,7 +16,7 @@ const PostWrpapper: FC<PostWrapperProps> = ({
   return (
     <Container
       width="md"
-      classNames="space-x-3xl flex flex-row pt-7xl laptop:space-x-lg small-laptop:flex-col small-laptop:!space-x-0 small-laptop:space-y-lg"
+      classNames="space-x-3xl flex-drow pt-7xl laptop:space-x-lg small-laptop:flex-col small-laptop:!space-x-0 small-laptop:space-y-lg"
     >
       <div className="content w-71/100 space-y-xl small-laptop:w-full">
         <PostContentBlock />
@@ -24,7 +24,7 @@ const PostWrpapper: FC<PostWrapperProps> = ({
         <Comments />
       </div>
       <div className="sidebar sticky top-xl h-fit w-29/100 space-y-xl small-laptop:w-full small-laptop:space-y-lg">
-        <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
+        <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
           <h4 className="text-inherit">Recent blog posts</h4>
         </div>
         {postsData.map(

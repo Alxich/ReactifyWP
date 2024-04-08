@@ -24,16 +24,16 @@ const Pagination: FC<PaginationProps> = ({
   return (
     <Container
       width="md"
-      classNames="flex flex-row justify-between items-center pt-7xl border-t border-t-light-border"
+      classNames="flex-drow justify-between items-center pt-7xl border-t border-t-light-border"
     >
       <ButtonNavigation previous />
-      <div className="navigation flex flex-row items-baseline justify-center space-x-xxxs">
+      <div className="navigation flex-drow items-baseline justify-center space-x-xxxs">
         {pageNumbers.map((item, key) => {
           const isFirstThree = key < 3; // Check if it's one of the first three elements
 
           return (
             <div
-              className={`item use-transition flex h-5xl w-5xl cursor-pointer select-none items-center justify-center rounded-lg p-sm ${
+              className={`item use-transition flex-ccenter flex h-5xl w-5xl cursor-pointer select-none rounded-lg p-sm ${
                 key == 0
                   ? item !== "..." &&
                     "bg-highlight-definition text-highlight hover:bg-transparent hover:text-gray active:bg-transparent"

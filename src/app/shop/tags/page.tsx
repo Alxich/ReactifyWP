@@ -128,15 +128,15 @@ const TagsPageAll: FC<TagPageProps> = (props) => {
 
   return (
     <Container
-      classNames="flex flex-col justify-center items-start post py-7xl px-3xl space-y-7xl"
+      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl"
       width="md"
     >
       <Breadcrumbs />
-      <div className="flex w-full flex-row items-start justify-between text-2xl font-semibold leading-normal ">
+      <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
         <h4 className="text-inherit">All available tags</h4>
       </div>
       {tags && (
-        <div className="tags flex w-full flex-row flex-wrap gap-x-xs gap-y-xs">
+        <div className="tags flex-drow-wrap gap-tag w-full">
           {tags.map(({ background, color, link, text }, key) => (
             <TagLink
               type="big"

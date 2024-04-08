@@ -15,10 +15,10 @@ const Comments: FC<CommentsWrapperProps> = ({
   return (
     <Container
       width="md"
-      classNames="flex flex-col pt-7xl space-y-3xl !mt-0 small-laptop:space-y-lg"
+      classNames="flex-dcol pt-7xl space-y-3xl !mt-0 small-laptop:space-y-lg"
     >
       {showTitle !== false && (
-        <div className="title text-2xl font-semibold ">
+        <div className="title f2xl-semibold">
           <h3 className="text-inherit">
             Hey! Lets write some comment. Please not be shy !
           </h3>
@@ -26,7 +26,7 @@ const Comments: FC<CommentsWrapperProps> = ({
       )}
       <Container
         width="md"
-        classNames="flex flex-col justify-start items-center space-y-xl small-laptop:space-y-lg"
+        classNames="flex-dcol justify-start items-center space-y-xl small-laptop:space-y-lg"
       >
         {showEditor !== false && (
           <CommentWrapper

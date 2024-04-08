@@ -61,7 +61,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
         )}
       >
         <div className="content w-full flex-col items-start justify-start space-y-sm desktop:space-y-xxxs">
-          <div className="short-info flex w-full flex-row items-baseline justify-between">
+          <div className="short-info flex-drow w-full items-baseline justify-between">
             {breadcrumbs && (
               <p className="w-full text-medium leading-normal text-gray">
                 <span className="breadcrumb">{breadcrumbs}</span>
@@ -74,7 +74,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
 
           <h4
             className={classNames(
-              "flex w-full flex-row items-start justify-between font-semibold leading-normal",
+              "flex-tspace flex-drow w-full font-semibold leading-normal",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
                 "text-2xl": isGridSmall == undefined || isGridSmall === false,
@@ -89,7 +89,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
           </div>
         </div>
         {tags && (
-          <div className="tags flex w-full flex-row flex-wrap space-x-xs">
+          <div className="tags flex-drow-wrap w-full space-x-xs">
             {tags.map(({ background, color, link, text }, key) => (
               <TagLink
                 background={background}

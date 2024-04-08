@@ -90,7 +90,7 @@ const ProductPage: FC<ProductPageProps> = ({}: ProductPageProps) => {
 
   return (
     <Container
-      classNames="flex flex-col justify-center items-start product py-7xl px-3xl"
+      classNames="flex-dcol flex-tcenter product wrapper-conspace"
       width="md"
     >
       <ProductHeader />

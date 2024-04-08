@@ -16,11 +16,11 @@ const CartItem: FC<CartItemProps> = (props) => {
   const maxInputValue = 100;
 
   return (
-    <div className="item flex flex-row items-center justify-between">
+    <div className="item flex-drow items-center justify-between">
       <div className="thumbnail min-w-[132px]">
         <Image src={vansCartIcon} alt="cart-item-image" />
       </div>
-      <div className="short-desc flex w-full flex-col items-start justify-center space-y-xxs pl-xs">
+      <div className="short-desc flex-dcol flex-tcenter w-full space-y-xxs pl-xs">
         <div className="title">
           <h4 className="text-xl">
             Trainers{" "}
@@ -32,7 +32,7 @@ const CartItem: FC<CartItemProps> = (props) => {
             <span className="font-meduim">Article</span>: LBL0281
           </p>
         </div>
-        <div className="sizes flex flex-row flex-wrap gap-x-xxs font-medium child:text-inherit">
+        <div className="sizes flex-drow-wrap gap-x-xxs font-medium child:text-inherit">
           <p>
             Size: <span className="font-bold">M</span>
           </p>
@@ -41,9 +41,9 @@ const CartItem: FC<CartItemProps> = (props) => {
           </p>
         </div>
       </div>
-      <div className="counter flex h-7xl flex-row items-center justify-center">
+      <div className="counter flex-ccenter flex h-7xl flex-row">
         <div
-          className="icon icon-plus use-transition flex h-1/2 w-xl cursor-pointer items-center justify-center text-normal font-normal text-gray "
+          className="icon icon-plus use-transition flex-ccenter flex h-1/2 w-xl cursor-pointer text-normal font-normal text-gray "
           onClick={() =>
             inputValue < maxInputValue - 1
               ? setInputValue(inputValue + 1)
@@ -58,11 +58,11 @@ const CartItem: FC<CartItemProps> = (props) => {
           value={inputValue}
           min={1}
           max={99}
-          className="flex h-full w-[132px] appearance-none items-center justify-center border-none text-center text-normal font-normal text-gray"
+          className="flex-ccenter flex h-full w-[132px] appearance-none border-none text-center text-normal font-normal text-gray"
         />
 
         <div
-          className="icon icon-minus use-transition flex h-1/2 w-xl cursor-pointer items-center justify-center  text-normal font-normal text-gray"
+          className="icon icon-minus use-transition flex-ccenter flex h-1/2 w-xl cursor-pointer  text-normal font-normal text-gray"
           onClick={() =>
             inputValue > 1 ? setInputValue(inputValue - 1) : void 0
           }
@@ -70,7 +70,7 @@ const CartItem: FC<CartItemProps> = (props) => {
           <SvgIcons type="Chevron-Arrow-Down" />
         </div>
       </div>
-      <div className="price flex w-full items-center justify-center">
+      <div className="price flex-ccenter flex w-full">
         <p className="text-normal font-semibold text-highlight">
           £75.00{" "}
           <span className="text-xs font-semibold">{"(8.78£ postage)"}</span>

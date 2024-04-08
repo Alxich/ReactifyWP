@@ -61,14 +61,14 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
   return (
     <form className="form w-full flex-col items-start justify-start space-y-7xl pt-2xl">
       <div className="title w-full">
-        <h3 className="text-2xl font-semibold ">Placing an order</h3>
+        <h3 className="f2xl-semibold">Placing an order</h3>
       </div>
-      <div className="item-row flex w-full flex-row items-start justify-between space-x-sm">
+      <div className="item-row flex-tspace flex-drow w-full space-x-sm">
         <div className="flex w-1/2 flex-col items-start justify-start space-y-xl">
           <div className="title w-full border-b border-b-black">
-            <h5 className="w-full text-normal font-medium ">Buyer data</h5>
+            <h5 className="w-full text-normal font-medium">Buyer data</h5>
           </div>
-          <div className="form-inputs flex w-full flex-col items-start justify-start space-y-xs">
+          <div className="form-inputs flex-dcol w-full items-start justify-start space-y-xs">
             <CartDetailsInputs placeholder="Enter your full name" type="text" />
             <CartDetailsInputs
               placeholder="Enter your phone number"
@@ -78,9 +78,9 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
         </div>
         <div className="flex w-1/2 flex-col items-start justify-start space-y-xl">
           <div className="title w-full border-b border-b-black">
-            <h5 className="w-full text-normal font-medium ">Delivery</h5>
+            <h5 className="w-full text-normal font-medium">Delivery</h5>
           </div>
-          <div className="form-inputs flex w-full flex-col items-start justify-start space-y-xs">
+          <div className="form-inputs flex-dcol w-full items-start justify-start space-y-xs">
             <CartDetailsInputs placeholder="Method of delivery" type="text" />
             <CartDetailsInputs placeholder="Region" type="text" />
             <CartDetailsInputs placeholder="City" type="text" />
@@ -88,14 +88,14 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
           </div>
         </div>
       </div>
-      <div className="item-row flex w-full flex-row items-start justify-between space-x-sm">
-        <div className="flex w-full flex-col items-start justify-start space-y-xl">
+      <div className="item-row flex-tspace flex-drow w-full space-x-sm">
+        <div className="flex-dcol w-full items-start justify-start space-y-xl">
           <div className="title w-full border-b border-b-black">
-            <h5 className="w-full text-normal font-medium ">
+            <h5 className="w-full text-normal font-medium">
               Do you want something special to you order ?
             </h5>
           </div>
-          <div className="form-inputs flex w-full flex-col items-start justify-start space-y-xs">
+          <div className="form-inputs flex-dcol w-full items-start justify-start space-y-xs">
             <CartDetailsTextarea placeholder="Comment on the order" />
           </div>
         </div>
