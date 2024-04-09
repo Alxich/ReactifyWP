@@ -12,7 +12,7 @@ const ProjectMainMessage: FC<ProjectMainMessageProps> = (props) => {
 
   return (
     <div className="flex-ccenter flex-drow h-screen fixed left-0 top-0 w-full backdrop-blur-sm">
-      <div className="flex-ccenter flex-dcol flex-drow w-full max-w-2xl rounded-lg border-2 border-gray bg-white p-7xl  shadow-2xl">
+      <div className="flex-ccenter flex-dcol flex-drow w-full max-w-2xl rounded-lg border-2 border-gray bg-white p-7xl shadow-2xl">
         <div className="error-svg">
           <SvgIcons type="Error" />
         </div>

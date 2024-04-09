@@ -58,20 +58,20 @@ const ProductPreview: FC<ProductPreviewProps> = ({
         })}
       >
         <div className="content flex-tstart flex-dcol w-full space-y-sm desktop:space-y-xxxs">
-          <div className="short-info flex-drow w-full items-baseline justify-between">
+          <div className="short-info flex-drow flex-basespace w-full">
             {breadcrumbs && (
-              <p className="w-full text-medium leading-normal text-gray">
+              <p className="w-full fmedium-normal leading-normal text-gray">
                 <span className="breadcrumb">{breadcrumbs}</span>
               </p>
             )}
             {price && (
-              <p className="price font-semibold text-highlight">£{price}</p>
+              <p className="price fnormal-semibold text-highlight">£{price}</p>
             )}
           </div>
 
           <h4
             className={classNames(
-              "flex-tspace flex-drow w-full font-semibold leading-normal",
+              "flex-tspace flex-drow w-full fnormal-semibold leading-normal",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
                 "text-2xl": isGridSmall == undefined || isGridSmall === false,

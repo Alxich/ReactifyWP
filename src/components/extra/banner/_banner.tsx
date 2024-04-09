@@ -35,7 +35,7 @@ const Banner: FC<BannerProps> = ({
   return (
     <div
       className={classNames(
-        "banner-wrapper use-transition flex-ccenter flex-drow h-screen visible fixed left-0 top-0 z-50 w-screen bg-black/30 px-10xl opacity-100 backdrop-blur-sm tablet-portrait:px-3xl",
+        "banner-wrapper use-transition flex-ccenter flex-drow visible fixed left-0 top-0 z-50 h-screen w-screen bg-black/30 px-10xl opacity-100 backdrop-blur-sm tablet-portrait:px-3xl",
         {
           "hidden opacity-0": isClosed,
           "py-[3vw]": type === "reg",
@@ -51,7 +51,7 @@ const Banner: FC<BannerProps> = ({
           },
         )}
       >
-        <div className="banner-head flex-tspace flex-drow sticky top-0 z-10 w-full overflow-hidden border-b border-b-gray bg-white pb-xl pt-7xl tablet:pb-md tablet:pt-0">
+        <div className="banner-head flex-tspace flex-drow wp-border-b-gray sticky top-0 z-10 w-full overflow-hidden bg-white pb-xl pt-7xl tablet:pb-md tablet:pt-0">
           <h2 className="f3xl-semibold leading-none">{title}</h2>
           <XMarkIcon
             onClick={() => closeTheBanner(!isClosed)}

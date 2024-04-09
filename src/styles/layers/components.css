@@ -99,7 +99,7 @@
   }
 
   .inputs-bborder-style {
-    @apply border-0 border-b border-b-gray bg-white py-sm pl-0 pr-md fnormal-normal placeholder:text-gray focus:outline-none;
+    @apply border-0 wp-border-b-gray bg-white py-sm pl-0 pr-md fnormal-normal placeholder:text-gray focus:outline-none;
   }
 
   .auth-inputs-style {

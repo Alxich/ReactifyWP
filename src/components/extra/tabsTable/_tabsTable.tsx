@@ -9,7 +9,7 @@ const TabsTable: FC<TabsProps> = ({}) => {
 
   return (
     <div className="tabs-table flex-dcol flex-tstart w-full space-y-xl">
-      <div className="table-header flex-drow w-full flex-wrap items-stretch justify-start gap-x-md border-b border-b-gray">
+      <div className="table-header flex-drow flex-ststart wp-border-b-gray w-full flex-wrap gap-x-md">
         <div
           className={classNames(
             "item active use-transition flex-ccenter flex-drow h-7xl cursor-pointer py-md",

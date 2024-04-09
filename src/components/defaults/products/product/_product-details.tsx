@@ -21,7 +21,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
         </div>
       </div>
       <div className="details product details flex-tstart flex-dcol w-1/2 space-y-md child:w-full tablet:w-full">
-        <div className="title-and-price flex-drow items-baseline justify-between">
+        <div className="title-and-price flex-drow flex-basespace">
           <h2 className="f2xl-normal">
             Trainers <span className="font-black">Vans SK8-HI</span>
           </h2>
@@ -33,7 +33,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
         <div className="selectors flex-dcol flex-tstart space-y-md">
           <SquaresSelector />
           <QuantitySelector />
-          <div className="item type-selctor-calc__vat flex-drow desktop:flex-dcol w-full items-baseline justify-between">
+          <div className="item type-selctor-calc__vat flex-drow desktop:flex-dcol flex-basespace w-full">
             <div className="title">
               <h4 className="fnormal-medium leading-normal">
                 Price with VAT + delivery
@@ -46,7 +46,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
           </div>
         </div>
         <div className="item type-selctor-total flex-dcol flex-tstart w-full">
-          <div className="flex-drow w-full items-baseline justify-between">
+          <div className="flex-drow flex-basespace w-full">
             <div className="title">
               <h4 className="fnormal-medium leading-normal">Total Price</h4>
             </div>

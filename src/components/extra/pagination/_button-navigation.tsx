@@ -19,7 +19,7 @@ const ButtonNavigation: FC<ButtonNavigationProps> = ({
   return (
     <div
       className={classNames(
-        "btn item-center use-transition flex-drow cursor-pointer select-none justify-center space-x-xs text-gray hover:text-highlight",
+        "btn item-center use-transition flex-drow cursor-pointer select-none flex-stcenter space-x-xs text-gray hover:text-highlight",
         {
           "btn-next flex-row-reverse space-x-reverse": next,
           "btn-previous flex-row": previous,

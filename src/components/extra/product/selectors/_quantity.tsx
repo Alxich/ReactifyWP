@@ -17,7 +17,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = ({}) => {
       <div className="title">
         <h4 className="fnormal-medium leading-normal">Quantity</h4>
       </div>
-      <div className="selectors-items flex-drow w-full items-stretch justify-start space-x-sm">
+      <div className="selectors-items flex-drow flex-ststart w-full space-x-sm">
         <div className="flex-drow flex-stspace container w-full">
           <div className="counter flex-drow h-7xl flex-row items-stretch">
             <input
@@ -39,7 +39,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = ({}) => {
                 +
               </div>
               <div
-                className="icon icon-minus use-transition flex-ccenter fnormal-normal flex-drow h-1/2 w-xl  cursor-pointer border border-gray bg-transparent text-gray hover:border-black hover:bg-black hover:text-white"
+                className="icon icon-minus use-transition flex-ccenter fnormal-normal flex-drow h-1/2 w-xl cursor-pointer border border-gray bg-transparent text-gray hover:border-black hover:bg-black hover:text-white"
                 onClick={() =>
                   inputValue > 1 ? setInputValue(inputValue - 1) : void 0
                 }

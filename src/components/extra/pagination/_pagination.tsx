@@ -27,7 +27,7 @@ const Pagination: FC<PaginationProps> = ({
       classNames="flex-drow flex-cspace pt-7xl border-t border-t-light-border"
     >
       <ButtonNavigation previous />
-      <div className="navigation flex-drow items-baseline justify-center space-x-xxxs">
+      <div className="navigation flex-drow flex-basecenter space-x-xxxs">
         {pageNumbers.map((item, key) => {
           const isFirstThree = key < 3; // Check if it's one of the first three elements
 

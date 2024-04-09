@@ -174,7 +174,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
           >
             <input
               type="text"
-              className="w-full border-0 border-b border-b-gray px-xs py-xxxs focus:border-b-gray focus:outline-0 focus:ring-0 active:outline-0"
+              className="wp-border-b-gray w-full border-0 px-xs py-xxxs focus:border-b-gray focus:outline-0 focus:ring-0 active:outline-0"
               placeholder="Enter a link ..."
               onChange={(e: FormEvent<HTMLInputElement>) => {
                 setLinkWritted(e.currentTarget.value);

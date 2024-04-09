@@ -32,7 +32,7 @@ const CartDetailsInputs: FC<CartDetailsInputsProps> = ({
     <input
       type={type}
       placeholder={placeholder}
-      className="fsmall-normal use-transition w-full border-0 !border-b border-b-gray/20 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
+      className="fsmall-normal use-transition !wp-border-b-gray/20 w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
       readOnly={readonly}
     />
   );
@@ -50,7 +50,7 @@ const CartDetailsTextarea: FC<CartDetailsTextareaProps> = ({
   return (
     <textarea
       placeholder={placeholder}
-      className="fsmall-normal use-transition h-auto min-h-5.5xl w-full border-0 !border-b border-b-gray/20 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
+      className="fsmall-normal use-transition !wp-border-b-gray/20 h-auto min-h-5.5xl w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
       readOnly={readonly}
       rows={1}
       cols={1}

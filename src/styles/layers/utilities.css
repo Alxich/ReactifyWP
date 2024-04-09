@@ -297,6 +297,10 @@
     @apply items-start justify-start;
   }
 
+  .flex-ststart {
+    @apply items-stretch justify-start;
+  }
+
   .flex-stcenter {
     @apply items-stretch justify-center;
   }
@@ -317,6 +321,14 @@
     @apply items-center justify-start;
   }
 
+  .flex-basespace {
+    @apply items-baseline justify-between;
+  }
+
+  .flex-basecenter {
+    @apply items-baseline justify-between;
+  }
+
   .gap-tag {
     @apply gap-xs;
   }
@@ -335,6 +347,10 @@
 
   .wp-border-b {
     @apply border-b border-b-black
+  }
+
+  .wp-border-b-gray {
+    @apply border-b border-b-gray
   }
 
   .wp-border-t {
