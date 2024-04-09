@@ -200,7 +200,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
       >
         <div className="title">
           <input
-            className="title w-full border-x-0 border-b border-t-0 border-b-black p-0 text-7xl font-bold "
+            className="title w-full border-x-0 border-b border-t-0 border-b-black p-0 f7xl-bold "
             value={"How create a new post ?"}
             readOnly
           />
@@ -242,7 +242,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         closeTheBanner={BannerCloseFunc}
         className="space-y-xs tablet:space-y-lg"
         additionalChildren={
-          <div className="flex-drow flex-cend w-full space-x-xs tablet:flex-col tablet:justify-center tablet:space-x-0 tablet:space-y-lg">
+          <div className="flex-drow flex-cend tablet:flex-dcol w-full space-x-xs tablet:justify-center tablet:space-x-0 tablet:space-y-lg">
             <Button
               formType="form__error"
               type="button"

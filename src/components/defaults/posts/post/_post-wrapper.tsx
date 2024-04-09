@@ -16,7 +16,7 @@ const PostWrpapper: FC<PostWrapperProps> = ({
   return (
     <Container
       width="md"
-      classNames="space-x-3xl flex-drow pt-7xl laptop:space-x-lg small-laptop:flex-col small-laptop:!space-x-0 small-laptop:space-y-lg"
+      classNames="space-x-3xl flex-drow pt-7xl laptop:space-x-lg small-laptop:flex-dcol small-laptop:!space-x-0 small-laptop:space-y-lg"
     >
       <div className="content w-71/100 space-y-xl small-laptop:w-full">
         <PostContentBlock />

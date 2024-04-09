@@ -11,8 +11,8 @@ interface PostActionsProps {}
 
 const PostActions: FC<PostActionsProps> = ({}: PostActionsProps) => {
   return (
-    <div className="post-actions flex-drow w-full items-center justify-between space-x-xs">
-      <div className="flex-ccenter flex w-auto space-x-xs">
+    <div className="post-actions flex-drow flex-cspace w-full space-x-xs">
+      <div className="flex-ccenter flex-drow w-auto space-x-xs">
         <Button type="button" formType="post__action:post-actions">
           <HandThumbUpIcon className="mr-xs h-full w-auto text-inherit" />
           Like

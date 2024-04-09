@@ -8,44 +8,44 @@ const TabsTable: FC<TabsProps> = ({}) => {
   const activeTab = false;
 
   return (
-    <div className="tabs-table flex-dcol w-full items-start justify-start space-y-xl">
-      <div className="table-header flex-drow-wrap w-full items-stretch justify-start gap-x-md border-b border-b-gray">
+    <div className="tabs-table flex-dcol flex-tstart w-full space-y-xl">
+      <div className="table-header flex-drow w-full flex-wrap items-stretch justify-start gap-x-md border-b border-b-gray">
         <div
           className={classNames(
-            "item active use-transition flex-ccenter flex h-7xl cursor-pointer py-md",
+            "item active use-transition flex-ccenter flex-drow h-7xl cursor-pointer py-md",
             {
               "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
             },
           )}
         >
-          <h3 className="use-transition text-normal font-medium text-inherit hover:text-highlight">
+          <h3 className="use-transition fnormal-medium text-inherit hover:text-highlight">
             Description and features
           </h3>
         </div>
         <div
           className={classNames(
-            "item use-transition flex-ccenter flex h-7xl cursor-pointer py-md",
+            "item use-transition flex-ccenter flex-drow h-7xl cursor-pointer py-md",
             {
               "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
             },
           )}
         >
-          <h3 className="use-transition text-normal font-medium text-inherit hover:text-highlight">
+          <h3 className="use-transition fnormal-medium text-inherit hover:text-highlight">
             Delivery and Returns
           </h3>
         </div>
         <div
           className={classNames(
-            "item use-transition flex-ccenter flex h-7xl cursor-pointer py-md",
+            "item use-transition flex-ccenter flex-drow h-7xl cursor-pointer py-md",
             {
               "border-b-3 border-b-highlight ": activeTab,
               "border-b-3 border-b-transparent text-gray": !activeTab,
             },
           )}
         >
-          <h3 className="use-transition text-normal font-medium text-inherit hover:text-highlight">
+          <h3 className="use-transition fnormal-medium text-inherit hover:text-highlight">
             Care instruction
           </h3>
         </div>

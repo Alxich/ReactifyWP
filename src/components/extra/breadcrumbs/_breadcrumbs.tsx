@@ -4,7 +4,7 @@ interface BreadcrumbsProps {}
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({}: BreadcrumbsProps) => {
   return (
-    <div className="breadcrumbs flex-drow w-full items-center justify-between">
+    <div className="breadcrumbs flex-drow flex-cspace w-full">
       <div className="breads">
         <p className="text-medium">
           <b className="font-semibold">Our journey</b> : <b>Home</b>{" "}

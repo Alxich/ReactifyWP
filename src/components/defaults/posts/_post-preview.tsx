@@ -25,13 +25,13 @@ const PostPreview: FC<PostPreviewProps> = ({
   return (
     <div
       className={classNames(
-        "post post-previewer flex cursor-pointer small-laptop:flex-col small-laptop:space-x-0 small-laptop:space-y-lg",
+        "post post-previewer small-laptop:flex-dcol flex-drow cursor-pointer small-laptop:space-x-0 small-laptop:space-y-lg",
         className && className,
         {
-          "flex-row justify-between space-x-3xl group-[.post-in-col]:small-laptop:!flex-col group-[.post-in-col]:small-laptop:!space-x-0 group-[.post-in-col]:laptop:flex-row group-[.post-in-col]:laptop:items-start group-[.post-in-col]:laptop:justify-between group-[.post-in-col]:desktop:space-x-lg":
+          "group-[.post-in-col]:small-laptop:!flex-dcol flex-row justify-between space-x-3xl group-[.post-in-col]:small-laptop:!space-x-0 group-[.post-in-col]:laptop:flex-row group-[.post-in-col]:laptop:items-start group-[.post-in-col]:laptop:justify-between group-[.post-in-col]:desktop:space-x-lg":
             (view && view == "row") || view == "row-full",
-          "flex-col space-y-3xl": view && view == "col",
-          "tablet:!flex-col tablet:!space-x-0 tablet:!space-y-lg small-laptop:flex-col laptop:flex-row laptop:justify-between laptop:!space-y-0 laptop:space-x-lg desktop:space-y-lg":
+          "flex-dcol space-y-3xl": view && view == "col",
+          "tablet:!flex-dcol small-laptop:flex-dcol tablet:!space-x-0 tablet:!space-y-lg laptop:flex-row laptop:justify-between laptop:!space-y-0 laptop:space-x-lg desktop:space-y-lg":
             type != "regular" && view && view == "col",
           "desktop:space-y-xs": type === "regular",
         },
@@ -52,12 +52,12 @@ const PostPreview: FC<PostPreviewProps> = ({
         <Image
           src={image}
           alt="post__preview__thumbnail__image"
-          className="h-full w-full"
+          className="spread-block"
         />
       </div>
       <div
         className={classNames(
-          "text-content flex-col items-start justify-start space-y-xl desktop:space-y-lg",
+          "text-content flex-tstart flex-dcol space-y-xl desktop:space-y-lg",
           {
             "w-1/2 small-laptop:!w-full desktop:w-1/2 group-[.post-in-col]:desktop:w-full ":
               (view && view == "row") || view == "row-full",
@@ -65,7 +65,7 @@ const PostPreview: FC<PostPreviewProps> = ({
           },
         )}
       >
-        <div className="content w-full flex-col items-start justify-start space-y-sm laptop:space-y-xxs">
+        <div className="content flex-tstart flex-dcol w-full space-y-sm laptop:space-y-xxs">
           {author && (
             <div className="author-info w-full">
               <p className="text-medium leading-normal text-gray">
@@ -81,23 +81,24 @@ const PostPreview: FC<PostPreviewProps> = ({
           )}
           <h4
             className={classNames(
-              "flex-tspace flex-drow w-full font-semibold leading-normal",
+              "flex-tspace flex-drow w-full leading-normal",
               {
-                "text-large small-laptop:!text-2xl":
+                "flarge-semibold small-laptop:!text-2xl":
                   isGridSmall != undefined && isGridSmall === true,
-                "text-2xl": isGridSmall == undefined || isGridSmall === false,
+                "f2xl-semibold":
+                  isGridSmall == undefined || isGridSmall === false,
               },
             )}
           >
             <span>{title}</span>
             <SvgIcons type="Explore-Arrow-Up-Right" />
           </h4>
-          <div className="text-block w-full text-normal text-gray">
+          <div className="text-block fnormal-normal w-full text-gray">
             <p className=" text-inherit">{texts}</p>
           </div>
         </div>
         {tags && (
-          <div className="tags flex-drow-wrap w-full space-x-xs">
+          <div className="tags flex-drow w-full flex-wrap space-x-xs">
             {tags.map(({ background, color, link, text }, key) => (
               <TagLink
                 background={background}

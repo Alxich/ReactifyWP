@@ -24,7 +24,7 @@ const Pagination: FC<PaginationProps> = ({
   return (
     <Container
       width="md"
-      classNames="flex-drow justify-between items-center pt-7xl border-t border-t-light-border"
+      classNames="flex-drow flex-cspace pt-7xl border-t border-t-light-border"
     >
       <ButtonNavigation previous />
       <div className="navigation flex-drow items-baseline justify-center space-x-xxxs">
@@ -33,7 +33,7 @@ const Pagination: FC<PaginationProps> = ({
 
           return (
             <div
-              className={`item use-transition flex-ccenter flex h-5xl w-5xl cursor-pointer select-none rounded-lg p-sm ${
+              className={`item use-transition flex-ccenter flex-drow h-5xl w-5xl cursor-pointer select-none rounded-lg p-sm ${
                 key == 0
                   ? item !== "..." &&
                     "bg-highlight-definition text-highlight hover:bg-transparent hover:text-gray active:bg-transparent"
@@ -45,7 +45,7 @@ const Pagination: FC<PaginationProps> = ({
               }`}
               key={`${item}__${key}`}
             >
-              <p className="use-transition text-medium font-semibold text-inherit">
+              <p className="use-transition fmedium-semibold text-inherit">
                 {item}
               </p>
             </div>

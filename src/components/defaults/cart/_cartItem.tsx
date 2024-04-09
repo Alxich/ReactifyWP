@@ -16,7 +16,7 @@ const CartItem: FC<CartItemProps> = (props) => {
   const maxInputValue = 100;
 
   return (
-    <div className="item flex-drow items-center justify-between">
+    <div className="item flex-drow flex-cspace">
       <div className="thumbnail min-w-[132px]">
         <Image src={vansCartIcon} alt="cart-item-image" />
       </div>
@@ -32,7 +32,7 @@ const CartItem: FC<CartItemProps> = (props) => {
             <span className="font-meduim">Article</span>: LBL0281
           </p>
         </div>
-        <div className="sizes flex-drow-wrap gap-x-xxs font-medium child:text-inherit">
+        <div className="sizes flex-drow flex-wrap gap-x-xxs font-medium child:text-inherit">
           <p>
             Size: <span className="font-bold">M</span>
           </p>
@@ -41,9 +41,9 @@ const CartItem: FC<CartItemProps> = (props) => {
           </p>
         </div>
       </div>
-      <div className="counter flex-ccenter flex h-7xl flex-row">
+      <div className="counter flex-ccenter flex-drow h-7xl flex-row">
         <div
-          className="icon icon-plus use-transition flex-ccenter flex h-1/2 w-xl cursor-pointer text-normal font-normal text-gray "
+          className="icon icon-plus use-transition flex-ccenter fnormal-normal flex-drow h-1/2 w-xl cursor-pointer text-gray "
           onClick={() =>
             inputValue < maxInputValue - 1
               ? setInputValue(inputValue + 1)
@@ -58,11 +58,11 @@ const CartItem: FC<CartItemProps> = (props) => {
           value={inputValue}
           min={1}
           max={99}
-          className="flex-ccenter flex h-full w-[132px] appearance-none border-none text-center text-normal font-normal text-gray"
+          className="flex-ccenter fnormal-normal flex-drow h-full w-[132px] appearance-none border-none text-center text-gray"
         />
 
         <div
-          className="icon icon-minus use-transition flex-ccenter flex h-1/2 w-xl cursor-pointer  text-normal font-normal text-gray"
+          className="icon icon-minus use-transition flex-ccenter fnormal-normal flex-drow h-1/2 w-xl cursor-pointer text-gray"
           onClick={() =>
             inputValue > 1 ? setInputValue(inputValue - 1) : void 0
           }
@@ -70,9 +70,10 @@ const CartItem: FC<CartItemProps> = (props) => {
           <SvgIcons type="Chevron-Arrow-Down" />
         </div>
       </div>
-      <div className="price flex-ccenter flex w-full">
-        <p className="text-normal font-semibold text-highlight">
+      <div className="price flex-ccenter flex-drow w-full">
+        <p className="fnormal-semibold text-highlight">
           £75.00{" "}
+          {/* CHECK THIS CODE: Unknown font-size (use custom class instead) use */}
           <span className="text-xs font-semibold">{"(8.78£ postage)"}</span>
         </p>
       </div>

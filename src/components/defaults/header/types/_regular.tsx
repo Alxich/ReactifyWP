@@ -8,14 +8,14 @@ interface PageHeaderRegProps {
 
 const PageHeaderReg: FC<PageHeaderRegProps> = ({ title, text }) => {
   return (
-    <div className="page-header w-full border-b border-b-black px-3xl py-7xl desktop:px-0">
+    <div className="page-header wp-border-b w-full px-3xl py-7xl desktop:px-0">
       <Container width="sm" classNames="mx-auto">
-        <h1 className="mb-xl text-8xl font-bold uppercase tablet-portrait:!text-6xl desktop:text-7xl">
+        <h1 className="f8xl-bold mb-xl uppercase tablet-portrait:!text-6xl desktop:text-7xl">
           {title}
         </h1>
 
-        <div className="flex-drow items-center justify-start space-x-xs">
-          <h3 className="text-2xl font-bold uppercase leading-none">
+        <div className="flex-drow flex-cstart space-x-xs">
+          <h3 className="f2xl-bold uppercase leading-none">
             Do not be shy to Explore{" "}
           </h3>
           <SvgIcons type="Explore-Arrow-Down-Right" />

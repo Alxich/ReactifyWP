@@ -13,44 +13,44 @@ interface CartSummaryProps {}
 
 const CartSummary: FC<CartSummaryProps> = (props) => {
   return (
-    <div className="payment-form w-full max-w-[480px] flex-col items-start justify-start space-y-lg bg-gray/5 px-3xl py-2xl">
+    <div className="payment-form flex-tstart flex-dcol w-full max-w-[480px] space-y-lg bg-gray/5 px-3xl py-2xl">
       <div className="title w-full">
         <h3 className="f2xl-semibold">Placing an order</h3>
       </div>
-      <div className="summary-details flex-dcol w-full items-start justify-start space-y-lg child:first:border-t-0 child:first:pt-0 child:last:border-b-0 child:last:pb-0">
-        <div className="item flex-dcol w-full items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
-          <div className="title flex-drow w-full items-center justify-between">
-            <h5 className="text-normal font-medium">Discounts</h5>
-            <p className="cursor-pointer text-sm font-medium text-gray underline">
+      <div className="summary-details flex-dcol flex-tstart w-full space-y-lg child:first:border-t-0 child:first:pt-0 child:last:border-b-0 child:last:pb-0">
+        <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">
+          <div className="title flex-drow flex-cspace w-full">
+            <h5 className="fnormal-medium">Discounts</h5>
+            <p className="fsmall-medium cursor-pointer text-gray underline">
               Clear the list
             </p>
           </div>
         </div>
-        <div className="item flex-dcol w-full items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
-          <div className="item-intire content-data flex-drow w-full items-center justify-between">
-            <div className="title flex w-full">
-              <h5 className="text-normal font-medium text-gray">Order value</h5>
+        <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">
+          <div className="item-intire content-data flex-drow flex-cspace w-full">
+            <div className="title flex-drow w-full">
+              <h5 className="fnormal-medium text-gray">Order value</h5>
             </div>
-            <p className="text-sm font-medium text-gray">£225.00</p>
+            <p className="fsmall-medium text-gray">£225.00</p>
           </div>
-          <div className="item-intire content-data flex-drow w-full items-center justify-between">
-            <div className="title flex w-full">
-              <h5 className="text-normal font-medium text-gray">Delivery</h5>
+          <div className="item-intire content-data flex-drow flex-cspace w-full">
+            <div className="title flex-drow w-full">
+              <h5 className="fnormal-medium text-gray">Delivery</h5>
             </div>
-            <p className="text-sm font-medium text-gray">£26.34</p>
+            <p className="fsmall-medium text-gray">£26.34</p>
           </div>
         </div>
-        <div className="item flex-dcol w-full items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
-          <div className="title flex-drow w-full items-center justify-between">
-            <h5 className="text-normal font-medium">Total price</h5>
-            <p className="text-normal font-medium text-highlight">£251.34</p>
+        <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">
+          <div className="title flex-drow flex-cspace w-full">
+            <h5 className="fnormal-medium">Total price</h5>
+            <p className="fnormal-medium text-highlight">£251.34</p>
           </div>
         </div>
-        <div className="item flex-dcol w-full items-start justify-start space-y-sm border-y border-y-gray/20 py-lg">
-          <div className="title flex-drow w-full items-center justify-between">
-            <h5 className="text-normal font-medium">We accept</h5>
+        <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">
+          <div className="title flex-drow flex-cspace w-full">
+            <h5 className="fnormal-medium">We accept</h5>
           </div>
-          <div className="items-card-acceps flex-drow w-full items-center justify-between space-x-2xl">
+          <div className="items-card-acceps flex-drow flex-cspace w-full space-x-2xl">
             <div className="item h-7xl w-full max-w-[48px]">
               <Image src={masterCardIcon} alt="card-acceptence-banks" />
             </div>
@@ -71,6 +71,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
             </div>
           </div>
         </div>
+        {/* CHECK THIS CODE: Unknown !important use */}
         <Button
           formType="form"
           type="button"
@@ -79,6 +80,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
           Proceed to pay
         </Button>
         <div className="additionals w-full">
+          {/* CHECK THIS CODE: Unknown !important use */}
           <p className="w-full text-xs font-normal text-gray">
             Prices and delivery costs are confirmed after you've reached the
             checkout. Additional payments may supply by your delivery partner 28

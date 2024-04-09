@@ -107,7 +107,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            "use-transition rounded-lg border-2 border-black bg-black px-lg py-xs text-normal font-semibold text-white hover:bg-transparent hover:text-black",
+            "use-transition fnormal-semibold rounded-lg border-2 border-black bg-black px-lg py-xs text-white hover:bg-transparent hover:text-black",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -142,7 +142,7 @@ const Button: FC<ButtonProps> = ({
 
       return (
         <button
-          className="flex-ccenter group hidden h-12 w-12 flex-col rounded tablet-portrait:flex"
+          className="flex-ccenter group hidden h-12 w-12 flex-dcol rounded tablet-portrait:flex"
           onClick={onClick}
         >
           <div

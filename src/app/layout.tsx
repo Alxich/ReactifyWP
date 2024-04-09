@@ -29,11 +29,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={classNames(
           inter.className,
-          "mx-auto flex max-w-wrapper-page-sz flex-col items-center justify-start p-2xl tablet:p-md overflow-x-hidden",
+          "flex-cstart flex-dcol mx-auto max-w-wrapper-page-sz overflow-x-hidden p-2xl tablet:p-md",
         )}
       >
         <Header />
-        <main className="flex min-h-screen w-full flex-col items-center justify-start">
+        <main className="flex-cstart flex-dcol min-h-screen w-full">
           <Container width="lg">
             <PageHeader
               title="Do you like this Stories ?"

@@ -61,15 +61,15 @@ const Footer: FC<FooterProps> = (props) => {
           classNames="head-wrapper flex-drow pb-7xl tablet-portrait:hidden"
           width="sm"
         >
-          <div className="navigation flex w-3/5 flex-row items-center justify-between laptop:w-full">
+          <div className="navigation flex-cspace flex-drow w-3/5 flex-row laptop:w-full">
             {navObjOne && (
-              <ul className="nav-list flex-dcol w-full items-start justify-start space-y-sm">
+              <ul className="nav-list flex-dcol flex-tstart w-full space-y-sm">
                 <li className="title mb-xxs font-semibold">
                   {navObjOne.title}
                 </li>
                 {navObjOne.navLinks.map((item, key) => (
                   <li
-                    className="underline-hover cursor-pointer text-normal "
+                    className="underline-hover fnormal-normal cursor-pointer "
                     key={`nav_${item}_${key}`}
                   >
                     <Link href={item.link}>{item.title}</Link>
@@ -78,13 +78,13 @@ const Footer: FC<FooterProps> = (props) => {
               </ul>
             )}
             {navObjTwo && (
-              <ul className="nav-list flex-dcol w-full items-start justify-start space-y-sm">
+              <ul className="nav-list flex-dcol flex-tstart w-full space-y-sm">
                 <li className="title mb-xxs font-semibold">
                   {navObjTwo.title}
                 </li>
                 {navObjTwo.navLinks.map((item, key) => (
                   <li
-                    className="underline-hover cursor-pointer text-normal "
+                    className="underline-hover fnormal-normal cursor-pointer "
                     key={`nav_${item}_${key}`}
                   >
                     <Link href={item.link}>{item.title}</Link>
@@ -93,13 +93,13 @@ const Footer: FC<FooterProps> = (props) => {
               </ul>
             )}
             {navObjThree && (
-              <ul className="nav-list flex-dcol w-full items-start justify-start space-y-sm">
+              <ul className="nav-list flex-dcol flex-tstart w-full space-y-sm">
                 <li className="title mb-xxs font-semibold">
                   {navObjThree.title}
                 </li>
                 {navObjThree.navLinks.map((item, key) => (
                   <li
-                    className="underline-hover cursor-pointer text-normal "
+                    className="underline-hover fnormal-normal cursor-pointer "
                     key={`nav_${item}_${key}`}
                   >
                     <Link href={item.link}>{item.title}</Link>
@@ -109,30 +109,30 @@ const Footer: FC<FooterProps> = (props) => {
             )}
           </div>
           <div className="highlight-banner w-2/5 laptop:hidden">
-            <p className="text-4xl font-bold uppercase">
+            <p className="f4xl-bold uppercase">
               As one chapter ends, the story{"'"}s essence lingers in the
               margins.
             </p>
           </div>
         </Container>
-        <div className="bottom-wrapper border-t border-t-black pt-2.5xl">
+        <div className="bottom-wrapper wp-border-t pt-2.5xl">
           <Container
-            classNames="flex-drow justify-between items-center tablet-portrait:flex-col tablet-portrait:space-y-lg"
+            classNames="flex-drow flex-cspace tablet-portrait:flex-dcol tablet-portrait:space-y-lg"
             width="sm"
           >
             <div className="privacy-rooles space-y-2.5xl tablet-portrait:w-full tablet-portrait:space-y-lg">
-              <p className="text-medium font-normal">
+              <p className="fmedium-normal">
                 © 2023 ReactifyWP - Wordpress blog project by Alxich. <br />
                 The rights belong to the authors of the content and libraries
                 used in this template.
               </p>
-              <div className="socials svg-animated hidden w-full flex-row justify-center space-x-xl child:cursor-pointer tablet-portrait:flex">
+              <div className="socials svg-animated tablet-portrait:flex-drow hidden w-full justify-center space-x-xl child:cursor-pointer">
                 <SvgIcons type="Discord" />
                 <SvgIcons type="Figma" />
                 <SvgIcons type="Google" />
                 <SvgIcons type="Github" />
               </div>
-              <p className="text-medium font-normal">
+              <p className="fmedium-normal">
                 The code and design of this template are copyrighted by{" "}
                 <Link href="#" className="use-transition hover:text-highlight">
                   @Alxich

@@ -12,7 +12,7 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
   return (
     <Container
       width="md"
-      classNames="flex-drow pt-7xl space-x-3xl tablet:flex-col tablet:space-x-0 tablet:space-y-lg tablet:pt-0"
+      classNames="flex-drow pt-7xl space-x-3xl tablet:flex-dcol tablet:space-x-0 tablet:space-y-lg tablet:pt-0"
     >
       <div className="thumbnail product-thumbnail relative h-fit w-1/2 cursor-pointer rounded-lg border border-gray bg-[#fff] tablet:mx-auto tablet:w-full tablet:max-w-[360px]">
         <Image src={VansProductImage} alt="product-image-container" />
@@ -20,41 +20,37 @@ const ProductDetails: FC<ProductDetailsProps> = (props) => {
           <MagnifyingGlassIcon className="w-xl " />
         </div>
       </div>
-      <div className="details product details flex w-1/2 flex-col items-start justify-start space-y-md child:w-full tablet:w-full">
+      <div className="details product details flex-tstart flex-dcol w-1/2 space-y-md child:w-full tablet:w-full">
         <div className="title-and-price flex-drow items-baseline justify-between">
-          <h2 className="text-2xl font-normal">
+          <h2 className="f2xl-normal">
             Trainers <span className="font-black">Vans SK8-HI</span>
           </h2>
-          <p className="price text-normal font-semibold text-highlight phone-portrait:hidden">
+          <p className="price fnormal-semibold text-highlight phone-portrait:hidden">
             £75.00
           </p>
         </div>
         <div className="line h-[1px] w-full bg-gray/20" />
-        <div className="selectors flex-dcol items-start justify-start space-y-md">
+        <div className="selectors flex-dcol flex-tstart space-y-md">
           <SquaresSelector />
           <QuantitySelector />
-          <div className="item type-selctor-calc__vat flex-drow w-full items-baseline justify-between desktop:flex-col">
+          <div className="item type-selctor-calc__vat flex-drow desktop:flex-dcol w-full items-baseline justify-between">
             <div className="title">
-              <h4 className="text-normal font-medium leading-normal">
+              <h4 className="fnormal-medium leading-normal">
                 Price with VAT + delivery
               </h4>
             </div>
-            <p className="price text-normal font-semibold text-highlight">
+            <p className="price fnormal-semibold text-highlight">
               £75.00{" "}
               <span className="text-xs font-semibold">{"(8.78£ postage)"}</span>
             </p>
           </div>
         </div>
-        <div className="item type-selctor-total flex-dcol w-full items-start justify-start">
+        <div className="item type-selctor-total flex-dcol flex-tstart w-full">
           <div className="flex-drow w-full items-baseline justify-between">
             <div className="title">
-              <h4 className="text-normal font-medium leading-normal">
-                Total Price
-              </h4>
+              <h4 className="fnormal-medium leading-normal">Total Price</h4>
             </div>
-            <p className="price text-normal font-semibold text-highlight">
-              £83.00
-            </p>
+            <p className="price fnormal-semibold text-highlight">£83.00</p>
           </div>
           <div className="advice-desc">
             <p className="text-xs font-normal text-gray">

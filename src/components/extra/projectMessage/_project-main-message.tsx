@@ -11,14 +11,12 @@ const ProjectMainMessage: FC<ProjectMainMessageProps> = (props) => {
   // }, []);
 
   return (
-    <div className="flex-ccenter fixed left-0 top-0 flex h-screen w-full backdrop-blur-sm">
-      <div className="flex-ccenter flex w-full max-w-2xl flex-col rounded-lg border-2 border-gray bg-white p-7xl  shadow-2xl">
+    <div className="flex-ccenter flex-drow h-screen fixed left-0 top-0 w-full backdrop-blur-sm">
+      <div className="flex-ccenter flex-dcol flex-drow w-full max-w-2xl rounded-lg border-2 border-gray bg-white p-7xl  shadow-2xl">
         <div className="error-svg">
           <SvgIcons type="Error" />
         </div>
-        <h1 className="mb-sm text-center text-3xl font-bold">
-          We’ll be back soon!
-        </h1>
+        <h1 className="f3xl-bold mb-sm text-center">We’ll be back soon!</h1>
         <p className="mb-md text-center">
           We are creating something amazing for you!
           <br />

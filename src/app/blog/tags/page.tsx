@@ -136,7 +136,7 @@ const TagsPageAll: FC<TagPageProps> = (props) => {
         <h4 className="text-inherit">All available tags</h4>
       </div>
       {tags && (
-        <div className="tags flex-drow-wrap gap-tag w-full">
+        <div className="tags flex-drow gap-tag w-full flex-wrap">
           {tags.map(({ background, color, link, text }, key) => (
             <TagLink
               type="big"

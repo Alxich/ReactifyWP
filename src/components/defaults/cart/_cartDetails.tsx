@@ -27,11 +27,12 @@ const CartDetailsInputs: FC<CartDetailsInputsProps> = ({
   type,
   readonly,
 }) => {
+  /* CHECK THIS CODE: Unknown !important use */
   return (
     <input
       type={type}
       placeholder={placeholder}
-      className="font-regular use-transition w-full border-0 !border-b border-b-gray/20 px-0 py-sm text-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
+      className="fsmall-normal use-transition w-full border-0 !border-b border-b-gray/20 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
       readOnly={readonly}
     />
   );
@@ -49,7 +50,7 @@ const CartDetailsTextarea: FC<CartDetailsTextareaProps> = ({
   return (
     <textarea
       placeholder={placeholder}
-      className="font-regular use-transition h-auto min-h-5.5xl w-full border-0 !border-b border-b-gray/20 px-0 py-sm text-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
+      className="fsmall-normal use-transition h-auto min-h-5.5xl w-full border-0 !border-b border-b-gray/20 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
       readOnly={readonly}
       rows={1}
       cols={1}
@@ -59,16 +60,16 @@ const CartDetailsTextarea: FC<CartDetailsTextareaProps> = ({
 
 const CartDetails: FC<CartDetailsProps> = (props) => {
   return (
-    <form className="form w-full flex-col items-start justify-start space-y-7xl pt-2xl">
+    <form className="form flex-tstart flex-dcol w-full space-y-7xl pt-2xl">
       <div className="title w-full">
         <h3 className="f2xl-semibold">Placing an order</h3>
       </div>
       <div className="item-row flex-tspace flex-drow w-full space-x-sm">
-        <div className="flex w-1/2 flex-col items-start justify-start space-y-xl">
-          <div className="title w-full border-b border-b-black">
-            <h5 className="w-full text-normal font-medium">Buyer data</h5>
+        <div className="flex-tstart flex-dcol w-1/2 space-y-xl">
+          <div className="title wp-border-b w-full">
+            <h5 className="fnormal-medium w-full">Buyer data</h5>
           </div>
-          <div className="form-inputs flex-dcol w-full items-start justify-start space-y-xs">
+          <div className="form-inputs flex-dcol flex-tstart w-full space-y-xs">
             <CartDetailsInputs placeholder="Enter your full name" type="text" />
             <CartDetailsInputs
               placeholder="Enter your phone number"
@@ -76,11 +77,11 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
             />
           </div>
         </div>
-        <div className="flex w-1/2 flex-col items-start justify-start space-y-xl">
-          <div className="title w-full border-b border-b-black">
-            <h5 className="w-full text-normal font-medium">Delivery</h5>
+        <div className="flex-tstart flex-dcol w-1/2 space-y-xl">
+          <div className="title wp-border-b w-full">
+            <h5 className="fnormal-medium w-full">Delivery</h5>
           </div>
-          <div className="form-inputs flex-dcol w-full items-start justify-start space-y-xs">
+          <div className="form-inputs flex-dcol flex-tstart w-full space-y-xs">
             <CartDetailsInputs placeholder="Method of delivery" type="text" />
             <CartDetailsInputs placeholder="Region" type="text" />
             <CartDetailsInputs placeholder="City" type="text" />
@@ -89,13 +90,13 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
         </div>
       </div>
       <div className="item-row flex-tspace flex-drow w-full space-x-sm">
-        <div className="flex-dcol w-full items-start justify-start space-y-xl">
-          <div className="title w-full border-b border-b-black">
-            <h5 className="w-full text-normal font-medium">
+        <div className="flex-dcol flex-tstart w-full space-y-xl">
+          <div className="title wp-border-b w-full">
+            <h5 className="fnormal-medium w-full">
               Do you want something special to you order ?
             </h5>
           </div>
-          <div className="form-inputs flex-dcol w-full items-start justify-start space-y-xs">
+          <div className="form-inputs flex-dcol flex-tstart w-full space-y-xs">
             <CartDetailsTextarea placeholder="Comment on the order" />
           </div>
         </div>

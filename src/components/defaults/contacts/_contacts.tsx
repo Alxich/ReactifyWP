@@ -11,12 +11,12 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "contacts flex-dcol flex-ccenter w-full space-y-5xl border-t border-t-black py-7xl phone-portrait:pb-0",
+        "contacts flex-dcol flex-ccenter wp-border-t w-full space-y-5xl py-7xl phone-portrait:pb-0",
         (className !== undefined || null) && className,
       )}
     >
       <div className="description flex-dcol flex-ccenter w-full space-y-xl px-7.5xl tablet:px-0">
-        <h2 className="text-center text-6xl font-semibold !leading-none">
+        <h2 className="f6xl-semibold text-center !leading-none">
           Subscribe to learn about new product features
         </h2>
         <p className="w-3/4 text-center text-xl tablet:w-full">
@@ -26,65 +26,53 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
         </p>
       </div>
       <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl phone-portrait:grid-cols-1 phone-portrait:grid-rows-4 tablet:px-0">
-        <label
-          htmlFor="user-mail"
-          className="flex-dcol w-full items-start justify-start"
-        >
-          <span className="mb-xxs text-medium font-medium">Email</span>
-          <div className="flex-column flex w-full">
+        <label htmlFor="user-mail" className="flex-dcol flex-tstart w-full">
+          <span className="fmedium-medium mb-xxs">Email</span>
+          <div className="flex-dcol w-full">
             <input
               id="user-mail"
               name="user-mail"
               type="email"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
+              className="contact-inputs-style"
               placeholder="Enter your email"
             />
           </div>
         </label>
 
-        <label
-          htmlFor="user-message"
-          className="flex-dcol w-full items-start justify-start"
-        >
-          <span className="mb-xxs text-medium font-medium">Message</span>
-          <div className="flex-column flex w-full">
+        <label htmlFor="user-message" className="flex-dcol flex-tstart w-full">
+          <span className="fmedium-medium mb-xxs">Message</span>
+          <div className="flex-dcol w-full">
             <input
               id="user-message"
               name="user-message"
               type="text"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
+              className="contact-inputs-style"
               placeholder="Enter your message"
             />
           </div>
         </label>
 
-        <label
-          htmlFor="user-name"
-          className="flex-dcol w-full items-start justify-start"
-        >
-          <span className="mb-xxs text-medium font-medium">Name</span>
-          <div className="flex-column flex w-full">
+        <label htmlFor="user-name" className="flex-dcol flex-tstart w-full">
+          <span className="fmedium-medium mb-xxs">Name</span>
+          <div className="flex-dcol w-full">
             <input
               id="user-name"
               name="user-name"
               type="text"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
+              className="contact-inputs-style"
               placeholder="Enter your name"
             />
           </div>
         </label>
 
-        <label
-          htmlFor="user-surname"
-          className="flex-dcol w-full items-start justify-start"
-        >
-          <span className="mb-xxs text-medium font-medium">Surname</span>
-          <div className="flex-column flex w-full">
+        <label htmlFor="user-surname" className="flex-dcol flex-tstart w-full">
+          <span className="fmedium-medium mb-xxs">Surname</span>
+          <div className="flex-dcol w-full">
             <input
               id="user-surname"
               name="user-surname"
               type="text"
-              className="block w-full rounded-lg border border-gray bg-white px-md py-sm text-normal placeholder:text-gray focus:outline-none"
+              className="contact-inputs-style"
               placeholder="Enter your surname"
             />
           </div>

@@ -26,7 +26,7 @@ const Comments: FC<CommentsWrapperProps> = ({
       )}
       <Container
         width="md"
-        classNames="flex-dcol justify-start items-center space-y-xl small-laptop:space-y-lg"
+        classNames="flex-dcol flex-tcenter space-y-xl small-laptop:space-y-lg"
       >
         {showEditor !== false && (
           <CommentWrapper

@@ -11,8 +11,252 @@
     @apply text-center font-bold;
   }
 
+  .fnormal-center {
+    @apply text-center text-normal;
+  }
+
+  .fsemibold-center {
+    @apply text-center font-semibold;
+  }
+
+  .fsmall-normal {
+    @apply text-small font-normal;
+  }
+
+  .fsmall-medium {
+    @apply text-small font-medium;
+  }
+
+  .fsmall-semibold {
+    @apply text-small font-semibold;
+  }
+
+  .fsmall-bold {
+    @apply text-small font-bold;
+  }
+
+  .fbase-normal {
+    @apply text-base font-normal;
+  }
+
+  .fbase-medium {
+    @apply text-base font-medium;
+  }
+
+  .fbase-semibold {
+    @apply text-base font-semibold;
+  }
+
+  .fbase-bold {
+    @apply text-base font-bold;
+  }
+
+  .fmedium-normal {
+    @apply text-medium font-normal;
+  }
+
+  .fmedium-medium {
+    @apply text-medium font-medium;
+  }
+
+  .fmedium-semibold {
+    @apply text-medium font-semibold;
+  }
+
+  .fmedium-bold {
+    @apply text-medium font-bold;
+  }
+
+  .fnormal-normal {
+    @apply text-normal font-normal;
+  }
+
+  .fnormal-medium {
+    @apply text-normal font-medium;
+  }
+
+  .fnormal-semibold {
+    @apply text-normal font-semibold;
+  }
+
+  .fnormal-bold {
+    @apply text-normal font-bold;
+  }
+
+  .flarge-normal {
+    @apply text-large font-normal;
+  }
+
+  .flarge-medium {
+    @apply text-large font-medium;
+  }
+
+  .flarge-semibold {
+    @apply text-large font-semibold;
+  }
+
+  .flarge-bold {
+    @apply text-large font-bold;
+  }
+
+  .fxl-normal {
+    @apply text-xl font-normal;
+  }
+
+  .fxl-medium {
+    @apply text-xl font-medium;
+  }
+
+  .fxl-semibold {
+    @apply text-xl font-semibold;
+  }
+
+  .fxl-bold {
+    @apply text-xl font-bold;
+  }
+
+  .f2xl-normal {
+    @apply text-2xl font-normal;
+  }
+
+  .f2xl-medium {
+    @apply text-2xl font-medium;
+  }
+
   .f2xl-semibold {
-    @apply text-2xl font-semibold
+    @apply text-2xl font-semibold;
+  }
+
+  .f2xl-bold {
+    @apply text-2xl font-bold;
+  }
+
+  .f3xl-normal {
+    @apply text-3xl font-normal;
+  }
+
+  .f3xl-medium {
+    @apply text-3xl font-medium;
+  }
+
+  .f3xl-semibold {
+    @apply text-3xl font-semibold;
+  }
+
+  .f3xl-bold {
+    @apply text-3xl font-bold;
+  }
+
+  .f4xl-normal {
+    @apply text-4xl font-normal;
+  }
+
+  .f4xl-medium {
+    @apply text-4xl font-medium;
+  }
+
+  .f4xl-semibold {
+    @apply text-4xl font-semibold;
+  }
+
+  .f4xl-bold {
+    @apply text-4xl font-bold;
+  }
+
+  .f5xl-normal {
+    @apply text-5xl font-normal;
+  }
+
+  .f5xl-medium {
+    @apply text-5xl font-medium;
+  }
+
+  .f5xl-semibold {
+    @apply text-5xl font-semibold;
+  }
+
+  .f5xl-bold {
+    @apply text-5xl font-bold;
+  }
+
+  .f6xl-normal {
+    @apply text-6xl font-normal;
+  }
+
+  .f6xl-medium {
+    @apply text-6xl font-medium;
+  }
+
+  .f6xl-semibold {
+    @apply text-6xl font-semibold;
+  }
+
+  .f6xl-bold {
+    @apply text-6xl font-bold;
+  }
+
+  .f7xl-normal {
+    @apply text-7xl font-normal;
+  }
+
+  .f7xl-medium {
+    @apply text-7xl font-medium;
+  }
+
+  .f7xl-semibold {
+    @apply text-7xl font-semibold;
+  }
+
+  .f7xl-bold {
+    @apply text-7xl font-bold;
+  }
+
+  .f8xl-normal {
+    @apply text-8xl font-normal;
+  }
+
+  .f8xl-medium {
+    @apply text-8xl font-medium;
+  }
+
+  .f8xl-semibold {
+    @apply text-8xl font-semibold;
+  }
+
+  .f8xl-bold {
+    @apply text-8xl font-bold;
+  }
+
+  .f9xl-normal {
+    @apply text-9xl font-normal;
+  }
+
+  .f9xl-medium {
+    @apply text-9xl font-medium;
+  }
+
+  .f9xl-semibold {
+    @apply text-9xl font-semibold;
+  }
+
+  .f9xl-bold {
+    @apply text-9xl font-bold;
+  }
+
+  .f10xl-normal {
+    @apply text-10xl font-normal;
+  }
+
+  .f10xl-medium {
+    @apply text-10xl font-medium;
+  }
+
+  .f10xl-semibold {
+    @apply text-10xl font-semibold;
+  }
+
+  .f10xl-bold {
+    @apply text-10xl font-bold;
   }
 
   /**
@@ -22,7 +266,7 @@
   */
 
   .wrapper-conspace {
-    @apply py-7xl px-3xl
+    @apply px-3xl py-7xl;
   }
 
   .flex-dcol {
@@ -34,7 +278,7 @@
   }
 
   .flex-drow-wrap {
-    @apply flex-drow flex-wrap
+    @apply flex-drow flex-wrap;
   }
 
   .flex-tcenter {
@@ -45,16 +289,36 @@
     @apply items-start justify-between;
   }
 
+  .flex-cspace {
+    @apply items-center justify-between;
+  }
+
+  .flex-tstart {
+    @apply items-start justify-start;
+  }
+
+  .flex-stcenter {
+    @apply items-stretch justify-center;
+  }
+
+  .flex-stspace {
+    @apply items-stretch justify-between;
+  }
+
   .flex-cend {
     @apply items-center justify-end;
   }
 
   .flex-ccenter {
-    @apply items-center justify-center
+    @apply items-center justify-center;
+  }
+
+  .flex-cstart {
+    @apply items-center justify-start;
   }
 
   .gap-tag {
-    @apply gap-xs
+    @apply gap-xs;
   }
 
   .underline-hover {
@@ -67,5 +331,17 @@
 
   .wp-border {
     @apply border border-black;
+  }
+
+  .wp-border-b {
+    @apply border-b border-b-black
+  }
+
+  .wp-border-t {
+    @apply border-t border-t-black
+  }
+
+  .spread-block {
+    @apply h-full w-full;
   }
 }

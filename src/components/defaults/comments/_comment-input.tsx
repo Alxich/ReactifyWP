@@ -115,19 +115,15 @@ const CommentInput: FC<CommentWrapperProps> = ({
   );
 
   return (
-    <div className="comment-wrapper flex-dcol flex-tcenter w-full space-y-md rounded-lg border border-black border-opacity-25 p-xl child:w-full">
-      <div className="author flex items-center justify-start space-x-xs">
+    <div className="comment-wrapper flex-dcol flex-tcenter inputs-bborder-round w-full space-y-md border-opacity-25 p-xl child:w-full">
+      <div className="author flex-cstart flex-drow space-x-xs">
         <div className="thumbnail h-5xl w-5xl cursor-pointer overflow-hidden rounded-full">
           <Image src={thumbnail1} alt="author-comment-thumbnail" />
         </div>
         <div
-          className={classNames(
-            "name cursor-pointer text-large font-semibold ",
-            {
-              "flex-drow w-full items-center justify-between":
-                type === "answer",
-            },
-          )}
+          className={classNames("name flarge-semibold cursor-pointer ", {
+            "flex-drow flex-cspace w-full": type === "answer",
+          })}
         >
           <p className="text-inherit">
             {type === "answer" ? "Your answer to this..." : author.name}
@@ -139,10 +135,10 @@ const CommentInput: FC<CommentWrapperProps> = ({
           )}
         </div>
       </div>
-      <div className="content text-normal font-normal">
+      <div className="content fnormal-normal">
         <EditorContent editor={editor} />
       </div>
-      <div className=" flex-drow w-full items-center justify-between space-x-sm border-t border-t-gray/20 pt-md">
+      <div className=" flex-drow flex-cspace w-full space-x-sm border-t border-t-gray/20 pt-md">
         <div className="actions comment-actions svg-animated-stroke">
           <div
             className={classNames("item", {
@@ -170,7 +166,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
           </div>
           <div
             className={classNames(
-              "flex-drow items-stretch justify-between space-x-xs rounded-md bg-white",
+              "flex-drow flex-stspace space-x-xs rounded-md bg-white",
               {
                 hidden: !linkSelected,
               },

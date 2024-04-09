@@ -35,7 +35,7 @@ const Banner: FC<BannerProps> = ({
   return (
     <div
       className={classNames(
-        "banner-wrapper use-transition flex-ccenter visible fixed left-0 top-0 z-50 flex h-screen w-screen bg-black/30 px-10xl opacity-100 backdrop-blur-sm tablet-portrait:px-3xl",
+        "banner-wrapper use-transition flex-ccenter flex-drow h-screen visible fixed left-0 top-0 z-50 w-screen bg-black/30 px-10xl opacity-100 backdrop-blur-sm tablet-portrait:px-3xl",
         {
           "hidden opacity-0": isClosed,
           "py-[3vw]": type === "reg",
@@ -44,15 +44,15 @@ const Banner: FC<BannerProps> = ({
     >
       <div
         className={classNames(
-          "banner flex-dcol items-center justify-between space-y-7xl overflow-y-auto overflow-x-hidden rounded-lg bg-white px-3xl pb-7xl tablet:space-y-lg tablet:px-xl tablet:pb-xl",
+          "banner flex-dcol flex-cspace space-y-7xl overflow-y-auto overflow-x-hidden rounded-lg bg-white px-3xl pb-7xl tablet:space-y-lg tablet:px-xl tablet:pb-xl",
           {
-            "h-full w-full": type === "reg",
+            "spread-block": type === "reg",
             "w-full max-w-[680px]": type === "message",
           },
         )}
       >
-        <div className="banner-head flex-tspace sticky top-0 z-10 flex w-full overflow-hidden border-b border-b-gray bg-white pb-xl pt-7xl tablet:pb-md tablet:pt-0">
-          <h2 className="text-3xl font-semibold leading-none">{title}</h2>
+        <div className="banner-head flex-tspace flex-drow sticky top-0 z-10 w-full overflow-hidden border-b border-b-gray bg-white pb-xl pt-7xl tablet:pb-md tablet:pt-0">
+          <h2 className="f3xl-semibold leading-none">{title}</h2>
           <XMarkIcon
             onClick={() => closeTheBanner(!isClosed)}
             height={32}
@@ -62,7 +62,7 @@ const Banner: FC<BannerProps> = ({
         </div>
         <div
           className={classNames(
-            "content page-content-text relative z-0 flex h-full w-full flex-col items-center justify-start space-y-7xl tablet:space-y-lg",
+            "content page-content-text spread-block flex-cstart flex-dcol flex-drow relative z-0 space-y-7xl tablet:space-y-lg",
             {
               [className as string]:
                 className !== undefined && typeof className === "string",

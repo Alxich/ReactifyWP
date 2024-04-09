@@ -25,7 +25,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
       <Container
         width="md"
         classNames={classNames(" flex", {
-          "space-y-7xl flex-col": showSlogan === false,
+          "space-y-7xl flex-dcol": showSlogan === false,
           "space-x-3xl flex-row": showSlogan !== false,
         })}
       >
@@ -39,7 +39,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         </div>
         {showSlogan !== false && (
           <div className="theme-slogan tablet:hidden">
-            <p className="whitespace-nowrap text-7xl font-bold uppercase writing-sd-rl">
+            <p className="f7xl-bold whitespace-nowrap uppercase writing-sd-rl">
               Have you heard about Reactify
               <span className="mt-xs rounded-sm bg-black px-xs py-sm text-white">
                 WP

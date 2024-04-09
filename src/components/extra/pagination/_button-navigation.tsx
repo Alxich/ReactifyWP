@@ -19,7 +19,7 @@ const ButtonNavigation: FC<ButtonNavigationProps> = ({
   return (
     <div
       className={classNames(
-        "btn item-center use-transition flex cursor-pointer select-none justify-center space-x-xs text-gray hover:text-highlight",
+        "btn item-center use-transition flex-drow cursor-pointer select-none justify-center space-x-xs text-gray hover:text-highlight",
         {
           "btn-next flex-row-reverse space-x-reverse": next,
           "btn-previous flex-row": previous,
@@ -29,7 +29,7 @@ const ButtonNavigation: FC<ButtonNavigationProps> = ({
     >
       {next && <ArrowRightIcon className="icon h-5 w-5" />}
       {previous && <ArrowLeftIcon className="icon h-5 w-5" />}
-      <p className=" use-transition text-medium font-medium  text-inherit">
+      <p className=" use-transition fmedium-medium  text-inherit">
         {next ? "Next" : previous && "Previous"}
       </p>
     </div>

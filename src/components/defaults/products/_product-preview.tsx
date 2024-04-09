@@ -25,12 +25,12 @@ const ProductPreview: FC<ProductPreviewProps> = ({
   return (
     <div
       className={classNames(
-        "post post-previewer flex cursor-pointer",
+        "post post-previewer flex-drow cursor-pointer",
         className && className,
         {
           "flex-row justify-between space-x-3xl":
             (view && view == "row") || view == "row-full",
-          "flex-col space-y-3xl": view && view == "col",
+          "flex-dcol space-y-3xl": view && view == "col",
         },
       )}
     >
@@ -48,19 +48,16 @@ const ProductPreview: FC<ProductPreviewProps> = ({
         <Image
           src={image}
           alt="post__preview__thumbnail__image"
-          className="h-full w-full"
+          className="spread-block"
         />
       </div>
       <div
-        className={classNames(
-          "text-content flex-col items-start justify-start space-y-xl",
-          {
-            "w-1/2": (view && view == "row") || view == "row-full",
-            "w-full": view && view == "col",
-          },
-        )}
+        className={classNames("text-content flex-tstart flex-dcol space-y-xl", {
+          "w-1/2": (view && view == "row") || view == "row-full",
+          "w-full": view && view == "col",
+        })}
       >
-        <div className="content w-full flex-col items-start justify-start space-y-sm desktop:space-y-xxxs">
+        <div className="content flex-tstart flex-dcol w-full space-y-sm desktop:space-y-xxxs">
           <div className="short-info flex-drow w-full items-baseline justify-between">
             {breadcrumbs && (
               <p className="w-full text-medium leading-normal text-gray">
@@ -84,12 +81,12 @@ const ProductPreview: FC<ProductPreviewProps> = ({
             <span>{title}</span>
             <SvgIcons type="Explore-Arrow-Up-Right" />
           </h4>
-          <div className="text-block w-full text-normal text-gray">
+          <div className="text-block fnormal-normal w-full text-gray">
             <p className=" text-inherit">{texts}</p>
           </div>
         </div>
         {tags && (
-          <div className="tags flex-drow-wrap w-full space-x-xs">
+          <div className="tags flex-drow w-full flex-wrap space-x-xs">
             {tags.map(({ background, color, link, text }, key) => (
               <TagLink
                 background={background}

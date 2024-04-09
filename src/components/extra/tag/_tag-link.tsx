@@ -14,7 +14,7 @@ const TagLink: FC<TagLinkProps> = ({
   return (
     <Link
       href={link}
-      className={classNames("tag-link rounded-xl text-medium font-normal", {
+      className={classNames("tag-link fmedium-normal rounded-xl", {
         "px-xs py-xxxs": type === "normal" || type === undefined || null,
         "px-lg py-sm": type === "big",
       })}

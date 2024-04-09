@@ -16,7 +16,7 @@ const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
   return (
     <>
       <li className="shopping-nav wp-border use-transition group rounded-full px-md py-xs hover:bg-black">
-        <ul className="flex h-full w-full items-center justify-between">
+        <ul className="spread-block flex-cspace flex">
           <li className="mr-xs cursor-pointer">
             <HeartIcon className={userIconStyle} />
           </li>
@@ -25,10 +25,10 @@ const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
           </li>
         </ul>
       </li>
-      <li className="account-nav wp-border use-transition group flex cursor-pointer items-center justify-between rounded-full px-md py-xs hover:bg-black">
+      <li className="account-nav wp-border use-transition flex-cspace flex-drow cursor-pointer group rounded-full px-md py-xs hover:bg-black">
         <UserIcon className={`mr-xs laptop:mr-0 ${userIconStyle}`} />
         <p
-          className={`name text-normal font-medium ${transitionSetup} group-hover:text-white laptop:hidden`}
+          className={`name fnormal-medium ${transitionSetup} group-hover:text-white laptop:hidden`}
         >
           John Doe
         </p>

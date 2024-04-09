@@ -11,10 +11,10 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
   const pagesNavArray = ["Posts", "About us", "Behind the pixels", "Contact"];
 
   return (
-    <header className="masthead flex-ccenter flex w-full max-w-wrapper-lg-sz border-b border-b-black pb-xl pt-xs">
-      <Container width="sm" classNames="flex justify-between">
-        <div className="logo cursor-pointer select-none laptop:flex laptop:items-center">
-          <p className="text-3xl font-bold laptop:text-2xl">
+    <header className="masthead flex-ccenter wp-border-b flex-drow w-full max-w-wrapper-lg-sz pb-xl pt-xs">
+      <Container width="sm" classNames="flex-drow flex-stspace">
+        <div className="logo laptop:flex-drow cursor-pointer select-none laptop:items-center">
+          <p className="f3xl-bold laptop:text-2xl">
             Reactify
             <span className="ml-xxs rounded-sm bg-black px-xxs py-xxs text-white">
               WP
@@ -27,13 +27,13 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
           isActive={isActive}
           onClick={() => setIsActive(!isActive)}
         />
-        <ul className="navigation flex w-auto items-center justify-between space-x-2xl tablet-portrait:hidden laptop:space-x-md">
+        <ul className="navigation flex-cspace flex-drow w-auto space-x-2xl tablet-portrait:hidden laptop:space-x-md">
           {pagesNavArray.map((item, key) => (
             <li
-              className="underline-hover cursor-pointer text-normal"
+              className="underline-hover fnormal-normal cursor-pointer"
               key={`nav_${item}_${key}`}
             >
-              <p className="">{item}</p>
+              <p>{item}</p>
             </li>
           ))}
           <RoundedNavItems />

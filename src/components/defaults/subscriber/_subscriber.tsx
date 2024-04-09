@@ -10,7 +10,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
     <div className="subscriber w-full rounded-lg bg-black py-7xl">
       <Container
         width="sm"
-        classNames="flex-drow items-start px-xl py-7xl space-x-10xl tablet:!px-md desktop:px-5xl desktop:space-x-2.5xl border-y border-gray small-laptop:flex-col small-laptop:!space-x-0 small-laptop:justify-center small-laptop:items-center small-laptop:space-y-lg"
+        classNames="flex-drow items-start px-xl py-7xl space-x-10xl tablet:!px-md desktop:px-5xl desktop:space-x-2.5xl border-y border-gray small-laptop:flex-dcol small-laptop:!space-x-0 small-laptop:justify-center small-laptop:items-center small-laptop:space-y-lg"
       >
         <div className="short-text w-1/2 space-y-sm small-laptop:w-full">
           <h4 className="f2xl-semibold text-white">
@@ -24,14 +24,11 @@ const Subscriber: FC<SubscriberProps> = (props) => {
         </div>
         <div className="w-1/2 small-laptop:w-full">
           <form className="w-full">
-            <label
-              htmlFor="user-mail"
-              className="flex-dcol items-start justify-start "
-            >
-              <span className="mb-md text-xl font-semibold text-white">
+            <label htmlFor="user-mail" className="flex-dcol flex-tstart ">
+              <span className="fxl-semibold mb-md text-white">
                 Please let us share a great posts with you
               </span>
-              <div className="flex-drow mb-xs w-full space-x-4 tablet:flex-col tablet:space-x-0 tablet:space-y-lg">
+              <div className="flex-drow tablet:flex-dcol mb-xs w-full space-x-4 tablet:space-x-0 tablet:space-y-lg">
                 <input
                   id="user-mail"
                   name="user-mail"
