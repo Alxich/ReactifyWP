@@ -10,9 +10,7 @@ const PageHeaderReg: FC<PageHeaderRegProps> = ({ title, text }) => {
   return (
     <div className="page-header wp-border-b w-full px-3xl py-7xl desktop:px-0">
       <Container width="sm" classNames="mx-auto">
-        <h1 className="f8xl-bold mb-xl uppercase tablet-portrait:!text-6xl desktop:text-7xl">
-          {title}
-        </h1>
+        <h1 className="f8xl-bold mb-xl uppercase desktop:text-7xl">{title}</h1>
 
         <div className="flex-drow flex-cstart space-x-xs">
           <h3 className="f2xl-bold uppercase leading-none">

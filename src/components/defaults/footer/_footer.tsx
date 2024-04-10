@@ -61,7 +61,7 @@ const Footer: FC<FooterProps> = (props) => {
           classNames="head-wrapper flex-drow pb-7xl tablet-portrait:hidden"
           width="sm"
         >
-          <div className="navigation flex-cspace flex-drow w-3/5 flex-row laptop:w-full">
+          <div className="navigation flex-cspace flex-drow flex-drow w-3/5 laptop:w-full">
             {navObjOne && (
               <ul className="nav-list flex-dcol flex-tstart w-full space-y-sm">
                 <li className="title mb-xxs font-semibold">

@@ -273,12 +273,24 @@
     @apply flex flex-col;
   }
 
+  .flex-dcol-reverse {
+    @apply flex flex-col-reverse;
+  }
+
   .flex-drow {
     @apply flex flex-row;
   }
 
+  .flex-drow-reverse {
+    @apply flex flex-row-reverse;
+  }
+
   .flex-drow-wrap {
     @apply flex-drow flex-wrap;
+  }
+
+  .flex-drow-rev-wrap {
+    @apply flex-drow-reverse flex-wrap;
   }
 
   .flex-tcenter {
@@ -346,15 +358,15 @@
   }
 
   .wp-border-b {
-    @apply border-b border-b-black
+    @apply border-b border-b-black;
   }
 
   .wp-border-b-gray {
-    @apply border-b border-b-gray
+    @apply border-b border-b-gray;
   }
 
   .wp-border-t {
-    @apply border-t border-t-black
+    @apply border-t border-t-black;
   }
 
   .spread-block {

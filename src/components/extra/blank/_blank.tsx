@@ -26,7 +26,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         width="md"
         classNames={classNames(" flex", {
           "space-y-7xl flex-dcol": showSlogan === false,
-          "space-x-3xl flex-row": showSlogan !== false,
+          "space-x-3xl flex-drow": showSlogan !== false,
         })}
       >
         <div className="content w-full space-y-xl">

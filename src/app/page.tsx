@@ -174,7 +174,7 @@ const Home: FC<HomeProps> = (props) => {
 
   return (
     <>
-      <Container width="lg" classNames="space-y-6.5xl py-6.5xl">
+      <Container width="lg" classNames="space-y-7xl py-7xl">
         <PostsRecent />
         <SubscriberBanner />
         <PostAll postsData={postsData} />

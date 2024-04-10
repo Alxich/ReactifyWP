@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
     <header className="masthead flex-ccenter wp-border-b flex-drow w-full max-w-wrapper-lg-sz pb-xl pt-xs">
       <Container width="sm" classNames="flex-drow flex-stspace">
         <div className="logo laptop:flex-drow cursor-pointer select-none laptop:items-center">
-          <p className="f3xl-bold laptop:text-2xl">
+          <p className="f3xl-bold laptop:text-4xl">
             Reactify
             <span className="ml-xxs rounded-sm bg-black px-xxs py-xxs text-white">
               WP

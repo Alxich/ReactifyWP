@@ -28,7 +28,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
         "post post-previewer flex-drow cursor-pointer",
         className && className,
         {
-          "flex-row justify-between space-x-3xl":
+          "flex-drow justify-between space-x-3xl":
             (view && view == "row") || view == "row-full",
           "flex-dcol space-y-3xl": view && view == "col",
         },
@@ -60,7 +60,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
         <div className="content flex-tstart flex-dcol w-full space-y-sm desktop:space-y-xxxs">
           <div className="short-info flex-drow flex-basespace w-full">
             {breadcrumbs && (
-              <p className="w-full fmedium-normal leading-normal text-gray">
+              <p className="fmedium-normal w-full leading-normal text-gray">
                 <span className="breadcrumb">{breadcrumbs}</span>
               </p>
             )}
@@ -71,7 +71,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
 
           <h4
             className={classNames(
-              "flex-tspace flex-drow w-full fnormal-semibold leading-normal",
+              "flex-tspace flex-drow fnormal-semibold w-full leading-normal",
               {
                 "text-large": isGridSmall != undefined && isGridSmall === true,
                 "text-2xl": isGridSmall == undefined || isGridSmall === false,

@@ -2,7 +2,7 @@
 
 @layer components {
   /**
-  *  
+  *
   * Running out svg icons style list classes:
   * |-- Discord
   * |-- Figma
@@ -79,7 +79,7 @@
   }
 
   .post__action {
-    @apply use-transition flex-drow h-2xl w-max flex-row flex-ccenter space-x-xs rounded-default border-2;
+    @apply use-transition flex-drow h-2xl w-max flex-drow flex-ccenter space-x-xs rounded-default border-2;
   }
 
   .comment-actions {

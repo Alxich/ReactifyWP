@@ -41,7 +41,7 @@ const CartItem: FC<CartItemProps> = (props) => {
           </p>
         </div>
       </div>
-      <div className="counter flex-ccenter flex-drow h-7xl flex-row">
+      <div className="counter flex-ccenter flex-drow flex-drow h-7xl">
         <div
           className="icon icon-plus use-transition flex-ccenter fnormal-normal flex-drow h-1/2 w-xl cursor-pointer text-gray "
           onClick={() =>

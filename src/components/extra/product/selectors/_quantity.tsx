@@ -19,7 +19,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = ({}) => {
       </div>
       <div className="selectors-items flex-drow flex-ststart w-full space-x-sm">
         <div className="flex-drow flex-stspace container w-full">
-          <div className="counter flex-drow h-7xl flex-row items-stretch">
+          <div className="counter flex-drow flex-drow h-7xl items-stretch">
             <input
               type="number"
               value={inputValue}

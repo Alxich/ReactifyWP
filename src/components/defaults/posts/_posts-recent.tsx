@@ -11,7 +11,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
   return (
     <Container
       width="md"
-      classNames="posts-recents grid grid-cols-2 auto-rows-max auto-cols-max gap-3xl laptop:flex-drow laptop:flex-dcol desktop:gap-lg"
+      classNames="posts-recents grid grid-cols-2 auto-rows-max auto-cols-max gap-3xl laptop:flex-dcol desktop:gap-lg"
     >
       <PostPreview
         view={"col"}
@@ -43,7 +43,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
           },
         ]}
       />
-      <div className="post-in-col flex-dcol tablet:!flex-dcol group space-y-3xl tablet:!space-x-0 tablet:!space-y-lg laptop:flex-row laptop:items-start laptop:!space-y-0 laptop:space-x-lg desktop:space-y-lg">
+      <div className="post-in-col flex-dcol tablet:flex-dcol laptop:flex-drow group space-y-3xl tablet:!space-x-0 tablet:!space-y-lg laptop:items-start laptop:!space-y-0 laptop:space-x-lg desktop:space-y-lg">
         <PostPreview
           view={"row"}
           isGridSmall={true}

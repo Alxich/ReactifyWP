@@ -260,8 +260,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
           </div>
         }
       >
-        {/* CHECK THIS CODE: Unknown !important use */}
-        <h3 className="!text-2xl !leading-none">
+        <h3 className="!text-2xl leading-none">
           Please be sure to not spam the report
         </h3>
         <p>
