@@ -11,7 +11,7 @@ const LoginPage: FC<LoginPageProps> = (props) => {
       width="sm"
     >
       <div className="loyalty flex-tcenter flex-dcol w-1/2 bg-black p-md tablet:w-full">
-        <div className="flex-tcenter spread-block flex-dcol space-y-xs border-10 border-white bg-black px-6.5xl tablet:p-xl tablet-portrait:px-md">
+        <div className="flex-tcenter spread-block flex-dcol space-y-xs border-10 border-white bg-black px-6.5xl tablet:px-xl tablet:py-7xl tablet-portrait:px-md">
           <h2 className="f5xl-bold text-white">
             Join the largest shop community in the world
           </h2>

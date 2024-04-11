@@ -35,7 +35,7 @@ const Banner: FC<BannerProps> = ({
   return (
     <div
       className={classNames(
-        "banner-wrapper use-transition flex-ccenter flex-drow visible fixed left-0 top-0 z-50 h-screen w-screen bg-black/30 px-10xl opacity-100 backdrop-blur-sm tablet-portrait:px-3xl",
+        "banner-wrapper use-transition flex-ccenter flex-drow visible fixed left-0 top-0 z-50 h-screen w-screen bg-black/30 px-10xl opacity-100 tablet:px-md backdrop-blur-sm tablet-portrait:px-3xl",
         {
           "invisible opacity-0": isClosed,
           "py-[3vw]": type === "reg",
@@ -44,7 +44,7 @@ const Banner: FC<BannerProps> = ({
     >
       <div
         className={classNames(
-          "banner flex-dcol flex-cspace space-y-7xl overflow-y-auto overflow-x-hidden rounded-lg bg-white px-3xl pb-7xl tablet:space-y-lg tablet:px-xl tablet:pb-xl",
+          "banner flex-dcol flex-cspace space-y-7xl overflow-y-auto overflow-x-hidden rounded-lg bg-white px-3xl pb-7xl tablet:space-y-lg tablet:px-xl tablet:pb-xl phone-portrait:space-y-md phone-portrait:py-md",
           {
             "spread-block": type === "reg",
             "w-full max-w-[680px]": type === "message",

@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-white fnormal-normal leading-normal text-black;
+    @apply fnormal-normal bg-white leading-normal text-black;
   }
 
   input:not([class*="bg-"]),
@@ -81,7 +81,7 @@
   .post-content-text h3,
   .post-content-text h4,
   .post-content-text h5 {
-    @apply font-semibold leading-loose;
+    @apply font-semibold leading-normal;
   }
 
   .page-content-text h1,
@@ -115,6 +115,6 @@
   }
   .page-content-text ul,
   .post-content-text ul {
-    @apply list-outside list-disc pl-4 dark:text-gray tablet:pl-2;
+    @apply list-outside list-disc pl-4 tablet:pl-2 dark:text-gray;
   }
 }

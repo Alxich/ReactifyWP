@@ -113,4 +113,8 @@
   .inputs-bborder-round {
     @apply rounded-lg border border-black;
   }
+
+  .banner-buttons {
+    @apply flex-drow flex-cend tablet:flex-dcol w-full space-x-xs tablet:justify-center tablet:space-x-0 tablet:space-y-md;
+  }
 }

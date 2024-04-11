@@ -33,19 +33,23 @@ main > .wrapper.max-w-wrapper-lg-sz > .wrapper.px-3xl {
 /*----------------------------------------------*/
 
 .comment-wrapper {
-  @apply phone-portrait:px-xs tablet:px-sm small-laptop:px-md;
+  @apply phone-portrait:px-xs phone-portrait:pt-md tablet:px-sm small-laptop:px-md;
 }
 
 .comment-wrapper .comment-content {
-  @apply pb-0
+  @apply !pb-0 phone-portrait:space-y-xs phone-portrait:py-xs;
+}
+
+.comment-wrapper .replies {
+  @apply phone-portrait:pb-xs;
 }
 
 .comment-wrapper .comment-wrapper {
-  @apply tablet:px-xs;
+  @apply phone-portrait:py-0 tablet:px-xs;
 }
 
 .comment-wrapper .comment-wrapper.input {
-  @apply tablet:px-sm;
+  @apply phone-portrait:space-y-xs phone-portrait:py-xs tablet:px-sm;
 }
 
 .comment-wrapper .comment-actions {

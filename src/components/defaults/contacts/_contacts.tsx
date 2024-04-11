@@ -11,7 +11,7 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "contacts flex-dcol flex-ccenter wp-border-t w-full space-y-5xl py-7xl phone-portrait:pb-0",
+        "contacts flex-dcol flex-ccenter wp-border-t w-full space-y-5xl py-7xl tablet:pb-0",
         (className !== undefined || null) && className,
       )}
     >

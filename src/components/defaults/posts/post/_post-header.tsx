@@ -8,7 +8,7 @@ interface PostHeaderProps {}
 const PostHeader: FC<PostHeaderProps> = ({}: PostHeaderProps) => {
   return (
     <Container
-      classNames="flex-drow flex-cspace tablet:flex-dcol tablet:items-start tablet:space-y-lg"
+      classNames="flex-drow flex-cspace tablet:flex-dcol space-x-lg tablet:items-start tablet:space-y-lg tablet:space-x-0"
       width="md"
     >
       <Breadcrumbs />

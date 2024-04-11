@@ -7,14 +7,14 @@ interface UserSettingsPageProps {}
 const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
   return (
     <Container
-      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl"
+      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl tablet:pb-0 tablet:space-y-4xl"
       width="md"
     >
       <Breadcrumbs />
-      <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
-        <h4 className="text-inherit">Explore all categories</h4>
-      </div>
-      <form className="settings-form flex-dcol flex-ccenter w-full gap-y-7xl">
+      <form className="settings-form flex-dcol flex-ccenter w-full gap-y-4xl">
+        <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
+          <h4 className="text-inherit">Explore all categories</h4>
+        </div>
         <div className="form-inputs-container flex-tcenter tablet:flex-dcol flex-drow w-full gap-x-xs tablet:gap-x-0 tablet:gap-y-7xl">
           <div className="flex-tstart flex-dcol container w-1/2 space-y-lg tablet:w-full">
             <h5 className="fnormal-medium inline-block w-full border-b-2 border-b-black pb-xxs">

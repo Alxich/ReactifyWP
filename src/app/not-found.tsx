@@ -27,7 +27,7 @@ const NotFoundPage: FC<NotFoundPageProps> = (props) => {
             Oops! You were not supposed to find this secret page -_(^ _ ^)_-
           </h2>
         </div>
-        <div className="add-text max-w-md pt-[20vh] fnormal-center child:text-inherit">
+        <div className="add-text fnormal-center max-w-md pt-[20vh] child:text-inherit tablet:pt-[10vh]">
           <p>
             Please, give me some privacy to fix this and find way to go back to
             the{" "}

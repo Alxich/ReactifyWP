@@ -7,10 +7,10 @@ interface SubscriberProps {}
 
 const Subscriber: FC<SubscriberProps> = (props) => {
   return (
-    <div className="subscriber w-full rounded-lg bg-black py-7xl">
+    <div className="subscriber w-full rounded-lg bg-black py-7xl tablet:py-0">
       <Container
         width="sm"
-        classNames="flex-drow items-start px-xl py-7xl space-x-10xl tablet:!px-md desktop:px-5xl desktop:space-x-2.5xl border-y border-gray small-laptop:flex-dcol small-laptop:!space-x-0 small-laptop:justify-center small-laptop:items-center small-laptop:space-y-lg"
+        classNames="flex-drow items-start px-xl py-7xl space-x-10xl tablet:px-md desktop:px-5xl desktop:space-x-2.5xl border-y border-gray small-laptop:flex-dcol tablet:border-none small-laptop:space-x-0 small-laptop:justify-center small-laptop:items-center small-laptop:space-y-lg"
       >
         <div className="short-text w-1/2 space-y-sm small-laptop:w-full">
           <h4 className="f2xl-semibold text-white">

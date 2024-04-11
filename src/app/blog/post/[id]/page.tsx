@@ -186,7 +186,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         <PostHeader />
         <PostWrpapper postsData={postsData} />
       </Container>
-      {/* {   <Banner
+      {   <Banner
         type="reg"
         title="Creating a new post"
         isClosed={BannerClosed}
@@ -205,44 +205,53 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
             readOnly
           />
         </div>
-        <Tiptap />
-      </Banner>} */}
+      </Banner>}
 
-      {/* {      <Banner
-        type="message"
-        title="Delete this post ?"
-        isClosed={BannerClosed}
-        closeTheBanner={BannerCloseFunc}
-        className="space-y-xs"
-        additionalChildren={
-          <div className="flex-drow w-full flex-cend space-x-xs">
-            <Button formType="form__error" type="button">
-              Yes, please delete it
-            </Button>
-            <Button formType="btn_action:post" type="button">
-              No, I change my mind
-            </Button>
-          </div>
-        }
-      >
-        <h3 className="!leading-none !text-2xl">
-          Are you sure that you want delete this post ?
-        </h3>
-        <p>
-          Deleting this post is as final as pressing 'send' on a fiery email.
-          Once it's gone, it's gone for good—no post-mortem recovery here! You
-          and others will bid adieu to it forever. Still determined to delete?
-        </p>
-      </Banner>} */}
+      {/* {
+        <Banner
+          type="message"
+          title="Delete this post ?"
+          isClosed={BannerClosed}
+          closeTheBanner={BannerCloseFunc}
+          className="space-y-xs"
+          additionalChildren={
+            <div className="banner-buttons">
+              <Button
+                formType="form__error"
+                type="button"
+                className="tablet:w-full"
+              >
+                Yes, please delete it
+              </Button>
+              <Button
+                formType="btn_action:post"
+                type="button"
+                className="tablet:w-full"
+              >
+                No, I change my mind
+              </Button>
+            </div>
+          }
+        >
+          <h3 className="!text-2xl !leading-none">
+            Are you sure that you want delete this post ?
+          </h3>
+          <p>
+            Deleting this post is as final as pressing 'send' on a fiery email.
+            Once it's gone, it's gone for good—no post-mortem recovery here! You
+            and others will bid adieu to it forever. Still determined to delete?
+          </p>
+        </Banner>
+      } */}
 
-      <Banner
+      {/* <Banner
         type="message"
         title="Report this post ?"
         isClosed={BannerClosed}
         closeTheBanner={BannerCloseFunc}
         className="space-y-xs tablet:space-y-lg"
         additionalChildren={
-          <div className="flex-drow flex-cend tablet:flex-dcol w-full space-x-xs tablet:justify-center tablet:space-x-0 tablet:space-y-lg">
+          <div className="banner-buttons">
             <Button
               formType="form__error"
               type="button"
@@ -270,7 +279,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
           the situation perfectly. Spamming it will result in a swift ban for
           you, no questions been asked!
         </p>
-      </Banner>
+      </Banner> */}
     </>
   );
 };
