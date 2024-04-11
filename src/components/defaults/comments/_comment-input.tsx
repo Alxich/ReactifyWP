@@ -115,15 +115,18 @@ const CommentInput: FC<CommentWrapperProps> = ({
   );
 
   return (
-    <div className="comment-wrapper flex-dcol flex-tcenter inputs-bborder-round w-full space-y-md border-opacity-25 p-xl child:w-full">
+    <div className="comment-wrapper relative input flex-dcol flex-tcenter inputs-bborder-round w-full space-y-md border-opacity-25 p-xl child:w-full">
       <div className="author flex-cstart flex-drow space-x-xs">
         <div className="thumbnail h-5xl w-5xl cursor-pointer overflow-hidden rounded-full">
           <Image src={thumbnail1} alt="author-comment-thumbnail" />
         </div>
         <div
-          className={classNames("name flarge-semibold cursor-pointer ", {
-            "flex-drow flex-cspace w-full": type === "answer",
-          })}
+          className={classNames(
+            "name flarge-semibold cursor-pointer truncate tablet:text-normal",
+            {
+              "flex-drow flex-cspace w-full": type === "answer",
+            },
+          )}
         >
           <p className="text-inherit">
             {type === "answer" ? "Your answer to this..." : author.name}
@@ -166,9 +169,9 @@ const CommentInput: FC<CommentWrapperProps> = ({
           </div>
           <div
             className={classNames(
-              "flex-drow flex-stspace space-x-xs rounded-md bg-white",
+              "flex-stspace hidden space-x-xs rounded-md bg-white phone-portrait:absolute phone-portrait:p-xs phone-portrait:wp-border phone-portrait:left-0 phone-portrait:right-xs phone-portrait:bottom-[35%]",
               {
-                hidden: !linkSelected,
+                "flex-drow": linkSelected,
               },
             )}
           >
@@ -196,4 +199,3 @@ const CommentInput: FC<CommentWrapperProps> = ({
 };
 
 export default CommentInput;
-

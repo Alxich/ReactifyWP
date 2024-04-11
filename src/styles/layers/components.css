@@ -79,7 +79,7 @@
   }
 
   .post__action {
-    @apply use-transition flex-drow h-2xl w-max flex-drow flex-ccenter space-x-xs rounded-default border-2;
+    @apply use-transition flex-drow flex-drow flex-ccenter h-2xl w-max space-x-xs rounded-default border-2;
   }
 
   .comment-actions {
@@ -95,19 +95,19 @@
   }
 
   .authorization-services .item {
-    @apply use-transition flex-drow h-9xl w-1/3 cursor-pointer flex-ccenter rounded-md border border-gray hover:border-light-border hover:bg-light-border;
+    @apply use-transition flex-drow flex-ccenter h-9xl w-1/3 cursor-pointer rounded-md border border-gray hover:border-light-border hover:bg-light-border;
   }
 
   .inputs-bborder-style {
-    @apply border-0 wp-border-b-gray bg-white py-sm pl-0 pr-md fnormal-normal placeholder:text-gray focus:outline-none;
+    @apply wp-border-b-gray fnormal-normal border-0 bg-white py-sm pl-0 pr-md placeholder:text-gray focus:outline-none;
   }
 
   .auth-inputs-style {
-    @apply inputs-bborder-round block w-full bg-white px-md py-sm fnormal-normal placeholder:focus:outline-none;
+    @apply inputs-bborder-round fnormal-normal block w-full bg-white px-md py-sm placeholder:focus:outline-none;
   }
 
   .contact-inputs-style {
-    @apply block w-full rounded-lg border border-gray bg-white px-md py-sm fnormal-normal placeholder:text-gray focus:outline-none;
+    @apply fnormal-normal block w-full rounded-lg border border-gray bg-white px-md py-sm placeholder:text-gray focus:outline-none;
   }
 
   .inputs-bborder-round {

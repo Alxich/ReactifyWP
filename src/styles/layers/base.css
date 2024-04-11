@@ -115,6 +115,6 @@
   }
   .page-content-text ul,
   .post-content-text ul {
-    @apply list-outside list-disc pl-4 dark:text-gray;
+    @apply list-outside list-disc pl-4 dark:text-gray tablet:pl-2;
   }
 }

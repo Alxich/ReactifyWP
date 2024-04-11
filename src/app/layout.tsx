@@ -29,7 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={classNames(
           inter.className,
-          "flex-cstart flex-dcol mx-auto max-w-wrapper-page-sz overflow-x-hidden p-2xl tablet:p-md",
+          "flex-cstart flex-dcol mx-auto max-w-wrapper-page-sz overflow-x-hidden p-2xl phone-portrait:p-xs tablet:p-md",
         )}
       >
         <Header />

@@ -35,7 +35,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            "use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm tablet:px-sm text-white hover:bg-transparent hover:text-highlight",
+            "use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight tablet:px-sm",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -53,7 +53,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            "use-transition rounded-lg border-2 border-vitalred bg-vitalred px-lg py-sm tablet:px-sm text-white hover:bg-transparent hover:text-vitalred",
+            "use-transition rounded-lg border-2 border-vitalred bg-vitalred px-lg py-sm text-white hover:bg-transparent hover:text-vitalred tablet:px-sm",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -71,7 +71,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            " post__action hover:text-black border-black bg-black px-xxs py-xxs text-white hover:bg-transparent",
+            " post__action border-black bg-black px-xxs py-xxs text-white hover:bg-transparent hover:text-black",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -107,7 +107,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            "use-transition fnormal-semibold rounded-lg border-2 border-black bg-black px-lg py-xs text-white hover:bg-transparent hover:text-black",
+            "use-transition fnormal-semibold rounded-lg border-2 border-black bg-black px-lg py-xs text-white hover:bg-transparent hover:text-black tablet:px-xs tablet-portrait:text-medium",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
@@ -142,7 +142,7 @@ const Button: FC<ButtonProps> = ({
 
       return (
         <button
-          className="flex-ccenter group hidden h-12 w-12 tablet-portrait:flex-dcol rounded"
+          className="flex-ccenter tablet-portrait:flex-dcol group hidden h-12 w-12 rounded"
           onClick={onClick}
         >
           <div
@@ -167,7 +167,7 @@ const Button: FC<ButtonProps> = ({
           id={id}
           type={type}
           className={classNames(
-            "use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm tablet:px-sm text-white hover:bg-transparent hover:text-highlight",
+            "use-transition rounded-lg border-2 border-highlight bg-highlight px-lg py-sm text-white hover:bg-transparent hover:text-highlight tablet:px-sm",
             {
               [className as string]:
                 typeof className === "string" && className !== undefined,
