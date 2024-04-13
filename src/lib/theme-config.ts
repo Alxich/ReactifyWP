@@ -44,6 +44,7 @@ const customScreens = {
   laptop: { max: "1024px" }, // for a laptop
   "small-laptop": { max: "900px" }, // for a small laptop
   "tablet-portrait": { max: "850px" }, // For portrait mode on a tablet
+  "tablet-portrait-min": { min: "850px" }, // For portrait mode on a tablet
   tablet: { max: "640px" }, // for a tablet
   "phone-portrait": { max: "400px" }, // For portrait mode on the phone
   phone: { max: "320px" }, // For phone
