@@ -19,7 +19,7 @@ interface CartPageProps {
 const CartPage: FC<CartPageProps> = ({ empty, success }: CartPageProps) => {
   return (
     <Container
-      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-lg"
+      classNames="flex-dcol flex-tcenter wrapper-conspace space-y-lg"
       width="md"
     >
       <Breadcrumbs />
@@ -38,7 +38,7 @@ const CartPage: FC<CartPageProps> = ({ empty, success }: CartPageProps) => {
             <CartItem />
             <CartItem />
           </div>
-          <div className="action-proceed flex-drow flex-tspace space-x-7xl">
+          <div className="action-proceed flex-drow flex-tspace tablet-portrait:flex-dcol space-x-7xl tablet-portrait:space-x-0 tablet-portrait:space-y-lg">
             <CartDetails />
             <CartSummary />
           </div>

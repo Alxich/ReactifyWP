@@ -180,37 +180,43 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
   return (
     <>
       <Container
-        classNames="flex-dcol flex-tcenter post wrapper-conspace"
+        classNames="flex-dcol flex-tcenter wrapper-conspace"
         width="md"
       >
         <PostHeader />
         <PostWrpapper postsData={postsData} />
       </Container>
-      {   <Banner
-        type="reg"
-        title="Creating a new post"
-        isClosed={BannerClosed}
-        closeTheBanner={BannerCloseFunc}
-        className="space-y-7xl"
-        additionalChildren={
-          <Button formType="btn_action:post" type="button" className="ml-auto">
-            Publicate this post
-          </Button>
-        }
-      >
-        <div className="title">
-          <input
-            className="title w-full border-x-0 border-b border-t-0 border-b-black p-0 f7xl-bold "
-            value={"How create a new post ?"}
-            readOnly
-          />
-        </div>
-      </Banner>}
+      {
+        <Banner
+          type="reg"
+          title="Creating a new post"
+          isClosed={BannerClosed}
+          closeTheBanner={BannerCloseFunc}
+          className="space-y-7xl"
+          additionalChildren={
+            <Button
+              formType="btn_action:post"
+              type="button"
+              className="ml-auto"
+            >
+              Publicate this post
+            </Button>
+          }
+        >
+          <div className="title">
+            <input
+              className="title f7xl-bold w-full border-x-0 border-b border-t-0 border-b-black p-0 "
+              value={"How create a new ?"}
+              readOnly
+            />
+          </div>
+        </Banner>
+      }
 
       {/* {
         <Banner
           type="message"
-          title="Delete this post ?"
+          title="Delete this ?"
           isClosed={BannerClosed}
           closeTheBanner={BannerCloseFunc}
           className="space-y-xs"
@@ -234,10 +240,10 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
           }
         >
           <h3 className="!text-2xl !leading-none">
-            Are you sure that you want delete this post ?
+            Are you sure that you want delete this ?
           </h3>
           <p>
-            Deleting this post is as final as pressing 'send' on a fiery email.
+            Deleting this is as final as pressing 'send' on a fiery email.
             Once it's gone, it's gone for good—no post-mortem recovery here! You
             and others will bid adieu to it forever. Still determined to delete?
           </p>
@@ -246,7 +252,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
 
       {/* <Banner
         type="message"
-        title="Report this post ?"
+        title="Report this ?"
         isClosed={BannerClosed}
         closeTheBanner={BannerCloseFunc}
         className="space-y-xs tablet:space-y-lg"

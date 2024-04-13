@@ -16,7 +16,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
 }) => {
   return (
     <Container
-      classNames={classNames("flex-dcol flex-tcenter post py-7xl", {
+      classNames={classNames("flex-dcol flex-tcenter py-7xl", {
         "space-y-7xl": showSlogan === false,
         "!pb-0": hasContacts === true,
       })}

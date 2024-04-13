@@ -11,7 +11,7 @@ export { default as AuthorizationForm } from "./defaults/authorization/_authoriz
 export { default as Subscriber } from "./defaults/subscriber/_subscriber";
 export { default as SubscriberBanner } from "./defaults/subscriber/_subscriber-banner";
 
-// Post components
+// components
 
 export { default as PostPreview } from "./defaults/posts/_post-preview";
 export { default as PostsRecent } from "./defaults/posts/_posts-recent";

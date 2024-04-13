@@ -7,7 +7,7 @@ interface UserAccountPageProps {}
 const UserAccountPage: FC<UserAccountPageProps> = (props) => {
   return (
     <Container
-      classNames="flex-dcol flex-tcenter post wrapper-conspace"
+      classNames="flex-dcol flex-tcenter wrapper-conspace tablet:pb-0"
       width="md"
     >
       <Breadcrumbs />

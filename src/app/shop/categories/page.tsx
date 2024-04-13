@@ -90,7 +90,7 @@ const CategoriesPage: FC<CategoriesPageProps> = (props) => {
 
   return (
     <Container
-      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl"
+      classNames="flex-dcol flex-tcenter wrapper-conspace space-y-7xl"
       width="md"
     >
       <Breadcrumbs />

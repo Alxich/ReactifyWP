@@ -45,6 +45,11 @@
     @apply block h-auto w-full rounded-default object-cover object-center;
   }
 
+  .post-content-text .banner,
+  .page-content-text .banner {
+    @apply tablet:mb-0
+  }
+
   .page-content-text p,
   .post-content-text p {
     @apply leading-normal;
@@ -67,6 +72,16 @@
   .post-content-text > * {
     @apply w-full text-inherit;
   }
+
+  .post-content-text .image,
+  .post-content-text .title,
+  .post-content-text  .text-additional,
+  .page-content-text .image,
+  .page-content-text .title,
+  .page-content-text .text-additional {
+    @apply tablet:px-0;
+  }
+
   .page-content-text image,
   .post-content-text image {
     @apply mx-auto;

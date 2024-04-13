@@ -1,11 +1,15 @@
 .pt-7xl {
-  @apply tablet-portrait:pt-3xl desktop:pt-4xl;
+  @apply desktop:pt-4xl tablet-portrait:pt-3xl;
 }
 .pb-7xl {
-  @apply tablet-portrait:pt-3xl desktop:pb-4xl;
+  @apply desktop:pb-4xl tablet-portrait:pt-3xl;
 }
 .py-7xl {
-  @apply tablet-portrait:pt-3xl desktop:py-4xl;
+  @apply desktop:py-4xl tablet-portrait:pt-3xl;
+}
+
+.space-y-7xl {
+  @apply desktop:space-y-4xl tablet-portrait:space-y-3xl;
 }
 
 /*----------------------------------------------*/
@@ -33,7 +37,7 @@ main > .wrapper.max-w-wrapper-lg-sz > .wrapper.px-3xl {
 /*----------------------------------------------*/
 
 .comment-wrapper {
-  @apply phone-portrait:px-xs phone-portrait:pt-md tablet:px-sm small-laptop:px-md;
+  @apply small-laptop:px-md tablet:px-sm phone-portrait:px-xs phone-portrait:pt-md;
 }
 
 .comment-wrapper .comment-content {
@@ -45,11 +49,11 @@ main > .wrapper.max-w-wrapper-lg-sz > .wrapper.px-3xl {
 }
 
 .comment-wrapper .comment-wrapper {
-  @apply phone-portrait:py-0 tablet:px-xs;
+  @apply tablet:px-xs phone-portrait:py-0;
 }
 
 .comment-wrapper .comment-wrapper.input {
-  @apply phone-portrait:space-y-xs phone-portrait:py-xs tablet:px-sm;
+  @apply tablet:px-sm phone-portrait:space-y-xs phone-portrait:py-xs;
 }
 
 .comment-wrapper .comment-actions {

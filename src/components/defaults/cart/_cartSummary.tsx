@@ -13,7 +13,7 @@ interface CartSummaryProps {}
 
 const CartSummary: FC<CartSummaryProps> = (props) => {
   return (
-    <div className="payment-form flex-tstart flex-dcol w-full max-w-[480px] space-y-lg bg-gray/5 px-3xl py-2xl">
+    <div className="payment-form flex-tstart flex-dcol w-full max-w-[480px] space-y-lg bg-gray/5 px-3xl py-2xl tablet-portrait:max-w-full phone-portrait:px-xxs">
       <div className="title w-full">
         <h3 className="f2xl-semibold">Placing an order</h3>
       </div>
@@ -21,7 +21,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
         <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">
           <div className="title flex-drow flex-cspace w-full">
             <h5 className="fnormal-medium">Discounts</h5>
-            <p className="fsmall-medium cursor-pointer text-gray underline">
+            <p className="fsmall-medium cursor-pointer text-gray underline tablet-portrait:text-medium">
               Clear the list
             </p>
           </div>
@@ -31,13 +31,17 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
             <div className="title flex-drow w-full">
               <h5 className="fnormal-medium text-gray">Order value</h5>
             </div>
-            <p className="fsmall-medium text-gray">£225.00</p>
+            <p className="fsmall-medium text-gray tablet-portrait:text-medium">
+              £225.00
+            </p>
           </div>
           <div className="item-intire content-data flex-drow flex-cspace w-full">
             <div className="title flex-drow w-full">
               <h5 className="fnormal-medium text-gray">Delivery</h5>
             </div>
-            <p className="fsmall-medium text-gray">£26.34</p>
+            <p className="fsmall-medium text-gray tablet-portrait:text-medium">
+              £26.34
+            </p>
           </div>
         </div>
         <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">

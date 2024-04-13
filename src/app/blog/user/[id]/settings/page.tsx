@@ -7,7 +7,7 @@ interface UserSettingsPageProps {}
 const UserSettingsPage: FC<UserSettingsPageProps> = (props) => {
   return (
     <Container
-      classNames="flex-dcol flex-tcenter post wrapper-conspace space-y-7xl tablet:pb-0 tablet:space-y-4xl"
+      classNames="flex-dcol flex-tcenter wrapper-conspace space-y-7xl tablet:pb-0 tablet:space-y-4xl"
       width="md"
     >
       <Breadcrumbs />

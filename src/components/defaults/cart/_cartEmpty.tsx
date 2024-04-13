@@ -6,7 +6,7 @@ interface CartEmptyProps {}
 const CartEmpty: FC<CartEmptyProps> = (props) => {
   return (
     <div className="empty-cart flex-dcol flex-ccenter w-full space-y-[10vw]">
-      <div className="main-text flex-ccenter flex-dcol flex-drow mt-[10vw] h-full w-fit max-w-[535px]">
+      <div className="main-text flex-ccenter flex-dcol mt-[10vw] h-full w-fit max-w-[535px]">
         <h3 className="f8xl-semibold text-center capitalize">
           So empty :{"("}
         </h3>

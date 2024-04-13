@@ -11,7 +11,7 @@ const ProductAll: FC<ProductAllProps> = ({ productsData }: ProductAllProps) => {
   return (
     <Container
       width="md"
-      classNames="grid grid-cols-3 auto-rows-max auto-cols-max gap-3xl laptop:grid-cols-2 tablet:!grid-cols-1 tablet:gap-lg"
+      classNames="grid grid-cols-3 auto-rows-max auto-cols-max gap-3xl laptop:grid-cols-2 tablet:grid-cols-1 tablet:gap-lg"
     >
       {productsData.map(
         ({ view, breadcrumbs, price, image, title, texts, tags }, key) => (

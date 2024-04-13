@@ -25,7 +25,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
   return (
     <div
       className={classNames(
-        "post post-previewer flex-drow cursor-pointer",
+        "post post-previewer cursor-pointer",
         className && className,
         {
           "flex-drow justify-between space-x-3xl":
@@ -36,7 +36,7 @@ const ProductPreview: FC<ProductPreviewProps> = ({
     >
       <div
         className={classNames(
-          "thumbnail overflow-hidden rounded-md border border-gray/20 tablet:!h-ctm-10 small-laptop:w-full",
+          "thumbnail overflow-hidden rounded-md border border-gray/20 tablet:h-ctm-10 small-laptop:w-full",
           {
             "min-w-[320px]": view && view == "row",
             "w-full": view && view == "col",

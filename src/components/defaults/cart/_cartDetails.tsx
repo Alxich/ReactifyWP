@@ -32,7 +32,7 @@ const CartDetailsInputs: FC<CartDetailsInputsProps> = ({
     <input
       type={type}
       placeholder={placeholder}
-      className="fsmall-normal use-transition !wp-border-b-gray/20 w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
+      className="fsmall-normal use-transition wp-border-b-gray20 w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent tablet-portrait:text-medium"
       readOnly={readonly}
     />
   );
@@ -50,7 +50,7 @@ const CartDetailsTextarea: FC<CartDetailsTextareaProps> = ({
   return (
     <textarea
       placeholder={placeholder}
-      className="fsmall-normal use-transition !wp-border-b-gray/20 h-auto min-h-5.5xl w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent"
+      className="fsmall-normal use-transition wp-border-b-gray20 h-auto min-h-5.5xl w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent tablet-portrait:text-medium"
       readOnly={readonly}
       rows={1}
       cols={1}
@@ -64,8 +64,8 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
       <div className="title w-full">
         <h3 className="f2xl-semibold">Placing an order</h3>
       </div>
-      <div className="item-row flex-tspace flex-drow w-full space-x-sm">
-        <div className="flex-tstart flex-dcol w-1/2 space-y-xl">
+      <div className="item-row flex-tspace flex-drow phone-portrait:flex-dcol w-full space-x-sm phone-portrait:space-x-0 phone-portrait:space-y-3xl">
+        <div className="flex-tstart flex-dcol w-1/2 space-y-xl phone-portrait:w-full">
           <div className="title wp-border-b w-full">
             <h5 className="fnormal-medium w-full">Buyer data</h5>
           </div>
@@ -77,7 +77,7 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
             />
           </div>
         </div>
-        <div className="flex-tstart flex-dcol w-1/2 space-y-xl">
+        <div className="flex-tstart flex-dcol w-1/2 space-y-xl phone-portrait:w-full">
           <div className="title wp-border-b w-full">
             <h5 className="fnormal-medium w-full">Delivery</h5>
           </div>

@@ -30,21 +30,23 @@ const ProductWrpapper: FC<ProductWrapperProps> = ({
         <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
           <h4 className="text-inherit">Recent products</h4>
         </div>
-        {productsData?.map(
-          ({ view, breadcrumbs, price, image, title, texts, tags }, key) => (
-            <ProductPreview
-              view={view}
-              breadcrumbs={breadcrumbs}
-              price={price}
-              image={image}
-              title={title}
-              texts={texts}
-              tags={tags}
-              type="regular"
-              key={`product_${title}__${key}`}
-            />
-          ),
-        )}
+        <div className="products grid grid-cols-1 auto-rows-max auto-cols-max gap-3xl small-laptop:grid-cols-2 tablet:grid-cols-1 tablet:gap-lg">
+          {productsData?.map(
+            ({ view, breadcrumbs, price, image, title, texts, tags }, key) => (
+              <ProductPreview
+                view={view}
+                breadcrumbs={breadcrumbs}
+                price={price}
+                image={image}
+                title={title}
+                texts={texts}
+                tags={tags}
+                type="regular"
+                key={`product_${title}__${key}`}
+              />
+            ),
+          )}
+        </div>
       </div>
     </Container>
   );

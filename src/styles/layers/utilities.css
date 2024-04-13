@@ -369,6 +369,10 @@
     @apply border-t border-t-black;
   }
 
+  .wp-border-b-gray20 {
+    @apply wp-border-b-gray border-b-gray/20
+  }
+
   .spread-block {
     @apply h-full w-full;
   }
