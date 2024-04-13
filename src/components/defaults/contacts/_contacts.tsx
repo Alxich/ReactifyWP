@@ -8,6 +8,37 @@ interface ContactsProps {
 }
 
 const Contacts: FC<ContactsProps> = ({ className }) => {
+  const inputs = [
+    {
+      id: "user-mail",
+      name: "user-mail",
+      type: "email",
+      placeholder: "Enter your email",
+      label: "Email",
+    },
+    {
+      id: "user-message",
+      name: "user-message",
+      type: "text",
+      placeholder: "Enter your message",
+      label: "Message",
+    },
+    {
+      id: "user-name",
+      name: "user-name",
+      type: "text",
+      placeholder: "Enter your name",
+      label: "Name",
+    },
+    {
+      id: "user-surname",
+      name: "user-surname",
+      type: "text",
+      placeholder: "Enter your surname",
+      label: "Surname",
+    },
+  ];
+
   return (
     <div
       className={classNames(
@@ -25,58 +56,25 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
           our last creators ideas everyday!
         </p>
       </div>
-      <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl phone-portrait:grid-cols-1 phone-portrait:grid-rows-4 tablet:px-0">
-        <label htmlFor="user-mail" className="flex-dcol flex-tstart w-full">
-          <span className="fmedium-medium mb-xxs">Email</span>
-          <div className="flex-dcol w-full">
-            <input
-              id="user-mail"
-              name="user-mail"
-              type="email"
-              className="contact-inputs-style"
-              placeholder="Enter your email"
-            />
-          </div>
-        </label>
-
-        <label htmlFor="user-message" className="flex-dcol flex-tstart w-full">
-          <span className="fmedium-medium mb-xxs">Message</span>
-          <div className="flex-dcol w-full">
-            <input
-              id="user-message"
-              name="user-message"
-              type="text"
-              className="contact-inputs-style"
-              placeholder="Enter your message"
-            />
-          </div>
-        </label>
-
-        <label htmlFor="user-name" className="flex-dcol flex-tstart w-full">
-          <span className="fmedium-medium mb-xxs">Name</span>
-          <div className="flex-dcol w-full">
-            <input
-              id="user-name"
-              name="user-name"
-              type="text"
-              className="contact-inputs-style"
-              placeholder="Enter your name"
-            />
-          </div>
-        </label>
-
-        <label htmlFor="user-surname" className="flex-dcol flex-tstart w-full">
-          <span className="fmedium-medium mb-xxs">Surname</span>
-          <div className="flex-dcol w-full">
-            <input
-              id="user-surname"
-              name="user-surname"
-              type="text"
-              className="contact-inputs-style"
-              placeholder="Enter your surname"
-            />
-          </div>
-        </label>
+      <form className="grid w-full max-w-[768px] grid-cols-2 grid-rows-3 gap-md px-7.5xl tablet:px-0 phone-portrait:grid-cols-1 phone-portrait:grid-rows-4">
+        {inputs.map((input) => (
+          <label
+            htmlFor={input.id}
+            className="flex-dcol flex-tstart w-full"
+            key={input.id}
+          >
+            <span className="fmedium-medium mb-xxs">{input.label}</span>
+            <div className="flex-dcol w-full">
+              <input
+                id={input.id}
+                name={input.name}
+                type={input.type}
+                className="contact-inputs-style"
+                placeholder={input.placeholder}
+              />
+            </div>
+          </label>
+        ))}
 
         <label
           htmlFor="submit-btn"

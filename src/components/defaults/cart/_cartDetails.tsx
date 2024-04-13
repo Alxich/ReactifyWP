@@ -59,6 +59,13 @@ const CartDetailsTextarea: FC<CartDetailsTextareaProps> = ({
 };
 
 const CartDetails: FC<CartDetailsProps> = (props) => {
+  const inputDetails = ["Method of delivery", "Region", "City", "Department"];
+
+  const renderInputDetails = () => {
+    return inputDetails.map((placeholder, index) => (
+      <CartDetailsInputs key={index} placeholder={placeholder} type="text" />
+    ));
+  };
   return (
     <form className="form flex-tstart flex-dcol w-full space-y-7xl pt-2xl">
       <div className="title w-full">
@@ -82,10 +89,7 @@ const CartDetails: FC<CartDetailsProps> = (props) => {
             <h5 className="fnormal-medium w-full">Delivery</h5>
           </div>
           <div className="form-inputs flex-dcol flex-tstart w-full space-y-xs">
-            <CartDetailsInputs placeholder="Method of delivery" type="text" />
-            <CartDetailsInputs placeholder="Region" type="text" />
-            <CartDetailsInputs placeholder="City" type="text" />
-            <CartDetailsInputs placeholder="Department" type="text" />
+            {renderInputDetails()}
           </div>
         </div>
       </div>

@@ -12,6 +12,23 @@ import { Button } from "@/components";
 interface CartSummaryProps {}
 
 const CartSummary: FC<CartSummaryProps> = (props) => {
+  const cardIcons = [
+    { src: masterCardIcon, alt: "card-acceptence-banks" },
+    { src: visaCardIcon, alt: "card-acceptence-banks" },
+    { src: applepayCardIcon, alt: "card-acceptence-banks" },
+    { src: googlepayCardIcon, alt: "card-acceptence-banks" },
+    { src: paypalCardIcon, alt: "card-acceptence-banks" },
+    { src: KlarnaCardIcon, alt: "card-acceptence-banks" },
+  ];
+
+  const renderCardIcons = () => {
+    return cardIcons.map((icon, index) => (
+      <div className="item h-7xl w-full max-w-[48px]" key={index}>
+        <Image src={icon.src} alt={icon.alt} />
+      </div>
+    ));
+  };
+
   return (
     <div className="payment-form flex-tstart flex-dcol w-full max-w-[480px] space-y-lg bg-gray/5 px-3xl py-2xl tablet-portrait:max-w-full phone-portrait:px-xxs">
       <div className="title w-full">
@@ -55,24 +72,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
             <h5 className="fnormal-medium">We accept</h5>
           </div>
           <div className="items-card-acceps flex-drow flex-cspace w-full space-x-2xl">
-            <div className="item h-7xl w-full max-w-[48px]">
-              <Image src={masterCardIcon} alt="card-acceptence-banks" />
-            </div>
-            <div className="item h-7xl w-full max-w-[48px]">
-              <Image src={visaCardIcon} alt="card-acceptence-banks" />
-            </div>
-            <div className="item h-7xl w-full max-w-[48px]">
-              <Image src={applepayCardIcon} alt="card-acceptence-banks" />
-            </div>
-            <div className="item h-7xl w-full max-w-[48px]">
-              <Image src={googlepayCardIcon} alt="card-acceptence-banks" />
-            </div>
-            <div className="item h-7xl w-full max-w-[48px]">
-              <Image src={paypalCardIcon} alt="card-acceptence-banks" />
-            </div>
-            <div className="item h-7xl w-full max-w-[48px]">
-              <Image src={KlarnaCardIcon} alt="card-acceptence-banks" />
-            </div>
+            {renderCardIcons()}
           </div>
         </div>
         {/* CHECK THIS CODE: Unknown !important use */}

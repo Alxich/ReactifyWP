@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 
-import { useEditor, EditorContent, FloatingMenu } from "@tiptap/react";
+import { useEditor, EditorContent } from "@tiptap/react";
 
 // Extensions for tiptap editor
 import StarterKit from "@tiptap/starter-kit";

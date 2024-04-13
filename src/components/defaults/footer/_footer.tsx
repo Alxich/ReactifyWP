@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Container, Subscriber, SvgIcons } from "../../index";
-import classNames from "classnames";
 
 interface FooterProps {}
 
@@ -48,6 +47,15 @@ const Footer: FC<FooterProps> = (props) => {
       { title: "Cookie Policy", link: "" },
     ],
   };
+
+  const socialIcons = (
+    <>
+      <SvgIcons type="Discord" />
+      <SvgIcons type="Figma" />
+      <SvgIcons type="Google" />
+      <SvgIcons type="Github" />
+    </>
+  );
 
   return (
     <>
@@ -127,10 +135,7 @@ const Footer: FC<FooterProps> = (props) => {
                 used in this template.
               </p>
               <div className="socials svg-animated tablet-portrait:flex-drow hidden w-full justify-center space-x-xl child:cursor-pointer">
-                <SvgIcons type="Discord" />
-                <SvgIcons type="Figma" />
-                <SvgIcons type="Google" />
-                <SvgIcons type="Github" />
+                {socialIcons}
               </div>
               <p className="fmedium-normal">
                 The code and design of this template are copyrighted by{" "}
@@ -141,10 +146,7 @@ const Footer: FC<FooterProps> = (props) => {
               </p>
             </div>
             <div className="socials svg-animated flex-drow space-x-xl child:cursor-pointer tablet-portrait:hidden">
-              <SvgIcons type="Discord" />
-              <SvgIcons type="Figma" />
-              <SvgIcons type="Google" />
-              <SvgIcons type="Github" />
+              {socialIcons}
             </div>
           </Container>
         </div>

@@ -8,49 +8,53 @@ interface AuthorizationFormProps {
 }
 
 const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
+  const fields = [
+    {
+      label: "Email",
+      id: "user-mail",
+      name: "user-mail",
+      type: "email",
+      placeholder: "Enter your email",
+    },
+    {
+      label: "Password",
+      id: "user-password",
+      name: "user-password",
+      type: "password",
+      placeholder: "Enter your password",
+    },
+    {
+      label: "Repeat password",
+      id: "user-repeat-password",
+      name: "user-repeat-password",
+      type: "password",
+      placeholder: "Enter your password again",
+    },
+  ];
+
   return (
-    <form className="flex-dcol w-full space-y-lg px-9.5xl py-10xl phone-portrait:!px-0 tablet-portrait:py-lg small-laptop:px-lg">
+    <form className="flex-dcol w-full space-y-lg px-9.5xl py-10xl small-laptop:px-lg tablet-portrait:py-lg phone-portrait:!px-0">
       <div className="title f5xl-bold w-full text-center leading-normal">
         <h1 className="text-inherit">Log In</h1>
       </div>
-      <label htmlFor="user-mail" className="flex-dcol flex-tstart w-full">
-        <span className="fmedium-medium mb-xxs">Email</span>
-        <div className="flex-dcol w-full">
-          <input
-            id="user-mail"
-            name="user-mail"
-            type="email"
-            className="auth-inputs-style"
-            placeholder="Enter your email"
-          />
-        </div>
-      </label>
-      <label htmlFor="user-mail" className="flex-dcol flex-tstart w-full">
-        <span className="fmedium-medium mb-xxs">Password</span>
-        <div className="flex-dcol w-full">
-          <input
-            id="user-password"
-            name="user-password"
-            type="password"
-            className="auth-inputs-style"
-            placeholder="Enter your password"
-          />
-        </div>
-      </label>
-      {type === "register" && (
-        <label htmlFor="user-mail" className="flex-dcol flex-tstart w-full">
-          <span className="fmedium-medium mb-xxs">Repeat password</span>
+      {fields.map((field, index) => (
+        <label
+          htmlFor={field.id}
+          className="flex-dcol flex-tstart w-full"
+          key={index}
+        >
+          <span className="fmedium-medium mb-xxs">{field.label}</span>
           <div className="flex-dcol w-full">
             <input
-              id="user-password"
-              name="user-password"
-              type="password"
+              id={field.id}
+              name={field.name}
+              type={field.type}
               className="auth-inputs-style"
-              placeholder="Enter your password again"
+              placeholder={field.placeholder}
             />
           </div>
         </label>
-      )}
+      ))}
       <Button type="submit" formType={"form"}>
         Subscribe
       </Button>
