@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { BlankPageWrapper } from "@/components";
 
-import pageContentBanner from "../../../public/images/post-recent-4.png";
+import pageContentBanner from "@images/post-recent-4.png";
 
 interface AboutPageProps {}
 

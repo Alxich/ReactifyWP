@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import PageHeaderReg from "./types/_regular";
 import PageHeaderUser from "./types/_user";
 
-import thumbnail from "../../../../public/images/thumbnail-1.png";
+import thumbnail from "@images/thumbnail-1.png";
 
 interface PageHeaderProps {
   title: string;

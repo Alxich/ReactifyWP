@@ -1,14 +1,17 @@
 "use client";
 
-import { FC, Dispatch, SetStateAction, ReactNode, useEffect } from "react";
+import {
+  FC,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
 
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 
 interface BannerProps {
   title: string;
-  isClosed: boolean;
-  closeTheBanner: Dispatch<SetStateAction<boolean>>;
   children: ReactNode;
   type: "reg" | "message";
   className?: string;
@@ -17,27 +20,27 @@ interface BannerProps {
 
 const Banner: FC<BannerProps> = ({
   title,
-  isClosed,
-  closeTheBanner,
   children,
   type,
   className,
   additionalChildren,
 }) => {
+  const [closeBanner, closeTheBanner] = useState<boolean>(false);
+
   useEffect(() => {
-    if (!isClosed) {
+    if (!closeBanner) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
     }
-  }, [isClosed]);
+  }, [closeBanner]);
 
   return (
     <div
       className={classNames(
-        "banner-wrapper use-transition flex-ccenter flex-drow visible fixed left-0 top-0 z-50 h-screen w-screen bg-black/30 px-10xl opacity-100 tablet:px-md backdrop-blur-sm tablet-portrait:px-3xl",
+        "banner-wrapper use-transition flex-ccenter flex-drow visible fixed left-0 top-0 z-50 h-screen w-screen bg-black/30 px-10xl opacity-100 backdrop-blur-sm tablet-portrait:px-3xl tablet:px-md",
         {
-          "invisible opacity-0": isClosed,
+          "invisible opacity-0": closeBanner,
           "py-[3vw]": type === "reg",
         },
       )}
@@ -54,7 +57,7 @@ const Banner: FC<BannerProps> = ({
         <div className="banner-head flex-cspace flex-drow wp-border-b-gray sticky top-0 z-10 w-full overflow-hidden bg-white pb-xl pt-7xl tablet:pb-md tablet:pt-0">
           <h2 className="f3xl-semibold leading-none">{title}</h2>
           <XMarkIcon
-            onClick={() => closeTheBanner(!isClosed)}
+            onClick={() => closeTheBanner(!closeBanner)}
             height={32}
             width={32}
             className="cursor-pointer "

@@ -1,16 +1,13 @@
-"use client";
-
 import { FC } from "react";
 import Link from "next/link";
-import { redirect, usePathname } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import { Breadcrumbs, Container } from "@/components";
 
 interface NotFoundPageProps {}
 
 const NotFoundPage: FC<NotFoundPageProps> = (props) => {
-  const route = usePathname();
-  !route.startsWith("/pageNotFound") && redirect("/pageNotFound");
+  // redirect("/pageNotFound");
 
   return (
     <Container width="sm" classNames="py-7xl">

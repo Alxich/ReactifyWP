@@ -27,12 +27,11 @@ const CartDetailsInputs: FC<CartDetailsInputsProps> = ({
   type,
   readonly,
 }) => {
-  /* CHECK THIS CODE: Unknown !important use */
   return (
     <input
       type={type}
       placeholder={placeholder}
-      className="fsmall-normal use-transition wp-border-b-gray20 w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent tablet-portrait:text-medium"
+      className="fmedium-normal use-transition wp-border-b-gray20 w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent tablet-portrait:text-medium"
       readOnly={readonly}
     />
   );
@@ -50,7 +49,7 @@ const CartDetailsTextarea: FC<CartDetailsTextareaProps> = ({
   return (
     <textarea
       placeholder={placeholder}
-      className="fsmall-normal use-transition wp-border-b-gray20 h-auto min-h-5.5xl w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent tablet-portrait:text-medium"
+      className="fmedium-normal use-transition wp-border-b-gray20 h-auto min-h-5.5xl w-full border-0 px-0 py-sm focus:border-b-black/70 focus:ring-0 focus:ring-transparent tablet-portrait:text-medium"
       readOnly={readonly}
       rows={1}
       cols={1}

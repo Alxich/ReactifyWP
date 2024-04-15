@@ -25,13 +25,13 @@ const PostPreview: FC<PostPreviewProps> = ({
   return (
     <div
       className={classNames(
-        "post post-previewer small-laptop:flex-dcol flex cursor-pointer tablet:w-full small-laptop:space-x-0 small-laptop:space-y-lg",
+        "post post-previewer small-laptop:flex-dcol flex cursor-pointer small-laptop:space-x-0 small-laptop:space-y-lg tablet:w-full",
         className && className,
         {
-          "group-[.post-in-col]:small-laptop:flex-dcol flex-drow justify-between space-x-3xl group-[.post-in-col]:small-laptop:space-x-0 group-[.post-in-col]:laptop:items-start group-[.post-in-col]:laptop:justify-between group-[.post-in-col]:desktop:space-x-lg":
+          "group-[.post-in-col]:small-laptop:flex-dcol flex-drow justify-between space-x-3xl group-[.post-in-col]:desktop:space-x-lg group-[.post-in-col]:laptop:items-start group-[.post-in-col]:laptop:justify-between group-[.post-in-col]:small-laptop:space-x-0":
             (view && view == "row") || view == "row-full",
           "flex-dcol space-y-3xl": view && view == "col",
-          "tablet:flex-dcol small-laptop:flex-dcol laptop:flex-drow tablet:space-x-0 tablet:space-y-lg laptop:justify-between laptop:space-x-lg laptop:space-y-0 desktop:space-y-lg":
+          "tablet:flex-dcol small-laptop:flex-dcol laptop:flex-drow desktop:space-y-lg laptop:justify-between laptop:space-x-lg laptop:space-y-0 tablet:space-x-0 tablet:space-y-lg":
             type != "regular" && view && view == "col",
           "desktop:space-y-xs": type === "regular",
         },
@@ -39,9 +39,9 @@ const PostPreview: FC<PostPreviewProps> = ({
     >
       <div
         className={classNames(
-          "thumbnail overflow-hidden rounded-md tablet:h-ctm-10 small-laptop:w-full",
+          "thumbnail overflow-hidden rounded-md small-laptop:w-full tablet:h-ctm-10",
           {
-            "min-w-[320px] tablet:h-ctm-10 small-laptop:h-ctm-10 desktop:min-w-[200px]":
+            "min-w-[320px] desktop:min-w-[200px] small-laptop:h-ctm-10 tablet:h-ctm-10":
               view && view == "row",
             "w-full": view && view == "col",
             "w-1/2 small-laptop:h-ctm-14": view && view == "row-full",
@@ -52,6 +52,8 @@ const PostPreview: FC<PostPreviewProps> = ({
         <Image
           src={image}
           alt="post__preview__thumbnail__image"
+          height={100}
+          width={100}
           className="spread-block"
         />
       </div>
@@ -59,7 +61,7 @@ const PostPreview: FC<PostPreviewProps> = ({
         className={classNames(
           "text-content flex-tstart flex-dcol space-y-xl desktop:space-y-lg",
           {
-            "w-1/2 small-laptop:w-full desktop:w-1/2 group-[.post-in-col]:desktop:w-full ":
+            "w-1/2 desktop:w-1/2 group-[.post-in-col]:desktop:w-full small-laptop:w-full ":
               (view && view == "row") || view == "row-full",
             "w-full desktop:w-full": view && view == "col",
           },

@@ -1,15 +1,15 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import postContentBanner from "../../../../../../public/images/post-recent-4.png";
-import postContentImage from "../../../../../../public/images/post-regular.png";
-import postContentImage2 from "../../../../../../public/images/post-regular-2.png";
-import postContentImage3 from "../../../../../../public/images/post-regular-3.png";
-import postContentImage4 from "../../../../../../public/images/post-regular-4.png";
-import postContentImage5 from "../../../../../../public/images/post-regular-5.png";
-import postContentImage6 from "../../../../../../public/images/post-regular-6.png";
-import postContentImage7 from "../../../../../../public/images/post-regular-7.png";
-import postContentImage8 from "../../../../../../public/images/post-regular-8.png";
+import postContentBanner from "@images/post-recent-4.png";
+import postContentImage from "@images/post-regular.png";
+import postContentImage2 from "@images/post-regular-2.png";
+import postContentImage3 from "@images/post-regular-3.png";
+import postContentImage4 from "@images/post-regular-4.png";
+import postContentImage5 from "@images/post-regular-5.png";
+import postContentImage6 from "@images/post-regular-6.png";
+import postContentImage7 from "@images/post-regular-7.png";
+import postContentImage8 from "@images/post-regular-8.png";
 
 interface PostContentBlockProps {}
 

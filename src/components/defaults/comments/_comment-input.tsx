@@ -13,7 +13,7 @@ import Link from "@tiptap/extension-link";
 
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 
-import thumbnail1 from "../../../../public/images/thumbnail-1.png";
+import thumbnail1 from "@images/thumbnail-1.png";
 import { Button, SvgIcons } from "@/components";
 
 interface CommentWrapperProps {

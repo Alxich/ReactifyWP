@@ -9,7 +9,7 @@ export const generatePageNumbers = (
   const halfVisible = Math.floor(visiblePages / 2);
 
   if (currentPage <= 0) {
-    errorTextHandler("PageNumberNav", currentPage);
+    errorTextHandler("PageNumberNav");
     currentPage = 1;
   }
 

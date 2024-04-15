@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Container, QuantitySelector, SquaresSelector } from "@/components";
 
-import VansProductImage from "../../../../../public/images/vans-icon.png";
+import VansProductImage from "@images/vans-icon.png";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface ProductDetailsProps {}

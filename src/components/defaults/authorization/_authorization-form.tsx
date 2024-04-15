@@ -37,24 +37,45 @@ const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
       <div className="title f5xl-bold w-full text-center leading-normal">
         <h1 className="text-inherit">Log In</h1>
       </div>
-      {fields.map((field, index) => (
-        <label
-          htmlFor={field.id}
-          className="flex-dcol flex-tstart w-full"
-          key={index}
-        >
-          <span className="fmedium-medium mb-xxs">{field.label}</span>
-          <div className="flex-dcol w-full">
-            <input
-              id={field.id}
-              name={field.name}
-              type={field.type}
-              className="auth-inputs-style"
-              placeholder={field.placeholder}
-            />
-          </div>
-        </label>
-      ))}
+      {fields.map((field, index) =>
+        type === "login" ? (
+          field.id !== "user-repeat-password" && (
+            <label
+              htmlFor={field.id}
+              className="flex-dcol flex-tstart w-full"
+              key={index}
+            >
+              <span className="fmedium-medium mb-xxs">{field.label}</span>
+              <div className="flex-dcol w-full">
+                <input
+                  id={field.id}
+                  name={field.name}
+                  type={field.type}
+                  className="auth-inputs-style"
+                  placeholder={field.placeholder}
+                />
+              </div>
+            </label>
+          )
+        ) : (
+          <label
+            htmlFor={field.id}
+            className="flex-dcol flex-tstart w-full"
+            key={index}
+          >
+            <span className="fmedium-medium mb-xxs">{field.label}</span>
+            <div className="flex-dcol w-full">
+              <input
+                id={field.id}
+                name={field.name}
+                type={field.type}
+                className="auth-inputs-style"
+                placeholder={field.placeholder}
+              />
+            </div>
+          </label>
+        ),
+      )}
       <Button type="submit" formType={"form"}>
         Subscribe
       </Button>

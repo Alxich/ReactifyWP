@@ -17,7 +17,7 @@ export type PaddingValues =
   | "9xl";
 
 export interface TagLinkProps {
-  type?: "big" | "normal";
+  type?: "big" | "normal" | string;
   link: string;
   text: string;
   color: string;
@@ -25,7 +25,7 @@ export interface TagLinkProps {
 }
 
 export interface PostPreviewBlockProps {
-  view: "row" | "col" | "row-full";
+  view: "row" | "col" | "row-full" | string;
   isGridSmall?: boolean;
   image: string | StaticImageData;
   author?: string;
@@ -36,7 +36,7 @@ export interface PostPreviewBlockProps {
 }
 
 export interface ProductPreviewBlockProps {
-  view: "row" | "col" | "row-full";
+  view: "row" | "col" | "row-full" | string;
   isGridSmall?: boolean;
   image: string | StaticImageData;
   breadcrumbs: string;

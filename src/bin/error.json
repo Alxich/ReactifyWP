@@ -1,0 +1,14 @@
+[
+  {
+    "type": "PageNumberNav",
+    "text": "\n|===> \n| Hey user!\n| You know that is not allowed to place in your current page number!\n| Please check your code and fix it.\n| Code will fix by itself this time.\n| Thanks.\n|===>"
+  },
+  {
+    "type": "NoErrorFound",
+    "text": "\n|===> \n| Hey user!\n| Did you know this type of error not exist ?\n| Please check your code and fix it.\n| Code will not fix by itself this time because it just not possible fix that is not exist there.\n| Thanks, wish you luck to find out what happened ;).\n|===>"
+  },
+  {
+    "type": "NotSpecifiedButtonNav",
+    "text": "\n|===> \n| Hey user!\n| Did you know this component need more props to exist ?\n| Please check your code and fix it.\n| Code will not fix by itself this time but will hide the broken elements.\n| Notice: Provide only one previous or next prors to true if not you will see same error.\n| Thanks, wish you luck to find out what happened ;).\n|===>"
+  }
+]

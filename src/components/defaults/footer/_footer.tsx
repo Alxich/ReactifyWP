@@ -1,10 +1,6 @@
-"use client";
-
 import { FC } from "react";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 import { Container, Subscriber, SvgIcons } from "../../index";
 
 interface FooterProps {}
@@ -15,14 +11,6 @@ type NavCategoryObject = {
 };
 
 const Footer: FC<FooterProps> = (props) => {
-  const route = usePathname();
-  const hideBorderAndSubscriber = () => {
-    const excludedRoutes = ["/login", "/register", "/contacts", "/blog/user/"];
-    return excludedRoutes.some((excludedRoute) =>
-      route.startsWith(excludedRoute),
-    );
-  };
-
   const navObjOne: NavCategoryObject = {
     title: "Discover & Explore",
     navLinks: [
@@ -59,12 +47,8 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <>
-      {!hideBorderAndSubscriber() && (
-        <Container width="lg">
-          <Subscriber />
-        </Container>
-      )}
-      <footer className="footer w-full max-w-wrapper-lg-sz pt-7xl large-desktop:pb-10xl">
+      <Subscriber />
+      <footer className="footer w-full max-w-wrapper-lg-sz pt-7xl large-desktop:pb-10xl wp-border-t">
         <Container
           classNames="head-wrapper flex-drow pb-7xl tablet-portrait:hidden"
           width="sm"

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { FC } from "react";
 
-import masterCardIcon from "../../../../public/images/summary-cart/MasterCard.png";
-import visaCardIcon from "../../../../public/images/summary-cart/Visa.png";
-import applepayCardIcon from "../../../../public/images/summary-cart/Apple Pay.png";
-import googlepayCardIcon from "../../../../public/images/summary-cart/Google Pay.png";
-import paypalCardIcon from "../../../../public/images/summary-cart/PayPal.png";
-import KlarnaCardIcon from "../../../../public/images/summary-cart/Klarna.png";
+import masterCardIcon from "@images/summary-cart/MasterCard.png";
+import visaCardIcon from "@images/summary-cart/Visa.png";
+import applepayCardIcon from "@images/summary-cart/Apple Pay.png";
+import googlepayCardIcon from "@images/summary-cart/Google Pay.png";
+import paypalCardIcon from "@images/summary-cart/PayPal.png";
+import KlarnaCardIcon from "@images/summary-cart/Klarna.png";
 import { Button } from "@/components";
 
 interface CartSummaryProps {}
@@ -38,7 +38,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
         <div className="item flex-dcol flex-tstart w-full space-y-sm border-y border-y-gray/20 py-lg">
           <div className="title flex-drow flex-cspace w-full">
             <h5 className="fnormal-medium">Discounts</h5>
-            <p className="fsmall-medium cursor-pointer text-gray underline tablet-portrait:text-medium">
+            <p className="fmedium-medium cursor-pointer text-gray underline tablet-portrait:text-medium">
               Clear the list
             </p>
           </div>
@@ -48,7 +48,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
             <div className="title flex-drow w-full">
               <h5 className="fnormal-medium text-gray">Order value</h5>
             </div>
-            <p className="fsmall-medium text-gray tablet-portrait:text-medium">
+            <p className="fmedium-medium text-gray tablet-portrait:text-medium">
               £225.00
             </p>
           </div>
@@ -56,7 +56,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
             <div className="title flex-drow w-full">
               <h5 className="fnormal-medium text-gray">Delivery</h5>
             </div>
-            <p className="fsmall-medium text-gray tablet-portrait:text-medium">
+            <p className="fmedium-medium text-gray tablet-portrait:text-medium">
               £26.34
             </p>
           </div>
@@ -75,7 +75,6 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
             {renderCardIcons()}
           </div>
         </div>
-        {/* CHECK THIS CODE: Unknown !important use */}
         <Button
           formType="form"
           type="button"
@@ -84,8 +83,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
           Proceed to pay
         </Button>
         <div className="additionals w-full">
-          {/* CHECK THIS CODE: Unknown !important use */}
-          <p className="w-full text-xs font-normal text-gray">
+          <p className="w-full text-base font-normal text-gray">
             Prices and delivery costs are confirmed after you've reached the
             checkout. Additional payments may supply by your delivery partner 28
             days right of withdrawal. Read more about

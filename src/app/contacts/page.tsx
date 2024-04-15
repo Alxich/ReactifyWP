@@ -7,7 +7,6 @@ interface ContactsPageProps {}
 const ContactsPage: FC<ContactsPageProps> = (props) => {
   return (
     <BlankPageWrapper hasContacts showSlogan={false}>
-      {/* CHECK THIS CODE: Unknown !important use */}
       <h2 className="!leading-normal">What ReactifyWP project used to ?</h2>
       <p>
         If you’ve been to New York City and have walked the streets, it is easy

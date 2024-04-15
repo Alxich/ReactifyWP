@@ -1,15 +1,9 @@
-"use client";
-
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { SvgIcons } from "../../index";
 
 interface ProjectMainMessageProps {}
 
 const ProjectMainMessage: FC<ProjectMainMessageProps> = (props) => {
-  // useEffect(() => {
-  //   document.body.style.cursor = " progress";
-  // }, []);
-
   return (
     <div className="flex-ccenter flex-drow h-screen fixed left-0 top-0 w-full backdrop-blur-sm">
       <div className="flex-ccenter flex-dcol flex-drow w-full max-w-2xl rounded-lg border-2 border-gray bg-white p-7xl shadow-2xl">

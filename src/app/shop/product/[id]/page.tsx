@@ -3,7 +3,7 @@ import { ProductPreviewBlockProps } from "@/lib/types";
 
 import { Container, ProductHeader, ProductWrpapper } from "@/components";
 
-import VansPreview from "../../../../../public/images/vans-preview.png";
+import VansPreview from "@images/vans-preview.png";
 
 interface ProductPageProps {}
 

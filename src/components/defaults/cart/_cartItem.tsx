@@ -7,7 +7,7 @@ import { TrashIcon } from "@heroicons/react/24/outline";
 
 import { SvgIcons } from "@/components";
 
-import vansCartIcon from "../../../../public/images/vans-cart.png";
+import vansCartIcon from "@images/vans-cart.png";
 
 interface CartItemProps {}
 
@@ -17,7 +17,7 @@ const CartItem: FC<CartItemProps> = (props) => {
 
   return (
     <div className="item flex-drow flex-cspace tablet-portrait:flex-drow-wrap phone-portrait:flex-dcol phone-portrait:space-y-lg phone-portrait:px-0">
-      <div className="short-info flex-drow flex-cspace w-full laptop:w-auto tablet-portrait:w-full tablet-portrait:wp-border-b tablet-portrait:pb-xl tablet-portrait:mb-xl phone-portrait:flex-dcol phone-portrait:space-y-xl phone-portrait:mb-0">
+      <div className="short-info flex-drow flex-cspace tablet-portrait:wp-border-b phone-portrait:flex-dcol w-full laptop:w-auto tablet-portrait:mb-xl tablet-portrait:w-full tablet-portrait:pb-xl phone-portrait:mb-0 phone-portrait:space-y-xl">
         <div className="thumbnail min-w-[132px] tablet:min-w-[100px]">
           <Image src={vansCartIcon} alt="cart-item-image" />
         </div>
@@ -75,8 +75,7 @@ const CartItem: FC<CartItemProps> = (props) => {
       <div className="price flex-ccenter flex-drow w-full laptop:w-auto phone-portrait:w-full">
         <p className="fnormal-semibold text-highlight">
           £75.00{" "}
-          {/* CHECK THIS CODE: Unknown font-size (use custom class instead) use */}
-          <span className="text-xs font-semibold">{"(8.78£ postage)"}</span>
+          <span className="text-base font-semibold">{"(8.78£ postage)"}</span>
         </p>
       </div>
       <div className="delete cursor-pointer text-gray hover:text-highlight">
