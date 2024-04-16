@@ -22,17 +22,17 @@ const Footer: FC<FooterProps> = (props) => {
   const navObjTwo: NavCategoryObject = {
     title: "Contributors",
     navLinks: [
-      { title: "Learn More About Us", link: "" },
-      { title: "Contact Information", link: "" },
-      { title: "Behind the Pixels", link: "" },
+      { title: "Learn More About Us", link: "/about" },
+      { title: "Contact Information", link: "/contacts" },
+      { title: "Behind the Pixels", link: "/behind-the-pixels" },
     ],
   };
   const navObjThree: NavCategoryObject = {
     title: "Policy and Privacy",
     navLinks: [
-      { title: "Privacy Policy", link: "" },
-      { title: "Terms of Use", link: "" },
-      { title: "Cookie Policy", link: "" },
+      { title: "Privacy Policy", link: "/privacy-policy" },
+      { title: "Terms of Use", link: "/term-of-use" },
+      { title: "Cookie Policy", link: "/cookie-policy" },
     ],
   };
 

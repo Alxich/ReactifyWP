@@ -20,7 +20,7 @@ const CartEmpty: FC<CartEmptyProps> = (props) => {
         to{" "}
         <Link
           className="use-transition font-semibold hover:text-highlight"
-          href={"/"}
+          href="/"
         >
           main page
         </Link>

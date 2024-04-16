@@ -31,7 +31,7 @@ const CartPage: FC<CartPageProps> = ({ empty, success }: CartPageProps) => {
         <div className="cart-table flex-dcol flex-ccenter w-full space-y-lg child:w-full">
           <div className="cart-header child:use-transition flex-drow flex-cend fmedium-medium space-x-6 text-gray underline child:cursor-pointer child:text-inherit child-hover:text-highlight">
             <p>Clear the list</p>
-            <Link href={"#"}>{"<"} Return to main page</Link>
+            <Link href="/">{"<"} Return to main page</Link>
           </div>
           <div className="cart-cards flex-dcol flex-ccenter child:w-full child:border-y child:border-b-gray/20 child:border-t-transparent child:px-lg child:py-2.5xl [&>*:first-child]:border-t-gray/20">
             <CartItem />

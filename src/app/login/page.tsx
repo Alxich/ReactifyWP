@@ -2,12 +2,14 @@ import { FC } from "react";
 
 import { AuthorizationForm, Container } from "@/components";
 
-interface LoginPageProps {}
+interface LoginPageProps {
+  type: "login" | "register";
+}
 
-const LoginPage: FC<LoginPageProps> = (props) => {
+const LoginPage: FC<LoginPageProps> = ({ type = "login" }: LoginPageProps) => {
   return (
     <Container
-      classNames="flex-drow justify-center pt-7xl px-10xl authorization-page desktop:px-4xl small-laptop:px-0 tablet:flex-dcol-reverse tablet:pt-0"
+      classNames="flex-drow justify-center pt-7xl px-10xl authorization-page desktop:px-4xl small-laptop:px-0 tablet:flex-dcol-reverse tablet:pt-0 tablet-portrait-min:pb-7xl"
       width="sm"
     >
       <div className="loyalty flex-tcenter flex-dcol w-1/2 bg-black p-md tablet:w-full">
@@ -22,7 +24,7 @@ const LoginPage: FC<LoginPageProps> = (props) => {
         </div>
       </div>
       <div className="w-1/2 tablet:w-full">
-        <AuthorizationForm type="login" />
+        <AuthorizationForm type={type} />
       </div>
     </Container>
   );

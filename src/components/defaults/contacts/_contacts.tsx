@@ -1,43 +1,17 @@
-import { Button } from "@/components";
-import classNames from "classnames";
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
+import classNames from "classnames";
+
+import { Button } from "@/components";
+
+import preloadData from "@/bin/preload.json";
 
 interface ContactsProps {
   className?: string;
 }
 
 const Contacts: FC<ContactsProps> = ({ className }) => {
-  const inputs = [
-    {
-      id: "user-mail",
-      name: "user-mail",
-      type: "email",
-      placeholder: "Enter your email",
-      label: "Email",
-    },
-    {
-      id: "user-message",
-      name: "user-message",
-      type: "text",
-      placeholder: "Enter your message",
-      label: "Message",
-    },
-    {
-      id: "user-name",
-      name: "user-name",
-      type: "text",
-      placeholder: "Enter your name",
-      label: "Name",
-    },
-    {
-      id: "user-surname",
-      name: "user-surname",
-      type: "text",
-      placeholder: "Enter your surname",
-      label: "Surname",
-    },
-  ];
+  const inputs = preloadData["contacts-form"]
 
   return (
     <div
@@ -84,7 +58,7 @@ const Contacts: FC<ContactsProps> = ({ className }) => {
             We care about your data in our{" "}
             <Link
               className="use-transition underline hover:text-highlight hover:no-underline"
-              href="#"
+              href="/privacy-policy"
             >
               privacy policy
             </Link>

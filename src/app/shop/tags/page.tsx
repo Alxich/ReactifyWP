@@ -1,11 +1,9 @@
 import { FC } from "react";
 
-import { PostPreviewBlockProps, TagLinkProps } from "@/lib/types";
+import { TagLinkProps } from "@/lib/types";
 import {
   Breadcrumbs,
   Container,
-  Pagination,
-  PostAll,
   TagLink,
 } from "@/components";
 

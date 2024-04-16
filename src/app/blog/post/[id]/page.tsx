@@ -27,7 +27,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
       </Container>
       {
         <Banner
-          type="reg"
+          type="editor"
           title="Creating a new post"
           className="space-y-7xl"
           additionalChildren={
@@ -42,8 +42,8 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         >
           <div className="title">
             <input
-              className="title f7xl-bold w-full border-x-0 border-b border-t-0 border-b-black p-0 "
-              value={"How create a new ?"}
+              className="title f4xl-bold w-full border-x-0 border-b border-t-0 border-b-black p-0 "
+              value={"How create a new post?"}
               readOnly
             />
           </div>

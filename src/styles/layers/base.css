@@ -59,8 +59,8 @@
   .post-content-text ol {
     @apply list-inside list-disc;
   }
-  .page-content-text li,
-  .post-content-text li {
+  .page-content-text ul li,
+  .post-content-text ul li {
     @apply list-inside list-decimal;
   }
 
@@ -131,5 +131,18 @@
   .page-content-text ul,
   .post-content-text ul {
     @apply list-outside list-disc pl-4 tablet:pl-2 dark:text-gray;
+  }
+
+  .tiptap ul,
+  .tiptap ol {
+    list-style-type: initial;
+    list-style-position: initial;
+    @apply pl-2xl py-lg
+  }
+
+  .tiptap ul li,
+  .tiptap ol li {
+    /* @apply flex items-center list-none before:block before:h-2 before:w-2 before:rounded-full before:bg-black before:mr-xxs */
+    list-style-position: initial;
   }
 }

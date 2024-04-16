@@ -56,7 +56,6 @@ export { default as ThemeSwither } from "./extra/_theme-switcher";
 // Extra - Titap
 
 export { default as Tiptap } from "./extra/editor/_tiptap";
-export { default as KeyPressInteraction } from "./extra/editor/extensions/_key-press-interaction";
 
 // Extra - Product (Shop variant)
 

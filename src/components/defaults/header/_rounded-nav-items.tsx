@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 
 import {
   ArrowRightEndOnRectangleIcon,
@@ -18,14 +19,18 @@ const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
       <li className="shopping-nav wp-border use-transition group rounded-full px-md py-xs hover:bg-black">
         <ul className="spread-block flex-cspace flex">
           <li className="mr-xs cursor-pointer">
-            <HeartIcon className={userIconStyle} />
+            <Link href="/shop/favorites">
+              <HeartIcon className={userIconStyle} />
+            </Link>
           </li>
           <li className="cursor-pointer">
-            <ShoppingBagIcon className={userIconStyle} />
+            <Link href="/shop/cart">
+              <ShoppingBagIcon className={userIconStyle} />
+            </Link>
           </li>
         </ul>
       </li>
-      <li className="account-nav wp-border use-transition flex-cspace flex-drow cursor-pointer group rounded-full px-md py-xs hover:bg-black">
+      <li className="account-nav wp-border use-transition flex-cspace flex-drow group cursor-pointer rounded-full px-md py-xs hover:bg-black">
         <UserIcon className={`mr-xs laptop:mr-0 ${userIconStyle}`} />
         <p
           className={`name fnormal-medium ${transitionSetup} group-hover:text-white laptop:hidden`}
@@ -34,9 +39,11 @@ const RoundedNavItems: FC<RoundedNavItemsProps> = (props) => {
         </p>
       </li>
       <li className="account-exit cursor-pointer">
-        <ArrowRightEndOnRectangleIcon
-          className={`mr-xs h-5.5xl w-5.5xl ${transitionSetup} hover:text-highlight`}
-        />
+        <Link href="/login">
+          <ArrowRightEndOnRectangleIcon
+            className={`mr-xs h-5.5xl w-5.5xl ${transitionSetup} hover:text-highlight`}
+          />
+        </Link>
       </li>
     </>
   );

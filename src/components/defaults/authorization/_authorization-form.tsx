@@ -3,34 +3,14 @@ import { FC } from "react";
 import { Button, SvgIcons } from "@/components";
 import Link from "next/link";
 
+import preloadData from "@/bin/preload.json";
+
 interface AuthorizationFormProps {
   type: "login" | "register";
 }
 
 const AuthorizationForm: FC<AuthorizationFormProps> = ({ type }) => {
-  const fields = [
-    {
-      label: "Email",
-      id: "user-mail",
-      name: "user-mail",
-      type: "email",
-      placeholder: "Enter your email",
-    },
-    {
-      label: "Password",
-      id: "user-password",
-      name: "user-password",
-      type: "password",
-      placeholder: "Enter your password",
-    },
-    {
-      label: "Repeat password",
-      id: "user-repeat-password",
-      name: "user-repeat-password",
-      type: "password",
-      placeholder: "Enter your password again",
-    },
-  ];
+  const fields = preloadData["authorization-form"];
 
   return (
     <form className="flex-dcol w-full space-y-lg px-9.5xl py-10xl small-laptop:px-lg tablet-portrait:py-lg phone-portrait:!px-0">

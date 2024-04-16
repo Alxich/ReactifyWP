@@ -2,10 +2,10 @@
   @apply desktop:pt-4xl tablet-portrait:pt-3xl;
 }
 .pb-7xl {
-  @apply desktop:pb-4xl tablet-portrait:pt-3xl;
+  @apply desktop:pb-4xl tablet-portrait:pb-3xl;
 }
 .py-7xl {
-  @apply desktop:py-4xl tablet-portrait:pt-3xl;
+  @apply desktop:py-4xl tablet-portrait:py-3xl;
 }
 
 .space-y-7xl {

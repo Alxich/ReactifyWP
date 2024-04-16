@@ -91,7 +91,7 @@
   }
 
   .banner .menu-bar button.is-active {
-    @apply bg-white;
+    @apply bg-white text-black;
   }
 
   .authorization-services .item {

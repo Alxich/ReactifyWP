@@ -56,7 +56,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
                   We care about your data in our{" "}
                   <Link
                     className="use-transition underline hover:text-highlight hover:no-underline"
-                    href="#"
+                    href="/privacy-policy"
                   >
                     privacy policy
                   </Link>

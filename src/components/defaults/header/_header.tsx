@@ -4,12 +4,18 @@ import { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 
 import { Button, Container, RoundedNavItems } from "../../index";
+import Link from "next/link";
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = ({}: HeaderProps) => {
   const [mobMenuActive, setMobMenuActive] = useState<boolean>(false);
-  const pagesNavArray = ["Posts", "About us", "Behind the pixels", "Contact"];
+  const pagesNavArray = [
+    { title: "Posts", link: "/blog/categories" },
+    { title: "About us", link: "/about" },
+    { title: "Behind the pixels", link: "/behind-the-pixels" },
+    { title: "Contact", link: "/contacts" },
+  ];
 
   useEffect(() => {
     const body = document.documentElement.classList;
@@ -18,6 +24,16 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
       ? body.add("overflow-hidden")
       : body.remove("overflow-hidden");
   }, [mobMenuActive]);
+
+  const showNavigation = () =>
+    pagesNavArray.map((item, key) => (
+      <li
+        className="underline-hover fnormal-normal cursor-pointer"
+        key={`nav_${item.title}_${key}`}
+      >
+        <Link href={item.link}>{item.title}</Link>
+      </li>
+    ));
 
   return (
     <header
@@ -30,12 +46,12 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
     >
       <Container width="sm" classNames="flex-drow flex-stspace">
         <div className="logo laptop:flex-drow cursor-pointer select-none laptop:items-center">
-          <p className="f3xl-bold laptop:text-4xl">
+          <Link href="/" className="f3xl-bold laptop:text-4xl">
             Reactify
             <span className="ml-xxs rounded-sm bg-black px-xxs py-xxs text-white">
               WP
             </span>
-          </p>
+          </Link>
         </div>
         <Button
           type="button"
@@ -44,14 +60,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
           onClick={() => setMobMenuActive(!mobMenuActive)}
         />
         <ul className="navigation flex-cspace flex-drow w-auto space-x-2xl laptop:space-x-md tablet-portrait:hidden">
-          {pagesNavArray.map((item, key) => (
-            <li
-              className="underline-hover fnormal-normal cursor-pointer"
-              key={`nav_${item}_${key}`}
-            >
-              <p>{item}</p>
-            </li>
-          ))}
+          {showNavigation()}
           <RoundedNavItems />
         </ul>
       </Container>
@@ -68,14 +77,7 @@ const Header: FC<HeaderProps> = ({}: HeaderProps) => {
           <h4 className="text-inherit">Our website navigation</h4>
         </div>
         <ul className="navigation flex-cspace flex-drow tablet-portrait:flex-dcol tablet-portrait:flex-tstart w-auto space-x-2xl laptop:space-x-md tablet-portrait:hidden tablet-portrait:space-x-0  tablet-portrait:space-y-lg">
-          {pagesNavArray.map((item, key) => (
-            <li
-              className="underline-hover fnormal-normal cursor-pointer"
-              key={`nav_${item}_${key}`}
-            >
-              <p>{item}</p>
-            </li>
-          ))}
+          {showNavigation()}
           <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
             <h4 className="text-inherit">Possible functions</h4>
           </div>

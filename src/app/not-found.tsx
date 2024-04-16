@@ -30,7 +30,7 @@ const NotFoundPage: FC<NotFoundPageProps> = (props) => {
             the{" "}
             <Link
               className="use-transition font-semibold hover:text-highlight"
-              href={"/"}
+              href="/"
             >
               {" "}
               main page
