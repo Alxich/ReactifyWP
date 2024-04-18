@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **ReactifyWP**
 
-## Getting Started
+**Contributors:** Alxich <br>
+**Requires at least:** WordPress 6.5 <br>
+**Tested up to:** WordPress 6.5 <br>
+**Requires PHP:** 8.1.23 <br>
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### **Description**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Simple custom WordPress theme with plugins and functional script's init.
+Used for websites like shops, blogs, landing pages etc.
+Theme customize the appearance of your site, including the layout, typography, color, and other design elements.
+Changing theme won’t necessarily change your blog content, pages, users, or other information stored in your database.
+Your theme only changes how all that information is displayed to your website visitors.
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+### **Themes plugins**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+    Wordpress Plugins that used with theme:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    - Gutenberg (additional)
+    - Woocommerce (additional)
+    - ACF (advanced custom fields) (additional)
+    - TI woocommerce wishlist (additional)
+    - Classic editor (additional)
+    - Query Monitor (additional)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+### **Built with**
+
+---
+
+<br>
+
+- [jQuery 3.6.0](https://jquery.com/)
+- [Fancybox V3](https://fancyapps.com/)
+- [AOS V2](https://michalsnik.github.io/aos/)
+- [Normalize V8.0.1](https://necolas.github.io/normalize.css/)
+- [Owl Carousel V2](https://owlcarousel2.github.io/OwlCarousel2/)
+- [Font Awesome V6.1.1](https://fontawesome.com/)
+
+<br>
+
+### **Disabled functions**
+
+---
+
+<br>
+
+- Comments.
+- Auto-generate tags for Contact form 7.
+- Messages for Contact form 7.
+- Woocommerce breadcrumbs.
+- Woocommerce rating.
+- Woocommerce meta.
+- Woocommerce sharing.
+- Woocommerce excerpt.
+- Woocommerce result count.
+- Woocommerce catalog ordering.
+
+<br>
+
+### **Added functions**
+
+---
+
+<br>
+
+- Hierarchy root files.
+- Hierarchy **Woocommerce** root files.
+- Added excerpts support to pages in WordPres admin panel.
+- Allowed loading and read svg format of images.
+- Added option pages for default values of page,footer,header,etc.
+- Registered new menus for header and footer.
+- Added support of **Woocommerce** features for custom theme
+
+<br>
+
+### **Licenses**
+
+---
+
+<br>
+
+_GNU General Public License v2 or later_
+
+[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-green.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
+
+<br>
+
+### **Changelog**
+
+---
+
+<br>
+
+    Version: 1.0 (19.07.2022)
+
+     - Added new README.md
+     - Released: July 19, 2022
+     - Initial release
+     - Create welcome intial page
+     - Redisigned theme icon
+     - Fixed version control
+     - Fixed files url`
+     - Fixed scripts
+     - Updated local files
+     - Moved index.php to subfolder (root/core/components)
+
+    Version: 1.0.1 (23.07.2022)
+
+     - Created welcome page with animation
+     - Added description in theme details
