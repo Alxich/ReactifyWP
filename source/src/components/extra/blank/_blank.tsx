@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 
-import { Breadcrumbs, Contacts, Container } from "@/components";
+import { Contacts, Container } from "@/components";
 import classNames from "classnames";
 
 interface BlankPageWrapperProps {
@@ -39,7 +39,7 @@ const BlankPageWrapper: FC<BlankPageWrapperProps> = ({
         </div>
         {showSlogan !== false && (
           <div className="theme-slogan tablet:hidden">
-            <p className="f7xl-bold whitespace-nowrap uppercase writing-sd-rl">
+            <p className="f7xl-bold whitespace-nowrap uppercase writing-v-rl">
               Have you heard about Reactify
               <span className="mt-xs rounded-sm bg-black px-xs py-sm text-white">
                 WP

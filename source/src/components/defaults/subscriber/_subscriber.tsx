@@ -13,7 +13,7 @@ const Subscriber: FC<SubscriberProps> = (props) => {
   const hideBorderAndSubscriber = () => {
     const excludedRoutes = ["/login", "/register", "/contacts", "/blog/user/"];
     return excludedRoutes.some((excludedRoute) =>
-      route.startsWith(excludedRoute),
+      route?.startsWith(excludedRoute),
     );
   };
 

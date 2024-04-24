@@ -82,8 +82,6 @@ const CommentInput: FC<CommentWrapperProps> = ({
 
       const url = linkWritted;
 
-      console.log(url);
-
       // cancelled
       if (url === null) {
         return;
@@ -115,7 +113,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
   );
 
   return (
-    <div className="comment-wrapper relative input flex-dcol flex-tcenter inputs-bborder-round w-full space-y-md border-opacity-25 p-xl child:w-full">
+    <div className="comment-wrapper input flex-dcol flex-tcenter inputs-bborder-round relative w-full space-y-md border-opacity-25 p-xl child:w-full">
       <div className="author flex-cstart flex-drow space-x-xs">
         <div className="thumbnail h-5xl w-5xl cursor-pointer overflow-hidden rounded-full">
           <Image src={thumbnail1} alt="author-comment-thumbnail" />
@@ -169,7 +167,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
           </div>
           <div
             className={classNames(
-              "flex-stspace hidden space-x-xs rounded-md bg-white phone-portrait:absolute phone-portrait:p-xs phone-portrait:wp-border phone-portrait:left-0 phone-portrait:right-xs phone-portrait:bottom-[35%]",
+              "flex-stspace phone-portrait:wp-border hidden space-x-xs rounded-md bg-white phone-portrait:absolute phone-portrait:bottom-[35%] phone-portrait:left-0 phone-portrait:right-xs phone-portrait:p-xs",
               {
                 "flex-drow": linkSelected,
               },

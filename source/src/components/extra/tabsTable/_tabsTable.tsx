@@ -53,16 +53,16 @@ const TabsTable: FC<TabsProps> = ({}) => {
       <div className="content page-content-text">
         <div className="item space-y-xl">
           <p>
-            The hi-top classic that's still going strong today, no other shoe
-            stomps the streets and takes to the tape as hard as the Vans Sk8 Hi.
-            The first skate shoe that utilised athletic-style support, its
-            pioneering build brought a new level of athleticism to street-wise
-            skating.
+            The hi-top classic that{"'"}s still going strong today, no other
+            shoe stomps the streets and takes to the tape as hard as the Vans
+            Sk8 Hi. The first skate shoe that utilised athletic-style support,
+            its pioneering build brought a new level of athleticism to
+            street-wise skating.
           </p>
           <p>
-            This men's model retains the same iconic look and construction of
-            the original, utilising the classic canvas and suede combination for
-            hard-wearing comfort. Vulcanised rubber soles keep your feet
+            This men{"'"}s model retains the same iconic look and construction
+            of the original, utilising the classic canvas and suede combination
+            for hard-wearing comfort. Vulcanised rubber soles keep your feet
             comfortable both on and off the board, while the iconic Formstripe
             to the sides puts the finishing touch on these all-time legends.
           </p>

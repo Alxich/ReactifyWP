@@ -13,7 +13,7 @@ export const generatePageNumbers = (
     currentPage = 1;
   }
 
-  const avaiblePages = currentPage < 10 ? 10 : totalPages;
+  const avaiblePages = currentPage < totalPages ? totalPages : currentPage;
 
   for (let i = currentPage; i <= avaiblePages; i++) {
     const isFirstPages = i <= visiblePages;
@@ -34,4 +34,29 @@ export const generatePageNumbers = (
   }
 
   return pages;
+};
+
+export const getFormatedDate = (isoDate: string | number | Date) => {
+  const dateObj = new Date(isoDate);
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return (
+    dateObj.getDate() +
+    " " +
+    monthNames[dateObj.getMonth() + 1] +
+    " " +
+    dateObj.getFullYear()
+  );
 };

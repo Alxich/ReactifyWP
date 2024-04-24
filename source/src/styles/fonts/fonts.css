@@ -212,7 +212,7 @@
   * Must help to resize font to each screeen
   * There is a list of endpoints:
   * | phone: 320px For phone
- } * | phone-portrait: 360px For portrait mode on the phone
+  * | phone-portrait: 360px For portrait mode on the phone
   * | tablet: 640px for a tablet
   * | tablet-portrait: 768px For portrait mode on a tablet
   * | laptop: 1024px for a laptop

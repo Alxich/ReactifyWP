@@ -30,12 +30,12 @@ const PostContentBlock: FC<
         appealing and easier to navigate.
       </p>
       <p>
-        If you’ve been to New York City and have walked the streets, it is easy
-        to figure out how to get from one place to another because of the grid
-        system that the city is built on. Just as the predictability of a city
-        grid helps locals and tourists get around easily, so do webpage grids
-        provide a structure that guides users and designers alike. Because of
-        their consistent reference point, grids improve page readability and
+        If you{"’"}ve been to New York City and have walked the streets, it is
+        easy to figure out how to get from one place to another because of the
+        grid system that the city is built on. Just as the predictability of a
+        city grid helps locals and tourists get around easily, so do webpage
+        grids provide a structure that guides users and designers alike. Because
+        of their consistent reference point, grids improve page readability and
         scannability and allow people to quickly get where they need to go.
       </p>
       <div className="image w-full space-y-sm px-3xl tablet:px-0">
@@ -120,7 +120,7 @@ const PostContentBlock: FC<
         />
         <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
-            Ritual’s four-column grid makes scanning products easy. {"("}We
+            Ritual{"’"}s four-column grid makes scanning products easy. {"("}We
             highlighted the columns in yellow, the gutters in blue, and the
             margins in purple.{")"}
           </p>
@@ -128,12 +128,12 @@ const PostContentBlock: FC<
       </div>
       <h4>Example 3: Modular Grid</h4>
       <p>
-        Our third example is from Behance, a design library. The site’s design
-        uses a modular grid to create a pleasant browsing experience. At desktop
-        size, rows are made up of 4 consistently sized modules. Horizontal
-        gutters are slightly thicker than vertical gutters and the margins are
-        consistently sized on the left and right of the design. Like in previous
-        example, the gutters visually separate each element.
+        Our third example is from Behance, a design library. The site{"’"}s
+        design uses a modular grid to create a pleasant browsing experience. At
+        desktop size, rows are made up of 4 consistently sized modules.
+        Horizontal gutters are slightly thicker than vertical gutters and the
+        margins are consistently sized on the left and right of the design. Like
+        in previous example, the gutters visually separate each element.
       </p>
       <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
@@ -143,21 +143,22 @@ const PostContentBlock: FC<
         />
         <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
-            Behance’s design uses a modular grid, which allows users to easily
-            browse. "("We highlighted the columns in yellow, the gutters in
-            blue, and the margins in purple.")"
+            Behance{"’"}s design uses a modular grid, which allows users to
+            easily browse.{"("}We highlighted the columns in yellow, the gutters
+            in blue, and the margins in purple.{")"}
           </p>
         </div>
       </div>
       <h4>Example 4: Breaking the Grid</h4>
       <p>
-        Our last example is Shrine from Google’s Material Studies. This design
-        uses a column grid, as we can see based on the left navigation, which is
-        2 columns wide. Look closely and you will see that some product images
-        settle to the margins, while others do not. Breaking the grid like this
-        makes it challenging to focus or quickly scan product images and calls
-        more attention to some products over others. It is okay to break the
-        grid every so often, as long as you have a valid reason for it.
+        Our last example is Shrine from Google{"’"}s Material Studies. This
+        design uses a column grid, as we can see based on the left navigation,
+        which is 2 columns wide. Look closely and you will see that some product
+        images settle to the margins, while others do not. Breaking the grid
+        like this makes it challenging to focus or quickly scan product images
+        and calls more attention to some products over others. It is okay to
+        break the grid every so often, as long as you have a valid reason for
+        it.
       </p>
       <div className="image w-full space-y-sm px-3xl tablet:px-0">
         <Image
@@ -168,8 +169,8 @@ const PostContentBlock: FC<
         <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
             Breaking the grid produces a chaotic browsing experience for users.
-            "("We highlighted the columns in yellow, the gutters in blue, and
-            the margins in purple.")"
+            {"("}We highlighted the columns in yellow, the gutters in blue, and
+            the margins in purple.{")"}
           </p>
         </div>
       </div>
@@ -191,7 +192,7 @@ const PostContentBlock: FC<
         <Image src={postContentImage6} alt="image-post-regular-6" />
         <div className="text-additional px-11xl text-center small-laptop:px-0">
           <p>
-            At the mobile size, Behance’s one-column grid {"("}left{")"} was
+            At the mobile size, Behance{"’"}s one-column grid {"("}left{")"} was
             reflowed into a four-column grid structure {"("}right{")"}.
           </p>
         </div>
@@ -209,12 +210,12 @@ const PostContentBlock: FC<
       </p>
       <p>
         <b>Choose the right grid for your needs</b>. Take time to think through
-        what type of grid ­— column, modular, or hierarchical — best suits your
-        needs. A hierarchical grid may be the best fit if one item on your page
-        will always be more important than the surrounding elements. For
-        example, hierarchical grids are great for online news platforms. If the
-        content you need to display is highly variable, consider using a basic
-        column or modular grid, as these provide lots of flexibility when
+        what type of grid {"­—"} column, modular, or hierarchical {"—"} best
+        suits your needs. A hierarchical grid may be the best fit if one item on
+        your page will always be more important than the surrounding elements.
+        For example, hierarchical grids are great for online news platforms. If
+        the content you need to display is highly variable, consider using a
+        basic column or modular grid, as these provide lots of flexibility when
         designing. For example, elements and content can span across multiple
         columns or modules or just one to fit design needs.
       </p>

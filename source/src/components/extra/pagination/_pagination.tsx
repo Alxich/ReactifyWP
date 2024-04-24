@@ -8,12 +8,16 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   visiblePages: number;
+  onNext: () => void;
+  onPrev: () => void;
 }
 
 const Pagination: FC<PaginationProps> = ({
   currentPage,
   totalPages,
   visiblePages,
+  onNext,
+  onPrev
 }: PaginationProps) => {
   const pageNumbers = generatePageNumbers(
     currentPage,
@@ -26,7 +30,7 @@ const Pagination: FC<PaginationProps> = ({
       width="md"
       classNames="flex-drow flex-cspace pt-7xl border-t border-t-light-border"
     >
-      <ButtonNavigation previous />
+      <ButtonNavigation previous onClick={onPrev} />
       <div className="navigation flex-drow flex-basecenter space-x-xxxs">
         {pageNumbers.map((item, key) => {
           const isFirstThree = key < 3; // Check if it's one of the first three elements
@@ -52,7 +56,7 @@ const Pagination: FC<PaginationProps> = ({
           );
         })}
       </div>
-      <ButtonNavigation next />
+      <ButtonNavigation next onClick={onNext}/>
     </Container>
   );
 };

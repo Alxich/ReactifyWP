@@ -41,14 +41,13 @@ const ThemeSwither: FC<ThemeSwitherProps> = (props) => {
       document.documentElement.classList.remove("light", "dark");
       document.documentElement.classList.add(theme);
       localStorage.setItem("web-theme", theme);
-      console.log(localStorage.getItem("web-theme"));
     }
   }, [theme]);
 
   return (
     <div
       className={classNames(
-        "theme-switcher use-transition flex-ccenter flex-drow group fixed bottom-xl left-xl h-9xl w-9xl cursor-pointer rounded-full border-4 border-black shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] phone-portrait:bottom-xs phone-portrait:left-xs tablet:bottom-sm tablet:left-sm",
+        "theme-switcher use-transition flex-ccenter flex-drow group fixed bottom-xl left-xl h-9xl w-9xl cursor-pointer rounded-full border-4 border-black shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] tablet:bottom-sm tablet:left-sm phone-portrait:bottom-xs phone-portrait:left-xs",
         {
           "dark bg-black hover:bg-white": theme === "dark",
           "light border-black bg-white hover:bg-black": theme === "light",

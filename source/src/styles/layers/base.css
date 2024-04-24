@@ -1,16 +1,22 @@
 @tailwind base;
 
 @layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+
+    @apply fnormal-normal bg-white leading-normal text-black;
+  }
+
   button,
   input,
   optgroup,
   select,
   textarea {
     @apply fnormal-normal;
-  }
-
-  body {
-    @apply fnormal-normal bg-white leading-normal text-black;
   }
 
   input:not([class*="bg-"]),

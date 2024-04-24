@@ -1,125 +1,101 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Container, PostPreview } from "../../index";
-import PostRecentImage1 from "@images/post-recent-1.png";
-import PostRecentImage2 from "@images/post-recent-2.png";
-import PostRecentImage3 from "@images/post-recent-3.png";
-import PostRecentImage4 from "@images/post-recent-4.png";
+
+import preloadData from "@bin/preload.json";
+import getOperationsRequest from "@/graphql/operations";
+import { OrderEnum, OrderbyEnum, PostPreviewBlockProps } from "@/lib/types";
+import { getFormatedDate } from "@/lib/functions";
 
 interface PostsRecentProps {}
 
 const PostsRecent: FC<PostsRecentProps> = () => {
+  const [postsData, setPostsData] = useState<Array<PostPreviewBlockProps>>(
+    preloadData.postsData,
+  );
+
+  const data = getOperationsRequest.GET.queryPostsData({
+    type: "queryPostsByVars",
+    variables: {
+      orderBy: OrderbyEnum.DATE,
+      order: OrderEnum.DESC,
+      offset: 0,
+      size: 4,
+    },
+  });
+
+  useEffect(() => {
+    const fetchedData = data?.data?.posts.nodes.map((item: any) => {
+      const checkIfPresent = (newData: any, placeData: any) =>
+        newData ? newData : placeData;
+
+      const data: PostPreviewBlockProps = {
+        view: "",
+        isGridSmall: false,
+        title: item.title,
+        author: checkIfPresent(
+          item.author.node.name,
+          preloadData.placeholders.authorName,
+        ),
+        date: getFormatedDate(item.date),
+        tags: item.tags.nodes,
+        texts: item.excerpt,
+        image: checkIfPresent(
+          item.featuredImage?.node.sourceUrl,
+          preloadData.placeholders.postImage,
+        ),
+      };
+
+      return data;
+    });
+
+    data.loading === false && fetchedData && setPostsData(fetchedData);
+  }, [data.loading]);
+
+  const postPreviews = [
+    { index: 0, view: "col" },
+    { index: 1, view: "row", isGridSmall: true },
+    { index: 2, view: "row", isGridSmall: true },
+    { index: 3, view: "row-full", className: "col-span-2" },
+  ];
+
+  const renderedPreviews = postPreviews.map(
+    ({ index, view, isGridSmall, className }) => {
+      const tags = postsData[index].tags?.map(({ slug, name }: any) => {
+        return {
+          link: `/blog/tags/${slug}`,
+          text: name,
+          color: "#667085",
+          background: "#F9F5FF",
+        };
+      });
+
+      return (
+        <PostPreview
+          key={index}
+          view={view}
+          isGridSmall={isGridSmall}
+          className={className}
+          author={postsData[index].author}
+          date={postsData[index].date}
+          image={postsData[index].image}
+          title={postsData[index].title}
+          texts={postsData[index].texts}
+          tags={tags}
+        />
+      );
+    },
+  );
+
   return (
     <Container
       width="md"
       classNames="posts-recents grid grid-cols-2 auto-rows-max auto-cols-max gap-3xl laptop:flex-dcol desktop:gap-lg"
     >
-      <PostPreview
-        view={"col"}
-        author="Olivia Rhye"
-        date="1 Jan 2023"
-        image={PostRecentImage1}
-        title={"UX review presentations"}
-        texts={
-          "How do you create compelling presentations that wow your colleagues and impress your managers?"
-        }
-        tags={[
-          {
-            background: "#F9F5FF",
-            color: "gray",
-            link: "#",
-            text: "Design",
-          },
-          {
-            background: "#EEF4FF",
-            color: "#3538CD",
-            link: "#",
-            text: "Research",
-          },
-          {
-            background: "#FDF2FA",
-            color: "#C11574",
-            link: "#",
-            text: "Presentation",
-          },
-        ]}
-      />
-      <div className="post-in-col flex-dcol tablet:flex-dcol laptop:flex-drow group space-y-3xl tablet:!space-x-0 tablet:!space-y-lg laptop:items-start laptop:!space-y-0 laptop:space-x-lg desktop:space-y-lg">
-        <PostPreview
-          view={"row"}
-          isGridSmall={true}
-          author="Phoenix Baker"
-          date="1 Jan 2023"
-          image={PostRecentImage2}
-          title={"Migrating to Linear 101"}
-          texts={
-            "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get..."
-          }
-          tags={[
-            {
-              background: "#F0F9FF",
-              color: "#026AA2",
-              link: "#",
-              text: "Design",
-            },
-            {
-              background: "#FDF2FA",
-              color: "#C11574",
-              link: "#",
-              text: "Research",
-            },
-          ]}
-        />
-        <PostPreview
-          view={"row"}
-          isGridSmall={true}
-          author="Lana Steiner"
-          date="1 Jan 2023"
-          image={PostRecentImage3}
-          title={"Building your API Stack"}
-          texts={
-            "The rise of RESTful APIs has been met by a rise in tools for creating, testing, and manag..."
-          }
-          tags={[
-            {
-              background: "#ECFDF3",
-              color: "#027A48",
-              link: "#",
-              text: "Design",
-            },
-            {
-              background: "#FDF2FA",
-              color: "#C11574",
-              link: "#",
-              text: "Research",
-            },
-          ]}
-        />
+      {renderedPreviews.slice(0, 1)}
+      <div className="post-in-col flex-dcol tablet:flex-dcol laptop:flex-drow group space-y-3xl desktop:space-y-lg laptop:items-start laptop:!space-y-0 laptop:space-x-lg tablet:!space-x-0 tablet:!space-y-lg">
+        {renderedPreviews.slice(1, 3)}
       </div>
-      <PostPreview
-        className="col-span-2"
-        view={"row-full"}
-        author="Olivia Rhye"
-        date="1 Jan 2023"
-        image={PostRecentImage4}
-        title={"Grid system for better Design User Interface"}
-        texts={
-          "A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate."
-        }
-        tags={[
-          {
-            background: "#F9F5FF",
-            color: "gray",
-            link: "#",
-            text: "Design",
-          },
-          {
-            background: "#FDF2FA",
-            color: "#C11574",
-            link: "#",
-            text: "Research",
-          },
-        ]}
-      />
+      {renderedPreviews.slice(3)}
     </Container>
   );
 };

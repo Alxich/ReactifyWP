@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import classNames from "classnames";
+import DOMPurify from "isomorphic-dompurify";
 
 import { SvgIcons, TagLink } from "../../index";
 import { PostPreviewBlockProps } from "@/lib/types";
@@ -22,13 +23,17 @@ const PostPreview: FC<PostPreviewProps> = ({
   className,
   type,
 }: PostPreviewProps) => {
+  const cleanedText = DOMPurify.sanitize(texts, {
+    USE_PROFILES: { html: true },
+  });
+
   return (
     <div
       className={classNames(
         "post post-previewer small-laptop:flex-dcol flex cursor-pointer small-laptop:space-x-0 small-laptop:space-y-lg tablet:w-full",
         className && className,
         {
-          "group-[.post-in-col]:small-laptop:flex-dcol flex-drow justify-between space-x-3xl group-[.post-in-col]:desktop:space-x-lg group-[.post-in-col]:laptop:items-start group-[.post-in-col]:laptop:justify-between group-[.post-in-col]:small-laptop:space-x-0":
+          "group-[.post-in-col]:small-laptop:flex-dcol flex-drow justify-between space-x-xl group-[.post-in-col]:desktop:space-x-lg group-[.post-in-col]:laptop:items-start group-[.post-in-col]:laptop:justify-between group-[.post-in-col]:small-laptop:space-x-0":
             (view && view == "row") || view == "row-full",
           "flex-dcol space-y-3xl": view && view == "col",
           "tablet:flex-dcol small-laptop:flex-dcol laptop:flex-drow desktop:space-y-lg laptop:justify-between laptop:space-x-lg laptop:space-y-0 tablet:space-x-0 tablet:space-y-lg":
@@ -54,7 +59,9 @@ const PostPreview: FC<PostPreviewProps> = ({
           alt="post__preview__thumbnail__image"
           height={100}
           width={100}
-          className="spread-block"
+          className={classNames("spread-block max-h-[320px]", {
+            "max-h-[220px]": view && view == "col"
+          })}
         />
       </div>
       <div
@@ -83,33 +90,44 @@ const PostPreview: FC<PostPreviewProps> = ({
           )}
           <h4
             className={classNames(
-              "flex-tspace flex-drow w-full leading-normal",
+              "flex-tspace flex-drow w-full leading-normal break-all overflow-hidden",
               {
                 "flarge-semibold small-laptop:text-2xl": (isGridSmall =
                   undefined && isGridSmall === true),
-                "f2xl-semibold":
+                "fxl-semibold":
                   isGridSmall == undefined || isGridSmall === false,
               },
             )}
           >
             <span>{title}</span>
-            <SvgIcons type="Explore-Arrow-Up-Right" />
+            <SvgIcons type="Explore-Arrow-Up-Right" classname="min-w-[24px]" />
           </h4>
-          <div className="text-block fnormal-normal w-full text-gray">
-            <p className=" text-inherit">{texts}</p>
+          <div className="text-block fnormal-normal w-full text-gray break-words overflow-hidden">
+            <p className="text-inherit">
+              {view != "row-full"
+                ? cleanedText
+                    .replace(/(<([^>]+)>)/gi, "")
+                    .split(" ")
+                    .slice(0, 20)
+                    .join(" ")
+                : cleanedText.replace(/(<([^>]+)>)/gi, "")}
+            </p>
           </div>
         </div>
-        {tags && (
+        {tags && tags?.length > 0 && (
           <div className="tags flex-drow w-full flex-wrap space-x-xs">
-            {tags.map(({ background, color, link, text }, key) => (
-              <TagLink
-                background={background}
-                color={color}
-                link={link}
-                text={text}
-                key={`items_${key}`}
-              />
-            ))}
+            {tags.map(
+              ({ link, text, background, color }, key) =>
+                text && (
+                  <TagLink
+                    background={background}
+                    color={color}
+                    link={link}
+                    text={text}
+                    key={`items_${key}`}
+                  />
+                ),
+            )}
           </div>
         )}
       </div>

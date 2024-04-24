@@ -16,7 +16,7 @@ interface PageHeaderProps {
 const PageHeader: FC<PageHeaderProps> = ({ title, text }: PageHeaderProps) => {
   const route = usePathname();
   const showSubscriber = () => {
-    if (route.startsWith("/blog/user/")) {
+    if (route?.startsWith("/blog/user/")) {
       return false;
     }
 
@@ -29,7 +29,7 @@ const PageHeader: FC<PageHeaderProps> = ({ title, text }: PageHeaderProps) => {
     }
   };
 
-  if (route.startsWith("/login") || route.startsWith("/register")) {
+  if (route?.startsWith("/login") || route?.startsWith("/register")) {
     return <></>;
   }
 

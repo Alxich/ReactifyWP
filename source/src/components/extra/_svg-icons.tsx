@@ -1,6 +1,8 @@
+import classNames from "classnames";
 import { FC } from "react";
 
 interface SvgIconsProps {
+  classname?: string,
   type:
     | "Discord"
     | "Figma"
@@ -23,12 +25,12 @@ interface SvgIconsProps {
     | "Moon";
 }
 
-const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
+const SvgIcons: FC<SvgIconsProps> = ({ type, classname }) => {
   switch (type) {
     case "Discord":
       return (
         <svg
-          className="Discord"
+          className={classNames("Discord", classname)}
           width="28"
           height="28"
           viewBox="0 0 28 28"
@@ -45,7 +47,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Figma":
       return (
         <svg
-          className="Figma"
+          className={classNames("Figma", classname)}
           width="20"
           height="28"
           viewBox="0 0 20 28"
@@ -78,7 +80,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Google":
       return (
         <svg
-          className="Google"
+          className={classNames("Google", classname)}
           width="28"
           height="28"
           viewBox="0 0 28 28"
@@ -115,7 +117,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Login_Google":
       return (
         <svg
-          className="Login_Google"
+          className={classNames("Login_Google", classname)}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -132,7 +134,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Login_Facebook":
       return (
         <svg
-          className="Login_Facebook"
+          className={classNames("Login_Facebook", classname)}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -174,7 +176,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Login_Apple":
       return (
         <svg
-          className="Login_Apple"
+          className={classNames("Login_Apple", classname)}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -191,7 +193,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Github":
       return (
         <svg
-          className="Github"
+          className={classNames("Github", classname)}
           width="28"
           height="28"
           viewBox="0 0 28 28"
@@ -245,14 +247,14 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Explore-Arrow-Down-Right":
       return (
         <svg
-          className="Explore-Arrow-Down-Right"
+          className={classNames("Explore-Arrow-Down-Right", classname)}
           width="24"
           height="25"
           viewBox="0 0 24 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect y="0.5" width="24" height="24" rx="2" className="fill-black" />
+          <rect y="0.5" width="24" height="24" rx="2" className={classNames("fill-black", classname)} />
           <path
             d="M7 17.5L17 7.5M17 7.5H7M17 7.5V17.5"
             stroke="white"
@@ -266,7 +268,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Explore-Arrow-Up-Right":
       return (
         <svg
-          className="Explore-Arrow-Up-Right"
+          className={classNames("Explore-Arrow-Up-Right", classname)}
           width="24"
           height="28"
           viewBox="0 0 24 28"
@@ -286,7 +288,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Chevron-Arrow-Down":
       return (
         <svg
-          className="Chevron-Arrow-Down"
+          className={classNames("Chevron-Arrow-Down", classname)}
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -303,7 +305,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Chevron-Arrow-Up":
       return (
         <svg
-          className="Chevron-Arrow-Up"
+          className={classNames("Chevron-Arrow-Up", classname)}
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -320,7 +322,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Bold":
       return (
         <svg
-          className="Bold"
+          className={classNames("Bold", classname)}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -347,7 +349,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Italic":
       return (
         <svg
-          className="Italic"
+          className={classNames("Italic", classname)}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -381,7 +383,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Link":
       return (
         <svg
-          className="Link"
+          className={classNames("Link", classname)}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -420,7 +422,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="Error h-[15vh] w-[15vh] text-highlight"
+          className={classNames("Error h-[15vh] w-[15vh] text-highlight", classname)}
         >
           <path
             strokeLinecap="round"
@@ -432,10 +434,10 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
 
     case "Checkbox":
       return (
-        <span className="Checkbox pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+        <span className={classNames("Checkbox pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100", classname)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-3.5 w-3.5"
+            className={classNames("h-3.5 w-3.5", classname)}
             viewBox="0 0 20 20"
             fill="currentColor"
             stroke="currentColor"
@@ -453,7 +455,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "User":
       return (
         <svg
-          className="User"
+          className={classNames("User", classname)}
           xmlns="http://www.w3.org/2000/svg"
           data-name="Layer 1"
           viewBox="0 0 128 160"
@@ -482,7 +484,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Sun":
       return (
         <svg
-          className="Sun"
+          className={classNames("Sun", classname)}
           width="32"
           height="32"
           viewBox="0 0 32 32"
@@ -503,7 +505,7 @@ const SvgIcons: FC<SvgIconsProps> = ({ type }) => {
     case "Moon":
       return (
         <svg
-          className="Moon"
+          className={classNames("Moon", classname)}
           width="32"
           height="32"
           viewBox="0 0 32 32"

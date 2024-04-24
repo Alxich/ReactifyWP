@@ -84,7 +84,7 @@ const CartSummary: FC<CartSummaryProps> = (props) => {
         </Button>
         <div className="additionals w-full">
           <p className="w-full text-base font-normal text-gray">
-            Prices and delivery costs are confirmed after you've reached the
+            Prices and delivery costs are confirmed after you{"'"}ve reached the
             checkout. Additional payments may supply by your delivery partner 28
             days right of withdrawal. Read more about
           </p>

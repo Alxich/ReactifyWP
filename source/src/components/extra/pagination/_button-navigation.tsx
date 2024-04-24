@@ -7,11 +7,13 @@ import { errorTextHandler } from "@/lib/errorTextHandler";
 interface ButtonNavigationProps {
   next?: true;
   previous?: true;
+  onClick?: () => void;
 }
 
 const ButtonNavigation: FC<ButtonNavigationProps> = ({
   next,
   previous,
+  onClick,
 }: ButtonNavigationProps) => {
   if ((!next && !previous) || (next === true && previous === true))
     errorTextHandler("PageNumberNav");
@@ -26,6 +28,7 @@ const ButtonNavigation: FC<ButtonNavigationProps> = ({
           hidden: !next && !previous,
         },
       )}
+      onClick={onClick}
     >
       {next && <ArrowRightIcon className="icon h-5 w-5" />}
       {previous && <ArrowLeftIcon className="icon h-5 w-5" />}
