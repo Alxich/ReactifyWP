@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { tagPreview } from "./tags";
 
 export const postPreview = `
   nodes {
@@ -17,9 +18,7 @@ export const postPreview = `
     }
     tags {
       nodes {
-        tagId
-        slug
-        name
+        ${tagPreview}
       }
     }
     excerpt
@@ -47,9 +46,7 @@ export default {
           }
           tags {
             nodes {
-              tagId
-              slug
-              name
+              ${tagPreview}
             }
           }
           content
@@ -71,12 +68,14 @@ export default {
         $size: Int
         $offset: Int
         $tagId: String
+        $tag: String
       ) {
         posts(
           where: { 
             orderby: { field: $orderBy, order: $order }
             offsetPagination: {size: $size, offset: $offset}
             tagId: $tagId,
+            tag: $tag
           }
           first: $first
         ) {

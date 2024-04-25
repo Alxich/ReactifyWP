@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-const tagPreview = `
+export const tagPreview = `
   id
   name
   slug

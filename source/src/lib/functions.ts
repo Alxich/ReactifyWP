@@ -8,8 +8,6 @@ export const generatePageNumbers = (
   const pages = [];
   const halfVisible = Math.floor(visiblePages / 2);
 
-  console.log(totalPages)
-
   if (currentPage <= 0) {
     errorTextHandler("PageNumberNav");
     currentPage = 1;

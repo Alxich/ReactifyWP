@@ -74,6 +74,7 @@ export interface queryVariables {
   offset?: number;
   id?: string;
   tagId?: string;
+  tag?: string
 }
 
 export interface queryPostsData {
@@ -92,6 +93,14 @@ export interface queryTagsData {
 }
 
 // All ENUMS to operate variables in GraphQL
+
+enum TagIdType {
+  DATABASE_ID = "DATABASE_ID",
+  ID = "ID",
+  NAME = "NAME",
+  SLUG = "SLUG",
+  URI = "URI",
+}
 
 export enum OrderbyEnum {
   DATE = "DATE",

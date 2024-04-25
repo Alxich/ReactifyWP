@@ -60,7 +60,7 @@ const PostPreview: FC<PostPreviewProps> = ({
           height={100}
           width={100}
           className={classNames("spread-block max-h-[320px]", {
-            "max-h-[220px]": view && view == "col"
+            "max-h-[220px]": view && view == "col",
           })}
         />
       </div>
@@ -90,7 +90,7 @@ const PostPreview: FC<PostPreviewProps> = ({
           )}
           <h4
             className={classNames(
-              "flex-tspace flex-drow w-full leading-normal break-all overflow-hidden",
+              "flex-tspace flex-drow w-full overflow-hidden break-all leading-normal",
               {
                 "flarge-semibold small-laptop:text-2xl": (isGridSmall =
                   undefined && isGridSmall === true),
@@ -102,7 +102,7 @@ const PostPreview: FC<PostPreviewProps> = ({
             <span>{title}</span>
             <SvgIcons type="Explore-Arrow-Up-Right" classname="min-w-[24px]" />
           </h4>
-          <div className="text-block fnormal-normal w-full text-gray break-words overflow-hidden">
+          <div className="text-block fnormal-normal w-full overflow-hidden break-words text-gray">
             <p className="text-inherit">
               {view != "row-full"
                 ? cleanedText
@@ -114,12 +114,14 @@ const PostPreview: FC<PostPreviewProps> = ({
             </p>
           </div>
         </div>
-        {tags && tags?.length > 0 && (
-          <div className="tags flex-drow w-full flex-wrap space-x-xs">
+        {tags && (
+          <div className="tags flex-drow w-full flex-wrap gap-xs">
             {tags.map(
-              ({ link, text, background, color }, key) =>
+              ({ id, slug, text, background, color, link }, key) =>
                 text && (
                   <TagLink
+                    id={id}
+                    slug={slug}
                     background={background}
                     color={color}
                     link={link}

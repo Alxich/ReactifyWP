@@ -38,8 +38,10 @@ const TagsPage: FC<TagPageProps> = (props) => {
       } else {
         setPageId(contextPageId);
       }
-    }, []);
+    }, [localPageSlug, slug]);
   }
+
+  useEffect(() => console.log(pageId), [pageId]);
 
   const [tag, setTag] = useState<TagLinkProps>(preloadData.tagsData[0]);
   const [postsData, setPostsData] = useState<Array<PostPreviewBlockProps>>(
@@ -59,7 +61,7 @@ const TagsPage: FC<TagPageProps> = (props) => {
     variables: {
       orderBy: OrderbyEnum.DATE,
       order: OrderEnum.DESC,
-      tagId: pageId,
+      tag: slug as string,
       offset: 0,
       size: 6,
     },
@@ -73,6 +75,22 @@ const TagsPage: FC<TagPageProps> = (props) => {
       setTotalPages(Math.floor(total / 6) + 1);
 
       const fetchedData = nodes.map((item: any) => {
+        const tags: TagLinkProps[] = item.tags?.nodes.map((item: any) => {
+          const { background, textColor: color } = item.tagACFFields;
+
+          const queryTagsData: TagLinkProps = {
+            id: item.id,
+            slug: item.slug,
+            background,
+            color,
+            link: `/blog/tag/${item.slug}`,
+            text: item.name,
+            type: "normal",
+          };
+
+          return queryTagsData;
+        });
+
         const checkIfPresent = (newData: any, placeData: any) =>
           newData ? newData : placeData;
 
@@ -88,7 +106,7 @@ const TagsPage: FC<TagPageProps> = (props) => {
           ),
           date:
             getFormatedDate(item.date) || preloadData.placeholders.defaultDate,
-          tags: item.tags?.nodes || preloadData.placeholders.defaultTags,
+          tags: tags || preloadData.placeholders.defaultTags,
           texts: item.excerpt || preloadData.placeholders.defaultTexts,
           image: checkIfPresent(
             item.featuredImage?.node.sourceUrl ||
@@ -155,15 +173,17 @@ const TagsPage: FC<TagPageProps> = (props) => {
         </h4>
       </div>
       <PostAll postsData={postsData} />
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        visiblePages={3}
-        onNext={() =>
-          setCurrentPage((prev) => (totalPages >= prev + 1 ? prev + 1 : prev))
-        }
-        onPrev={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
-      />
+      {postsData.length > 0 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          visiblePages={3}
+          onNext={() =>
+            setCurrentPage((prev) => (totalPages >= prev + 1 ? prev + 1 : prev))
+          }
+          onPrev={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
+        />
+      )}
     </Container>
   );
 };
