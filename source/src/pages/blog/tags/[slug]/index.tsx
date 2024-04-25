@@ -1,14 +1,147 @@
-import { FC } from "react";
+import { FC, useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { PageContext } from "@/pages/_app";
 
-import { PostPreviewBlockProps } from "@/lib/types";
-import { Breadcrumbs, Container, Pagination, PostAll } from "@/components";
+import {
+  OrderEnum,
+  OrderbyEnum,
+  PostPreviewBlockProps,
+  type TagLinkProps,
+} from "@/lib/types";
 
 import preloadData from "@bin/preload.json";
+import getOperationsRequest from "@/graphql/operations";
+import { getFormatedDate } from "@/lib/functions";
+
+import { Breadcrumbs, Container, Pagination, PostAll } from "@/components";
 
 interface TagPageProps {}
 
 const TagsPage: FC<TagPageProps> = (props) => {
-  const postsData: Array<PostPreviewBlockProps> = preloadData.postsData;
+  const [pageId, setPageId] = useState<string | undefined>();
+
+  const Router = useRouter();
+  const { slug } = Router.query;
+  const { pageId: contextPageId, pageSlug } = useContext(PageContext);
+  pageSlug && localStorage.setItem("pageSlug", pageSlug);
+  contextPageId && localStorage.setItem("pageId", contextPageId);
+
+  if (typeof window !== "undefined") {
+    const localPageSlug = localStorage.getItem("pageSlug") || "";
+    const localPageId = localStorage.getItem("pageId") || "";
+
+    useEffect(() => {
+      if (slug != localPageSlug) {
+        localPageId
+          ? setPageId(localPageId)
+          : console.error("There is no provided ID!");
+      } else {
+        setPageId(contextPageId);
+      }
+    }, []);
+  }
+
+  const [tag, setTag] = useState<TagLinkProps>(preloadData.tagsData[0]);
+  const [postsData, setPostsData] = useState<Array<PostPreviewBlockProps>>(
+    preloadData.postsData,
+  );
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(
+    preloadData.placeholders.totalPosts / 6,
+  );
+
+  const {
+    data: queryPostsData,
+    loading: queryPostsDataLoading,
+    refetch: queryPostsDataRefetch,
+  } = getOperationsRequest.GET.queryPostsData({
+    type: "queryPostsByVars",
+    variables: {
+      orderBy: OrderbyEnum.DATE,
+      order: OrderEnum.DESC,
+      tagId: pageId,
+      offset: 0,
+      size: 6,
+    },
+  });
+
+  useEffect(() => {
+    if (queryPostsData && queryPostsDataLoading === false) {
+      const { nodes, pageInfo } = queryPostsData.posts;
+
+      const { total } = pageInfo.offsetPagination;
+      setTotalPages(Math.floor(total / 6) + 1);
+
+      const fetchedData = nodes.map((item: any) => {
+        const checkIfPresent = (newData: any, placeData: any) =>
+          newData ? newData : placeData;
+
+        const queryPostsData: PostPreviewBlockProps = {
+          view: "col",
+          isGridSmall: false,
+          title: item.title || preloadData.placeholders.postTitle,
+          author: checkIfPresent(
+            item.author?.node.name ||
+              preloadData.placeholders.authorName ||
+              "Anon",
+            preloadData.placeholders.authorName,
+          ),
+          date:
+            getFormatedDate(item.date) || preloadData.placeholders.defaultDate,
+          tags: item.tags?.nodes || preloadData.placeholders.defaultTags,
+          texts: item.excerpt || preloadData.placeholders.defaultTexts,
+          image: checkIfPresent(
+            item.featuredImage?.node.sourceUrl ||
+              preloadData.placeholders.postImage,
+            preloadData.placeholders.postImage,
+          ),
+        };
+
+        return queryPostsData;
+      });
+
+      // POSTSDATA's status update with new data received
+      if (fetchedData) {
+        setPostsData(fetchedData);
+      }
+    }
+  }, [queryPostsData, queryPostsDataLoading]);
+
+  useEffect(() => {
+    queryPostsDataRefetch({
+      offset: (currentPage - 1) * 6,
+    });
+  }, [currentPage]);
+
+  const { data: queryTagData, loading: queryTagDataLoading } =
+    getOperationsRequest.GET.queryTagsData({
+      type: "queryTag",
+      variables: {
+        id: pageId,
+      },
+    });
+
+  useEffect(() => {
+    if (queryTagData) {
+      const { id, slug, background, color, name, description } =
+        queryTagData?.tag;
+      const fetchedData: TagLinkProps = {
+        id,
+        slug,
+        background,
+        color,
+        link: `/blog/tag/${slug}`,
+        name: name,
+        description,
+        type: "big",
+      };
+
+      // CATEGORIESDATA's status update with new data received
+      if (queryTagDataLoading === false && fetchedData) {
+        setTag(fetchedData);
+      }
+    }
+  }, [queryTagData, queryTagDataLoading]);
 
   return (
     <Container
@@ -17,10 +150,20 @@ const TagsPage: FC<TagPageProps> = (props) => {
     >
       <Breadcrumbs />
       <div className="flex-tspace f2xl-semibold flex-drow w-full leading-normal">
-        <h4 className="text-inherit">All frameworks tag posts</h4>
+        <h4 className="text-inherit">
+          All {tag ? tag.name : "example"} tag posts
+        </h4>
       </div>
       <PostAll postsData={postsData} />
-      <Pagination currentPage={1} totalPages={10} visiblePages={3} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        visiblePages={3}
+        onNext={() =>
+          setCurrentPage((prev) => (totalPages >= prev + 1 ? prev + 1 : prev))
+        }
+        onPrev={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
+      />
     </Container>
   );
 };

@@ -1,7 +1,8 @@
 import { gql } from "@apollo/client";
 
-const postPreview = `
+export const postPreview = `
   nodes {
+    id
     title
     date
     featuredImage {
@@ -28,6 +29,33 @@ const postPreview = `
 
 export default {
   Queries: {
+    queryPost: gql`
+      query queryPost($id: String) {
+        post(id: $id) {
+          title
+          date
+          author {
+            node {
+              name
+            }
+          }
+          categories {
+            nodes {
+              name
+              slug
+            }
+          }
+          tags {
+            nodes {
+              tagId
+              slug
+              name
+            }
+          }
+          content
+        }
+      }
+    `,
     queryPosts: gql`
       query queryPosts {
         posts {
@@ -35,9 +63,23 @@ export default {
         }
       }
     `,
-    queryPostsTotal: gql`
-      query queryPostsTotal {
-        posts {
+    queryPostsByVars: gql`
+      query queryPostsByVars(
+        $orderBy: PostObjectsConnectionOrderbyEnum!
+        $order: OrderEnum!
+        $first: Int
+        $size: Int
+        $offset: Int
+        $tagId: String
+      ) {
+        posts(
+          where: { 
+            orderby: { field: $orderBy, order: $order }
+            offsetPagination: {size: $size, offset: $offset}
+            tagId: $tagId,
+          }
+          first: $first
+        ) {
           pageInfo {
             offsetPagination {
               # Boolean whether there are more nodes in this connection.
@@ -55,24 +97,6 @@ export default {
               total
             }
           }
-        }
-      }
-    `,
-    queryPostsByVars: gql`
-      query queryPostsByVars(
-        $orderBy: PostObjectsConnectionOrderbyEnum!
-        $order: OrderEnum!
-        $first: Int
-        $size: Int!
-        $offset: Int!
-      ) {
-        posts(
-          where: { 
-            orderby: { field: $orderBy, order: $order }
-            offsetPagination: {size: $size, offset: $offset}
-          }
-          first: $first
-        ) {
           ${postPreview}
         }
       }

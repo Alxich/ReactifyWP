@@ -1,16 +1,22 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import Link from "next/link";
 
-import { TagLinkProps } from "@/lib/types";
 import classNames from "classnames";
+
+import { PageContext } from "@/pages/_app";
+import { TagLinkProps } from "@/lib/types";
 
 const TagLink: FC<TagLinkProps> = ({
   type,
+  id,
+  slug,
   link,
   text,
   color,
   background,
 }: TagLinkProps) => {
+  const { setPageId, setPageSlug } = useContext(PageContext);
+
   return (
     <Link
       href={link}
@@ -22,6 +28,10 @@ const TagLink: FC<TagLinkProps> = ({
         display: !background || !color ? "none" : "block",
         background: background,
         color: color,
+      }}
+      onClick={() => {
+        id && setPageId && setPageId(id);
+        slug && setPageSlug && setPageSlug(slug);
       }}
     >
       {text}

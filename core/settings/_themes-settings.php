@@ -95,4 +95,11 @@ function wpexplorer_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'wpexplorer_excerpt_length', PHP_INT_MAX );
 
+/**
+ *   Add thumbnails support to categories in WordPres
+ */
+if(function_exists('add_theme_support')) {
+	add_theme_support('category-thumbnails');
+}
+
 ?>

@@ -11,8 +11,8 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "reactifywp.local",
-        port: "",
+        hostname: "localhost",
+        port: "10004",
       },
     ],
   },

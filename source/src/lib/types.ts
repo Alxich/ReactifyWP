@@ -18,9 +18,12 @@ export type PaddingValues =
 
 export interface TagLinkProps {
   type?: "big" | "normal" | string;
+  id?: string;
   slug?: string;
   link: string;
-  text: string;
+  name?: string;
+  description?: string;
+  text?: string;
   color: string;
   background: string;
 }
@@ -47,17 +50,45 @@ export interface ProductPreviewBlockProps {
   price: number;
 }
 
+export interface CategoryPreviewBlockProps {
+  view: "row" | "col" | "row-full" | string;
+  isGridSmall?: boolean;
+  image: string | StaticImageData;
+  title: string;
+  texts: string;
+  tags?: TagLinkProps[];
+}
+
 // Apollo Client types and intefaces
+
+export interface queryVariables {
+  orderBy?: OrderbyEnum; // Your possible options for Orderby
+  order?: OrderEnum; // Your possible options for Order
+  hideEmpty?: Boolean;
+  first?: number; // Optional parameter
+  last?: number
+  after?: string;
+  before?: string;
+  slug?: string;
+  size?: number;
+  offset?: number;
+  id?: string;
+  tagId?: string;
+}
 
 export interface queryPostsData {
   type: "queryPost" | "queryPosts" | "queryPostsByVars" | "queryPostsTotal";
-  variables?: {
-    orderBy: OrderbyEnum; // Your possible options for Orderby
-    order: OrderEnum; // Your possible options for Order
-    first?: number; // Optional parameter
-    size: number;
-    offset: number;
-  };
+  variables?: queryVariables
+}
+
+export interface queryCategoriesData {
+  type: "queryCategory" | "queryCategories" | "queryCategoriesByVars" | "queryCategoriesTotal";
+  variables?: queryVariables
+}
+
+export interface queryTagsData {
+  type: "queryTag" | "queryTags";
+  variables?: queryVariables
 }
 
 // All ENUMS to operate variables in GraphQL
@@ -65,6 +96,7 @@ export interface queryPostsData {
 export enum OrderbyEnum {
   DATE = "DATE",
   TITLE = "TITLE",
+  NAME = "NAME"
 }
 
 export enum OrderEnum {

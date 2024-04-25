@@ -19,69 +19,72 @@ const Home: FC<HomeProps> = (props) => {
     preloadData.postsData,
   );
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPosts, setTotalPosts] = useState<number>(
-    preloadData.placeholders.totalPosts,
+  const [totalPages, setTotalPages] = useState<number>(
+    preloadData.placeholders.totalPosts / 6,
   );
-  const [totalPages, setTotalPages] = useState<number>(totalPosts / 6);
+  const initialOffset: number = 4; // No need for moment
 
-  const {data: queryPostData, loading: queryPostDataLoading, refetch: queryPostDataRefetch} = getOperationsRequest.GET.queryPostsData({
+  const {
+    data: queryPostsData,
+    loading: queryPostsDataLoading,
+    refetch: queryPostsDataRefetch,
+  } = getOperationsRequest.GET.queryPostsData({
     type: "queryPostsByVars",
     variables: {
       orderBy: OrderbyEnum.DATE,
       order: OrderEnum.DESC,
-      offset: 4,
-      size: 6
+      offset: initialOffset,
+      size: 6,
     },
   });
 
   useEffect(() => {
-    const fetchedData = queryPostData?.posts.nodes.map((item: any) => {
-      const checkIfPresent = (newData: any, placeData: any) =>
-        newData ? newData : placeData;
-  
-      const queryPostData: PostPreviewBlockProps = {
-        view: "col",
-        isGridSmall: false,
-        title: item.title || preloadData.placeholders.postTitle,
-        author: checkIfPresent(
-          item.author?.node.name || preloadData.placeholders.authorName || "Anon",
-          preloadData.placeholders.authorName,
-        ),
-        date: getFormatedDate(item.date) || preloadData.placeholders.defaultDate,
-        tags: item.tags?.nodes || preloadData.placeholders.defaultTags,
-        texts: item.excerpt || preloadData.placeholders.defaultTexts,
-        image: checkIfPresent(
-          item.featuredImage?.node.sourceUrl || preloadData.placeholders.postImage,
-          preloadData.placeholders.postImage,
-        ),
-      };
-  
-      return queryPostData;
+    if (queryPostsData && queryPostsDataLoading === false) {
+      const { nodes, pageInfo } = queryPostsData.posts;
+
+      const { total } = pageInfo.offsetPagination;
+      setTotalPages(Math.floor(total / 6));
+
+      const fetchedData = nodes.map((item: any) => {
+        const checkIfPresent = (newData: any, placeData: any) =>
+          newData ? newData : placeData;
+
+        const queryPostsData: PostPreviewBlockProps = {
+          view: "col",
+          isGridSmall: false,
+          title: item.title || preloadData.placeholders.postTitle,
+          author: checkIfPresent(
+            item.author?.node.name ||
+              preloadData.placeholders.authorName ||
+              "Anon",
+            preloadData.placeholders.authorName,
+          ),
+          date:
+            getFormatedDate(item.date) || preloadData.placeholders.defaultDate,
+          tags: item.tags?.nodes || preloadData.placeholders.defaultTags,
+          texts: item.excerpt || preloadData.placeholders.defaultTexts,
+          image: checkIfPresent(
+            item.featuredImage?.node.sourceUrl ||
+              preloadData.placeholders.postImage,
+            preloadData.placeholders.postImage,
+          ),
+        };
+
+        return queryPostsData;
+      });
+
+      // POSTSDATA's status update with new data received
+      if (fetchedData) {
+        setPostsData(fetchedData);
+      }
+    }
+  }, [queryPostsData, queryPostsDataLoading]);
+
+  useEffect(() => {
+    queryPostsDataRefetch({
+      offset: (currentPage - 1) * 6 + initialOffset,
     });
-  
-    // Оновлення стану postsData з отриманими новими даними
-    if (queryPostDataLoading === false && fetchedData) {
-      setPostsData(fetchedData);
-    }
-  }, [queryPostData, queryPostDataLoading]);
-
-  const totalPostsNum = getOperationsRequest.GET.queryPostsData({
-    type: "queryPostsTotal",
-  });
-
-  useEffect(() => {
-    if (totalPostsNum.loading === false && totalPostsNum) {
-      const { total } = totalPostsNum.data.posts.pageInfo.offsetPagination;
-      setTotalPosts(total);
-      setTotalPages(Math.floor(totalPosts / 6));
-    }
-  }, [totalPostsNum.loading]);
-
-  useEffect(() => {
-    queryPostDataRefetch({
-      offset: ((currentPage - 1) * 6) + 4
-    })
-  }, [currentPage])
+  }, [currentPage]);
 
   return (
     <Container width="lg" classNames="space-y-7xl py-7xl">
@@ -90,16 +93,12 @@ const Home: FC<HomeProps> = (props) => {
       <PostAll postsData={postsData} />
       <Pagination
         currentPage={currentPage}
-        totalPages={totalPages - 1}
+        totalPages={totalPages}
         visiblePages={3}
         onNext={() =>
           setCurrentPage((prev) => (totalPages >= prev + 1 ? prev + 1 : prev))
         }
-        onPrev={() =>
-          setCurrentPage((prev) =>
-           prev > 1 ? prev - 1 : prev
-          )
-        }
+        onPrev={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
       />
     </Container>
   );

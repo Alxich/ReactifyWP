@@ -1,6 +1,6 @@
 {
   "placeholders": {
-    "postImage": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+    "postImage": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
     "totalPosts": 60,
     "postTitle": "Sample Title",
     "authorName": "Anonymous",
@@ -11,7 +11,7 @@
   "postsData": [
     {
       "view": "col",
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Alec Whitten",
       "date": "1 Jan 2023",
       "title": "Bill Walsh leadership lessons",
@@ -33,7 +33,7 @@
     },
     {
       "view": "col",
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Demi WIlkinson",
       "date": "1 Jan 2023",
       "title": "PM mental models",
@@ -61,7 +61,7 @@
     },
     {
       "view": "col",
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Candice Wu",
       "date": "1 Jan 2023",
       "title": "What is Wireframing?",
@@ -83,7 +83,7 @@
     },
     {
       "view": "col",
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Natali Craig ",
       "date": "1 Jan 2023",
       "title": "How collaboration makes us better designers",
@@ -105,7 +105,7 @@
     },
     {
       "view": "col",
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Drew Cano",
       "date": "1 Jan 2023",
       "title": "Our top 10 Javascript frameworks to use",
@@ -133,7 +133,7 @@
     },
     {
       "view": "col",
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Orlando Diggs",
       "date": "1 Jan 2023",
       "title": "Podcast: Creating a better CX Community",
@@ -341,7 +341,7 @@
     {
       "view": "col",
       "isGridSmall": false,
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "breadcrumbs": "Man clothing • Footwear • Trainers",
       "price": 83.78,
       "title": "Product 1",
@@ -366,7 +366,7 @@
     {
       "view": "col",
       "isGridSmall": false,
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "breadcrumbs": "Man clothing • Footwear • Trainers",
       "price": 83.78,
       "title": "Product 2",
@@ -391,7 +391,7 @@
     {
       "view": "col",
       "isGridSmall": false,
-      "image": "http://reactifywp.local/wp-content/uploads/2024/04/placeholder.png",
+      "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "breadcrumbs": "Man clothing • Footwear • Trainers",
       "price": 83.78,
       "title": "Product 3",

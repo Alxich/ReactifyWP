@@ -1,15 +1,15 @@
-import PostOperations from "../../queries/posts";
-import { queryPostsData } from "@/lib/types";
+import CategoryOperations from "../../queries/categories";
+import { queryCategoriesData } from "@/lib/types";
 
 // Apollo Client
 import { DocumentNode, useQuery } from "@apollo/client";
 
-const useQueryData = ({ type, variables }: queryPostsData) => {
+const useQueryData = ({ type, variables }: queryCategoriesData) => {
   const queryMap: Record<string, DocumentNode> = {
-    queryPost: PostOperations.Queries.queryPost,
-    queryPosts: PostOperations.Queries.queryPosts,
-    queryPostsByVars: PostOperations.Queries.queryPostsByVars,
-    queryPostsTotal: PostOperations.Queries.queryPostsTotal,
+    queryCateogory: CategoryOperations.Queries.queryCategory,
+    queryCategories: CategoryOperations.Queries.queryCategories,
+    queryCategoriesByVars: CategoryOperations.Queries.queryCategoriesByVars,
+    queryCategoriesTotal: CategoryOperations.Queries.queryCategoriesTotal
   };
 
   const queryFunc = (query: DocumentNode, variables: any) => {
@@ -27,7 +27,7 @@ const useQueryData = ({ type, variables }: queryPostsData) => {
       refetch,
     };
   };
-
+  
   return queryFunc(queryMap[type], variables);
 };
 
