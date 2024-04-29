@@ -9,7 +9,6 @@ const useQueryData = ({ type, variables }: queryPostsData) => {
     queryPost: PostOperations.Queries.queryPost,
     queryPosts: PostOperations.Queries.queryPosts,
     queryPostsByVars: PostOperations.Queries.queryPostsByVars,
-    queryPostsTotal: PostOperations.Queries.queryPostsTotal,
   };
 
   const queryFunc = (query: DocumentNode, variables: any) => {

@@ -8,14 +8,24 @@
     "defaultTags": ["General"],
     "defaultTexts": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
+  "categoryData": {
+    "title": "Uncontented catogory",
+    "texts": "This is a new content of description",
+    "view": "col",
+    "link": "Example Category",
+    "isGridSmall": false,
+    "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png"
+  },
   "postsData": [
     {
+      "slug": "its-post-slug",
       "view": "col",
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Alec Whitten",
       "date": "1 Jan 2023",
       "title": "Bill Walsh leadership lessons",
       "texts": "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+      "link": "Example Post",
       "tags": [
         {
           "link": "#",
@@ -32,12 +42,14 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Demi WIlkinson",
       "date": "1 Jan 2023",
       "title": "PM mental models",
       "texts": "Mental models are simple expressions of complex processes or relationships.",
+      "link": "Example Post",
       "tags": [
         {
           "link": "#",
@@ -60,12 +72,14 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Candice Wu",
       "date": "1 Jan 2023",
       "title": "What is Wireframing?",
       "texts": "Introduction to Wireframing and its Principles. Learn from the best in the industry.",
+      "link": "Example Post",
       "tags": [
         {
           "link": "#",
@@ -82,12 +96,14 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Natali Craig ",
       "date": "1 Jan 2023",
       "title": "How collaboration makes us better designers",
       "texts": "Collaboration can make our teams stronger, and our individual designs better.",
+      "link": "Example Post",
       "tags": [
         {
           "link": "#",
@@ -104,12 +120,14 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Drew Cano",
       "date": "1 Jan 2023",
       "title": "Our top 10 Javascript frameworks to use",
       "texts": "JavaScript frameworks make development easy with extensive features and functionalities.",
+      "link": "Example Post",
       "tags": [
         {
           "link": "#",
@@ -132,12 +150,14 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
       "author": "Orlando Diggs",
       "date": "1 Jan 2023",
       "title": "Podcast: Creating a better CX Community",
       "texts": "Starting a community doesn’t need to be complicated, but how do you get started?",
+      "link": "Example Post",
       "tags": [
         {
           "link": "#",
@@ -339,6 +359,7 @@
   ],
   "productsData": [
     {
+      "slug": "its-post-slug",
       "view": "col",
       "isGridSmall": false,
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
@@ -346,6 +367,7 @@
       "price": 83.78,
       "title": "Product 1",
       "texts": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "link": "Example Post",
       "tags": [
         {
           "type": "big",
@@ -364,6 +386,7 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "isGridSmall": false,
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
@@ -371,6 +394,7 @@
       "price": 83.78,
       "title": "Product 2",
       "texts": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "link": "Example Post",
       "tags": [
         {
           "type": "big",
@@ -389,6 +413,7 @@
       ]
     },
     {
+      "slug": "its-post-slug",
       "view": "col",
       "isGridSmall": false,
       "image": "http://localhost:10004/wp-content/uploads/2024/04/placeholder.png",
@@ -396,6 +421,7 @@
       "price": 83.78,
       "title": "Product 3",
       "texts": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "link": "Example Post",
       "tags": [
         {
           "type": "big",

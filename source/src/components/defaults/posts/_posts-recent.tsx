@@ -30,6 +30,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
 
       const data: PostPreviewBlockProps = {
         view: "",
+        slug: item.slug,
         isGridSmall: false,
         title: item.title,
         author: checkIfPresent(
@@ -43,6 +44,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
           item.featuredImage?.node.sourceUrl,
           preloadData.placeholders.postImage,
         ),
+        link: `/blog/post/${item.slug != undefined ? item.slug : "example_post"}`
       };
 
       return data;
@@ -72,6 +74,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
       return (
         <PostPreview
           key={index}
+          slug={postsData[index].slug}
           view={view}
           isGridSmall={isGridSmall}
           className={className}
@@ -81,6 +84,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
           title={postsData[index].title}
           texts={postsData[index].texts}
           tags={tags}
+          link={postsData[index].link}
         />
       );
     },

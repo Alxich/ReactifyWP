@@ -5,6 +5,7 @@ import DOMPurify from "isomorphic-dompurify";
 
 import { SvgIcons, TagLink } from "../../index";
 import { PostPreviewBlockProps } from "@/lib/types";
+import Link from "next/link";
 
 interface PostPreviewProps extends PostPreviewBlockProps {
   className?: string;
@@ -22,6 +23,7 @@ const PostPreview: FC<PostPreviewProps> = ({
   tags,
   className,
   type,
+  link,
 }: PostPreviewProps) => {
   const cleanedText = DOMPurify.sanitize(texts, {
     USE_PROFILES: { html: true },
@@ -42,7 +44,7 @@ const PostPreview: FC<PostPreviewProps> = ({
         },
       )}
     >
-      <div
+      <Link href={link}
         className={classNames(
           "thumbnail overflow-hidden rounded-md small-laptop:w-full tablet:h-ctm-10",
           {
@@ -63,7 +65,7 @@ const PostPreview: FC<PostPreviewProps> = ({
             "max-h-[220px]": view && view == "col",
           })}
         />
-      </div>
+      </Link>
       <div
         className={classNames(
           "text-content flex-tstart flex-dcol space-y-xl desktop:space-y-lg",
@@ -74,7 +76,7 @@ const PostPreview: FC<PostPreviewProps> = ({
           },
         )}
       >
-        <div className="content flex-tstart flex-dcol w-full space-y-sm laptop:space-y-xxs">
+        <Link href={link} className="content flex-tstart flex-dcol w-full space-y-sm laptop:space-y-xxs">
           {author && (
             <div className="author-info w-full">
               <p className="text-medium leading-normal text-gray">
@@ -113,7 +115,7 @@ const PostPreview: FC<PostPreviewProps> = ({
                 : cleanedText.replace(/(<([^>]+)>)/gi, "")}
             </p>
           </div>
-        </div>
+        </Link>
         {tags && (
           <div className="tags flex-drow w-full flex-wrap gap-xs">
             {tags.map(

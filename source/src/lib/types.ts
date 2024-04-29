@@ -29,6 +29,7 @@ export interface TagLinkProps {
 }
 
 export interface PostPreviewBlockProps {
+  slug?: string;
   view: "row" | "col" | "row-full" | string;
   isGridSmall?: boolean;
   image: string | StaticImageData;
@@ -36,10 +37,12 @@ export interface PostPreviewBlockProps {
   date?: string;
   title: string;
   texts: string;
+  link: string;
   tags?: TagLinkProps[];
 }
 
 export interface ProductPreviewBlockProps {
+  slug?: string;
   view: "row" | "col" | "row-full" | string;
   isGridSmall?: boolean;
   image: string | StaticImageData;
@@ -51,11 +54,14 @@ export interface ProductPreviewBlockProps {
 }
 
 export interface CategoryPreviewBlockProps {
+  id?: string;
+  slug?: string;
   view: "row" | "col" | "row-full" | string;
   isGridSmall?: boolean;
   image: string | StaticImageData;
   title: string;
   texts: string;
+  link: string;
   tags?: TagLinkProps[];
 }
 
@@ -66,35 +72,40 @@ export interface queryVariables {
   order?: OrderEnum; // Your possible options for Order
   hideEmpty?: Boolean;
   first?: number; // Optional parameter
-  last?: number
+  last?: number;
   after?: string;
   before?: string;
   slug?: string;
   size?: number;
   offset?: number;
   id?: string;
+  idType?: IDTypeEnum;
   tagId?: string;
-  tag?: string
+  tag?: string;
 }
 
 export interface queryPostsData {
   type: "queryPost" | "queryPosts" | "queryPostsByVars" | "queryPostsTotal";
-  variables?: queryVariables
+  variables?: queryVariables;
 }
 
 export interface queryCategoriesData {
-  type: "queryCategory" | "queryCategories" | "queryCategoriesByVars" | "queryCategoriesTotal";
-  variables?: queryVariables
+  type:
+    | "queryCategory"
+    | "queryCategories"
+    | "queryCategoriesByVars"
+    | "queryCategoriesTotal";
+  variables?: queryVariables;
 }
 
 export interface queryTagsData {
   type: "queryTag" | "queryTags";
-  variables?: queryVariables
+  variables?: queryVariables;
 }
 
 // All ENUMS to operate variables in GraphQL
 
-enum TagIdType {
+export enum IDTypeEnum {
   DATABASE_ID = "DATABASE_ID",
   ID = "ID",
   NAME = "NAME",
@@ -105,7 +116,7 @@ enum TagIdType {
 export enum OrderbyEnum {
   DATE = "DATE",
   TITLE = "TITLE",
-  NAME = "NAME"
+  NAME = "NAME",
 }
 
 export enum OrderEnum {

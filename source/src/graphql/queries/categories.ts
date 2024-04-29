@@ -1,57 +1,57 @@
 import { gql } from "@apollo/client";
-import { postPreview } from "./posts";
-
-const CategoryPreview = `
-  nodes {
-    id
-    description
-    name
-    slug
-    customFields {
-      thumbnail {
-        node {
-          sourceUrl
-        }
-      }
-    }
-  }
-`;
+import { categoryPreview, postPreview } from "./previews/previews";
 
 export default {
   Queries: {
     queryCategory: gql`
-      query queryCategory($id: String) {
-        category(id: $id) {
-          nodes {
-            description
-            name
-            slug
-            customFields {
-              thumbnail {
-                node {
-                  sourceUrl
-                }
+      query queryCategory(
+        $id: ID!
+        $idType: CategoryIdType!
+        $orderBy: PostObjectsConnectionOrderbyEnum!
+        $order: OrderEnum!
+        $first: Int
+        $last: Int
+        $after: String
+        $before: String
+      ) {
+        category(id: $id, idType: $idType) {
+          id
+          description
+          name
+          slug
+          customFields {
+            thumbnail {
+              node {
+                sourceUrl
               }
             }
-            posts {
-              ${postPreview}
-            }
           }
+          posts(
+            where: { 
+              orderby: { field: $orderBy, order: $order }
+            }
+            first: $first
+            after: $after
+            before: $before
+            last: $last
+          ) {
+            ${postPreview}
+          } 
         }
       }
     `,
     queryCategories: gql`
       query queryCategories {
         categories {
-            ${CategoryPreview}
+          ${categoryPreview}
         }
       }
     `,
     queryCategoriesTotal: gql`
       query queryCategoriesTotal {
-        categories(first: 9999999) {
-          nodes {
-            id
+        categories(first: 99999999) {
+          edges {
+            cursor
           }
         }
       }
@@ -68,11 +68,7 @@ export default {
         $before: String
       ) {
         categories(where: {orderby: $orderBy, order: $order, slug: $slug, hideEmpty: $hideEmpty}, first: $first, after: $after, before: $before, last: $last,) {
-            ${CategoryPreview}
-            pageInfo {
-              endCursor
-              startCursor
-            }
+          ${categoryPreview}
         }
       }
     `,

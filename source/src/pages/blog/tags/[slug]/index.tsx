@@ -1,11 +1,11 @@
-import { FC, useContext, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { PageContext } from "@/pages/_app";
 
 import {
   OrderEnum,
   OrderbyEnum,
   PostPreviewBlockProps,
+  IDTypeEnum,
   type TagLinkProps,
 } from "@/lib/types";
 
@@ -18,30 +18,8 @@ import { Breadcrumbs, Container, Pagination, PostAll } from "@/components";
 interface TagPageProps {}
 
 const TagsPage: FC<TagPageProps> = (props) => {
-  const [pageId, setPageId] = useState<string | undefined>();
-
   const Router = useRouter();
-  const { slug } = Router.query;
-  const { pageId: contextPageId, pageSlug } = useContext(PageContext);
-  pageSlug && localStorage.setItem("pageSlug", pageSlug);
-  contextPageId && localStorage.setItem("pageId", contextPageId);
-
-  if (typeof window !== "undefined") {
-    const localPageSlug = localStorage.getItem("pageSlug") || "";
-    const localPageId = localStorage.getItem("pageId") || "";
-
-    useEffect(() => {
-      if (slug != localPageSlug) {
-        localPageId
-          ? setPageId(localPageId)
-          : console.error("There is no provided ID!");
-      } else {
-        setPageId(contextPageId);
-      }
-    }, [localPageSlug, slug]);
-  }
-
-  useEffect(() => console.log(pageId), [pageId]);
+  const { slug: pageSlug } = Router.query;
 
   const [tag, setTag] = useState<TagLinkProps>(preloadData.tagsData[0]);
   const [postsData, setPostsData] = useState<Array<PostPreviewBlockProps>>(
@@ -51,30 +29,44 @@ const TagsPage: FC<TagPageProps> = (props) => {
   const [totalPages, setTotalPages] = useState<number>(
     preloadData.placeholders.totalPosts / 6,
   );
+  const [endCursor, setEndCursor] = useState<string | undefined>();
+  const [startCursor, setStartCursor] = useState<string | undefined>();
+  const [direction, setDirection] = useState<"after" | "before">("after");
+
+  const initialOffset = 0; // No in use for now (Can change for your needs)
 
   const {
-    data: queryPostsData,
-    loading: queryPostsDataLoading,
-    refetch: queryPostsDataRefetch,
-  } = getOperationsRequest.GET.queryPostsData({
-    type: "queryPostsByVars",
+    data: queryTagData,
+    loading: queryTagDataLoading,
+    refetch: queryTagDataRefetch,
+  } = getOperationsRequest.GET.queryTagsData({
+    type: "queryTag",
     variables: {
+      id: pageSlug ? pageSlug.toString() : "",
+      idType: IDTypeEnum.SLUG,
       orderBy: OrderbyEnum.DATE,
       order: OrderEnum.DESC,
-      tag: slug as string,
-      offset: 0,
-      size: 6,
+      first: 6,
+      offset: initialOffset,
     },
   });
 
   useEffect(() => {
-    if (queryPostsData && queryPostsDataLoading === false) {
-      const { nodes, pageInfo } = queryPostsData.posts;
+    if (queryTagData && queryTagData.tag && queryTagDataLoading === false) {
+      const { id, slug, background, color, name, description, posts } =
+        queryTagData.tag;
 
-      const { total } = pageInfo.offsetPagination;
+      const { nodes, pageInfo } = posts;
+      const {
+        startCursor: fetchStartCursor,
+        endCursor: fetchEndCursor,
+        offsetPagination,
+      } = pageInfo;
+      const { total } = offsetPagination;
+
       setTotalPages(Math.floor(total / 6) + 1);
 
-      const fetchedData = nodes.map((item: any) => {
+      const fetchedPostData = nodes.map((item: any) => {
         const tags: TagLinkProps[] = item.tags?.nodes.map((item: any) => {
           const { background, textColor: color } = item.tagACFFields;
 
@@ -95,6 +87,7 @@ const TagsPage: FC<TagPageProps> = (props) => {
           newData ? newData : placeData;
 
         const queryPostsData: PostPreviewBlockProps = {
+          slug: item.slug,
           view: "col",
           isGridSmall: false,
           title: item.title || preloadData.placeholders.postTitle,
@@ -113,37 +106,20 @@ const TagsPage: FC<TagPageProps> = (props) => {
               preloadData.placeholders.postImage,
             preloadData.placeholders.postImage,
           ),
+          link: `/blog/post/${item.slug != undefined ? item.slug : "example_post"}`,
         };
 
         return queryPostsData;
       });
 
       // POSTSDATA's status update with new data received
-      if (fetchedData) {
-        setPostsData(fetchedData);
+      if (fetchedPostData) {
+        setEndCursor(fetchEndCursor);
+        setStartCursor(fetchStartCursor);
+        setPostsData(fetchedPostData);
       }
-    }
-  }, [queryPostsData, queryPostsDataLoading]);
 
-  useEffect(() => {
-    queryPostsDataRefetch({
-      offset: (currentPage - 1) * 6,
-    });
-  }, [currentPage]);
-
-  const { data: queryTagData, loading: queryTagDataLoading } =
-    getOperationsRequest.GET.queryTagsData({
-      type: "queryTag",
-      variables: {
-        id: pageId,
-      },
-    });
-
-  useEffect(() => {
-    if (queryTagData) {
-      const { id, slug, background, color, name, description } =
-        queryTagData?.tag;
-      const fetchedData: TagLinkProps = {
+      const fetchedTagData: TagLinkProps = {
         id,
         slug,
         background,
@@ -154,12 +130,48 @@ const TagsPage: FC<TagPageProps> = (props) => {
         type: "big",
       };
 
-      // CATEGORIESDATA's status update with new data received
-      if (queryTagDataLoading === false && fetchedData) {
-        setTag(fetchedData);
+      // TAGSDATA's status update with new data received
+      if (fetchedTagData) {
+        setTag(fetchedTagData);
       }
     }
   }, [queryTagData, queryTagDataLoading]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, []);
+
+  const handleNext = () => {
+    setCurrentPage((prev) => (totalPages >= prev + 1 ? prev + 1 : prev));
+    setDirection("after");
+  };
+
+  const handlePrev = () => {
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
+    setDirection("before");
+  };
+
+  const refetchTagData = (direction: "after" | "before") => {
+    if (direction === "after" && endCursor) {
+      queryTagDataRefetch({
+        after: endCursor,
+        before: null,
+        first: 6,
+        last: null,
+      });
+    } else if (direction === "before" && startCursor) {
+      queryTagDataRefetch({
+        after: null,
+        before: startCursor,
+        first: null,
+        last: 6,
+      });
+    }
+  };
+
+  useEffect(() => {
+    currentPage && refetchTagData(direction);
+  }, [currentPage]);
 
   return (
     <Container
@@ -178,10 +190,8 @@ const TagsPage: FC<TagPageProps> = (props) => {
           currentPage={currentPage}
           totalPages={totalPages}
           visiblePages={3}
-          onNext={() =>
-            setCurrentPage((prev) => (totalPages >= prev + 1 ? prev + 1 : prev))
-          }
-          onPrev={() => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))}
+          onNext={handleNext}
+          onPrev={handlePrev}
         />
       )}
     </Container>

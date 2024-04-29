@@ -19,8 +19,9 @@ const PostAll: FC<PostAllProps> = ({
     >
       {postsData &&
         postsData.map(
-          ({ view, author, date, image, title, texts, tags }, key) => (
+          ({ view, author, date, image, title, texts, tags, link, slug }, key) => (
             <PostPreview
+              slug={slug}
               view={view}
               author={author}
               date={date}
@@ -28,6 +29,7 @@ const PostAll: FC<PostAllProps> = ({
               title={title}
               texts={texts}
               tags={tags}
+              link={link}
               type="regular"
               key={`post_${title}__${key}`}
             />
@@ -35,8 +37,9 @@ const PostAll: FC<PostAllProps> = ({
         )}
       {CategoriesData &&
         CategoriesData.map(
-          ({ view, author, date, image, title, texts, tags }, key) => (
+          ({ view, author, date, image, title, texts, tags, link, slug }, key) => (
             <PostPreview
+              slug={slug}
               view={view}
               author={author}
               date={date}
@@ -44,8 +47,9 @@ const PostAll: FC<PostAllProps> = ({
               title={title}
               texts={texts}
               tags={tags}
+              link={link}
               type="regular"
-              key={`post_${title}__${key}`}
+              key={`category_${title}__${key}`}
             />
           ),
         )}

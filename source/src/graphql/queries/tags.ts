@@ -1,22 +1,32 @@
 import { gql } from "@apollo/client";
-
-export const tagPreview = `
-  id
-  name
-  slug
-  description
-  tagACFFields {
-    background
-    textColor
-  }
-`;
+import { postPreview, tagPreview } from "./previews/previews";
 
 export default {
   Queries: {
     queryTag: gql` 
-      query queryTag($id: ID!) {
-        tag(id: $id) {
+      query queryTag(
+        $id: ID!
+        $idType: TagIdType!
+        $orderBy: PostObjectsConnectionOrderbyEnum!
+        $order: OrderEnum!
+        $first: Int
+        $last: Int
+        $after: String
+        $before: String
+      ) {
+        tag(id: $id, idType: $idType) {
           ${tagPreview}
+          posts(
+            where: { 
+              orderby: { field: $orderBy, order: $order }
+            }
+            first: $first
+            after: $after
+            before: $before
+            last: $last
+          ) {
+            ${postPreview}
+          }
         }
       }
     `,

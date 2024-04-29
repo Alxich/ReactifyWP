@@ -84,6 +84,7 @@ const Home: FC<HomeProps> = (props) => {
               preloadData.placeholders.postImage,
             preloadData.placeholders.postImage,
           ),
+          link: `/blog/post/${item.slug != undefined ? item.slug : "example_post"}`
         };
 
         return queryPostsData;
