@@ -1,4 +1,3 @@
-
 export const tagPreview = `
   id
   name
@@ -28,6 +27,53 @@ export const categoryPreview = `
       }
     }
   }
+`;
+
+export const avatarPreview = `
+avatar {
+  rating
+  isRestricted
+  url
+}
+`;
+
+export const authorPreview = `
+  author {
+    node {
+      id
+      isRestricted
+      name
+      ${avatarPreview}
+      ... on User {
+        id
+        slug
+        firstName
+        username
+        nickname
+        nicename
+        description
+      }
+    }
+  }
+`;
+
+export const postPagePreview = `
+  title
+  date
+  status
+  commentStatus
+  content(format: RENDERED)
+  hasPassword
+  isPostsPage
+  isRestricted
+  modified
+  commentCount
+  featuredImage {
+    node {
+      sourceUrl(size: LARGE)
+    }
+  }
+  ${authorPreview}
 `;
 
 export const postPreview = `
@@ -72,5 +118,33 @@ export const postPreview = `
     }
     excerpt
     content
+  }
+`;
+
+export const commentReview = `
+  id
+  type
+  status
+  isRestricted
+  karma
+  ${authorPreview} 
+  date
+  content
+`;
+
+export const commentsReview = `
+  pageInfo {
+    hasPreviousPage
+    hasNextPage
+    endCursor
+    startCursor
+  }
+  nodes {
+    ${commentReview}
+    replies {
+      nodes {
+        ${commentReview}
+      }
+    }
   }
 `;

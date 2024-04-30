@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import {
   Container,
@@ -7,14 +8,38 @@ import {
   Banner,
   Button,
 } from "@/components";
-import { PostPreviewBlockProps } from "@/lib/types";
+import { IDTypeEnum, PostPreviewBlockProps } from "@/lib/types";
 
 import preloadData from "@bin/preload.json";
+import getOperationsRequest from "@/graphql/operations";
 
 interface PostPageProps {}
 
 const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
-  const postsData: Array<PostPreviewBlockProps> = preloadData.postsData;
+  const Router = useRouter();
+  const { slug: pageSlug } = Router.query;
+
+  const [postData, setPostData] = useState<Array<PostPreviewBlockProps>>(preloadData.postsData);
+
+  const {
+    data: queryPostData,
+    loading: queryPostDataLoading,
+    refetch: queryPostDataRefetch,
+  } = getOperationsRequest.GET.QueryData({
+    type: "queryPost",
+    variables: {
+      id: pageSlug ? pageSlug.toString() : "",
+      idType: IDTypeEnum.SLUG,
+    },
+  });
+
+  useEffect(() => {
+    if (queryPostData && queryPostData.post && queryPostDataLoading === false) {      
+      setPostData(queryPostData.post);
+
+      console.log(queryPostData.post)
+    }
+  }, [queryPostData, queryPostDataLoading]);
 
   return (
     <>
@@ -23,9 +48,9 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
         width="md"
       >
         <PostHeader />
-        <PostWrpapper postsData={postsData} />
+        {postData && <PostWrpapper postData={postData} />}
       </Container>
-      {
+      {/* {
         <Banner
           type="editor"
           title="Creating a new post"
@@ -48,7 +73,7 @@ const PostPage: FC<PostPageProps> = ({}: PostPageProps) => {
             />
           </div>
         </Banner>
-      }
+      } */}
 
       {/* {
         <Banner

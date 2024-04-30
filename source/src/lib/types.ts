@@ -84,22 +84,18 @@ export interface queryVariables {
   tag?: string;
 }
 
-export interface queryPostsData {
-  type: "queryPost" | "queryPosts" | "queryPostsByVars" | "queryPostsTotal";
-  variables?: queryVariables;
-}
-
-export interface queryCategoriesData {
+export interface queryData {
   type:
+    | "queryTag"
+    | "queryTags"
     | "queryCategory"
     | "queryCategories"
     | "queryCategoriesByVars"
-    | "queryCategoriesTotal";
-  variables?: queryVariables;
-}
-
-export interface queryTagsData {
-  type: "queryTag" | "queryTags";
+    | "queryCategoriesTotal"
+    | "queryPost"
+    | "queryPosts"
+    | "queryPostsByVars"
+    | "queryPostsTotal";
   variables?: queryVariables;
 }
 

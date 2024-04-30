@@ -6,12 +6,15 @@ import CommentWrapper from "./_comment-wrapper";
 interface CommentsWrapperProps {
   showTitle?: boolean;
   showEditor?: boolean;
+  commentsData: any;
 }
 
 const Comments: FC<CommentsWrapperProps> = ({
   showTitle,
   showEditor,
+  commentsData,
 }: CommentsWrapperProps) => {
+  const { nodes: comments } = commentsData;
   return (
     <Container
       width="md"
@@ -28,56 +31,22 @@ const Comments: FC<CommentsWrapperProps> = ({
         width="md"
         classNames="flex-dcol flex-ccenter space-y-xl small-laptop:space-y-lg"
       >
-        {showEditor !== false && (
-          <CommentWrapper
-            type="answer"
-            author={{
-              name: "John Doe",
-              thumbnail: "placeholder-text-nah",
-            }}
-            content="I just tried this recipe and it was amazing! The instructions were clear and easy to follow, and the end result was delicious. I will definitely be making this again. Thanks for sharing!"
-          />
+        {showEditor !== false && <CommentWrapper type="answer" />}
+        {comments?.map(
+          (item: any, key: number) =>
+            item && (
+              <CommentWrapper
+                type="reg"
+                commentData={item}
+                key={`post-comments__${item}__${key}`}
+              />
+            ),
         )}
-        <CommentWrapper
-          type="reg"
-          author={{
-            name: "Jane Doe",
-            thumbnail: "placeholder-text-nah",
-          }}
-          content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
-        >
-          <CommentWrapper
-            type="reg"
-            author={{
-              name: "Jane Doe",
-              thumbnail: "placeholder-text-nah",
-            }}
-            content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
-          >
-            <CommentWrapper
-              type="reg"
-              author={{
-                name: "Jane Doe",
-                thumbnail: "placeholder-text-nah",
-              }}
-              content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
-            >
-              {showEditor !== false && (
-                <CommentWrapper
-                  type="answer"
-                  author={{
-                    name: "Jane Doe",
-                    thumbnail: "placeholder-text-nah",
-                  }}
-                  content="I really appreciate the insights and perspective shared in this article. It's definitely given me something to think about and has helped me see things from a different angle. Thank you for writing and sharing!"
-                />
-              )}
-            </CommentWrapper>
-          </CommentWrapper>
-        </CommentWrapper>
-        <Button formType="btn__action:load-more" type="button">
-          Load More
-        </Button>
+        {comments && (
+          <Button formType="btn__action:load-more" type="button">
+            Load More
+          </Button>
+        )}
       </Container>
     </Container>
   );

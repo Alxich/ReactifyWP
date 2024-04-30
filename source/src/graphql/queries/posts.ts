@@ -1,30 +1,19 @@
 import { gql } from "@apollo/client";
-import { postPreview, tagPreview } from "./previews/previews";
+import {
+  commentsReview,
+  postPagePreview,
+  postPreview,
+} from "./previews/previews";
 
 export default {
   Queries: {
     queryPost: gql`
-      query queryPost($id: String) {
-        post(id: $id) {
-          title
-          date
-          author {
-            node {
-              name
-            }
+      query queryPost($id: ID!, $idType: PostIdType!) {
+        post(id: $id, idType: $idType) {
+          ${postPagePreview}
+          comments(first: 100) {
+            ${commentsReview}
           }
-          categories {
-            nodes {
-              name
-              slug
-            }
-          }
-          tags {
-            nodes {
-              ${tagPreview}
-            }
-          }
-          content
         }
       }
     `,

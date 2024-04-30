@@ -53,7 +53,7 @@
 
   .post-content-text .banner,
   .page-content-text .banner {
-    @apply tablet:mb-0
+    @apply tablet:mb-0;
   }
 
   .page-content-text p,
@@ -81,7 +81,7 @@
 
   .post-content-text .image,
   .post-content-text .title,
-  .post-content-text  .text-additional,
+  .post-content-text .text-additional,
   .page-content-text .image,
   .page-content-text .title,
   .page-content-text .text-additional {
@@ -139,11 +139,104 @@
     @apply list-outside list-disc pl-4 tablet:pl-2 dark:text-gray;
   }
 
+  .post-content-text table,
+  .page-content-text table {
+    @apply wp-border m-0 w-full table-fixed border-collapse p-0;
+  }
+  .post-content-text figcaption,
+  .page-content-text figcaption,
+  .post-content-text table caption,
+  .page-content-text table caption {
+    @apply fnormal-normal mx-0 mb-[0.75em] mt-[0.5em];
+  }
+  .post-content-text figcaption,
+  .page-content-text figcaption,
+  .post-content-text table tr,
+  .page-content-text table tr {
+    @apply wp-border bg-gray/20 p-[0.35em];
+  }
+
+  .post-content-text table td,
+  .post-content-text table th,
+  .page-content-text table th,
+  .page-content-text table td {
+    @apply p-[0.625em] text-center;
+  }
+  .post-content-text table th,
+  .page-content-text table th {
+    @apply fnormal-normal uppercase tracking-widest;
+  }
+
+  @media screen and (max-width: 600px) {
+    .page-content-text table {
+      @apply border-0;
+    }
+    .post-content-text table caption,
+    .page-content-text table caption {
+      @apply fsmall-normal;
+    }
+    .post-content-text table thead,
+    .page-content-text table thead {
+      @apply absolute -m-px h-px w-px overflow-hidden border-[none] p-0;
+      clip: rect(0 0 0 0);
+    }
+    .post-content-text table tr,
+    .page-content-text table tr {
+      @apply mb-[0.625em] block border-b-[3px] border-solid border-b-[#ddd];
+    }
+    .post-content-text table td,
+    .page-content-text table td {
+      @apply fsmall-normal block border-b border-solid border-b-[#ddd] text-right;
+    }
+    .post-content-text table td::before,
+    .page-content-text table td::before {
+      @apply float-left font-bold uppercase content-[attr(data-label)];
+      /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+    }
+    .post-content-text table td:last-child,
+    .page-content-text table td:last-child {
+      @apply border-b-0;
+    }
+  }
+
+  .post-content-text code,
+  .page-content-text code {
+    @apply whitespace-pre-wrap rounded-md bg-black/85 my-5 w-full block p-md text-highlight;
+  }
+
+  .post-content-text pre code,
+  .page-content-text pre code {
+    white-space: inherit;
+  }
+
+  .post-content-text pre,
+  .page-content-text pre {
+    @apply rounded-md bg-black/85 my-5 p-md whitespace-pre-wrap;
+  }
+
+  .post-content-text figure,
+  .page-content-text figure {
+    @apply !w-full
+  }
+
+  .post-content-text figure img,
+  .page-content-text figure img {
+    @apply !w-auto m-auto
+  }
+
+  .post-content-text figure figcaption,
+  .page-content-text figure figcaption {
+    @apply bg-transparent border-none px-0
+  }
+
   .tiptap ul,
   .tiptap ol {
     list-style-type: initial;
     list-style-position: initial;
-    @apply pl-2xl py-lg
+    @apply py-lg pl-2xl;
   }
 
   .tiptap ul li,

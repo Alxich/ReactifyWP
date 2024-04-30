@@ -12,7 +12,7 @@ const TagsPageAll: FC<TagPageProps> = (props) => {
   const [tags, setTags] = useState<Array<TagLinkProps>>(preloadData.tagsData);
 
   const { data: queryTagsData, loading: queryTagsDataLoading } =
-    getOperationsRequest.GET.queryTagsData({
+    getOperationsRequest.GET.QueryData({
       type: "queryTags",
       variables: {},
     });

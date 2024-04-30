@@ -1,9 +1,7 @@
-import queryPostsData from "./posts/postsData";
-import queryCategoriesData from "./categories/categoriesData";
-import queryTagsData from "./tags/tagsData";
+import  QueryData  from "./query";
 
 const getOperationsRequest = {
-  GET: { queryPostsData, queryCategoriesData, queryTagsData },
+  GET: {QueryData},
 };
 
 export default getOperationsRequest;

@@ -39,7 +39,7 @@ const TagsPage: FC<TagPageProps> = (props) => {
     data: queryTagData,
     loading: queryTagDataLoading,
     refetch: queryTagDataRefetch,
-  } = getOperationsRequest.GET.queryTagsData({
+  } = getOperationsRequest.GET.QueryData({
     type: "queryTag",
     variables: {
       id: pageSlug ? pageSlug.toString() : "",

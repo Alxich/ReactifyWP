@@ -28,7 +28,7 @@ const Home: FC<HomeProps> = (props) => {
     data: queryPostsData,
     loading: queryPostsDataLoading,
     refetch: queryPostsDataRefetch,
-  } = getOperationsRequest.GET.queryPostsData({
+  } = getOperationsRequest.GET.QueryData({
     type: "queryPostsByVars",
     variables: {
       orderBy: OrderbyEnum.DATE,

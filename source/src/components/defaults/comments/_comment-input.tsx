@@ -13,25 +13,29 @@ import Link from "@tiptap/extension-link";
 
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 
-import thumbnail1 from "@images/thumbnail-1.png";
 import { Button, SvgIcons } from "@/components";
+
+import preloadData from "@bin/preload.json";
 
 interface CommentWrapperProps {
   type: "edit" | "reg" | "answer";
-  author: {
-    thumbnail: string;
-    name: string;
-  };
-  content: string;
 }
+
+type CommentInputAuthor = {
+  thumbnail: string;
+  name: string;
+};
 
 const CommentInput: FC<CommentWrapperProps> = ({
   type,
-  author,
-  content,
 }: CommentWrapperProps) => {
   const [linkSelected, setLinkSelected] = useState<boolean>(false);
   const [linkWritted, setLinkWritted] = useState<string | null | undefined>();
+
+  const author: CommentInputAuthor = {
+    name: "Bla bla bla",
+    thumbnail: preloadData.placeholders.postImage,
+  };
 
   const submitBtnText = () => {
     switch (type) {
@@ -116,7 +120,7 @@ const CommentInput: FC<CommentWrapperProps> = ({
     <div className="comment-wrapper input flex-dcol flex-tcenter inputs-bborder-round relative w-full space-y-md border-opacity-25 p-xl child:w-full">
       <div className="author flex-cstart flex-drow space-x-xs">
         <div className="thumbnail h-5xl w-5xl cursor-pointer overflow-hidden rounded-full">
-          <Image src={thumbnail1} alt="author-comment-thumbnail" />
+          <Image src={author.thumbnail} alt="author-comment-thumbnail" width={100} height={100}/>
         </div>
         <div
           className={classNames(

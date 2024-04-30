@@ -14,6 +14,16 @@ const nextConfig = {
         hostname: "localhost",
         port: "10004",
       },
+      {
+        protocol: "http",
+        hostname: "0.gravatar.com",
+        port: "",
+      },
+      {
+        protocol: "http",
+        hostname: "1.gravatar.com",
+        port: "",
+      },
     ],
   },
 };
