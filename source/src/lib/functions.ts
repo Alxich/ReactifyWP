@@ -1,4 +1,5 @@
 import { errorTextHandler } from "./errorTextHandler";
+import type { TagLinkProps } from "./types";
 
 export const generatePageNumbers = (
   currentPage: number,
@@ -60,3 +61,23 @@ export const getFormatedDate = (isoDate: string | number | Date) => {
     dateObj.getFullYear()
   );
 };
+
+export const sortPostTags = (item: [any]) => {
+  const tags: TagLinkProps[] = item.map((item: any) => {
+    const { background, textColor: color } = item.tagACFFields;
+
+    const queryTagsData: TagLinkProps = {
+      id: item.id,
+      slug: item.slug,
+      background,
+      color,
+      link: `/blog/tag/${item.slug}`,
+      text: item.name,
+      type: "normal",
+    };
+
+    return queryTagsData;
+  });
+
+  return tags;
+}

@@ -13,7 +13,7 @@ const PostsRecent: FC<PostsRecentProps> = () => {
     preloadData.postsData,
   );
 
-  const data = getOperationsRequest.GET.queryPostsData({
+  const data = getOperationsRequest.GET.QueryData({
     type: "queryPostsByVars",
     variables: {
       orderBy: OrderbyEnum.DATE,
