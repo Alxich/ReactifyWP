@@ -41,8 +41,16 @@ export default {
       }
     `,
     queryCategories: gql`
-      query queryCategories {
-        categories {
+      query queryCategories(
+        $orderBy: TermObjectsConnectionOrderbyEnum
+        $order: OrderEnum
+        $first: Int
+        $last: Int
+        $hideEmpty: Boolean!
+        $after: String
+        $before: String
+      ) {
+        categories(where: {orderby: $orderBy, order: $order, hideEmpty: $hideEmpty}, first: $first, after: $after, before: $before, last: $last,) {
           ${categoryPreview}
         }
       }

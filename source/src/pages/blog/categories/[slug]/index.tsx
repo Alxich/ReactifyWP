@@ -11,8 +11,7 @@ const CategoryPage: FC<CategoryPageProps> = (props) => {
       width="md"
     >
       <Breadcrumbs />
-
-      <PostAll queryType="Slug" queryOption="Cateogries" blockView="Post" />
+      <PostAll queryType="Slug" queryOption="Categories" blockView="Post" />
     </Container>
   );
 };

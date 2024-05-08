@@ -18,7 +18,7 @@ import { getFormatedDate, sortPostTags } from "@/lib/functions";
 
 interface PostAllProps {
   blockView: "Post" | "Category";
-  queryOption: "Cateogries" | "Tags" | "Posts";
+  queryOption: "Categories" | "Tags" | "Posts";
   queryType: "All" | "Slug" | "Vars";
   vars?: {
     initialOffset?: number;
@@ -37,7 +37,7 @@ const PostAll: FC<PostAllProps> = ({
   const [pageData, setPageData] = useState<
     TagLinkProps | CategoryPreviewBlockProps
   >(preloadData.tagsData[0]);
-  const [postsData, setPostsData] = useState<Array<PostPreviewBlockProps>>(
+  const [postsData, setPostsData] = useState<PostPreviewBlockProps[]>(
     preloadData.postsData,
   );
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -47,27 +47,59 @@ const PostAll: FC<PostAllProps> = ({
   const [endCursor, setEndCursor] = useState<string | undefined>();
   const [startCursor, setStartCursor] = useState<string | undefined>();
   const [direction, setDirection] = useState<"after" | "before">("after");
-
-  const initialOffset = vars?.initialOffset || 0; // No in use for now (Can change for your needs)
+  const initialOffset = vars?.initialOffset || 0;
 
   const getQueryType = () => {
-    if (queryType === "Slug") {
-      switch (queryOption) {
-        case "Cateogries":
-          return "queryCategory";
+    switch (queryType) {
+      case "Slug":
+        switch (queryOption) {
+          case "Categories":
+            return "queryCategory";
+          case "Tags":
+            return "queryTag";
+          default:
+            return "queryPosts";
+        }
+      case "Vars":
+        switch (queryOption) {
+          case "Categories":
+            return "queryCategoriesByVars";
+          case "Tags":
+            return "queryTag";
+          default:
+            return "queryPostsByVars";
+        }
 
-        case "Tags":
-          return "queryTag";
+      case "All":
+        switch (queryOption) {
+          case "Categories":
+            return "queryCategories";
+          case "Tags":
+            return "queryTags";
+          default:
+            return "queryPosts";
+        }
 
-        default:
-          return "queryPosts";
-      }
-    } else if (queryType === "Vars") {
-      return "queryPostsByVars";
-    } else {
-      return "queryPosts";
+      default:
+        return "queryPosts";
     }
   };
+
+  if (queryType == "All" && getQueryType() === "queryCategories") {
+    const { data: queryCategoryTotal, loading: queryCategoryTotalLoading } =
+      getOperationsRequest.GET.QueryData({
+        type: "queryCategoriesTotal",
+        variables: {},
+      });
+
+    useEffect(() => {
+      if (queryCategoryTotal && queryCategoryTotalLoading == false) {
+        const total = queryCategoryTotal.categories.edges;
+
+        setTotalPages(Math.floor(total.length / 6) + 1);
+      }
+    }, []);
+  }
 
   const {
     data: queryContentData,
@@ -80,8 +112,10 @@ const PostAll: FC<PostAllProps> = ({
         id: pageSlug ? pageSlug.toString() : "",
         idType: IDTypeEnum.SLUG,
       }),
-      orderBy: OrderbyEnum.DATE,
-      order: OrderEnum.DESC,
+      ...(blockView === "Post"
+        ? { orderBy: OrderbyEnum.DATE, order: OrderEnum.DESC }
+        : { orderBy: OrderbyEnum.NAME, order: OrderEnum.DESC }),
+      ...(blockView === "Category" && { hideEmpty: false }),
       ...(queryType === "Vars" ? { size: 6 } : { first: 6 }),
       offset: initialOffset,
     },
@@ -91,41 +125,88 @@ const PostAll: FC<PostAllProps> = ({
     if (!queryContentData || queryContentDataLoading) return;
 
     const fetchData = () => {
-      const { nodes, pageInfo } =
-        queryType !== "Vars"
-          ? getQueryType() === "queryTag"
-            ? queryContentData.tag.posts
-            : queryContentData.category.posts
-          : queryContentData.posts;
+      const getPostsData = () => {
+        switch (queryType) {
+          case "Vars":
+            return queryContentData?.posts || {};
+          case "Slug":
+            switch (getQueryType()) {
+              case "queryTag":
+                return queryContentData?.tag?.posts || {};
+              case "queryCategory":
+                return queryContentData?.category?.posts || {};
+              default:
+                return queryContentData?.posts || {};
+            }
+          case "All":
+            switch (getQueryType()) {
+              case "queryCategories":
+                return queryContentData?.categories || {};
+              default:
+                return queryContentData?.posts || {};
+            }
+
+          default:
+            return queryContentData?.posts || {};
+        }
+      };
+
+      const { nodes, pageInfo } = getPostsData();
+
       const { startCursor, endCursor, offsetPagination } = pageInfo;
-      const { total } = offsetPagination;
-      setTotalPages(Math.floor(total / 6) + 1);
+
+      if (queryType !== "All" && getQueryType() !== "queryCategories") {
+        const { total } = offsetPagination;
+        setTotalPages(Math.floor(total / 6) + 1);
+      }
 
       const fetchedPostData = nodes.map((item: any) => {
-        const tags = sortPostTags(item.tags?.nodes);
         const checkIfPresent = (newData: any, placeData: any) =>
           newData ? newData : placeData;
-        const queryPostsData: PostPreviewBlockProps = {
-          view: "col",
-          isGridSmall: false,
-          title: item.title || preloadData.placeholders.postTitle,
-          author: checkIfPresent(
-            item.author?.node.name ||
-              preloadData.placeholders.authorName ||
-              "Anon",
-            preloadData.placeholders.authorName,
-          ),
-          date:
-            getFormatedDate(item.date) || preloadData.placeholders.defaultDate,
-          tags: tags || preloadData.placeholders.defaultTags,
-          texts: item.excerpt || preloadData.placeholders.defaultTexts,
-          image: checkIfPresent(
-            item.featuredImage?.node.sourceUrl ||
-              preloadData.placeholders.postImage,
-            preloadData.placeholders.postImage,
-          ),
-          link: `/blog/post/${item.slug || "example_post"}`,
-        };
+
+        const queryPostsData:
+          | PostPreviewBlockProps
+          | CategoryPreviewBlockProps =
+          blockView !== "Category"
+            ? {
+                view: "col",
+                isGridSmall: false,
+                title: item.title || preloadData.placeholders.postTitle,
+                author: checkIfPresent(
+                  item.author?.node.name ||
+                    preloadData.placeholders.authorName ||
+                    "Anon",
+                  preloadData.placeholders.authorName,
+                ),
+                date:
+                  getFormatedDate(item.date) ||
+                  preloadData.placeholders.defaultDate,
+                tags:
+                  sortPostTags(item.tags?.nodes) ||
+                  preloadData.placeholders.defaultTags,
+                texts: item.excerpt || preloadData.placeholders.defaultTexts,
+                image: checkIfPresent(
+                  item.featuredImage?.node.sourceUrl ||
+                    preloadData.placeholders.postImage,
+                  preloadData.placeholders.postImage,
+                ),
+                link: `/blog/post/${item.slug || "example_post"}`,
+              }
+            : {
+                slug: item.slug,
+                view: "col",
+                isGridSmall: false,
+                title: item.name || preloadData.placeholders.postTitle,
+                texts:
+                  item.description || preloadData.placeholders.defaultTexts,
+                image: checkIfPresent(
+                  item.customFields?.thumbnail?.node.sourceUrl ||
+                    preloadData.placeholders.postImage,
+                  preloadData.placeholders.postImage,
+                ),
+                link: `/blog/category/${item.slug != undefined ? item.slug : "example_category"}`,
+              };
+
         return queryPostsData;
       });
 
@@ -136,10 +217,14 @@ const PostAll: FC<PostAllProps> = ({
       }
     };
 
+    /**
+     * Page data likely a page title, background, banner, etc
+     */
+
     if (queryType !== "Vars") {
       if (getQueryType() === "queryTag" && queryContentData?.tag) {
         const { id, slug, background, color, name, description } =
-          queryContentData?.tag;
+          queryContentData.tag;
         fetchData();
         setPageData({
           id,
@@ -161,7 +246,7 @@ const PostAll: FC<PostAllProps> = ({
           name,
           slug,
           customFields: thumbnail,
-        } = queryContentData?.category;
+        } = queryContentData.category;
         fetchData();
         setPageData({
           id,
@@ -175,6 +260,8 @@ const PostAll: FC<PostAllProps> = ({
           view: "col",
           isGridSmall: false,
         });
+      } else {
+        fetchData();
       }
     } else {
       fetchData();
@@ -235,7 +322,7 @@ const PostAll: FC<PostAllProps> = ({
         width="md"
         classNames="grid grid-cols-3 auto-rows-max auto-cols-max gap-3xl laptop:grid-cols-2 tablet:!grid-cols-1 tablet:gap-lg"
       >
-        {postsData &&
+        {blockView === "Post" &&
           postsData.map(
             (
               { view, author, date, image, title, texts, tags, link, slug },
